@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Quest"
 
         mc:Ignorable="d"
-        Title="Year1" MinHeight="450" Height="550" Width="850" MinWidth="650" MaxWidth="1050" MaxHeight="650" Loaded="Window_Loaded" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+        Title="Этаж 1" MinHeight="450" Height="550" Width="850" MinWidth="650" MaxWidth="1050" MaxHeight="650" Loaded="Window_Loaded" Closing="Window_Closing" WindowStartupLocation="CenterScreen" Topmost="True">
     <Grid Background="Black">
         <ToolBar Margin="4" VerticalAlignment="Top" Height="40" Panel.ZIndex="1">
             <ToolBar.Background>
@@ -22,7 +22,7 @@
             <Image x:Name="hp2" Source="hp.png" HorizontalAlignment="Right" Margin="1"/>
             <Image x:Name="hp3" Source="hp.png" HorizontalAlignment="Right" Margin="1"/>
         </ToolBar>
-        <TabControl x:Name="tb" BorderBrush="Transparent" Margin="2,35,2,-24" Background="Transparent" TabStripPlacement="Bottom" >
+        <TabControl x:Name="tc" BorderBrush="Transparent" Margin="2,35,2,-24" Background="Transparent" TabStripPlacement="Bottom" >
             <TabItem Header="-1" >
                 <Border CornerRadius="10" Margin="5,10,5,5">
                     <Border.Effect>
@@ -208,9 +208,15 @@
                     <Grid Margin="5">
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
                             <StackPanel Margin="5">
-                                <TextBlock Margin="1" TextWrapping="Wrap">
-                                4
+                                <TextBlock x:Name="tb4" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18">
+                                Вы заходите в четвертую комнату. Голос начинает расказывать Вам историю. Во время своего путешествия по острову Гомер встретил нескольких рыбаков. Он спросил, как идут их дела, и они ответили загадкой: «Что поймали - отбросили, что не словили - сохранили. Что мы поймали?»
                                 </TextBlock>
+                                <TextBox x:Name="textBox4"/>
+                                <Button x:Name="otv4" HorizontalAlignment="Center" Margin="10,3" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv4_Click">
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="button12.png"/>
+                                    </Button.Background>
+                                </Button>
                             </StackPanel>
                             <Border.Effect>
                                 <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
@@ -238,8 +244,7 @@
                                 <TextBlock x:Name="tb5" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
                                 Вы заходите в пятую комнату. Голос говорит вам: "Кто ходит на четырёх ногах утром, на двух днём и на трёх ночью?"
                                 </TextBlock>
-                                <TextBox x:Name="textBox5">
-                                </TextBox>
+                                <TextBox x:Name="textBox5"/>
                                 <Button x:Name="otv5" HorizontalAlignment="Center" Margin="10,3" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv5_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="button12.png"/>
@@ -256,7 +261,7 @@
                     </Grid>
                 </Border>
             </TabItem>
-            <TabItem Header="2 этаж" >
+            <TabItem Header="2 этаж">
                 <Border CornerRadius="10" Margin="5,10,5,5">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
@@ -267,10 +272,15 @@
                     <Grid Margin="5">
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
                             <StackPanel Margin="5">
-                                <TextBlock Margin="1" TextWrapping="Wrap">
-                                2 этаж
-                                </TextBlock>
+                                <TextBlock x:Name="tb6" Margin="1" TextWrapping="Wrap">
                                 
+                                </TextBlock>
+                                <TextBox x:Name="textBox6" Visibility="Collapsed"/>
+                                <Button x:Name="otv6" Visibility="Collapsed" HorizontalAlignment="Center" Margin="10,3" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv5_Click">
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="button12.png"/>
+                                    </Button.Background>
+                                </Button>
                             </StackPanel>
                             <Border.Effect>
                                 <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>

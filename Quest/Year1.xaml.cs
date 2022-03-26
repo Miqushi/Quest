@@ -47,7 +47,7 @@ namespace Quest
         {
             if (lb1.SelectedIndex == 0)
             {
-                tb.SelectedIndex = 1;
+                tc.SelectedIndex = 1;
             }
             else
             {
@@ -61,7 +61,20 @@ namespace Quest
             {
                 if (lb2.SelectedIndex == i)
                 {
-                    tb.SelectedIndex = i + 2;
+                    tc.SelectedIndex = i + 2;
+                    if(tc.SelectedIndex == 7) 
+                    {
+                        if (lvl == 5)
+                        {
+                            tb6.Text = "Что общего у всех предметов, которые вы нашли?";
+                            textBox6.Visibility = Visibility.Visible;
+                            otv6.Visibility = Visibility.Visible;
+                        }
+                        else
+                        {
+                            tb6.Text = "Приходите позже, когда ответите на все загадки";
+                        }
+                    }
                 }
             }
             lb2.SetValue(ListBox.SelectedIndexProperty, DependencyProperty.UnsetValue);
@@ -85,26 +98,35 @@ namespace Quest
 
         private void Help(object sender, RoutedEventArgs e)
         {
-            if (tb.SelectedIndex == 2)
+
+            if (tc.SelectedIndex == 2)
             {
                 MessageBox.Show("Мир");
             }
-            if (tb.SelectedIndex == 3)
+            if (tc.SelectedIndex == 3)
             {
                 MessageBox.Show("42. Без суббот и воскресений - значит считать каждые 5 дней в неделю, т.е. лишь 5/7 жизни. Если 5/7 это 30 лет, то верный ответ 30 × 7 / 5 = 42 ");
             }
-            if (tb.SelectedIndex == 4)
+            if (tc.SelectedIndex == 4)
             {
                 MessageBox.Show("Куб-бук");
             }
-            if (tb.SelectedIndex == 6)
+            if (tc.SelectedIndex == 4)
+            {
+                MessageBox.Show("Куб-бук");
+            }
+            if (tc.SelectedIndex == 5)
+            {
+                MessageBox.Show("Вши");
+            }
+            if (tc.SelectedIndex == 6)
             {
                 MessageBox.Show("Человек");
             }
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            tb.SelectedIndex = 1;
+            tc.SelectedIndex = 1;
         }
 
         private void lb4_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -150,6 +172,22 @@ namespace Quest
             else 
             { 
                 damage(); 
+            }
+        }
+
+        private void otv4_Click(object sender, RoutedEventArgs e)
+        {
+            string otvet = textBox4.Text.Trim().ToLower();
+            if (otvet == "вши")
+            {
+                tb4.Text = "Следующая загадка наиболее известна своей апокрифической причастностью к смерти греческого поэта Гомера, описываемого философами всех времен как «мудрейшего из греков». Гомер отправился на остров Иос, хотя оракул предупреждал о том, что он станет местом его смерти (греки никогда не прислушивались к пророчествам о собственной гибели). Во время своего путешествия по острову Гомер встретил нескольких рыбаков. Он спросил, как идут их дела, и они ответили загадкой:«Что поймали -отбросили, что не словили - сохранили.Что мы поймали?» Не в состоянии отгадать загадку Гомер в конце концов умер на острове, отказываясь покинуть его, пока не найдет ответ.";
+                textBox4.Visibility = Visibility.Collapsed;
+                otv4.Visibility = Visibility.Collapsed;
+                lvl += 1;
+            }
+            else
+            {
+                damage();
             }
         }
     }
