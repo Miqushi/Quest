@@ -97,6 +97,10 @@ namespace Quest
             {
                 MessageBox.Show("Куб-бук");
             }
+            if (tb.SelectedIndex == 6)
+            {
+                MessageBox.Show("Человек");
+            }
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
@@ -121,7 +125,7 @@ namespace Quest
             string otvet = textBox2.Text.Trim().ToLower();
             if (otvet == "куб-бук" || otvet == "бук-куб")
             {
-                tbIst.Text = "Дверь отворилась. Вы берете листок с анограммой и идете исследовать помещение дальше";
+                tb3.Text = "Дверь отворилась. Вы берете листок с анограммой и идете исследовать помещение дальше";
                 textBox2.Visibility = Visibility.Collapsed;
                 otv2.Visibility = Visibility.Collapsed;
                 lvl += 1;
@@ -129,6 +133,19 @@ namespace Quest
             else
             {
                 damage();
+            }
+        }
+
+        private void otv5_Click(object sender, RoutedEventArgs e)
+        {
+            string otvet = textBox5.Text.Trim().ToLower();
+            if (otvet == "эдип" || otvet == "человек")
+            {
+                tb5.Text = "Вы видете картину, а рядом с ней подпись: На картине изображена встреча Эдипа со Сфинксом на пути между Фивами и Дельфами. Эдип должен был правильно ответить на загадку Сфинкса, чтобы пройти. Неудача означала для него смерть и гибель осаждённых фиванцев. Загадка заключалась в следующем: «кто ходит на четырёх ногах утром, на двух днём и на трёх ночью?». Эдип ответил: «Человек: в младенчестве он ползает на четвереньках; во взрослом возрасте он ходит на двух ногах и в старости он использует посох». По преданию существует и иной ответ на загадку. И он был сам Эдип.";
+                img5.Visibility = Visibility.Visible;
+                textBox5.Visibility = Visibility.Collapsed;
+                otv5.Visibility = Visibility.Collapsed;
+                lvl += 1;
             }
         }
     }

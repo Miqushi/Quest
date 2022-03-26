@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Quest"
 
         mc:Ignorable="d"
-        Title="Year1" MinHeight="450" Height="500" Width="750" MinWidth="650" MaxWidth="950" MaxHeight="600" Loaded="Window_Loaded" Closing="Window_Closing">
+        Title="Year1" MinHeight="450" Height="550" Width="850" MinWidth="650" MaxWidth="1050" MaxHeight="650" Loaded="Window_Loaded" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
     <Grid Background="Black">
         <ToolBar Margin="4" VerticalAlignment="Top" Height="40" Panel.ZIndex="1">
             <ToolBar.Background>
@@ -22,7 +22,7 @@
             <Image x:Name="hp2" Source="hp.png" HorizontalAlignment="Right" Margin="1"/>
             <Image x:Name="hp3" Source="hp.png" HorizontalAlignment="Right" Margin="1"/>
         </ToolBar>
-        <TabControl x:Name="tb" BorderBrush="Transparent" Margin="5,35,5.2,-24" Background="Transparent" TabStripPlacement="Bottom" >
+        <TabControl x:Name="tb" BorderBrush="Transparent" Margin="2,35,2,-24" Background="Transparent" TabStripPlacement="Bottom" >
             <TabItem Header="-1" >
                 <Border CornerRadius="10" Margin="5,10,5,5">
                     <Border.Effect>
@@ -37,10 +37,10 @@
                                 <TextBlock Margin="1" TextWrapping="Wrap">
                                 Вы начинаете свое путешествие. После долгого блуждания по лесу вы встречаете одиноко стоящее здание. Вы решаете подйти к нему и видите табло УО "БГАЭК". На двери весит замок, а рядом надпись: "Начало"
                                 </TextBlock>
-                                <ListBox x:Name="lb1" SelectionChanged="lb1_SelectionChanged" >
+                                <ListBox x:Name="lb1" SelectionChanged="lb1_SelectionChanged" FontFamily="Monotype Corsiva" FontSize="16"  >
                                     <ListBox.ItemsPanel>
                                         <ItemsPanelTemplate>
-                                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                            <StackPanel  Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                                         </ItemsPanelTemplate>
                                     </ListBox.ItemsPanel>
                                     <ListBoxItem>1953</ListBoxItem>
@@ -70,10 +70,10 @@
                     <Grid Margin="5">
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
                             <StackPanel Margin="5">
-                                <TextBlock Margin="1" TextWrapping="Wrap">
+                                <TextBlock Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
                                 Вы заходите внутрь и вдруг дверь сзади захлопывается. Вы слышите голос: "Теперь, чтобы выбраться тебе отсюда, тебе надо пройти 4 этажа с загадками, чтобы найти ключ." Вы видете перед собой 6 дверей, 6 ведет на другой этаж, но она закрыта. 
                                 </TextBlock>
-                                <ListBox x:Name="lb2" SelectionChanged="lb2_SelectionChanged">
+                                <ListBox x:Name="lb2" SelectionChanged="lb2_SelectionChanged" FontFamily="Monotype Corsiva" FontSize="18" >
                                     <ListBox.ItemsPanel>
                                         <ItemsPanelTemplate>
                                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
@@ -108,8 +108,8 @@
                     <Grid Margin="5">
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
                             <StackPanel x:Name="panel" Margin="5">
-                                <TextBlock x:Name="tbIst" Margin="1" TextWrapping="Wrap">
-                                Вы заходите в первую комнату. Пройдя дальше, Вы вновь слышите голос:        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀ ⠀⠀ Китайские мастера боевых искусств говорили, что драка - для дураков, для умных - победа. А что, по их мнению - для мудрых?
+                                <TextBlock x:Name="tbIst" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
+                                Вы заходите в первую комнату. Пройдя дальше, Вы вновь слышите голос: Китайские мастера боевых искусств говорили, что драка - для дураков, для умных - победа. А что, по их мнению - для мудрых?
                                 </TextBlock>
                                 <TextBox x:Name="textBox1" HorizontalAlignment="Stretch">
                                 </TextBox>
@@ -140,8 +140,8 @@
                     <Grid Margin="5">
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
                             <StackPanel Margin="5">
-                                <TextBlock x:Name="tbMath" Margin="1" TextWrapping="Wrap">
-                                Вы заходите во вторую  комнату. На столе вы видете сейф, а рядом записка:            ⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀ У женщины спросили: "Сколько Вам лет?". Она ответила: "30, не считая суббот и воскресений". Сколько ей лет?
+                                <TextBlock x:Name="tbMath" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
+                                Вы заходите во вторую  комнату. Вы видете сейф, а рядом записка: У женщины спросили: "Сколько Вам лет?". Она ответила: "30, не считая суббот и воскресений". Сколько ей лет?
                                 </TextBlock>
                                 <ListBox x:Name="lb4" SelectionChanged="lb4_SelectionChanged">
                                     <ListBox.ItemsPanel>
@@ -176,8 +176,8 @@
                     <Grid Margin="5">
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
                             <StackPanel Margin="5">
-                                <TextBlock Margin="1" TextWrapping="Wrap" ToolTip="Слово или словосочетание, образованное путём перестановки букв, составляющих другое слово (пила-липа). Прародителем анаграммы однако считают поэта и учёного Ликофрона">
-                                Вы заходите в третюю комнату. На столе лежит один листок. В нем анограмма:⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ Читаем мы направо смело - Геометрическое тело. Прочтем же справа мы налево - Увидим разновидность древа. (ответ пишите слитно, через дефис)
+                                <TextBlock Margin="1" x:Name="tb3" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" ToolTip="Слово или словосочетание, образованное путём перестановки букв, составляющих другое слово (пила-липа). Прародителем анаграммы однако считают поэта и учёного Ликофрона">
+                                Вы заходите в третюю комнату. На столе лежит один листок. В нем анограмма: Читаем мы направо смело - Геометрическое тело. Прочтем же справа мы налево - Увидим разновидность древа. (ответ пишите слитно, через дефис)
                                 </TextBlock>
                                 <TextBox x:Name="textBox2" HorizontalAlignment="Stretch">
                                 </TextBox>
@@ -197,7 +197,7 @@
                     </Grid>
                 </Border>
             </TabItem>
-            <TabItem Header="1" >
+            <TabItem Header="4" >
                 <Border CornerRadius="10" Margin="5,10,5,5">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
@@ -233,22 +233,18 @@
                     <Grid Margin="5">
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
                             <StackPanel Margin="5">
-                                <TextBlock Margin="1" TextWrapping="Wrap">
-                                5
+                                <Image x:Name="img5" Visibility="Collapsed" Height="200" Width="300" Source="Oedipus.jpg">
+                                </Image>
+                                <TextBlock x:Name="tb5" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
+                                Вы заходите в пятую комнату. Голос говорит вам: "Кто ходит на четырёх ногах утром, на двух днём и на трёх ночью?"
                                 </TextBlock>
-                                <ListBox x:Name="lb7">
-                                    <ListBox.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                                        </ItemsPanelTemplate>
-                                    </ListBox.ItemsPanel>
-                                    <ListBoxItem>1</ListBoxItem>
-                                    <ListBoxItem>2</ListBoxItem>
-                                    <ListBoxItem>3</ListBoxItem>
-                                    <ListBoxItem>4</ListBoxItem>
-                                    <ListBoxItem>5</ListBoxItem>
-                                    <ListBoxItem>2 этаж</ListBoxItem>
-                                </ListBox>
+                                <TextBox x:Name="textBox5">
+                                </TextBox>
+                                <Button x:Name="otv5" HorizontalAlignment="Center" Margin="10,3" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv5_Click">
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="button12.png"/>
+                                    </Button.Background>
+                                </Button>
                             </StackPanel>
                             <Border.Effect>
                                 <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
@@ -274,19 +270,7 @@
                                 <TextBlock Margin="1" TextWrapping="Wrap">
                                 2 этаж
                                 </TextBlock>
-                                <ListBox x:Name="lb8">
-                                    <ListBox.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                                        </ItemsPanelTemplate>
-                                    </ListBox.ItemsPanel>
-                                    <ListBoxItem>1</ListBoxItem>
-                                    <ListBoxItem>2</ListBoxItem>
-                                    <ListBoxItem>3</ListBoxItem>
-                                    <ListBoxItem>4</ListBoxItem>
-                                    <ListBoxItem>5</ListBoxItem>
-                                    <ListBoxItem>2 этаж</ListBoxItem>
-                                </ListBox>
+                                
                             </StackPanel>
                             <Border.Effect>
                                 <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
