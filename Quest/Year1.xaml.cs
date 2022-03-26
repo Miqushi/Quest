@@ -79,7 +79,20 @@ namespace Quest
             }
             lb2.SetValue(ListBox.SelectedIndexProperty, DependencyProperty.UnsetValue);
         }
+        private void img1_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            MessageBox.Show("По легенде первое оливковое дерево подарила людям богиня Афина, когда выиграла свой спор с Посейдоном о том, кому быть покровителем Афин. В Греции считалось, что первое оливковое дерево возникло из копья богини Афины, которое она воткнула на Афинском Акрополе.", "Информация");
+        }
 
+        private void img2_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Тетраэдр является треугольной пирамидой при принятии любой из граней за основание. У тетраэдра 4 грани, 4 вершины и 6 рёбер. Тетраэдр, у которого все грани — равносторонние треугольники, называется правильным. Правильный тетраэдр является одним из пяти правильных многогранников.", "Информация");
+        }
+
+        private void img3_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Прародителем анаграммы однако считают поэта и учёного Ликофрона", "Информация");
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string otvet = textBox1.Text.Trim().ToLower();
@@ -88,6 +101,7 @@ namespace Quest
                 tbIst.Text = "Перед вами появляется оливковая ветвь. Вы берете ее и отправляетесь дальше";
                 textBox1.Visibility = Visibility.Collapsed;
                 otv1.Visibility = Visibility.Collapsed;
+                img1.Visibility = Visibility.Visible;
                 lvl += 1;
             }
             else
@@ -135,6 +149,7 @@ namespace Quest
             {
                 tbMath.Text = "Сейф отворяется. Внутри него лежал тетраэдр. Вы берете его и отправляетесь исследовать другие комнаты";
                 lb4.Visibility = Visibility.Collapsed;
+                img2.Visibility = Visibility.Visible;
                 lvl += 1;
             }
             else
@@ -150,6 +165,7 @@ namespace Quest
                 tb3.Text = "Дверь отворилась. Вы берете листок с анограммой и идете исследовать помещение дальше";
                 textBox2.Visibility = Visibility.Collapsed;
                 otv2.Visibility = Visibility.Collapsed;
+                img3.Visibility = Visibility.Visible;
                 lvl += 1;
             }
             else
@@ -190,5 +206,7 @@ namespace Quest
                 damage();
             }
         }
+
+        
     }
 }
