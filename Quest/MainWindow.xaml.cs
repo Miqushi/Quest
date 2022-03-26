@@ -23,7 +23,6 @@ namespace Quest
         public MainWindow()
         {
             InitializeComponent();
-
         }
         
         private void curs1_Click(object sender, RoutedEventArgs e)
@@ -35,7 +34,6 @@ namespace Quest
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
             curs2.IsEnabled = false;
             curs3.IsEnabled = false;
             curs4.IsEnabled = false;
