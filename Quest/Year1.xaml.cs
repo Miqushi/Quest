@@ -147,6 +147,10 @@ namespace Quest
                 otv5.Visibility = Visibility.Collapsed;
                 lvl += 1;
             }
+            else 
+            { 
+                damage(); 
+            }
         }
     }
 }
