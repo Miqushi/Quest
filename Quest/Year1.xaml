@@ -34,7 +34,7 @@
                     <Grid Margin="5">
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
                             <StackPanel Margin="5">
-                                <TextBlock Margin="1" TextWrapping="Wrap">
+                                <TextBlock Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
                                 Вы начинаете свое путешествие. После долгого блуждания по лесу вы встречаете одиноко стоящее здание. Вы решаете подйти к нему и видите табло УО "БГАЭК". На двери весит замок, а рядом надпись: "Начало"
                                 </TextBlock>
                                 <ListBox x:Name="lb1" SelectionChanged="lb1_SelectionChanged" FontFamily="Monotype Corsiva" FontSize="16"  >
@@ -276,11 +276,15 @@
                     <Grid Margin="5">
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
                             <StackPanel Margin="5">
-                                <TextBlock x:Name="tb6" Margin="1" TextWrapping="Wrap">
-                                
+                                <TextBlock x:Name="tb6" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
                                 </TextBlock>
-                                <TextBox x:Name="textBox6" Visibility="Collapsed" FontFamily="Monotype Corsiva" FontSize="18"/>
-                                <Button x:Name="otv6" Visibility="Collapsed" HorizontalAlignment="Center" Margin="10,3" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv5_Click">
+                                <TextBox x:Name="textBox6" Visibility="Collapsed"/>
+                                <Button x:Name="otv6" Visibility="Collapsed" HorizontalAlignment="Center" Margin="10,3" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv6_Click">
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="button12.png"/>
+                                    </Button.Background>
+                                </Button>
+                                <Button x:Name="next" Visibility="Collapsed" HorizontalAlignment="Center" Margin="10,3" Content="Вперед" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="next_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="button12.png"/>
                                     </Button.Background>

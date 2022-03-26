@@ -40,7 +40,7 @@ namespace Quest
                 hp1.Opacity = 0;
                 MessageBox.Show("You Died");
                 main.Show();
-                this.Close();
+                Close();
             }
         }
         private void lb1_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -207,6 +207,25 @@ namespace Quest
             }
         }
 
-        
+        private void otv6_Click(object sender, RoutedEventArgs e)
+        {
+            string otvet = textBox6.Text.Trim().ToLower();
+            if (otvet == "греция" || otvet == "древняя греция")
+            {
+                tb6.Text = "Этот ответ оказывается правильным. Дверь открываеся и вы проходите на второй этаж";
+                textBox6.Visibility = Visibility.Collapsed;
+                otv6.Visibility = Visibility.Collapsed;
+                next.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                damage();
+            }
+        }
+
+        private void next_Click(object sender, RoutedEventArgs e)
+        {
+ 
+        }
     }
 }

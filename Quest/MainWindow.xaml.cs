@@ -25,7 +25,7 @@ namespace Quest
             InitializeComponent();
 
         }
-
+        
         private void curs1_Click(object sender, RoutedEventArgs e)
         {
             Year1 y1 = new Year1();
@@ -35,6 +35,7 @@ namespace Quest
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            
             curs2.IsEnabled = false;
             curs3.IsEnabled = false;
             curs4.IsEnabled = false;
