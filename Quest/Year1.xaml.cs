@@ -98,7 +98,6 @@ namespace Quest
                 MessageBox.Show("Куб-бук");
             }
         }
-
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             tb.SelectedIndex = 1;
