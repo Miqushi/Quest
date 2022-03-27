@@ -12,11 +12,11 @@
             <ToolBar.Background>
                 <ImageBrush ImageSource="bar.jpg"></ImageBrush>
             </ToolBar.Background>
-            <Image Source="back.png" Margin="2" MouseDown="Back" />
-            <Image Source="help.png" Margin="2" MouseDown="Help"></Image>
-            <Image x:Name="hp1" Source="hp.png" HorizontalAlignment="Right" Margin="2"/>
-            <Image x:Name="hp2" Source="hp.png" HorizontalAlignment="Right" Margin="2"/>
-            <Image x:Name="hp3" Source="hp.png" HorizontalAlignment="Right" Margin="2"/>
+            <Image Source="back.png" Margin="2" MouseDown="Back" ToolTip="Вернуться в главную комнату" />
+            <Image Source="help.png" Margin="2" MouseDown="Help" ToolTip="Ответ на загадку" ></Image>
+            <Image x:Name="hp1" Source="hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
+            <Image x:Name="hp2" Source="hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
+            <Image x:Name="hp3" Source="hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
         </ToolBar>
         <TabControl x:Name="tc" BorderBrush="Transparent" Margin="2,35,2,-24" Background="Transparent" TabStripPlacement="Bottom" >
             <TabItem Header="-1" >
@@ -106,7 +106,7 @@
                             <StackPanel x:Name="panel" Margin="5">
                                 <Image x:Name="img1" Visibility="Collapsed" Height="200" Width="300" Source="olive.png" MouseDown="img1_MouseDown"/>
                                 <TextBlock x:Name="tbIst" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
-                                Вы заходите в первую комнату. Пройдя дальше, Вы вновь слышите голос: Китайские мастера боевых искусств говорили, что драка - для дураков, для умных - победа. А что, по их мнению - для мудрых?
+                                Вы заходите в первую комнату. Пройдя дальше, и, осмотревшись по сторонам, Вы вновь слышите голос: Китайские мастера боевых искусств говорили, что драка - для дураков, для умных - победа. А что, по их мнению - для мудрых?
                                 </TextBlock>
                                 <TextBox x:Name="textBox1" HorizontalAlignment="Stretch">
                                 </TextBox>
@@ -140,7 +140,7 @@
                                 <Image x:Name="img2" Visibility="Collapsed" Height="200" Width="200" Source="tetra.png" MouseDown="img2_MouseDown">
                                 </Image>
                                 <TextBlock x:Name="tbMath" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
-                                Вы заходите во вторую  комнату. Вы видете сейф, а рядом записка: У женщины спросили: "Сколько Вам лет?". Она ответила: "30, не считая суббот и воскресений". Сколько ей лет?
+                                Вы заходите во вторую комнату. Вы видете сейф, а рядом записка с загадкой: У женщины спросили: "Сколько Вам лет?". Она ответила: "30, не считая суббот и воскресений". Сколько ей лет?
                                 </TextBlock>
                                 <ListBox x:Name="lb4" SelectionChanged="lb4_SelectionChanged" FontFamily="Monotype Corsiva" FontSize="18">
                                     <ListBox.ItemsPanel>
@@ -209,7 +209,7 @@
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
                             <StackPanel Margin="5">
                                 <TextBlock x:Name="tb4" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18">
-                                Вы заходите в четвертую комнату. Голос начинает расказывать Вам историю. Во время своего путешествия по острову Гомер встретил нескольких рыбаков. Он спросил, как идут их дела, и они ответили загадкой: «Что поймали - отбросили, что не словили - сохранили. Что мы поймали?»
+                                Вы заходите в четвертую комнату. Голос начинает расказывать Вам историю: Во время своего путешествия по острову Гомер встретил нескольких рыбаков. Он спросил, как идут их дела, и они ответили загадкой: «Что поймали - отбросили, что не словили - сохранили. Что мы поймали?»
                                 </TextBlock>
                                 <TextBox x:Name="textBox4"/>
                                 <Button x:Name="otv4" HorizontalAlignment="Center" Margin="10,3" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv4_Click">
@@ -242,7 +242,7 @@
                                 <Image x:Name="img5" Visibility="Collapsed" Height="200" Width="300" Source="Oedipus.jpg" >
                                 </Image>
                                 <TextBlock x:Name="tb5" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
-                                Вы заходите в пятую комнату. Голос говорит вам: "Кто ходит на четырёх ногах утром, на двух днём и на трёх ночью?"
+                                Вы заходите в пятую комнату. Голос спрашивает у вас: "Кто ходит на четырёх ногах утром, на двух днём и на трёх ночью?"
                                 </TextBlock>
                                 <TextBox x:Name="textBox5"/>
                                 <Button x:Name="otv5" HorizontalAlignment="Center" Margin="10,3" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv5_Click">

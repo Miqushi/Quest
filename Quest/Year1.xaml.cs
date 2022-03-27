@@ -43,6 +43,38 @@ namespace Quest
                 Close();
             }
         }
+        private void Back(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            tc.SelectedIndex = 1;
+        }
+
+        private void Help(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (tc.SelectedIndex == 2)
+            {
+                MessageBox.Show("Мир", "Ответ");
+            }
+            if (tc.SelectedIndex == 3)
+            {
+                MessageBox.Show("42. Без суббот и воскресений - значит считать каждые 5 дней в неделю, т.е. лишь 5/7 жизни. Если 5/7 это 30 лет, то верный ответ 30 × 7 / 5 = 42", "Ответ");
+            }
+            if (tc.SelectedIndex == 4)
+            {
+                MessageBox.Show("Куб-бук", "Ответ");
+            }
+            if (tc.SelectedIndex == 5)
+            {
+                MessageBox.Show("Вши", "Ответ");
+            }
+            if (tc.SelectedIndex == 6)
+            {
+                MessageBox.Show("Человек", "Ответ");
+            }
+            if (tc.SelectedIndex == 7)
+            {
+                MessageBox.Show("Какая общая страна у всех этих предметов и событий?", "Ответ");
+            }
+        }
         private void lb1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (lb1.SelectedIndex == 0)
@@ -62,7 +94,7 @@ namespace Quest
                 if (lb2.SelectedIndex == i)
                 {
                     tc.SelectedIndex = i + 2;
-                    if(tc.SelectedIndex == 7) 
+                    if (tc.SelectedIndex == 7)
                     {
                         if (lvl == 5)
                         {
@@ -98,7 +130,7 @@ namespace Quest
             string otvet = textBox1.Text.Trim().ToLower();
             if (otvet == "мир")
             {
-                tbIst.Text = "Перед вами появляется оливковая ветвь. Вы берете ее и отправляетесь дальше";
+                tbIst.Text = "Перед вами появляется оливковая ветвь. Вы берете ее и идете дальше";
                 textBox1.Visibility = Visibility.Collapsed;
                 otv1.Visibility = Visibility.Collapsed;
                 img1.Visibility = Visibility.Visible;
@@ -128,7 +160,7 @@ namespace Quest
             string otvet = textBox2.Text.Trim().ToLower();
             if (otvet == "куб-бук" || otvet == "бук-куб")
             {
-                tb3.Text = "Дверь отворилась. Вы берете листок с анограммой и идете исследовать помещение дальше";
+                tb3.Text = "Дверь отворилась. Вы берете листок с анограммой и шагаете исследовать помещения дальше";
                 textBox2.Visibility = Visibility.Collapsed;
                 otv2.Visibility = Visibility.Collapsed;
                 img3.Visibility = Visibility.Visible;
@@ -151,9 +183,9 @@ namespace Quest
                 otv5.Visibility = Visibility.Collapsed;
                 lvl += 1;
             }
-            else 
-            { 
-                damage(); 
+            else
+            {
+                damage();
             }
         }
 
@@ -162,7 +194,7 @@ namespace Quest
             string otvet = textBox4.Text.Trim().ToLower();
             if (otvet == "вши")
             {
-                tb4.Text = "Следующая загадка наиболее известна своей апокрифической причастностью к смерти греческого поэта Гомера, описываемого философами всех времен как «мудрейшего из греков». Гомер отправился на остров Иос, хотя оракул предупреждал о том, что он станет местом его смерти (греки никогда не прислушивались к пророчествам о собственной гибели). Во время своего путешествия по острову Гомер встретил нескольких рыбаков. Он спросил, как идут их дела, и они ответили загадкой:«Что поймали -отбросили, что не словили - сохранили.Что мы поймали?» Не в состоянии отгадать загадку Гомер в конце концов умер на острове, отказываясь покинуть его, пока не найдет ответ.";
+                tb4.Text = "Эта загадка наиболее известна своей апокрифической причастностью к смерти греческого поэта Гомера, описываемого философами всех времен как «мудрейшего из греков». Гомер отправился на остров Иос, хотя оракул предупреждал о том, что он станет местом его смерти (греки никогда не прислушивались к пророчествам о собственной гибели). Во время своего путешествия по острову Гомер встретил нескольких рыбаков. Он спросил, как идут их дела, и они ответили загадкой:«Что поймали -отбросили, что не словили - сохранили.Что мы поймали?» Не в состоянии отгадать загадку Гомер в конце концов умер на острове, отказываясь покинуть его, пока не найдет ответ.";
                 textBox4.Visibility = Visibility.Collapsed;
                 otv4.Visibility = Visibility.Collapsed;
                 lvl += 1;
@@ -188,41 +220,12 @@ namespace Quest
                 damage();
             }
         }
-        
+
         private void next_Click(object sender, RoutedEventArgs e)
         {
-            year.x +=1;
+            year.x += 1;
             main.Show();
             Close();
-        }
-
-        private void Back(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            tc.SelectedIndex = 1;
-        }
-
-        private void Help(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            if (tc.SelectedIndex == 2)
-            {
-                MessageBox.Show("Мир");
-            }
-            if (tc.SelectedIndex == 3)
-            {
-                MessageBox.Show("42. Без суббот и воскресений - значит считать каждые 5 дней в неделю, т.е. лишь 5/7 жизни. Если 5/7 это 30 лет, то верный ответ 30 × 7 / 5 = 42 ");
-            }
-            if (tc.SelectedIndex == 4)
-            {
-                MessageBox.Show("Куб-бук");
-            }
-            if (tc.SelectedIndex == 5)
-            {
-                MessageBox.Show("Вши");
-            }
-            if (tc.SelectedIndex == 6)
-            {
-                MessageBox.Show("Человек");
-            }
         }
     }
 }
