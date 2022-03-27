@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 namespace Quest
 {
@@ -110,40 +109,6 @@ namespace Quest
                 damage();
             }
         }
-
-        private void Help(object sender, RoutedEventArgs e)
-        {
-
-            if (tc.SelectedIndex == 2)
-            {
-                MessageBox.Show("Мир");
-            }
-            if (tc.SelectedIndex == 3)
-            {
-                MessageBox.Show("42. Без суббот и воскресений - значит считать каждые 5 дней в неделю, т.е. лишь 5/7 жизни. Если 5/7 это 30 лет, то верный ответ 30 × 7 / 5 = 42 ");
-            }
-            if (tc.SelectedIndex == 4)
-            {
-                MessageBox.Show("Куб-бук");
-            }
-            if (tc.SelectedIndex == 4)
-            {
-                MessageBox.Show("Куб-бук");
-            }
-            if (tc.SelectedIndex == 5)
-            {
-                MessageBox.Show("Вши");
-            }
-            if (tc.SelectedIndex == 6)
-            {
-                MessageBox.Show("Человек");
-            }
-        }
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            tc.SelectedIndex = 1;
-        }
-
         private void lb4_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (lb4.SelectedIndex == 1)
@@ -229,6 +194,35 @@ namespace Quest
             year.x +=1;
             main.Show();
             Close();
+        }
+
+        private void Back(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            tc.SelectedIndex = 1;
+        }
+
+        private void Help(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (tc.SelectedIndex == 2)
+            {
+                MessageBox.Show("Мир");
+            }
+            if (tc.SelectedIndex == 3)
+            {
+                MessageBox.Show("42. Без суббот и воскресений - значит считать каждые 5 дней в неделю, т.е. лишь 5/7 жизни. Если 5/7 это 30 лет, то верный ответ 30 × 7 / 5 = 42 ");
+            }
+            if (tc.SelectedIndex == 4)
+            {
+                MessageBox.Show("Куб-бук");
+            }
+            if (tc.SelectedIndex == 5)
+            {
+                MessageBox.Show("Вши");
+            }
+            if (tc.SelectedIndex == 6)
+            {
+                MessageBox.Show("Человек");
+            }
         }
     }
 }

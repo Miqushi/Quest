@@ -6,21 +6,17 @@
         xmlns:local="clr-namespace:Quest"
 
         mc:Ignorable="d"
-        Title="Этаж 1" MinHeight="450" Height="550" Width="850" MinWidth="650" MaxWidth="1050" MaxHeight="650" Loaded="Window_Loaded" Closing="Window_Closing" WindowStartupLocation="CenterScreen" Topmost="True">
+        Title="Этаж 1" MinHeight="450" Height="550" Width="850" MinWidth="650" MaxWidth="1050" MaxHeight="650" Loaded="Window_Loaded" Closing="Window_Closing" WindowStartupLocation="CenterScreen" Topmost="True" Icon="icon.ico">
     <Grid Background="Black">
         <ToolBar Margin="4" VerticalAlignment="Top" Height="40" Panel.ZIndex="1">
             <ToolBar.Background>
                 <ImageBrush ImageSource="bar.jpg"></ImageBrush>
             </ToolBar.Background>
-            <Button Click="Help" >
-                
-            </Button>
-            <Button Click="Button_Click_2">
-                
-            </Button>
-            <Image x:Name="hp1" Source="hp.png" HorizontalAlignment="Right" Margin="2,1"/>
-            <Image x:Name="hp2" Source="hp.png" HorizontalAlignment="Right" Margin="1"/>
-            <Image x:Name="hp3" Source="hp.png" HorizontalAlignment="Right" Margin="1"/>
+            <Image Source="back.png" Margin="2" MouseDown="Back" />
+            <Image Source="help.png" Margin="2" MouseDown="Help"></Image>
+            <Image x:Name="hp1" Source="hp.png" HorizontalAlignment="Right" Margin="2"/>
+            <Image x:Name="hp2" Source="hp.png" HorizontalAlignment="Right" Margin="2"/>
+            <Image x:Name="hp3" Source="hp.png" HorizontalAlignment="Right" Margin="2"/>
         </ToolBar>
         <TabControl x:Name="tc" BorderBrush="Transparent" Margin="2,35,2,-24" Background="Transparent" TabStripPlacement="Bottom" >
             <TabItem Header="-1" >
@@ -35,7 +31,7 @@
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
                             <StackPanel Margin="5">
                                 <TextBlock Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
-                                Вы начинаете свое путешествие. После долгого блуждания по лесу вы встречаете одиноко стоящее здание. Вы решаете подйти к нему и видите табло УО "БГАЭК". На двери весит замок, а рядом надпись: "Начало"
+                                Вы начинаете свое путешествие. После долгого блуждания по лесу вы встречаете одиноко стоящее здание. Вы решаете подйти к нему и видите табло УО "БГАЭК". На двери весит замок, а рядом надпись: "Код для замка - дата появления этого места."
                                 </TextBlock>
                                 <ListBox x:Name="lb1" SelectionChanged="lb1_SelectionChanged" FontFamily="Monotype Corsiva" FontSize="16"  >
                                     <ListBox.ItemsPanel>
@@ -71,7 +67,7 @@
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
                             <StackPanel Margin="5">
                                 <TextBlock Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
-                                Вы заходите внутрь и вдруг дверь сзади захлопывается. Вы слышите голос: "Теперь, чтобы выбраться тебе отсюда, тебе надо пройти 4 этажа с загадками, чтобы найти ключ." Вы видете перед собой 6 дверей, 6 ведет на другой этаж, но она закрыта. 
+                                Вы заходите внутрь и вдруг дверь сзади захлопывается. Вы слышите голос: "Теперь, чтобы выбраться отсюда, тебе надо пройти 4 этажа с загадками и найти ключ." Вы видете перед собой шесть дверей, шестая ведет на другой этаж, но она закрыта.
                                 </TextBlock>
                                 <ListBox x:Name="lb2" SelectionChanged="lb2_SelectionChanged" FontFamily="Monotype Corsiva" FontSize="18" >
                                     <ListBox.ItemsPanel>
@@ -146,7 +142,7 @@
                                 <TextBlock x:Name="tbMath" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
                                 Вы заходите во вторую  комнату. Вы видете сейф, а рядом записка: У женщины спросили: "Сколько Вам лет?". Она ответила: "30, не считая суббот и воскресений". Сколько ей лет?
                                 </TextBlock>
-                                <ListBox x:Name="lb4" SelectionChanged="lb4_SelectionChanged">
+                                <ListBox x:Name="lb4" SelectionChanged="lb4_SelectionChanged" FontFamily="Monotype Corsiva" FontSize="18">
                                     <ListBox.ItemsPanel>
                                         <ItemsPanelTemplate>
                                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
