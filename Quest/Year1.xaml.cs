@@ -222,10 +222,12 @@ namespace Quest
                 damage();
             }
         }
-
+        
         private void next_Click(object sender, RoutedEventArgs e)
         {
- 
+            year.x +=1;
+            main.Show();
+            Close();
         }
     }
 }

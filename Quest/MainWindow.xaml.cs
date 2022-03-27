@@ -18,6 +18,10 @@ namespace Quest
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
+    static class year
+    {
+        public static int x { get; set; } = 0;
+    }
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -33,10 +37,11 @@ namespace Quest
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            curs2.IsEnabled = false;
-            curs3.IsEnabled = false;
-            curs4.IsEnabled = false;
+        { 
+            if(year.x >= 1)
+            {
+                curs2.IsEnabled = true;
+            }
         }
     }
 }
