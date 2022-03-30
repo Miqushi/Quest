@@ -29,7 +29,7 @@
                     </Border.Background>
                     <Grid Margin="5">
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
-                            <StackPanel Margin="5">
+                            <StackPanel Margin="5,5,5,0">
                                 <TextBlock Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
                                 Вы начинаете свое путешествие. После долгого блуждания по лесу вы встречаете одиноко стоящее здание. Вы решаете подйти к нему и видите табло УО "БГАЭК". На двери весит замок, а рядом надпись: "Код для замка - дата появления этого места."
                                 </TextBlock>
@@ -65,11 +65,11 @@
                     </Border.Background>
                     <Grid Margin="5">
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
-                            <StackPanel Margin="5">
+                            <StackPanel Margin="5,5,5,0">
                                 <TextBlock Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
                                 Вы заходите внутрь и вдруг дверь сзади захлопывается. Вы слышите голос: "Теперь, чтобы выбраться отсюда, тебе надо пройти 4 этажа с загадками и найти ключ." Вы видете перед собой шесть дверей, шестая ведет на другой этаж, но она закрыта.
                                 </TextBlock>
-                                <ListBox x:Name="lb2" SelectionChanged="lb2_SelectionChanged" FontFamily="Monotype Corsiva" FontSize="18" >
+                                <ListBox x:Name="lb2" SelectionChanged="lb2_SelectionChanged" Margin="1" FontFamily="Monotype Corsiva" FontSize="18" >
                                     <ListBox.ItemsPanel>
                                         <ItemsPanelTemplate>
                                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
@@ -93,24 +93,24 @@
                     </Grid>
                 </Border>
             </TabItem>
-            <TabItem Header="1" >
+            <TabItem Header="1" Height="23" Margin="-1.6,0,-2,-2.2" VerticalAlignment="Top" >
                 <Border CornerRadius="10" Margin="5,10,5,5">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
                     </Border.Effect>
                     <Border.Background>
-                        <ImageBrush ImageSource="zal.jpg"></ImageBrush>
+                        <ImageBrush ImageSource="zal.jpg" Stretch="UniformToFill"></ImageBrush>
                     </Border.Background>
                     <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
-                            <StackPanel x:Name="panel" Margin="5">
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
+                            <StackPanel Margin="5,5,5,0">
                                 <Image x:Name="img1" Visibility="Collapsed" Height="200" Width="300" Source="olive.png" MouseDown="img1_MouseDown"/>
                                 <TextBlock x:Name="tbIst" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
                                 Вы заходите в первую комнату. Пройдя дальше, и, осмотревшись по сторонам, Вы вновь слышите голос: Китайские мастера боевых искусств говорили, что драка - для дураков, для умных - победа. А что, по их мнению - для мудрых?
                                 </TextBlock>
-                                <TextBox x:Name="textBox1" HorizontalAlignment="Stretch">
+                                <TextBox x:Name="textBox1" Margin="1" FontFamily="Monotype Corsiva" FontSize="18">
                                 </TextBox>
-                                <Button x:Name="otv1" HorizontalAlignment="Center" Margin="10,3" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="Button_Click" >
+                                <Button x:Name="otv1" HorizontalAlignment="Center" Margin="5" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="Button_Click" >
                                     <Button.Background>
                                         <ImageBrush ImageSource="button12.png"/>
                                     </Button.Background>
@@ -135,14 +135,14 @@
                         <ImageBrush ImageSource="House.jpeg"></ImageBrush>
                     </Border.Background>
                     <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
-                            <StackPanel Margin="5">
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
+                            <StackPanel Margin="5,5,5,0">
                                 <Image x:Name="img2" Visibility="Collapsed" Height="200" Width="200" Source="tetra.png" MouseDown="img2_MouseDown">
                                 </Image>
                                 <TextBlock x:Name="tbMath" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
                                 Вы заходите во вторую комнату. Вы видете сейф, а рядом записка с загадкой: У женщины спросили: "Сколько Вам лет?". Она ответила: "30, не считая суббот и воскресений". Сколько ей лет?
                                 </TextBlock>
-                                <ListBox x:Name="lb4" SelectionChanged="lb4_SelectionChanged" FontFamily="Monotype Corsiva" FontSize="18">
+                                <ListBox x:Name="lb4" SelectionChanged="lb4_SelectionChanged" Margin="1" FontFamily="Monotype Corsiva" FontSize="18">
                                     <ListBox.ItemsPanel>
                                         <ItemsPanelTemplate>
                                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
@@ -173,15 +173,14 @@
                         <ImageBrush ImageSource="House.jpeg"></ImageBrush>
                     </Border.Background>
                     <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
-                            <StackPanel Margin="5">
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
+                            <StackPanel Margin="5,5,5,0">
                                 <Image x:Name="img3" Visibility="Collapsed" Height="200" Width="300" Source="list.png" MouseDown="img3_MouseDown"/>
                                 <TextBlock Margin="1" x:Name="tb3" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" ToolTip="Слово или словосочетание, образованное путём перестановки букв, составляющих другое слово (пила-липа).">
                                 Вы заходите в третюю комнату. На столе лежит один листок. В нем анограмма: Читаем мы направо смело - Геометрическое тело. Прочтем же справа мы налево - Увидим разновидность древа. (ответ пишите слитно, через дефис)
                                 </TextBlock>
-                                <TextBox x:Name="textBox2" HorizontalAlignment="Stretch">
-                                </TextBox>
-                                <Button x:Name="otv2" HorizontalAlignment="Center" Margin="10,3" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv2_Click">
+                                <TextBox x:Name="textBox2" Margin="1" FontFamily="Monotype Corsiva" FontSize="18"/>
+                                <Button x:Name="otv2" HorizontalAlignment="Center" Margin="5" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv2_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="button12.png"/>
                                     </Button.Background>
@@ -197,7 +196,7 @@
                     </Grid>
                 </Border>
             </TabItem>
-            <TabItem Header="4" >
+            <TabItem Header="4">
                 <Border CornerRadius="10" Margin="5,10,5,5">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
@@ -206,13 +205,13 @@
                         <ImageBrush ImageSource="House.jpeg"></ImageBrush>
                     </Border.Background>
                     <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
-                            <StackPanel Margin="5">
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
+                            <StackPanel Margin="5,5,5,0">
                                 <TextBlock x:Name="tb4" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18">
                                 Вы заходите в четвертую комнату. Голос начинает расказывать Вам историю: Во время своего путешествия по острову Гомер встретил нескольких рыбаков. Он спросил, как идут их дела, и они ответили загадкой: «Что поймали - отбросили, что не словили - сохранили. Что мы поймали?»
                                 </TextBlock>
-                                <TextBox x:Name="textBox4"/>
-                                <Button x:Name="otv4" HorizontalAlignment="Center" Margin="10,3" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv4_Click">
+                                <TextBox x:Name="textBox4" Margin="1" FontFamily="Monotype Corsiva" FontSize="18"/>
+                                <Button x:Name="otv4" HorizontalAlignment="Center" Margin="5" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv4_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="button12.png"/>
                                     </Button.Background>
@@ -228,7 +227,7 @@
                     </Grid>
                 </Border>
             </TabItem>
-            <TabItem Header="5" >
+            <TabItem Header="5">
                 <Border CornerRadius="10" Margin="5,10,5,5">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
@@ -237,15 +236,15 @@
                         <ImageBrush ImageSource="House.jpeg"></ImageBrush>
                     </Border.Background>
                     <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
-                            <StackPanel Margin="5">
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
+                            <StackPanel Margin="5,5,5,0">
                                 <Image x:Name="img5" Visibility="Collapsed" Height="200" Width="300" Source="Oedipus.jpg" >
                                 </Image>
                                 <TextBlock x:Name="tb5" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
                                 Вы заходите в пятую комнату. Голос спрашивает у вас: "Кто ходит на четырёх ногах утром, на двух днём и на трёх ночью?"
                                 </TextBlock>
-                                <TextBox x:Name="textBox5"/>
-                                <Button x:Name="otv5" HorizontalAlignment="Center" Margin="10,3" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv5_Click">
+                                <TextBox x:Name="textBox5" Margin="1" FontFamily="Monotype Corsiva" FontSize="18"/>
+                                <Button x:Name="otv5" HorizontalAlignment="Center" Margin="5" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv5_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="button12.png"/>
                                     </Button.Background>
@@ -271,16 +270,16 @@
                     </Border.Background>
                     <Grid Margin="5">
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
-                            <StackPanel Margin="5">
+                            <StackPanel Margin="5,5,5,0">
                                 <TextBlock x:Name="tb6" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
                                 </TextBlock>
-                                <TextBox x:Name="textBox6" Visibility="Collapsed"/>
-                                <Button x:Name="otv6" Visibility="Collapsed" HorizontalAlignment="Center" Margin="10,3" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv6_Click">
+                                <TextBox Margin="1" x:Name="textBox6" Visibility="Collapsed" FontFamily="Monotype Corsiva" FontSize="18"/>
+                                <Button x:Name="otv6" Visibility="Collapsed" HorizontalAlignment="Center" Margin="5" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv6_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="button12.png"/>
                                     </Button.Background>
                                 </Button>
-                                <Button x:Name="next" Visibility="Collapsed" HorizontalAlignment="Center" Margin="10,3" Content="Вперед" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="next_Click">
+                                <Button x:Name="next" Visibility="Collapsed" HorizontalAlignment="Center" Margin="5" Content="Вперед" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="next_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="button12.png"/>
                                     </Button.Background>
