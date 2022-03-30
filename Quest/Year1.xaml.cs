@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 namespace Quest
 {
     /// <summary>
@@ -15,11 +16,6 @@ namespace Quest
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             main.Show();
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
         }
         public int hp = 3;
         public int lvl = 0;
@@ -43,36 +39,36 @@ namespace Quest
                 Close();
             }
         }
-        private void Back(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void Back(object sender, MouseButtonEventArgs e)
         {
             tc.SelectedIndex = 1;
         }
 
-        private void Help(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void Help(object sender, MouseButtonEventArgs e)
         {
-            if (tc.SelectedIndex == 2)
+            switch (tc.SelectedIndex)
             {
-                MessageBox.Show("Мир", "Ответ");
-            }
-            if (tc.SelectedIndex == 3)
-            {
-                MessageBox.Show("42. Без суббот и воскресений - значит считать каждые 5 дней в неделю, т.е. лишь 5/7 жизни. Если 5/7 это 30 лет, то верный ответ 30 × 7 / 5 = 42", "Ответ");
-            }
-            if (tc.SelectedIndex == 4)
-            {
-                MessageBox.Show("Куб-бук", "Ответ");
-            }
-            if (tc.SelectedIndex == 5)
-            {
+                case 0:
+                    MessageBox.Show("1953", "Ответ");
+                    break;
+                case 2:
+                    MessageBox.Show("Мир", "Ответ");
+                    break;
+                case 3:
+                    MessageBox.Show("42. Без суббот и воскресений - значит считать каждые 5 дней в неделю, т.е. лишь 5/7 жизни. Если 5/7 это 30 лет, то верный ответ 30 × 7 / 5 = 42", "Ответ");
+                    break;
+                case 4:
+                    MessageBox.Show("Куб-бук", "Ответ");
+                    break;
+                case 5:
                 MessageBox.Show("Вши", "Ответ");
-            }
-            if (tc.SelectedIndex == 6)
-            {
-                MessageBox.Show("Человек", "Ответ");
-            }
-            if (tc.SelectedIndex == 7)
-            {
-                MessageBox.Show("Какая общая страна у всех этих предметов и событий?", "Ответ");
+                    break;
+                case 6:
+                    MessageBox.Show("Человек", "Ответ");
+                    break;
+                case 7:
+                    MessageBox.Show("Какая общая страна у всех этих предметов и событий?", "Ответ");
+                    break;
             }
         }
         private void lb1_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -111,21 +107,21 @@ namespace Quest
             }
             lb2.SetValue(ListBox.SelectedIndexProperty, DependencyProperty.UnsetValue);
         }
-        private void img1_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void img1_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("По легенде первое оливковое дерево подарила людям богиня Афина, когда выиграла свой спор с Посейдоном о том, кому быть покровителем Афин. В Греции считалось, что первое оливковое дерево возникло из копья богини Афины, которое она воткнула на Афинском Акрополе.", "Информация");
         }
 
-        private void img2_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void img2_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("Тетраэдр является треугольной пирамидой при принятии любой из граней за основание. У тетраэдра 4 грани, 4 вершины и 6 рёбер. Тетраэдр, у которого все грани — равносторонние треугольники, называется правильным. Правильный тетраэдр является одним из пяти правильных многогранников.", "Информация");
         }
 
-        private void img3_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void img3_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("Прародителем анаграммы однако считают поэта и учёного Ликофрона", "Информация");
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Riddle1()
         {
             string otvet = textBox1.Text.Trim().ToLower();
             if (otvet == "мир")
@@ -141,6 +137,10 @@ namespace Quest
                 damage();
             }
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Riddle1();
+        }
         private void lb4_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (lb4.SelectedIndex == 1)
@@ -155,14 +155,14 @@ namespace Quest
                 damage();
             }
         }
-        private void otv2_Click(object sender, RoutedEventArgs e)
+        private void Riddle3()
         {
             string otvet = textBox2.Text.Trim().ToLower();
             if (otvet == "куб-бук" || otvet == "бук-куб")
             {
                 tb3.Text = "Дверь отворилась. Вы берете листок с анограммой и шагаете исследовать помещения дальше";
                 textBox2.Visibility = Visibility.Collapsed;
-                otv2.Visibility = Visibility.Collapsed;
+                otv3.Visibility = Visibility.Collapsed;
                 img3.Visibility = Visibility.Visible;
                 lvl += 1;
             }
@@ -171,8 +171,30 @@ namespace Quest
                 damage();
             }
         }
-
-        private void otv5_Click(object sender, RoutedEventArgs e)
+        private void otv3_Click(object sender, RoutedEventArgs e)
+        {
+            Riddle3();
+        }
+        private void Riddle4()
+        {
+            string otvet = textBox4.Text.Trim().ToLower();
+            if (otvet == "вши")
+            {
+                tb4.Text = "Эта загадка наиболее известна своей апокрифической причастностью к смерти греческого поэта Гомера, описываемого философами всех времен как «мудрейшего из греков». Гомер отправился на остров Иос, хотя оракул предупреждал о том, что он станет местом его смерти (греки никогда не прислушивались к пророчествам о собственной гибели). Во время своего путешествия по острову Гомер встретил нескольких рыбаков. Он спросил, как идут их дела, и они ответили загадкой:«Что поймали -отбросили, что не словили - сохранили.Что мы поймали?» Не в состоянии отгадать загадку Гомер в конце концов умер на острове, отказываясь покинуть его, пока не найдет ответ.";
+                textBox4.Visibility = Visibility.Collapsed;
+                otv4.Visibility = Visibility.Collapsed;
+                lvl += 1;
+            }
+            else
+            {
+                damage();
+            }
+        }
+        private void otv4_Click(object sender, RoutedEventArgs e)
+        {
+            Riddle4();
+        }
+        private void Riddle5()
         {
             string otvet = textBox5.Text.Trim().ToLower();
             if (otvet == "эдип" || otvet == "человек")
@@ -188,23 +210,10 @@ namespace Quest
                 damage();
             }
         }
-
-        private void otv4_Click(object sender, RoutedEventArgs e)
+        private void otv5_Click(object sender, RoutedEventArgs e)
         {
-            string otvet = textBox4.Text.Trim().ToLower();
-            if (otvet == "вши")
-            {
-                tb4.Text = "Эта загадка наиболее известна своей апокрифической причастностью к смерти греческого поэта Гомера, описываемого философами всех времен как «мудрейшего из греков». Гомер отправился на остров Иос, хотя оракул предупреждал о том, что он станет местом его смерти (греки никогда не прислушивались к пророчествам о собственной гибели). Во время своего путешествия по острову Гомер встретил нескольких рыбаков. Он спросил, как идут их дела, и они ответили загадкой:«Что поймали -отбросили, что не словили - сохранили.Что мы поймали?» Не в состоянии отгадать загадку Гомер в конце концов умер на острове, отказываясь покинуть его, пока не найдет ответ.";
-                textBox4.Visibility = Visibility.Collapsed;
-                otv4.Visibility = Visibility.Collapsed;
-                lvl += 1;
-            }
-            else
-            {
-                damage();
-            }
+            Riddle5();
         }
-
         private void otv6_Click(object sender, RoutedEventArgs e)
         {
             string otvet = textBox6.Text.Trim().ToLower();
@@ -226,6 +235,38 @@ namespace Quest
             year.x += 1;
             main.Show();
             Close();
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (tc.SelectedIndex)
+            {
+                case 2:
+                    if (e.Key == Key.Enter)
+                    {
+                        Riddle1();
+                    }
+                    break;
+                case 4:
+                    if (e.Key == Key.Enter)
+                    {
+                        Riddle3();
+                    }
+                    break;
+                case 5:
+                    if (e.Key == Key.Enter)
+                    {
+                        Riddle4();
+                    }
+                    break;
+                case 6:
+                    if (e.Key == Key.Enter)
+                    {
+                        Riddle5();
+                    }
+                    break;
+
+            }
         }
     }
 }

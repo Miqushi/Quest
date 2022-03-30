@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Quest"
 
         mc:Ignorable="d"
-        Title="Этаж 1" MinHeight="450" Height="550" Width="850" MinWidth="650" MaxWidth="1050" MaxHeight="650" Loaded="Window_Loaded" Closing="Window_Closing" WindowStartupLocation="CenterScreen" Topmost="True" Icon="icon.ico">
+        Title="Этаж 1" MinHeight="450" Height="550" Width="850" MinWidth="650" MaxWidth="1050" MaxHeight="650" Closing="Window_Closing" WindowStartupLocation="CenterScreen" Topmost="True" Icon="icon.ico" KeyDown="Window_KeyDown">
     <Grid Background="Black">
         <ToolBar Margin="4" VerticalAlignment="Top" Height="40" Panel.ZIndex="1">
             <ToolBar.Background>
@@ -93,7 +93,7 @@
                     </Grid>
                 </Border>
             </TabItem>
-            <TabItem Header="1" Height="23" Margin="-1.6,0,-2,-2.2" VerticalAlignment="Top" >
+            <TabItem Header="1">
                 <Border CornerRadius="10" Margin="5,10,5,5">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
@@ -110,7 +110,7 @@
                                 </TextBlock>
                                 <TextBox x:Name="textBox1" Margin="1" FontFamily="Monotype Corsiva" FontSize="18">
                                 </TextBox>
-                                <Button x:Name="otv1" HorizontalAlignment="Center" Margin="5" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="Button_Click" >
+                                <Button x:Name="otv1" HorizontalAlignment="Center" Margin="5" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="Button_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="button12.png"/>
                                     </Button.Background>
@@ -180,7 +180,7 @@
                                 Вы заходите в третюю комнату. На столе лежит один листок. В нем анограмма: Читаем мы направо смело - Геометрическое тело. Прочтем же справа мы налево - Увидим разновидность древа. (ответ пишите слитно, через дефис)
                                 </TextBlock>
                                 <TextBox x:Name="textBox2" Margin="1" FontFamily="Monotype Corsiva" FontSize="18"/>
-                                <Button x:Name="otv2" HorizontalAlignment="Center" Margin="5" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv2_Click">
+                                <Button x:Name="otv3" HorizontalAlignment="Center" Margin="5" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv3_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="button12.png"/>
                                     </Button.Background>
