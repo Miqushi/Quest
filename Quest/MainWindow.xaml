@@ -22,7 +22,7 @@
                     <TextBlock TextAlignment="Center" Margin="10,0" Text="Выжить в БГАЭК" FontFamily="Garamond" Foreground="DarkGray" FontSize="30"></TextBlock>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Bottom" Margin="90,0,90,10" Height="220">
-                    <Button x:Name="curs1" Margin="10,3" Content="I курс" Height="47" Foreground="Black" Click="curs1_Click" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Cursor="Hand" >
+                    <Button x:Name="curs1" Margin="10,3" Content="I курс" Height="47" Foreground="Black" Click="curs1_Click" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" >
                         <Button.Background>
                             <ImageBrush ImageSource="Img/button.png"/>
                         </Button.Background>
