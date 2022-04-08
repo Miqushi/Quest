@@ -111,43 +111,46 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Main.png" />
+    <Resource Include="Img\Main.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="bar.jpg" />
+    <Resource Include="Img\bar.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="button12.png" />
+    <Resource Include="Img\button.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="fon.jpg" />
+    <Resource Include="Img\fon.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="hp.png" />
+    <Resource Include="Img\hp.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="House.jpeg" />
+    <Resource Include="Img\House.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="zal.jpg" />
+    <Resource Include="Img\zal.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Oedipus.jpg" />
+    <Resource Include="Img\Oedipus.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="olive.png" />
+    <Resource Include="Img\olive.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="tetra.png" />
+    <Resource Include="Img\tetra.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="list.png" />
+    <Resource Include="Img\list.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="help.png" />
+    <Resource Include="Img\help.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="back.png" />
+    <Resource Include="Img\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="icon.ico" />
