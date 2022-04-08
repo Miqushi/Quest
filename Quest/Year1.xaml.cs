@@ -21,7 +21,7 @@ namespace Quest
         public int lvl = 0;
         public void damage()
         {
-            MessageBox.Show("Вы ошиблись. Попробуйте еще раз");
+            MessageBox.Show("Ошибка","Вы ошиблись. Попробуйте еще раз");
             hp -= 1;
             if (hp == 2)
             {
@@ -34,7 +34,7 @@ namespace Quest
             if (hp == 0)
             {
                 hp1.Opacity = 0;
-                MessageBox.Show("You Died");
+                MessageBox.Show("Конец Игры","You Died");
                 main.Show();
                 Close();
             }
