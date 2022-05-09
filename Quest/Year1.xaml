@@ -208,8 +208,10 @@
                     <Grid Margin="5">
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
                             <StackPanel Margin="5,5,5,0">
+                                <Image x:Name="img4" Visibility="Collapsed" Height="200" Width="300" Source="Img/prometheus.jpg" >
+                                </Image>
                                 <TextBlock x:Name="tb4" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18">
-                                Вы заходите в четвертую комнату. Голос начинает расказывать Вам историю: Во время своего путешествия по острову Гомер встретил нескольких рыбаков. Он спросил, как идут их дела, и они ответили загадкой: «Что поймали - отбросили, что не словили - сохранили. Что мы поймали?»
+                                Вы заходите в четвертую комнату. Голос говорит очередную загадку: "Ветер его колышет и возбуждает. Все, что видит, он пожирает. Если его не усмирить – это конец."
                                 </TextBlock>
                                 <TextBox x:Name="textBox4" Margin="1" FontFamily="Monotype Corsiva" FontSize="18"/>
                                 <Button x:Name="otv4" HorizontalAlignment="Center" Margin="5" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv4_Click">
