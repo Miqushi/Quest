@@ -269,5 +269,12 @@ namespace Quest
 
             }
         }
+
+
+        private void hall_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Point p = e.GetPosition(this);
+            MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
+        }
     }
 }

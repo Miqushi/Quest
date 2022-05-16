@@ -27,17 +27,17 @@
                             <ImageBrush ImageSource="Img/button.png"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="curs2" Margin="10,3" Content="II курс" Height="47" Foreground="Black" IsEnabled="False" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16"  >
+                    <Button x:Name="curs2" Margin="10,3" Content="II курс" Height="47" Foreground="Black"  BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="curs2_Click"  >
                         <Button.Background>
                             <ImageBrush ImageSource="Img/button.png"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="curs3" Margin="10,3" Content="III курс" Height="47" Foreground="Black" IsEnabled="False" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" >
+                    <Button x:Name="curs3" Margin="10,3" Content="III курс" Height="47" Foreground="Black"  BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="curs3_Click" >
                         <Button.Background>
                             <ImageBrush ImageSource="Img/button.png"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="curs4" Margin="10,3" Content="IV курс" Height="47" Foreground="Black" IsEnabled="False" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" >
+                    <Button x:Name="curs4" Margin="10,3" Content="IV курс" Height="47" Foreground="Black"  BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" >
                         <Button.Background>
                             <ImageBrush  ImageSource="Img/button.png"/>
                         </Button.Background>

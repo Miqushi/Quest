@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:Quest"
 
         mc:Ignorable="d"
-        Title="Этаж 1" MinHeight="450" Height="550" Width="850" MinWidth="650" MaxWidth="1050" MaxHeight="650" Closing="Window_Closing" WindowStartupLocation="CenterScreen" Topmost="True" Icon="/icon.ico" KeyDown="Window_KeyDown">
+        Title="Этаж 1" MinHeight="450" Height="550" Width="850" MinWidth="650" Closing="Window_Closing" WindowStartupLocation="CenterScreen" Topmost="True" Icon="/icon.ico" KeyDown="Window_KeyDown">
     <Grid Background="Black">
         <ToolBar Margin="4" VerticalAlignment="Top" Height="40" Panel.ZIndex="1">
             <ToolBar.Background>
@@ -57,12 +57,12 @@
                 </Border>
             </TabItem>
             <TabItem Header="0" >
-                <Border CornerRadius="10" Margin="5,10,5,5">
+                <Border x:Name="hall" CornerRadius="10" Margin="5,10,5,5" MouseDown="hall_MouseDown">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
                     </Border.Effect>
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/zal.jpg"></ImageBrush>
+                        <ImageBrush ImageSource="Img/hall.jpg"></ImageBrush>
                     </Border.Background>
                     <Grid Margin="5">
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">

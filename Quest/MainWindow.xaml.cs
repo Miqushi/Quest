@@ -38,10 +38,24 @@ namespace Quest
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         { 
-            if(year.x >= 1)
-            {
-                curs2.IsEnabled = true;
-            }
+            //if(year.x >= 1)
+            //{
+            //    curs2.IsEnabled = true;
+            //}
+        }
+
+        private void curs2_Click(object sender, RoutedEventArgs e)
+        {
+            Year2 y2 = new Year2();
+            y2.Show();
+            this.Close();
+        }
+
+        private void curs3_Click(object sender, RoutedEventArgs e)
+        {
+            Year3 y3 = new Year3();
+            y3.Show();
+            this.Close();
         }
     }
 }
