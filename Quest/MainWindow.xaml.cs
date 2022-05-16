@@ -37,10 +37,10 @@ namespace Quest
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
-        { 
-            //if(year.x >= 1)
+        {
+            //if (Properties.Settings.Default.YearCount == 0)
             //{
-            //    curs2.IsEnabled = true;
+                
             //}
         }
 
@@ -57,5 +57,7 @@ namespace Quest
             y3.Show();
             this.Close();
         }
+
+     
     }
 }

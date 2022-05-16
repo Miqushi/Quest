@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Quest"
         mc:Ignorable="d"
-        Title="Этаж 3" MinHeight="450" Height="550" Width="850" MinWidth="650" Closing="Window_Closing" WindowStartupLocation="CenterScreen" Topmost="True" Icon="/icon.ico" KeyDown="Window_KeyDown">
+        Title="Этаж 3" MinHeight="450" Height="550" Width="850" MinWidth="650"  WindowStartupLocation="CenterScreen" Topmost="True" Icon="/icon.ico">
     <Grid Background="Black">
        
     </Grid>

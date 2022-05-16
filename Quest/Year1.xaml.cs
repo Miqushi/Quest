@@ -21,7 +21,7 @@ namespace Quest
         public int lvl = 0;
         public void damage()
         {
-            MessageBox.Show("Ошибка","Вы ошиблись. Попробуйте еще раз");
+            MessageBox.Show("Ошибка", "Вы ошиблись. Попробуйте еще раз");
             hp -= 1;
             if (hp == 2)
             {
@@ -34,7 +34,7 @@ namespace Quest
             if (hp == 0)
             {
                 hp1.Opacity = 0;
-                MessageBox.Show("Конец Игры","You Died");
+                MessageBox.Show("Конец Игры", "You Died");
                 main.Show();
                 Close();
             }
@@ -61,7 +61,7 @@ namespace Quest
                     MessageBox.Show("Куб-бук", "Ответ");
                     break;
                 case 5:
-                MessageBox.Show("Огонь", "Ответ");
+                    MessageBox.Show("Огонь", "Ответ");
                     break;
                 case 6:
                     MessageBox.Show("Человек", "Ответ");
@@ -233,7 +233,7 @@ namespace Quest
 
         private void next_Click(object sender, RoutedEventArgs e)
         {
-            year.x += 1;
+            Properties.Settings.Default.YearCount = +1;
             main.Show();
             Close();
         }
@@ -273,8 +273,52 @@ namespace Quest
 
         private void hall_MouseDown(object sender, MouseButtonEventArgs e)
         {
+
             Point p = e.GetPosition(this);
-            MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
+
+            if (basis.ActualHeight > 1000 && basis.ActualWidth > 1900)
+            {
+                if ((p.X > 1302 && p.X < 1415) && (p.Y > 383 && p.Y < 843))
+                {
+                    MessageBox.Show("1");
+                }
+
+            }
+            else
+            {
+                if ((p.X > 565 && p.X < 620) && (p.Y > 205 && p.Y < 419))
+                {
+                    MessageBox.Show("1", "1");
+                }
+                if ((p.X > 432 && p.X < 458) && (p.Y > 241 && p.Y < 371))
+                {
+                    MessageBox.Show("2", "2");
+                }
+                if ((p.X > 377 && p.X < 401) && (p.Y > 269 && p.Y < 368))
+                {
+                    MessageBox.Show("3", "3");
+                }
+                if ((p.X > 349 && p.X < 365) && (p.Y > 271 && p.Y < 357))
+                {
+                    MessageBox.Show("4", "4");
+                }
+                if ((p.X > 258 && p.X < 324) && (p.Y > 271 && p.Y < 348))
+                {
+                    MessageBox.Show("5", "5");
+                }
+                if ((p.X > 72 && p.X < 172) && (p.Y > 259 && p.Y < 389))
+                {
+                    MessageBox.Show("6", "6");
+                }
+
+            }
+            //MessageBox.Show("Разрешение экрана: " + basis.ActualHeight.ToString() + " X " + basis.ActualWidth.ToString());
+            //MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
+        }
+
+        private void hall_MouseMove(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

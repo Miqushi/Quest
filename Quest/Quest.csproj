@@ -66,6 +66,7 @@
     <Compile Include="MessageBox.xaml.cs">
       <DependentUpon>MessageBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="Year1.xaml.cs">
       <DependentUpon>Year1.xaml</DependentUpon>
     </Compile>

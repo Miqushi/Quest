@@ -74,5 +74,13 @@ namespace Quest
             dialog.ShowDialog();
             return dialog.Result;
         }
+        public static MessageBoxResult Show(string message)
+        {
+            var dialog = new MessageBox();
+            dialog.MessageContainer.Text = message;
+            dialog.AddButtons(MessageBoxButton.OK);
+            dialog.ShowDialog();
+            return dialog.Result;
+        }
     }
 }
