@@ -7,6 +7,18 @@
         mc:Ignorable="d"
         Title="Этаж 3" MinHeight="450" Height="550" Width="850" MinWidth="650"  WindowStartupLocation="CenterScreen" Topmost="True" Icon="/icon.ico">
     <Grid Background="Black">
-       
+        <ToolBar x:Name="toolBar" Margin="4" VerticalAlignment="Top" Height="40" Panel.ZIndex="1">
+            <ToolBar.Background>
+                <ImageBrush ImageSource="Img/bar.jpg"></ImageBrush>
+            </ToolBar.Background>
+            <Image Source="Img/back.png" Margin="2"  ToolTip="Вернуться в главную комнату" />
+            <Image Source="Img/help.png" Margin="2"  ToolTip="Ответ на загадку" ></Image>
+            <Image x:Name="hp1" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
+            <Image x:Name="hp2" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
+            <Image x:Name="hp3" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
+        </ToolBar>
+        <TabControl x:Name="tc" Margin="2,35,2,183" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" >
+            
+        </TabControl>
     </Grid>
 </Window>

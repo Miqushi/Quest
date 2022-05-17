@@ -17,24 +17,24 @@ namespace Quest
         {
             main.Show();
         }
-        public int hp = 3;
         public int lvl = 0;
         public void damage()
         {
             MessageBox.Show("Ошибка", "Вы ошиблись. Попробуйте еще раз");
-            hp -= 1;
-            if (hp == 2)
+            Properties.Settings.Default.hp--;
+            if (Properties.Settings.Default.hp == 2)
             {
                 hp3.Opacity = 0;
             }
-            if (hp == 1)
+            if (Properties.Settings.Default.hp == 1)
             {
                 hp2.Opacity = 0;
             }
-            if (hp == 0)
+            if (Properties.Settings.Default.hp == 0)
             {
                 hp1.Opacity = 0;
                 MessageBox.Show("Конец Игры", "You Died");
+                Properties.Settings.Default.hp = 3;
                 main.Show();
                 Close();
             }
@@ -90,19 +90,6 @@ namespace Quest
                 if (lb2.SelectedIndex == i)
                 {
                     tc.SelectedIndex = i + 2;
-                    if (tc.SelectedIndex == 7)
-                    {
-                        if (lvl == 5)
-                        {
-                            tb6.Text = "Что общего у всех предметов, которые вы нашли?";
-                            textBox6.Visibility = Visibility.Visible;
-                            otv6.Visibility = Visibility.Visible;
-                        }
-                        else
-                        {
-                            tb6.Text = "Приходите позже, когда ответите на все загадки";
-                        }
-                    }
                 }
             }
             lb2.SetValue(ListBox.SelectedIndexProperty, DependencyProperty.UnsetValue);
@@ -233,7 +220,7 @@ namespace Quest
 
         private void next_Click(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.YearCount = +1;
+            Properties.Settings.Default.YearCount++;
             main.Show();
             Close();
         }
@@ -266,14 +253,50 @@ namespace Quest
                         Riddle5();
                     }
                     break;
-
             }
         }
 
-
-        private void hall_MouseDown(object sender, MouseButtonEventArgs e)
+        private void hall_MouseMove(object sender, MouseEventArgs e)
         {
+            Point p = e.GetPosition(this);
+            if (basis.ActualHeight > 1000 && basis.ActualWidth > 1900)
+            {
+                if ((p.X > 1302 && p.X < 1415) && (p.Y > 383 && p.Y < 843) ||
+                (p.X > 1020 && p.X < 1055) && (p.Y > 476 && p.Y < 754) ||
+                (p.X > 874 && p.X < 923) && (p.Y > 512 && p.Y < 720) ||
+                (p.X > 806 && p.X < 836) && (p.Y > 520 && p.Y < 707) ||
+                (p.X > 649 && p.X < 749) && (p.Y > 521 && p.Y < 693) ||
+                (p.X > 146 && p.X < 383) && (p.Y > 495 && p.Y < 765)
+                )
+                {
+                    Cursor = Cursors.Hand;
+                }
+                else
+                {
+                    Cursor = Cursors.Arrow;
+                }
+            }
+            else
+            {
+                if ((p.X > 565 && p.X < 620) && (p.Y > 205 && p.Y < 419) ||
+                (p.X > 432 && p.X < 458) && (p.Y > 241 && p.Y < 371) ||
+                (p.X > 377 && p.X < 401) && (p.Y > 269 && p.Y < 368) ||
+                (p.X > 349 && p.X < 365) && (p.Y > 271 && p.Y < 357) ||
+                (p.X > 258 && p.X < 324) && (p.Y > 271 && p.Y < 348) ||
+                (p.X > 72 && p.X < 172) && (p.Y > 259 && p.Y < 389)
+                )
+                {
+                    Cursor = Cursors.Hand;
+                }
+                else
+                {
+                    Cursor = Cursors.Arrow;
+                }
+            }
+        }
 
+        private void tabItemHall_MouseDown(object sender, MouseButtonEventArgs e)
+        {
             Point p = e.GetPosition(this);
 
             if (basis.ActualHeight > 1000 && basis.ActualWidth > 1900)
@@ -302,8 +325,6 @@ namespace Quest
                 {
                     tc.SelectedIndex = 7;
                 }
-
-
             }
             else
             {
@@ -331,48 +352,20 @@ namespace Quest
                 {
                     tc.SelectedIndex = 7;
                 }
-
             }
-            //MessageBox.Show("Разрешение экрана: " + basis.ActualHeight.ToString() + " X " + basis.ActualWidth.ToString());
-            MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
         }
 
-        private void hall_MouseMove(object sender, MouseEventArgs e)
+        private void TabItem_GotFocus(object sender, RoutedEventArgs e)
         {
-            Point p = e.GetPosition(this);
-            if (basis.ActualHeight > 1000 && basis.ActualWidth > 1900)
+            if (lvl == 5)
             {
-                if ((p.X > 1302 && p.X < 1415) && (p.Y > 383 && p.Y < 843) ||
-                (p.X > 1020 && p.X < 1055) && (p.Y > 476 && p.Y < 754) ||
-                (p.X > 874 && p.X < 923) && (p.Y > 512 && p.Y < 720) ||
-               (p.X > 806 && p.X < 836) && (p.Y > 520 && p.Y < 707) ||
-                (p.X > 649 && p.X < 749) && (p.Y > 521 && p.Y < 693) ||
-                (p.X > 146 && p.X < 383) && (p.Y > 495 && p.Y < 765)
-                )
-                {
-                    this.Cursor = Cursors.Hand;
-                }
-                else
-                {
-                    this.Cursor = Cursors.Arrow;
-                }
+                tb6.Text = "Что общего у всех предметов, которые вы нашли?";
+                textBox6.Visibility = Visibility.Visible;
+                otv6.Visibility = Visibility.Visible;
             }
             else
             {
-                if ((p.X > 565 && p.X < 620) && (p.Y > 205 && p.Y < 419) ||
-                (p.X > 432 && p.X < 458) && (p.Y > 241 && p.Y < 371) ||
-                (p.X > 377 && p.X < 401) && (p.Y > 269 && p.Y < 368) ||
-                (p.X > 349 && p.X < 365) && (p.Y > 271 && p.Y < 357) ||
-                (p.X > 258 && p.X < 324) && (p.Y > 271 && p.Y < 348) ||
-                (p.X > 72 && p.X < 172) && (p.Y > 259 && p.Y < 389)
-                )
-                {
-                    this.Cursor = Cursors.Hand;
-                }
-                else
-                {
-                    this.Cursor = Cursors.Arrow;
-                }
+                tb6.Text = "Приходите позже, когда решите все задания";
             }
         }
     }

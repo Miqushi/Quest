@@ -5,9 +5,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Quest"
-
         mc:Ignorable="d"
         Title="Этаж 1" MinHeight="450" Height="550" Width="850" MinWidth="650" Closing="Window_Closing" WindowStartupLocation="CenterScreen"  Icon="/icon.ico" KeyDown="Window_KeyDown">
+   
     <Grid x:Name="basis" Background="Black">
         <ToolBar x:Name="toolBar" Margin="4" VerticalAlignment="Top" Height="40" Panel.ZIndex="1">
             <ToolBar.Background>
@@ -19,17 +19,17 @@
             <Image x:Name="hp2" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
             <Image x:Name="hp3" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
         </ToolBar>
-        <TabControl x:Name="tc" BorderBrush="Transparent" Margin="2,35,2,-24" Background="Transparent" TabStripPlacement="Bottom" >
-            <TabItem Header="-1" >
-                <Border CornerRadius="10" Margin="5,10,5,5">
+        <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" >
+            <TabItem Header="-1">
+                <Border CornerRadius="10" Margin="5,0,5,5">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
                     </Border.Effect>
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/House.jpeg"></ImageBrush>
+                        <ImageBrush ImageSource="Img/outdoor.jpg"></ImageBrush>
                     </Border.Background>
                     <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="5">
                             <StackPanel Margin="5,5,5,0">
                                 <TextBlock Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
                                 Вы начинаете свое путешествие. После долгого блуждания по лесу вы встречаете одиноко стоящее здание. Вы решаете подйти к нему и видите табло УО "БГАЭК". На двери весит замок, а рядом надпись: "Код для замка - дата появления этого места."
@@ -56,8 +56,8 @@
                     </Grid>
                 </Border>
             </TabItem>
-            <TabItem Header="0">
-                <Border x:Name="hall" CornerRadius="10" Margin="5,10,5,5" MouseDown="hall_MouseDown" MouseMove="hall_MouseMove">
+            <TabItem Header="0" x:Name="tabItemHall" MouseDown="tabItemHall_MouseDown" >
+                <Border x:Name="hall" CornerRadius="10" Margin="5,0,5,5"  MouseMove="hall_MouseMove">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
                     </Border.Effect>
@@ -65,7 +65,7 @@
                         <ImageBrush ImageSource="Img/hall.jpg"></ImageBrush>
                     </Border.Background>
                     <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="5">
                             <StackPanel Margin="5,5,5,0">
                                 <TextBlock Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
                                 Вы заходите внутрь и вдруг дверь сзади захлопывается. Вы слышите голос: "Теперь, чтобы выбраться отсюда, тебе надо пройти 4 этажа с загадками и найти ключ." Вы видете перед собой шесть дверей, шестая ведет на другой этаж, но она закрыта.
@@ -95,12 +95,12 @@
                 </Border>
             </TabItem>
             <TabItem Header="1">
-                <Border CornerRadius="10" Margin="5,10,5,5">
+                <Border CornerRadius="10" Margin="5,0,5,5">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
                     </Border.Effect>
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/House.jpeg" Stretch="UniformToFill"></ImageBrush>
+                        <ImageBrush ImageSource="Img/zad1.jpg" Stretch="UniformToFill"></ImageBrush>
                     </Border.Background>
                     <Grid Margin="5">
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
@@ -128,15 +128,15 @@
                 </Border>
             </TabItem>
             <TabItem Header="2" >
-                <Border CornerRadius="10" Margin="5,10,5,5">
+                <Border CornerRadius="10" Margin="5,0,5,5">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
                     </Border.Effect>
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/House.jpeg"></ImageBrush>
+                        <ImageBrush ImageSource="Img/zad2.jpg"></ImageBrush>
                     </Border.Background>
                     <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="5">
                             <StackPanel Margin="5,5,5,0">
                                 <Image x:Name="img2" Visibility="Collapsed" Height="200" Width="200" Source="Img/tetra.png" MouseDown="img2_MouseDown">
                                 </Image>
@@ -166,15 +166,15 @@
                 </Border>
             </TabItem>
             <TabItem Header="3" >
-                <Border CornerRadius="10" Margin="5,10,5,5">
+                <Border CornerRadius="10" Margin="5,0,5,5">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
                     </Border.Effect>
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/House.jpeg"></ImageBrush>
+                        <ImageBrush ImageSource="Img/zad3.jpg"></ImageBrush>
                     </Border.Background>
                     <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="5">
                             <StackPanel Margin="5,5,5,0">
                                 <Image x:Name="img3" Visibility="Collapsed" Height="200" Width="300" Source="Img/list.png" MouseDown="img3_MouseDown"/>
                                 <TextBlock Margin="1" x:Name="tb3" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" ToolTip="Слово или словосочетание, образованное путём перестановки букв, составляющих другое слово (пила-липа).">
@@ -198,15 +198,15 @@
                 </Border>
             </TabItem>
             <TabItem Header="4">
-                <Border CornerRadius="10" Margin="5,10,5,5">
+                <Border CornerRadius="10" Margin="5,0,5,5">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
                     </Border.Effect>
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/House.jpeg"></ImageBrush>
+                        <ImageBrush ImageSource="Img/zad4.jpg"></ImageBrush>
                     </Border.Background>
                     <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="5">
                             <StackPanel Margin="5,5,5,0">
                                 <Image x:Name="img4" Visibility="Collapsed" Height="200" Width="300" Source="Img/prometheus.jpg" >
                                 </Image>
@@ -231,15 +231,15 @@
                 </Border>
             </TabItem>
             <TabItem Header="5">
-                <Border CornerRadius="10" Margin="5,10,5,5">
+                <Border CornerRadius="10" Margin="5,0,5,5">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
                     </Border.Effect>
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/House.jpeg"></ImageBrush>
+                        <ImageBrush ImageSource="Img/zad5.jpg"></ImageBrush>
                     </Border.Background>
                     <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="5">
                             <StackPanel Margin="5,5,5,0">
                                 <Image x:Name="img5" Visibility="Collapsed" Height="200" Width="300" Source="Img/Oedipus.jpg" >
                                 </Image>
@@ -263,8 +263,8 @@
                     </Grid>
                 </Border>
             </TabItem>
-            <TabItem Header="2 этаж">
-                <Border CornerRadius="10" Margin="5,10,5,5">
+            <TabItem Header="2 этаж" GotFocus="TabItem_GotFocus">
+                <Border CornerRadius="10" Margin="5,0,5,5">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
                     </Border.Effect>
@@ -272,9 +272,10 @@
                         <ImageBrush ImageSource="Img/House.jpeg"></ImageBrush>
                     </Border.Background>
                     <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10,10,10,10">
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="5">
                             <StackPanel Margin="5,5,5,0">
-                                <TextBlock x:Name="tb6" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
+                                <TextBlock x:Name="tb6" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18">
+                                    
                                 </TextBlock>
                                 <TextBox Margin="1" x:Name="textBox6" Visibility="Collapsed" FontFamily="Monotype Corsiva" FontSize="18"/>
                                 <Button x:Name="otv6" Visibility="Collapsed" HorizontalAlignment="Center" Margin="5" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv6_Click">

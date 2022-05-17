@@ -183,6 +183,18 @@
   <ItemGroup>
     <Resource Include="Img\hall.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\outdoor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\zad1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\zad2.jpg" />
+    <Resource Include="Img\zad3.jpg" />
+    <Resource Include="Img\zad4.jpg" />
+    <Resource Include="Img\zad5.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
