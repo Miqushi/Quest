@@ -280,45 +280,100 @@ namespace Quest
             {
                 if ((p.X > 1302 && p.X < 1415) && (p.Y > 383 && p.Y < 843))
                 {
-                    MessageBox.Show("1");
+                    tc.SelectedIndex = 2;
                 }
+                if ((p.X > 1020 && p.X < 1055) && (p.Y > 476 && p.Y < 754))
+                {
+                    tc.SelectedIndex = 3;
+                }
+                if ((p.X > 874 && p.X < 923) && (p.Y > 512 && p.Y < 720))
+                {
+                    tc.SelectedIndex = 4;
+                }
+                if ((p.X > 806 && p.X < 836) && (p.Y > 520 && p.Y < 707))
+                {
+                    tc.SelectedIndex = 5;
+                }
+                if ((p.X > 649 && p.X < 749) && (p.Y > 521 && p.Y < 693))
+                {
+                    tc.SelectedIndex = 6;
+                }
+                if ((p.X > 146 && p.X < 383) && (p.Y > 495 && p.Y < 765))
+                {
+                    tc.SelectedIndex = 7;
+                }
+
 
             }
             else
             {
                 if ((p.X > 565 && p.X < 620) && (p.Y > 205 && p.Y < 419))
                 {
-                    MessageBox.Show("1", "1");
+                    tc.SelectedIndex = 2;
                 }
                 if ((p.X > 432 && p.X < 458) && (p.Y > 241 && p.Y < 371))
                 {
-                    MessageBox.Show("2", "2");
+                    tc.SelectedIndex = 3;
                 }
                 if ((p.X > 377 && p.X < 401) && (p.Y > 269 && p.Y < 368))
                 {
-                    MessageBox.Show("3", "3");
+                    tc.SelectedIndex = 4;
                 }
                 if ((p.X > 349 && p.X < 365) && (p.Y > 271 && p.Y < 357))
                 {
-                    MessageBox.Show("4", "4");
+                    tc.SelectedIndex = 5;
                 }
                 if ((p.X > 258 && p.X < 324) && (p.Y > 271 && p.Y < 348))
                 {
-                    MessageBox.Show("5", "5");
+                    tc.SelectedIndex = 6;
                 }
                 if ((p.X > 72 && p.X < 172) && (p.Y > 259 && p.Y < 389))
                 {
-                    MessageBox.Show("6", "6");
+                    tc.SelectedIndex = 7;
                 }
 
             }
             //MessageBox.Show("Разрешение экрана: " + basis.ActualHeight.ToString() + " X " + basis.ActualWidth.ToString());
-            //MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
+            MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
         }
 
         private void hall_MouseMove(object sender, MouseEventArgs e)
         {
-
+            Point p = e.GetPosition(this);
+            if (basis.ActualHeight > 1000 && basis.ActualWidth > 1900)
+            {
+                if ((p.X > 1302 && p.X < 1415) && (p.Y > 383 && p.Y < 843) ||
+                (p.X > 1020 && p.X < 1055) && (p.Y > 476 && p.Y < 754) ||
+                (p.X > 874 && p.X < 923) && (p.Y > 512 && p.Y < 720) ||
+               (p.X > 806 && p.X < 836) && (p.Y > 520 && p.Y < 707) ||
+                (p.X > 649 && p.X < 749) && (p.Y > 521 && p.Y < 693) ||
+                (p.X > 146 && p.X < 383) && (p.Y > 495 && p.Y < 765)
+                )
+                {
+                    this.Cursor = Cursors.Hand;
+                }
+                else
+                {
+                    this.Cursor = Cursors.Arrow;
+                }
+            }
+            else
+            {
+                if ((p.X > 565 && p.X < 620) && (p.Y > 205 && p.Y < 419) ||
+                (p.X > 432 && p.X < 458) && (p.Y > 241 && p.Y < 371) ||
+                (p.X > 377 && p.X < 401) && (p.Y > 269 && p.Y < 368) ||
+                (p.X > 349 && p.X < 365) && (p.Y > 271 && p.Y < 357) ||
+                (p.X > 258 && p.X < 324) && (p.Y > 271 && p.Y < 348) ||
+                (p.X > 72 && p.X < 172) && (p.Y > 259 && p.Y < 389)
+                )
+                {
+                    this.Cursor = Cursors.Hand;
+                }
+                else
+                {
+                    this.Cursor = Cursors.Arrow;
+                }
+            }
         }
     }
 }
