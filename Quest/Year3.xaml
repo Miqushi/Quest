@@ -1,24 +1,49 @@
 ﻿<Window x:Class="Quest.Year3"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Quest"
         mc:Ignorable="d"
-        Title="Этаж 3" MinHeight="450" Height="550" Width="850" MinWidth="650"  WindowStartupLocation="CenterScreen" Topmost="True" Icon="/icon.ico">
+        Title="Этаж 3" MinHeight="450" Height="550" Width="850" MinWidth="650"  WindowStartupLocation="CenterScreen" Topmost="True" Icon="/icon.ico" Closed="Window_Closed">
     <Grid Background="Black">
         <ToolBar x:Name="toolBar" Margin="4" VerticalAlignment="Top" Height="40" Panel.ZIndex="1">
             <ToolBar.Background>
                 <ImageBrush ImageSource="Img/bar.jpg"></ImageBrush>
             </ToolBar.Background>
-            <Image Source="Img/back.png" Margin="2"  ToolTip="Вернуться в главную комнату" />
-            <Image Source="Img/help.png" Margin="2"  ToolTip="Ответ на загадку" ></Image>
+            <Image Source="Img/back.png" Margin="2"  ToolTip="Вернуться в главную комнату" MouseDown="Back" />
+            <Image Source="Img/help.png" Margin="2"  ToolTip="Ответ на загадку" MouseDown="Help" ></Image>
             <Image x:Name="hp1" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp2" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
             <Image x:Name="hp3" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
         </ToolBar>
-        <TabControl x:Name="tc" Margin="2,35,2,183" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" >
-            
+        <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" >
+            <TabItem Header="0">
+                <Border CornerRadius="10" Margin="5,0,5,5">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                    </Border.Effect>
+                    <Border.Background>
+                        <ImageBrush ImageSource="Img/y3_hall.jpg"></ImageBrush>
+                    </Border.Background>
+                    <Grid Margin="5">
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="5">
+                            <StackPanel Margin="5,5,5,0">
+                                <TextBlock Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
+                                Вы поднимаетесь на третий этаж и видите перед собой 4 двери на которых написаны различные шифры.
+                                </TextBlock>
+                            </StackPanel>
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                            </Border.Effect>
+                            <Border.Background>
+                                <ImageBrush ImageSource="Img/fon.jpg"></ImageBrush>
+                            </Border.Background>
+                        </Border>
+                    </Grid>
+                </Border>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

@@ -23,5 +23,41 @@ namespace Quest
         {
             InitializeComponent();
         }
+        MainWindow main = new MainWindow();
+        public void Damage()
+        {
+            MessageBox.Show("Ошибка", "Вы ошиблись. Попробуйте еще раз");
+            Properties.Settings.Default.hp--;
+            if (Properties.Settings.Default.hp == 2)
+            {
+                hp3.Opacity = 0;
+            }
+            if (Properties.Settings.Default.hp == 1)
+            {
+                hp2.Opacity = 0;
+            }
+            if (Properties.Settings.Default.hp == 0)
+            {
+                hp1.Opacity = 0;
+                MessageBox.Show("Конец Игры", "You Died");
+                Properties.Settings.Default.hp = 3;
+                main.Show();
+                Close();
+            }
+        }
+        private void Back(object sender, MouseButtonEventArgs e)
+        {
+            tc.SelectedIndex = 1;
+        }
+
+        private void Help(object sender, MouseButtonEventArgs e)
+        {
+            
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            main.Show();
+        }
     }
 }

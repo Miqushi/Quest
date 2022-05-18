@@ -18,7 +18,7 @@ namespace Quest
             main.Show();
         }
         public int lvl = 0;
-        public void damage()
+        public void Damage()
         {
             MessageBox.Show("Ошибка", "Вы ошиблись. Попробуйте еще раз");
             Properties.Settings.Default.hp--;
@@ -79,20 +79,8 @@ namespace Quest
             }
             else
             {
-                damage();
+                Damage();
             }
-        }
-
-        private void lb2_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            for (int i = 0; i < 6; i++)
-            {
-                if (lb2.SelectedIndex == i)
-                {
-                    tc.SelectedIndex = i + 2;
-                }
-            }
-            lb2.SetValue(ListBox.SelectedIndexProperty, DependencyProperty.UnsetValue);
         }
         private void img1_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -121,7 +109,7 @@ namespace Quest
             }
             else
             {
-                damage();
+                Damage();
             }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -139,7 +127,7 @@ namespace Quest
             }
             else
             {
-                damage();
+                Damage();
             }
         }
         private void Riddle3()
@@ -155,7 +143,7 @@ namespace Quest
             }
             else
             {
-                damage();
+                Damage();
             }
         }
         private void otv3_Click(object sender, RoutedEventArgs e)
@@ -175,7 +163,7 @@ namespace Quest
             }
             else
             {
-                damage();
+                Damage();
             }
         }
         private void otv4_Click(object sender, RoutedEventArgs e)
@@ -195,7 +183,7 @@ namespace Quest
             }
             else
             {
-                damage();
+                Damage();
             }
         }
         private void otv5_Click(object sender, RoutedEventArgs e)
@@ -214,7 +202,7 @@ namespace Quest
             }
             else
             {
-                damage();
+                Damage();
             }
         }
 

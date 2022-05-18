@@ -67,22 +67,9 @@
                     <Grid Margin="5">
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="5">
                             <StackPanel Margin="5,5,5,0">
-                                <TextBlock Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
+                                <TextBlock Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18">
                                 Вы заходите внутрь и вдруг дверь сзади захлопывается. Вы слышите голос: "Теперь, чтобы выбраться отсюда, тебе надо пройти 4 этажа с загадками и найти ключ." Вы видете перед собой шесть дверей, шестая ведет на другой этаж, но она закрыта.
                                 </TextBlock>
-                                <ListBox x:Name="lb2" SelectionChanged="lb2_SelectionChanged" Margin="1" FontFamily="Monotype Corsiva" FontSize="18" >
-                                    <ListBox.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                                        </ItemsPanelTemplate>
-                                    </ListBox.ItemsPanel>
-                                    <ListBoxItem>1</ListBoxItem>
-                                    <ListBoxItem>2</ListBoxItem>
-                                    <ListBoxItem>3</ListBoxItem>
-                                    <ListBoxItem>4</ListBoxItem>
-                                    <ListBoxItem>5</ListBoxItem>
-                                    <ListBoxItem>2 этаж</ListBoxItem>
-                                </ListBox>
                             </StackPanel>
                             <Border.Effect>
                                 <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>

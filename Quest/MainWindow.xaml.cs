@@ -35,7 +35,6 @@ namespace Quest
             y1.Show();
             this.Close();
         }
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //if (Properties.Settings.Default.YearCount == 0)
