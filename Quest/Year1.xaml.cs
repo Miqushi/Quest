@@ -18,30 +18,63 @@ namespace Quest
             main.Show();
         }
         public int lvl = 0;
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            switch (Properties.Settings.Default.hp)
+            {
+                case 3:
+                    {
+                        hp1.Visibility = Visibility.Visible;
+                        hp2.Visibility = Visibility.Visible;
+                        hp3.Visibility = Visibility.Visible;
+                    }
+                    break;
+                case 2:
+                    {
+                        hp1.Visibility = Visibility.Visible;
+                        hp2.Visibility = Visibility.Visible;
+                    }
+                    break;
+                case 1:
+                    {
+                        hp1.Visibility = Visibility.Visible;
+                    }
+                    break;
+            }
+        }
         public void Damage()
         {
             MessageBox.Show("Ошибка", "Вы ошиблись. Попробуйте еще раз");
             Properties.Settings.Default.hp--;
-            if (Properties.Settings.Default.hp == 2)
+            switch (Properties.Settings.Default.hp)
             {
-                hp3.Opacity = 0;
-            }
-            if (Properties.Settings.Default.hp == 1)
-            {
-                hp2.Opacity = 0;
-            }
-            if (Properties.Settings.Default.hp == 0)
-            {
-                hp1.Opacity = 0;
-                MessageBox.Show("Конец Игры", "You Died");
-                Properties.Settings.Default.hp = 3;
-                main.Show();
-                Close();
+                case 2:
+                    {
+                        hp3.Visibility = Visibility.Hidden;
+                    }
+                    break;
+                case 1:
+                    {
+                        hp2.Visibility = Visibility.Hidden;
+                    }
+                    break;
+                case 0:
+                    {
+                        hp1.Visibility = Visibility.Hidden;
+                        MessageBox.Show("Конец Игры", "You Died");
+                        Properties.Settings.Default.hp = 3;
+                        main.Show();
+                        Close();
+                    }
+                    break;
             }
         }
         private void Back(object sender, MouseButtonEventArgs e)
         {
-            tc.SelectedIndex = 1;
+            if(tc.SelectedIndex != 0)
+            {
+                tc.SelectedIndex = 1;
+            }
         }
 
         private void Help(object sender, MouseButtonEventArgs e)
@@ -76,6 +109,7 @@ namespace Quest
             if (lb1.SelectedIndex == 0)
             {
                 tc.SelectedIndex = 1;
+                //lb1.SetValue(ListBox.SelectedIndexProperty, DependencyProperty.UnsetValue);
             }
             else
             {
@@ -175,7 +209,7 @@ namespace Quest
             string otvet = textBox5.Text.Trim().ToLower();
             if (otvet == "эдип" || otvet == "человек")
             {
-                tb5.Text = "Вы видете картину, а рядом с ней подпись: На картине изображена встреча Эдипа со Сфинксом на пути между Фивами и Дельфами. Эдип должен был правильно ответить на загадку Сфинкса, чтобы пройти. Неудача означала для него смерть и гибель осаждённых фиванцев. Загадка заключалась в следующем: «кто ходит на четырёх ногах утром, на двух днём и на трёх ночью?». Эдип ответил: «Человек: в младенчестве он ползает на четвереньках; во взрослом возрасте он ходит на двух ногах и в старости он использует посох». По преданию существует и иной ответ на загадку. И он был сам Эдип.";
+                tb5.Text = Properties.Resources.riddle5;
                 img5.Visibility = Visibility.Visible;
                 textBox5.Visibility = Visibility.Collapsed;
                 otv5.Visibility = Visibility.Collapsed;
@@ -355,6 +389,11 @@ namespace Quest
             {
                 tb6.Text = "Приходите позже, когда решите все задания";
             }
+        }
+
+        private void hall_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Cursor = Cursors.Arrow;
         }
     }
 }

@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Quest"
         mc:Ignorable="d"
-        Title="Этаж 1" MinHeight="450" Height="550" Width="850" MinWidth="650" Closing="Window_Closing" WindowStartupLocation="CenterScreen"  Icon="/icon.ico" KeyDown="Window_KeyDown">
+        Title="Этаж 1" MinHeight="450" Height="550" Width="850" MinWidth="650" Closing="Window_Closing" WindowStartupLocation="CenterScreen"  Icon="/icon.ico" KeyDown="Window_KeyDown" Loaded="Window_Loaded">
    
     <Grid x:Name="basis" Background="Black">
         <ToolBar x:Name="toolBar" Margin="4" VerticalAlignment="Top" Height="40" Panel.ZIndex="1">
@@ -15,9 +15,9 @@
             </ToolBar.Background>
             <Image Source="Img/back.png" Margin="2" MouseDown="Back" ToolTip="Вернуться в главную комнату" />
             <Image Source="Img/help.png" Margin="2" MouseDown="Help" ToolTip="Ответ на загадку" ></Image>
-            <Image x:Name="hp1" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
-            <Image x:Name="hp2" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
-            <Image x:Name="hp3" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
+            <Image x:Name="hp1" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
+            <Image x:Name="hp2" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
+            <Image x:Name="hp3" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
         </ToolBar>
         <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" >
             <TabItem Header="-1">
@@ -57,7 +57,7 @@
                 </Border>
             </TabItem>
             <TabItem Header="0" x:Name="tabItemHall" MouseDown="tabItemHall_MouseDown" >
-                <Border x:Name="hall" CornerRadius="10" Margin="5,0,5,5"  MouseMove="hall_MouseMove">
+                <Border x:Name="hall" CornerRadius="10" Margin="5,0,5,5"  MouseMove="hall_MouseMove" MouseLeave="hall_MouseLeave">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
                     </Border.Effect>

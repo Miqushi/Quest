@@ -19,8 +19,8 @@
             <Image x:Name="hp3" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
         </ToolBar>
         <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" >
-            <TabItem Header="0">
-                <Border CornerRadius="10" Margin="5,0,5,5">
+            <TabItem Header="0" x:Name="tabItemHally3" MouseDown="tabItemHally3_MouseDown">
+                <Border x:Name="hall" CornerRadius="10" Margin="5,0,5,5">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
                     </Border.Effect>
