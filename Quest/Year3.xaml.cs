@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media.Animation;
 
 namespace Quest
 {
@@ -115,6 +116,9 @@ namespace Quest
             }
         }
 
-        
+        private void Image_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }
