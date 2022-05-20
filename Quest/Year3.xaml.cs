@@ -1,16 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Quest
 {
@@ -22,6 +12,26 @@ namespace Quest
         public Year3()
         {
             InitializeComponent();
+        }
+        private void hall_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Cursor = Cursors.Arrow;
+        }
+        private void home_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+        private void home_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Cursor = Cursors.Arrow;
+        }
+        private void help_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+        private void help_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Cursor = Cursors.Arrow;
         }
         MainWindow main = new MainWindow();
         public void Damage()
@@ -47,23 +57,64 @@ namespace Quest
         }
         private void Back(object sender, MouseButtonEventArgs e)
         {
-            tc.SelectedIndex = 1;
+            tc.SelectedIndex = 0;
         }
 
         private void Help(object sender, MouseButtonEventArgs e)
         {
-            
+
         }
 
         private void Window_Closed(object sender, EventArgs e)
         {
+            Properties.Settings.Default.Save();
             main.Show();
         }
 
         private void tabItemHally3_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Point p = e.GetPosition(this);
-            MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
+            if ((p.X > 110 && p.X < 165) && (p.Y > 221 && p.Y < 485))
+            {
+                tc.SelectedIndex = 1;
+            }
+            if ((p.X > 200 && p.X < 230) && (p.Y > 212 && p.Y < 458))
+            {
+                tc.SelectedIndex = 2;
+            }
+            if ((p.X > 290 && p.X < 313) && (p.Y > 272 && p.Y < 419))
+            {
+                tc.SelectedIndex = 3;
+            }
+            if ((p.X > 347 && p.X < 417) && (p.Y > 273 && p.Y < 413))
+            {
+                tc.SelectedIndex = 4;
+            }
+            if ((p.X > 597 && p.X < 751) && (p.Y > 249 && p.Y < 449))
+            {
+                tc.SelectedIndex = 5;
+            }
         }
+
+        private void hall_MouseMove(object sender, MouseEventArgs e)
+        {
+            Point p = e.GetPosition(this);
+
+            if ((p.X > 110 && p.X < 165) && (p.Y > 221 && p.Y < 485) ||
+            (p.X > 200 && p.X < 230) && (p.Y > 212 && p.Y < 458) ||
+            (p.X > 290 && p.X < 313) && (p.Y > 272 && p.Y < 419) ||
+            (p.X > 347 && p.X < 417) && (p.Y > 273 && p.Y < 413) ||
+            (p.X > 597 && p.X < 751) && (p.Y > 249 && p.Y < 449)
+            )
+            {
+                Cursor = Cursors.Hand;
+            }
+            else
+            {
+                Cursor = Cursors.Arrow;
+            }
+        }
+
+        
     }
 }

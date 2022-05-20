@@ -117,7 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="riddle1" xml:space="preserve">
+    <value>Перед вами появляется оливковая ветвь. Вы берете ее и идете дальше</value>
+  </data>
+  <data name="riddle2" xml:space="preserve">
+    <value>Сейф отворяется. Внутри него лежал тетраэдр. Вы берете его и отправляетесь исследовать другие комнаты</value>
+  </data>
+  <data name="riddle3" xml:space="preserve">
+    <value>Дверь отворилась. Вы берете листок с анограммой и шагаете исследовать помещения дальше</value>
+  </data>
+  <data name="riddle4" xml:space="preserve">
+    <value>По древнейшей версии мифа, Прометей похитил огонь у Гефеста, унёс с Олимпа и передал его людям. Он совершил это, скрыв искру в полом стебле тростника (нарфекс) и показал людям, как его сохранять, присыпая золой. В истолковании, он изобрёл «огневые палочки», от которых загорается огонь. В наказание Зевс направит людям первую женщину — Пандору. По версии мифа, заполучить огонь Прометею помогла Афина.</value>
+  </data>
   <data name="riddle5" xml:space="preserve">
     <value>Вы видете картину, а рядом с ней подпись: На картине изображена встреча Эдипа со Сфинксом на пути между Фивами и Дельфами. Эдип должен был правильно ответить на загадку Сфинкса, чтобы пройти. Неудача означала для него смерть и гибель осаждённых фиванцев. Загадка заключалась в следующем: «кто ходит на четырёх ногах утром, на двух днём и на трёх ночью?». Эдип ответил: «Человек: в младенчестве он ползает на четвереньках; во взрослом возрасте он ходит на двух ногах и в старости он использует посох». По преданию существует и иной ответ на загадку. И он был сам Эдип.</value>
+  </data>
+  <data name="riddle6" xml:space="preserve">
+    <value>Этот ответ оказывается правильным. Дверь открываеся и вы проходите на второй этаж</value>
   </data>
 </root>

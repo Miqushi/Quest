@@ -61,11 +61,66 @@ namespace Quest.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        internal static System.Drawing.Icon icon {
+            get {
+                object obj = ResourceManager.GetObject("icon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Перед вами появляется оливковая ветвь. Вы берете ее и идете дальше.
+        /// </summary>
+        internal static string riddle1 {
+            get {
+                return ResourceManager.GetString("riddle1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сейф отворяется. Внутри него лежал тетраэдр. Вы берете его и отправляетесь исследовать другие комнаты.
+        /// </summary>
+        internal static string riddle2 {
+            get {
+                return ResourceManager.GetString("riddle2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дверь отворилась. Вы берете листок с анограммой и шагаете исследовать помещения дальше.
+        /// </summary>
+        internal static string riddle3 {
+            get {
+                return ResourceManager.GetString("riddle3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на По древнейшей версии мифа, Прометей похитил огонь у Гефеста, унёс с Олимпа и передал его людям. Он совершил это, скрыв искру в полом стебле тростника (нарфекс) и показал людям, как его сохранять, присыпая золой. В истолковании, он изобрёл «огневые палочки», от которых загорается огонь. В наказание Зевс направит людям первую женщину — Пандору. По версии мифа, заполучить огонь Прометею помогла Афина..
+        /// </summary>
+        internal static string riddle4 {
+            get {
+                return ResourceManager.GetString("riddle4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вы видете картину, а рядом с ней подпись: На картине изображена встреча Эдипа со Сфинксом на пути между Фивами и Дельфами. Эдип должен был правильно ответить на загадку Сфинкса, чтобы пройти. Неудача означала для него смерть и гибель осаждённых фиванцев. Загадка заключалась в следующем: «кто ходит на четырёх ногах утром, на двух днём и на трёх ночью?». Эдип ответил: «Человек: в младенчестве он ползает на четвереньках; во взрослом возрасте он ходит на двух ногах и в старости он использует посох». По преданию [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string riddle5 {
             get {
                 return ResourceManager.GetString("riddle5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Этот ответ оказывается правильным. Дверь открываеся и вы проходите на второй этаж.
+        /// </summary>
+        internal static string riddle6 {
+            get {
+                return ResourceManager.GetString("riddle6", resourceCulture);
             }
         }
     }

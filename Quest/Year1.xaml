@@ -6,35 +6,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Quest"
         mc:Ignorable="d"
-        Title="Этаж 1" MinHeight="450" Height="550" Width="850" MinWidth="650" Closing="Window_Closing" WindowStartupLocation="CenterScreen"  Icon="/icon.ico" KeyDown="Window_KeyDown" Loaded="Window_Loaded">
-   
+        Title="Этаж 1" MinHeight="450" Height="650" Width="1000" MinWidth="650" Closing="Window_Closing" WindowStartupLocation="CenterScreen"  Icon="/icon.ico" KeyDown="Window_KeyDown" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Monotype Corsiva"/>
+            <Setter Property="FontSize" Value="19"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+    </Window.Resources>
     <Grid x:Name="basis" Background="Black">
         <ToolBar x:Name="toolBar" Margin="4" VerticalAlignment="Top" Height="40" Panel.ZIndex="1">
             <ToolBar.Background>
                 <ImageBrush ImageSource="Img/bar.jpg"></ImageBrush>
             </ToolBar.Background>
-            <Image Source="Img/back.png" Margin="2" MouseDown="Back" ToolTip="Вернуться в главную комнату" />
-            <Image Source="Img/help.png" Margin="2" MouseDown="Help" ToolTip="Ответ на загадку" ></Image>
+            <Image x:Name="home" Source="Img/back.png" Margin="2" MouseDown="Back" ToolTip="Вернуться в главную комнату" MouseEnter="home_MouseEnter" MouseLeave="home_MouseLeave" />
+            <Image x:Name="help" Source="Img/help.png" Margin="2" MouseDown="Help" ToolTip="Ответ на загадку" MouseEnter="help_MouseEnter" MouseLeave="help_MouseLeave" ></Image>
             <Image x:Name="hp1" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp2" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
             <Image x:Name="hp3" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
         </ToolBar>
         <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" >
             <TabItem Header="-1">
-                <Border CornerRadius="10" Margin="5,0,5,5">
+                <Border CornerRadius="5" Margin="2,0,2,5">
                     <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
                     </Border.Effect>
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/outdoor.jpg"></ImageBrush>
+                        <ImageBrush ImageSource="Img/outdoor.jpg"/>
                     </Border.Background>
-                    <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="5">
+                    <Grid>
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="10" Color="#FFC973" ShadowDepth="0"></DropShadowEffect>
+                            </Border.Effect>
+                            <Border.Background>
+                                <ImageBrush ImageSource="Img/fon.jpg"/>
+                            </Border.Background>
                             <StackPanel Margin="5,5,5,0">
-                                <TextBlock Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
+                                <TextBlock>
                                 Вы начинаете свое путешествие. После долгого блуждания по лесу вы встречаете одиноко стоящее здание. Вы решаете подйти к нему и видите табло УО "БГАЭК". На двери весит замок, а рядом надпись: "Код для замка - дата появления этого места."
                                 </TextBlock>
-                                <ListBox x:Name="lb1" SelectionChanged="lb1_SelectionChanged" FontFamily="Monotype Corsiva" FontSize="16"  >
+                                <ListBox x:Name="lb1" SelectionChanged="lb1_SelectionChanged" FontFamily="Monotype Corsiva" FontSize="18">
                                     <ListBox.ItemsPanel>
                                         <ItemsPanelTemplate>
                                             <StackPanel  Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
@@ -46,91 +58,85 @@
                                     <ListBoxItem>1956</ListBoxItem>
                                 </ListBox>
                             </StackPanel>
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
-                            </Border.Effect>
-                            <Border.Background>
-                                <ImageBrush ImageSource="Img/fon.jpg"></ImageBrush>
-                            </Border.Background>
                         </Border>
                     </Grid>
                 </Border>
             </TabItem>
-            <TabItem Header="0" x:Name="tabItemHall" MouseDown="tabItemHall_MouseDown" >
-                <Border x:Name="hall" CornerRadius="10" Margin="5,0,5,5"  MouseMove="hall_MouseMove" MouseLeave="hall_MouseLeave">
+            <TabItem Header="0" x:Name="tabItemHall" MouseDown="tabItemHall_MouseDown">
+                <Border x:Name="hall" CornerRadius="5" Margin="2,0,2,5" MouseMove="hall_MouseMove" MouseLeave="hall_MouseLeave">
                     <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
                     </Border.Effect>
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/hall.jpg"></ImageBrush>
+                        <ImageBrush ImageSource="Img/hall.jpg"/>
                     </Border.Background>
-                    <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="5">
-                            <StackPanel Margin="5,5,5,0">
-                                <TextBlock Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18">
+                    <Grid>
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="8">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="0"/>
+                            </Border.Effect>
+                            <Border.Background>
+                                <ImageBrush ImageSource="Img/fon.jpg"/>
+                            </Border.Background>
+                            <StackPanel Margin="5">
+                                <TextBlock>
                                 Вы заходите внутрь и вдруг дверь сзади захлопывается. Вы слышите голос: "Теперь, чтобы выбраться отсюда, тебе надо пройти 4 этажа с загадками и найти ключ." Вы видете перед собой шесть дверей, шестая ведет на другой этаж, но она закрыта.
                                 </TextBlock>
                             </StackPanel>
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
-                            </Border.Effect>
-                            <Border.Background>
-                                <ImageBrush ImageSource="Img/fon.jpg"></ImageBrush>
-                            </Border.Background>
                         </Border>
                     </Grid>
                 </Border>
             </TabItem>
             <TabItem Header="1">
-                <Border CornerRadius="10" Margin="5,0,5,5">
+                <Border CornerRadius="5" Margin="2,0,2,5">
                     <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
                     </Border.Effect>
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/zad1.jpg" Stretch="UniformToFill"></ImageBrush>
+                        <ImageBrush ImageSource="Img/zad1.jpg"/>
                     </Border.Background>
-                    <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
-                            <StackPanel Margin="5,5,5,0">
+                    <Grid>
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="8">
+                            <StackPanel Margin="5">
                                 <Image x:Name="img1" Visibility="Collapsed" Height="200" Width="300" Source="Img/olive.png" MouseDown="img1_MouseDown"/>
-                                <TextBlock x:Name="tbIst" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
+                                <TextBlock x:Name="tbIst">
                                 Вы заходите в первую комнату. Пройдя дальше, и, осмотревшись по сторонам, Вы вновь слышите голос: Китайские мастера боевых искусств говорили, что драка - для дураков, для умных - победа. А что, по их мнению - для мудрых?
                                 </TextBlock>
-                                <TextBox x:Name="textBox1" Margin="1" FontFamily="Monotype Corsiva" FontSize="18">
+                                <TextBox x:Name="textBox1" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18">
                                 </TextBox>
-                                <Button x:Name="otv1" HorizontalAlignment="Center" Margin="5" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="Button_Click" Cursor="Hand">
+                                <Button x:Name="otv1" HorizontalAlignment="Center" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="20" Click="Button_Click" Cursor="Hand">
                                     <Button.Background>
                                         <ImageBrush ImageSource="Img/button.png"/>
                                     </Button.Background>
                                 </Button>
                             </StackPanel>
                             <Border.Effect>
-                                <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="0"/>
                             </Border.Effect>
                             <Border.Background>
-                                <ImageBrush ImageSource="Img/fon.jpg"></ImageBrush>
+                                <ImageBrush ImageSource="Img/fon.jpg"/>
                             </Border.Background>
                         </Border>
                     </Grid>
                 </Border>
             </TabItem>
             <TabItem Header="2" >
-                <Border CornerRadius="10" Margin="5,0,5,5">
+                <Border CornerRadius="5" Margin="2,0,2,5">
                     <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
                     </Border.Effect>
                     <Border.Background>
                         <ImageBrush ImageSource="Img/zad2.jpg"></ImageBrush>
                     </Border.Background>
-                    <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="5">
+                    <Grid>
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="8">
                             <StackPanel Margin="5,5,5,0">
                                 <Image x:Name="img2" Visibility="Collapsed" Height="200" Width="200" Source="Img/tetra.png" MouseDown="img2_MouseDown">
                                 </Image>
-                                <TextBlock x:Name="tbMath" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
+                                <TextBlock x:Name="tbMath">
                                 Вы заходите во вторую комнату. Вы видете сейф, а рядом записка с загадкой: У женщины спросили: "Сколько Вам лет?". Она ответила: "30, не считая суббот и воскресений". Сколько ей лет?
                                 </TextBlock>
-                                <ListBox x:Name="lb4" SelectionChanged="lb4_SelectionChanged" Margin="1" FontFamily="Monotype Corsiva" FontSize="18">
+                                <ListBox x:Name="lb4" SelectionChanged="lb4_SelectionChanged"  FontFamily="Monotype Corsiva" FontSize="18">
                                     <ListBox.ItemsPanel>
                                         <ItemsPanelTemplate>
                                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
@@ -143,7 +149,7 @@
                                 </ListBox>
                             </StackPanel>
                             <Border.Effect>
-                                <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="0"></DropShadowEffect>
                             </Border.Effect>
                             <Border.Background>
                                 <ImageBrush ImageSource="Img/fon.jpg"></ImageBrush>
@@ -153,62 +159,62 @@
                 </Border>
             </TabItem>
             <TabItem Header="3" >
-                <Border CornerRadius="10" Margin="5,0,5,5">
+                <Border CornerRadius="5" Margin="2,0,2,5">
                     <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
                     </Border.Effect>
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/zad3.jpg"></ImageBrush>
+                        <ImageBrush ImageSource="Img/zad3.jpg"/>
                     </Border.Background>
-                    <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="5">
-                            <StackPanel Margin="5,5,5,0">
+                    <Grid>
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="8">
+                            <StackPanel Margin="5">
                                 <Image x:Name="img3" Visibility="Collapsed" Height="200" Width="300" Source="Img/list.png" MouseDown="img3_MouseDown"/>
-                                <TextBlock Margin="1" x:Name="tb3" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" ToolTip="Слово или словосочетание, образованное путём перестановки букв, составляющих другое слово (пила-липа).">
+                                <TextBlock x:Name="tb3" ToolTip="Слово или словосочетание, образованное путём перестановки букв, составляющих другое слово (пила-липа).">
                                 Вы заходите в третюю комнату. На столе лежит один листок. В нем анограмма: Читаем мы направо смело - Геометрическое тело. Прочтем же справа мы налево - Увидим разновидность древа. (ответ пишите слитно, через дефис)
                                 </TextBlock>
-                                <TextBox x:Name="textBox2" Margin="1" FontFamily="Monotype Corsiva" FontSize="18"/>
-                                <Button x:Name="otv3" HorizontalAlignment="Center" Margin="5" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv3_Click">
+                                <TextBox x:Name="textBox2" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18"/>
+                                <Button x:Name="otv3" HorizontalAlignment="Center"  Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv3_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="Img/button.png"/>
                                     </Button.Background>
                                 </Button>
                             </StackPanel>
                             <Border.Effect>
-                                <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="0"/>
                             </Border.Effect>
                             <Border.Background>
-                                <ImageBrush ImageSource="Img/fon.jpg"></ImageBrush>
+                                <ImageBrush ImageSource="Img/fon.jpg"/>
                             </Border.Background>
                         </Border>
                     </Grid>
                 </Border>
             </TabItem>
             <TabItem Header="4">
-                <Border CornerRadius="10" Margin="5,0,5,5">
+                <Border CornerRadius="5" Margin="2,0,2,5">
                     <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
                     </Border.Effect>
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/zad4.jpg"></ImageBrush>
+                        <ImageBrush ImageSource="Img/zad4.jpg"/>
                     </Border.Background>
-                    <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="5">
-                            <StackPanel Margin="5,5,5,0">
+                    <Grid>
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="8">
+                            <StackPanel Margin="5">
                                 <Image x:Name="img4" Visibility="Collapsed" Height="200" Width="300" Source="Img/prometheus.jpg" >
                                 </Image>
-                                <TextBlock x:Name="tb4" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18">
+                                <TextBlock x:Name="tb4">
                                 Вы заходите в четвертую комнату. Голос говорит очередную загадку: "Ветер его колышет и возбуждает. Все, что видит, он пожирает. Если его не усмирить – это конец."
                                 </TextBlock>
-                                <TextBox x:Name="textBox4" Margin="1" FontFamily="Monotype Corsiva" FontSize="18"/>
-                                <Button x:Name="otv4" HorizontalAlignment="Center" Margin="5" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv4_Click">
+                                <TextBox x:Name="textBox4" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18"/>
+                                <Button x:Name="otv4" HorizontalAlignment="Center"  Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv4_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="Img/button.png"/>
                                     </Button.Background>
                                 </Button>
                             </StackPanel>
                             <Border.Effect>
-                                <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="0"></DropShadowEffect>
                             </Border.Effect>
                             <Border.Background>
                                 <ImageBrush ImageSource="Img/fon.jpg"></ImageBrush>
@@ -218,54 +224,54 @@
                 </Border>
             </TabItem>
             <TabItem Header="5">
-                <Border CornerRadius="10" Margin="5,0,5,5">
+                <Border CornerRadius="5" Margin="2,0,2,5">
                     <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
                     </Border.Effect>
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/zad5.jpg"></ImageBrush>
+                        <ImageBrush ImageSource="Img/zad5.jpg"/>
                     </Border.Background>
-                    <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="5">
-                            <StackPanel Margin="5,5,5,0">
+                    <Grid>
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="8">
+                            <StackPanel Margin="5">
                                 <Image x:Name="img5" Visibility="Collapsed" Height="200" Width="300" Source="Img/Oedipus.jpg" >
                                 </Image>
-                                <TextBlock x:Name="tb5" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
+                                <TextBlock x:Name="tb5">
                                 Вы заходите в пятую комнату. Голос спрашивает у вас: "Кто ходит на четырёх ногах утром, на двух днём и на трёх ночью?"
                                 </TextBlock>
-                                <TextBox x:Name="textBox5" Margin="1" FontFamily="Monotype Corsiva" FontSize="18"/>
-                                <Button x:Name="otv5" HorizontalAlignment="Center" Margin="5" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv5_Click">
+                                <TextBox x:Name="textBox5" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18"/>
+                                <Button x:Name="otv5" HorizontalAlignment="Center" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv5_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="Img/button.png"/>
                                     </Button.Background>
                                 </Button>
                             </StackPanel>
                             <Border.Effect>
-                                <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="0"/>
                             </Border.Effect>
                             <Border.Background>
-                                <ImageBrush ImageSource="Img/fon.jpg"></ImageBrush>
+                                <ImageBrush ImageSource="Img/fon.jpg"/>
                             </Border.Background>
                         </Border>
                     </Grid>
                 </Border>
             </TabItem>
             <TabItem Header="2 этаж" GotFocus="TabItem_GotFocus">
-                <Border CornerRadius="10" Margin="5,0,5,5">
+                <Border CornerRadius="5" Margin="2,0,2,5">
                     <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
                     </Border.Effect>
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/House.jpeg"></ImageBrush>
+                        <ImageBrush ImageSource="Img/House.jpeg"/>
                     </Border.Background>
-                    <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="5">
-                            <StackPanel Margin="5,5,5,0">
-                                <TextBlock x:Name="tb6" Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18">
+                    <Grid>
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="8">
+                            <StackPanel Margin="5">
+                                <TextBlock x:Name="tb6">
                                     
                                 </TextBlock>
-                                <TextBox Margin="1" x:Name="textBox6" Visibility="Collapsed" FontFamily="Monotype Corsiva" FontSize="18"/>
-                                <Button x:Name="otv6" Visibility="Collapsed" HorizontalAlignment="Center" Margin="5" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv6_Click">
+                                <TextBox x:Name="textBox6" Margin="0,5,0,5" Visibility="Collapsed" FontFamily="Monotype Corsiva" FontSize="18"/>
+                                <Button x:Name="otv6" Visibility="Collapsed" HorizontalAlignment="Center" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv6_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="Img/button.png"/>
                                     </Button.Background>
@@ -277,10 +283,10 @@
                                 </Button>
                             </StackPanel>
                             <Border.Effect>
-                                <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="0"/>
                             </Border.Effect>
                             <Border.Background>
-                                <ImageBrush ImageSource="Img/fon.jpg"></ImageBrush>
+                                <ImageBrush ImageSource="Img/fon.jpg"/>
                             </Border.Background>
                         </Border>
                     </Grid>

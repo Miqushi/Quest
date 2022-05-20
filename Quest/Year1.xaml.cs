@@ -13,8 +13,25 @@ namespace Quest
             InitializeComponent();
         }
         MainWindow main = new MainWindow();
+        private void home_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+        private void home_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Cursor = Cursors.Arrow;
+        }
+        private void help_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+        private void help_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Cursor = Cursors.Arrow;
+        }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            Properties.Settings.Default.Save();
             main.Show();
         }
         public int lvl = 0;
@@ -71,7 +88,7 @@ namespace Quest
         }
         private void Back(object sender, MouseButtonEventArgs e)
         {
-            if(tc.SelectedIndex != 0)
+            if (tc.SelectedIndex != 0)
             {
                 tc.SelectedIndex = 1;
             }
@@ -135,7 +152,7 @@ namespace Quest
             string otvet = textBox1.Text.Trim().ToLower();
             if (otvet == "мир")
             {
-                tbIst.Text = "Перед вами появляется оливковая ветвь. Вы берете ее и идете дальше";
+                tbIst.Text = Properties.Resources.riddle1;
                 textBox1.Visibility = Visibility.Collapsed;
                 otv1.Visibility = Visibility.Collapsed;
                 img1.Visibility = Visibility.Visible;
@@ -154,7 +171,7 @@ namespace Quest
         {
             if (lb4.SelectedIndex == 1)
             {
-                tbMath.Text = "Сейф отворяется. Внутри него лежал тетраэдр. Вы берете его и отправляетесь исследовать другие комнаты";
+                tbMath.Text = Properties.Resources.riddle2;
                 lb4.Visibility = Visibility.Collapsed;
                 img2.Visibility = Visibility.Visible;
                 lvl += 1;
@@ -169,7 +186,7 @@ namespace Quest
             string otvet = textBox2.Text.Trim().ToLower();
             if (otvet == "куб-бук" || otvet == "бук-куб")
             {
-                tb3.Text = "Дверь отворилась. Вы берете листок с анограммой и шагаете исследовать помещения дальше";
+                tb3.Text = Properties.Resources.riddle3;
                 textBox2.Visibility = Visibility.Collapsed;
                 otv3.Visibility = Visibility.Collapsed;
                 img3.Visibility = Visibility.Visible;
@@ -189,7 +206,7 @@ namespace Quest
             string otvet = textBox4.Text.Trim().ToLower();
             if (otvet == "огонь")
             {
-                tb4.Text = "По древнейшей версии мифа, Прометей похитил огонь у Гефеста, унёс с Олимпа и передал его людям. Он совершил это, скрыв искру в полом стебле тростника (нарфекс) и показал людям, как его сохранять, присыпая золой. В истолковании, он изобрёл «огневые палочки», от которых загорается огонь. В наказание Зевс направит людям первую женщину — Пандору. По версии мифа, заполучить огонь Прометею помогла Афина.";
+                tb4.Text = Properties.Resources.riddle4;
                 img4.Visibility = Visibility.Visible;
                 textBox4.Visibility = Visibility.Collapsed;
                 otv4.Visibility = Visibility.Collapsed;
@@ -229,7 +246,7 @@ namespace Quest
             string otvet = textBox6.Text.Trim().ToLower();
             if (otvet == "греция" || otvet == "древняя греция")
             {
-                tb6.Text = "Этот ответ оказывается правильным. Дверь открываеся и вы проходите на второй этаж";
+                tb6.Text = Properties.Resources.riddle6;
                 textBox6.Visibility = Visibility.Collapsed;
                 otv6.Visibility = Visibility.Collapsed;
                 next.Visibility = Visibility.Visible;
@@ -281,100 +298,54 @@ namespace Quest
         private void hall_MouseMove(object sender, MouseEventArgs e)
         {
             Point p = e.GetPosition(this);
-            if (basis.ActualHeight > 1000 && basis.ActualWidth > 1900)
+
+            if ((p.X > 668 && p.X < 734) && (p.Y > 250 && p.Y < 500) ||
+            (p.X > 524 && p.X < 540) && (p.Y > 297 && p.Y < 450) ||
+            (p.X > 450 && p.X < 473) && (p.Y > 317 && p.Y < 432) ||
+            (p.X > 413 && p.X < 430) && (p.Y > 322 && p.Y < 422) ||
+            (p.X > 338 && p.X < 386) && (p.Y > 319 && p.Y < 418) ||
+            (p.X > 79 && p.X < 201) && (p.Y > 306 && p.Y < 460)
+            )
             {
-                if ((p.X > 1302 && p.X < 1415) && (p.Y > 383 && p.Y < 843) ||
-                (p.X > 1020 && p.X < 1055) && (p.Y > 476 && p.Y < 754) ||
-                (p.X > 874 && p.X < 923) && (p.Y > 512 && p.Y < 720) ||
-                (p.X > 806 && p.X < 836) && (p.Y > 520 && p.Y < 707) ||
-                (p.X > 649 && p.X < 749) && (p.Y > 521 && p.Y < 693) ||
-                (p.X > 146 && p.X < 383) && (p.Y > 495 && p.Y < 765)
-                )
-                {
-                    Cursor = Cursors.Hand;
-                }
-                else
-                {
-                    Cursor = Cursors.Arrow;
-                }
+                Cursor = Cursors.Hand;
             }
             else
             {
-                if ((p.X > 565 && p.X < 620) && (p.Y > 205 && p.Y < 419) ||
-                (p.X > 432 && p.X < 458) && (p.Y > 241 && p.Y < 371) ||
-                (p.X > 377 && p.X < 401) && (p.Y > 269 && p.Y < 368) ||
-                (p.X > 349 && p.X < 365) && (p.Y > 271 && p.Y < 357) ||
-                (p.X > 258 && p.X < 324) && (p.Y > 271 && p.Y < 348) ||
-                (p.X > 72 && p.X < 172) && (p.Y > 259 && p.Y < 389)
-                )
-                {
-                    Cursor = Cursors.Hand;
-                }
-                else
-                {
-                    Cursor = Cursors.Arrow;
-                }
+                Cursor = Cursors.Arrow;
             }
+
         }
 
         private void tabItemHall_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Point p = e.GetPosition(this);
+            //MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
 
-            if (basis.ActualHeight > 1000 && basis.ActualWidth > 1900)
+            if ((p.X > 668 && p.X < 734) && (p.Y > 250 && p.Y < 500))
             {
-                if ((p.X > 1302 && p.X < 1415) && (p.Y > 383 && p.Y < 843))
-                {
-                    tc.SelectedIndex = 2;
-                }
-                if ((p.X > 1020 && p.X < 1055) && (p.Y > 476 && p.Y < 754))
-                {
-                    tc.SelectedIndex = 3;
-                }
-                if ((p.X > 874 && p.X < 923) && (p.Y > 512 && p.Y < 720))
-                {
-                    tc.SelectedIndex = 4;
-                }
-                if ((p.X > 806 && p.X < 836) && (p.Y > 520 && p.Y < 707))
-                {
-                    tc.SelectedIndex = 5;
-                }
-                if ((p.X > 649 && p.X < 749) && (p.Y > 521 && p.Y < 693))
-                {
-                    tc.SelectedIndex = 6;
-                }
-                if ((p.X > 146 && p.X < 383) && (p.Y > 495 && p.Y < 765))
-                {
-                    tc.SelectedIndex = 7;
-                }
+                tc.SelectedIndex = 2;
             }
-            else
+            if ((p.X > 524 && p.X < 540) && (p.Y > 297 && p.Y < 450))
             {
-                if ((p.X > 565 && p.X < 620) && (p.Y > 205 && p.Y < 419))
-                {
-                    tc.SelectedIndex = 2;
-                }
-                if ((p.X > 432 && p.X < 458) && (p.Y > 241 && p.Y < 371))
-                {
-                    tc.SelectedIndex = 3;
-                }
-                if ((p.X > 377 && p.X < 401) && (p.Y > 269 && p.Y < 368))
-                {
-                    tc.SelectedIndex = 4;
-                }
-                if ((p.X > 349 && p.X < 365) && (p.Y > 271 && p.Y < 357))
-                {
-                    tc.SelectedIndex = 5;
-                }
-                if ((p.X > 258 && p.X < 324) && (p.Y > 271 && p.Y < 348))
-                {
-                    tc.SelectedIndex = 6;
-                }
-                if ((p.X > 72 && p.X < 172) && (p.Y > 259 && p.Y < 389))
-                {
-                    tc.SelectedIndex = 7;
-                }
+                tc.SelectedIndex = 3;
             }
+            if ((p.X > 450 && p.X < 473) && (p.Y > 317 && p.Y < 432))
+            {
+                tc.SelectedIndex = 4;
+            }
+            if ((p.X > 413 && p.X < 430) && (p.Y > 322 && p.Y < 422))
+            {
+                tc.SelectedIndex = 5;
+            }
+            if ((p.X > 338 && p.X < 386) && (p.Y > 319 && p.Y < 418))
+            {
+                tc.SelectedIndex = 6;
+            }
+            if ((p.X > 79 && p.X < 201) && (p.Y > 306 && p.Y < 460))
+            {
+                tc.SelectedIndex = 7;
+            }
+
         }
 
         private void TabItem_GotFocus(object sender, RoutedEventArgs e)
@@ -394,6 +365,6 @@ namespace Quest
         private void hall_MouseLeave(object sender, MouseEventArgs e)
         {
             Cursor = Cursors.Arrow;
-        }
+        } 
     }
 }

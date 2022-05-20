@@ -6,36 +6,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Quest"
         mc:Ignorable="d"
-        Title="Этаж 3" MinHeight="450" Height="550" Width="850" MinWidth="650"  WindowStartupLocation="CenterScreen" Topmost="True" Icon="/icon.ico" Closed="Window_Closed">
+        Title="Этаж 3" MinHeight="450" Height="650" Width="1000" MinWidth="650"  WindowStartupLocation="CenterScreen" Topmost="True" Icon="/icon.ico" Closed="Window_Closed">
     <Grid Background="Black">
         <ToolBar x:Name="toolBar" Margin="4" VerticalAlignment="Top" Height="40" Panel.ZIndex="1">
             <ToolBar.Background>
-                <ImageBrush ImageSource="Img/bar.jpg"></ImageBrush>
+                <ImageBrush ImageSource="Img/bar.jpg"/>
             </ToolBar.Background>
-            <Image Source="Img/back.png" Margin="2"  ToolTip="Вернуться в главную комнату" MouseDown="Back" />
-            <Image Source="Img/help.png" Margin="2"  ToolTip="Ответ на загадку" MouseDown="Help" ></Image>
+            <Image x:Name="home" Source="Img/back.png" Margin="2"  ToolTip="Вернуться в главную комнату" MouseDown="Back" MouseEnter="home_MouseEnter"/>
+            <Image x:Name="help" Source="Img/help.png" Margin="2"  ToolTip="Ответ на загадку" MouseDown="Help" MouseEnter="help_MouseEnter" MouseLeave="help_MouseLeave"/>
             <Image x:Name="hp1" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp2" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
             <Image x:Name="hp3" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
         </ToolBar>
         <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" >
             <TabItem Header="0" x:Name="tabItemHally3" MouseDown="tabItemHally3_MouseDown">
-                <Border x:Name="hall" CornerRadius="10" Margin="5,0,5,5">
+                <Border x:Name="hall" CornerRadius="10" Margin="2,0,2,5" MouseMove="hall_MouseMove" MouseLeave="hall_MouseLeave" >
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
                     </Border.Effect>
                     <Border.Background>
                         <ImageBrush ImageSource="Img/y3_hall.jpg"></ImageBrush>
                     </Border.Background>
-                    <Grid Margin="5">
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="5">
-                            <StackPanel Margin="5,5,5,0">
-                                <TextBlock Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="18" >
-                                Вы поднимаетесь на третий этаж и видите перед собой 4 двери на которых написаны различные шифры.
+                    <Grid>
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
+                            <StackPanel Margin="5">
+                                <TextBlock Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="20" >
+                                Вы поднимаетесь на третий этаж и видите перед собой 4 двери. Голос говорит Вам: "0"
                                 </TextBlock>
                             </StackPanel>
                             <Border.Effect>
-                                <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="1"></DropShadowEffect>
                             </Border.Effect>
                             <Border.Background>
                                 <ImageBrush ImageSource="Img/fon.jpg"></ImageBrush>
@@ -43,6 +43,44 @@
                         </Border>
                     </Grid>
                 </Border>
+            </TabItem>
+            <TabItem Header="1">
+                <Border  CornerRadius="10" Margin="2,0,2,5" MouseMove="hall_MouseMove" MouseLeave="hall_MouseLeave" >
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                    </Border.Effect>
+                    <Border.Background>
+                        <ImageBrush ImageSource="Img/zad1_y3.jpg"></ImageBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
+                            <StackPanel Margin="5">
+                                <TextBlock Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="20" >
+                                    Вы заходите в кабинет. На доске висел лист
+                                </TextBlock>
+                            </StackPanel>
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="1"></DropShadowEffect>
+                            </Border.Effect>
+                            <Border.Background>
+                                <ImageBrush ImageSource="Img/fon.jpg"></ImageBrush>
+                            </Border.Background>
+                        </Border>
+                    </Grid>
+                </Border>
+                        
+            </TabItem>
+            <TabItem Header="2">
+                
+            </TabItem>
+            <TabItem Header="3">
+                
+            </TabItem>
+            <TabItem Header="4">
+                
+            </TabItem>
+            <TabItem Header="nextFloor">
+
             </TabItem>
         </TabControl>
     </Grid>
