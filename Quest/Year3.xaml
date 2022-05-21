@@ -7,38 +7,55 @@
         xmlns:local="clr-namespace:Quest"
         mc:Ignorable="d"
         Title="Этаж 3" MinHeight="450" Height="650" Width="1000" MinWidth="650"  WindowStartupLocation="CenterScreen" Topmost="True" Icon="/icon.ico" Closed="Window_Closed">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Monotype Corsiva"/>
+            <Setter Property="FontSize" Value="19"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style TargetType="Image">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="False">
+                    <Setter Property="Cursor" Value="Arrow"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid Background="Black">
         <ToolBar x:Name="toolBar" Margin="4" VerticalAlignment="Top" Height="40" Panel.ZIndex="1">
             <ToolBar.Background>
                 <ImageBrush ImageSource="Img/bar.jpg"/>
             </ToolBar.Background>
-            <Image x:Name="home" Source="Img/back.png" Margin="2"  ToolTip="Вернуться в главную комнату" MouseDown="Back" MouseEnter="home_MouseEnter"/>
-            <Image x:Name="help" Source="Img/help.png" Margin="2"  ToolTip="Ответ на загадку" MouseDown="Help" MouseEnter="help_MouseEnter" MouseLeave="help_MouseLeave"/>
+            <Image x:Name="home" Source="Img/back.png" Margin="2" ToolTip="Вернуться в главную комнату"/>
+            <Image x:Name="help" Source="Img/help.png" Margin="2" ToolTip="Ответ на загадку"/>
             <Image x:Name="hp1" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp2" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
             <Image x:Name="hp3" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
         </ToolBar>
         <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" >
             <TabItem Header="0" x:Name="tabItemHally3" MouseDown="tabItemHally3_MouseDown">
-                <Border x:Name="hall" CornerRadius="10" Margin="2,0,2,5" MouseMove="hall_MouseMove" MouseLeave="hall_MouseLeave" >
+                <Border x:Name="hall" CornerRadius="5" Margin="2,0,2,5" MouseMove="hall_MouseMove" MouseLeave="hall_MouseLeave">
                     <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
                     </Border.Effect>
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/y3_hall.jpg"></ImageBrush>
+                        <ImageBrush ImageSource="Img/y3_hall.jpg"/>
                     </Border.Background>
                     <Grid>
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
                             <StackPanel Margin="5">
-                                <TextBlock Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="20" >
+                                <TextBlock>
                                 Вы поднимаетесь на третий этаж и видите перед собой 4 двери. Голос говорит Вам: "0"
                                 </TextBlock>
                             </StackPanel>
                             <Border.Effect>
-                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="1"></DropShadowEffect>
+                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="0"/>
                             </Border.Effect>
                             <Border.Background>
-                                <ImageBrush ImageSource="Img/fon.jpg"></ImageBrush>
+                                <ImageBrush ImageSource="Img/fon.jpg"/>
                             </Border.Background>
                         </Border>
                     </Grid>
@@ -47,10 +64,10 @@
             <TabItem Header="1">
                 <Border CornerRadius="10" Margin="2,0,2,5">
                     <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
                     </Border.Effect>
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/zad1_y3.jpg"></ImageBrush>
+                        <ImageBrush ImageSource="Img/zad1_y3.jpg"/>
                     </Border.Background>
                     <Grid>
                         <Image x:Name="caesar" Source="Img/House.jpeg" Margin="600,200,300,300" >
@@ -60,7 +77,7 @@
                                         <Storyboard>
                                             <ThicknessAnimation 
                                                 To="100" 
-                                                Duration="0:0:0.5" 
+                                                Duration="0:0:0.1" 
                                                 Storyboard.TargetProperty="Margin"
                                             />
                                         </Storyboard>
@@ -70,7 +87,7 @@
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <ThicknessAnimation 
-                                                Duration="0:0:0.5" 
+                                                Duration="0:0:0.1" 
                                                 Storyboard.TargetProperty="Margin"
                                             />
                                         </Storyboard>
@@ -93,10 +110,31 @@
                         </Border>
                     </Grid>
                 </Border>
-                
             </TabItem>
             <TabItem Header="2">
-                
+                <Border CornerRadius="5" Margin="2,0,2,5">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
+                    </Border.Effect>
+                    <Border.Background>
+                        <ImageBrush ImageSource="Img/zad2_y3.jpg"/>
+                    </Border.Background>
+                    <Grid>
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="10" Color="#FFC973" ShadowDepth="0"></DropShadowEffect>
+                            </Border.Effect>
+                            <Border.Background>
+                                <ImageBrush ImageSource="Img/fon.jpg"/>
+                            </Border.Background>
+                            <StackPanel Margin="5">
+                                <TextBlock>
+                                    Вы заходите во второй кабинет. На столе лежит неизвестная книга, а на ней наклеена записка.
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Border>
             </TabItem>
             <TabItem Header="3">
                 

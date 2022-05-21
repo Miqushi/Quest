@@ -13,14 +13,24 @@
             <Setter Property="FontSize" Value="19"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
+        <Style TargetType="Image">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="False">
+                    <Setter Property="Cursor" Value="Arrow"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
     <Grid x:Name="basis" Background="Black">
         <ToolBar x:Name="toolBar" Margin="4" VerticalAlignment="Top" Height="40" Panel.ZIndex="1">
             <ToolBar.Background>
                 <ImageBrush ImageSource="Img/bar.jpg"></ImageBrush>
             </ToolBar.Background>
-            <Image x:Name="home" Source="Img/back.png" Margin="2" MouseDown="Back" ToolTip="Вернуться в главную комнату" MouseEnter="home_MouseEnter" MouseLeave="home_MouseLeave" />
-            <Image x:Name="help" Source="Img/help.png" Margin="2" MouseDown="Help" ToolTip="Ответ на загадку" MouseEnter="help_MouseEnter" MouseLeave="help_MouseLeave" ></Image>
+            <Image x:Name="home" Source="Img/back.png" Margin="2" MouseDown="Back" ToolTip="Вернуться в главную комнату"/>
+            <Image x:Name="help" Source="Img/help.png" Margin="2" MouseDown="Help" ToolTip="Ответ на загадку"/>
             <Image x:Name="hp1" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp2" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
             <Image x:Name="hp3" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
@@ -199,10 +209,33 @@
                         <ImageBrush ImageSource="Img/zad4.jpg"/>
                     </Border.Background>
                     <Grid>
+                        <Image x:Name="img4" Source="Img/prometheus.jpg" Margin="772,196,132,259">
+                            <Image.Triggers>
+                                <EventTrigger RoutedEvent="Image.MouseEnter">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation 
+                                                To="600,50,100,200" 
+                                                Duration="0:0:0.1" 
+                                                Storyboard.TargetProperty="Margin"
+                                            />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="Image.MouseLeave">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation 
+                                                Duration="0:0:0.1" 
+                                                Storyboard.TargetProperty="Margin"
+                                            />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Image.Triggers>
+                        </Image>
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="8">
                             <StackPanel Margin="5">
-                                <Image x:Name="img4" Visibility="Collapsed" Height="200" Width="300" Source="Img/prometheus.jpg" >
-                                </Image>
                                 <TextBlock x:Name="tb4">
                                 Вы заходите в четвертую комнату. Голос говорит очередную загадку: "Ветер его колышет и возбуждает. Все, что видит, он пожирает. Если его не усмирить – это конец."
                                 </TextBlock>
@@ -232,10 +265,34 @@
                         <ImageBrush ImageSource="Img/zad5.jpg"/>
                     </Border.Background>
                     <Grid>
+                        <Image x:Name="img5" Source="Img/Oedipus.jpg" Margin="391,188,529,255" >
+                            <Image.Triggers>
+                                <EventTrigger RoutedEvent="Image.MouseEnter">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation 
+                                                To="50,50,50,150" 
+                                                Duration="0:0:0.1" 
+                                                Storyboard.TargetProperty="Margin"
+                                            />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="Image.MouseLeave">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation 
+                                                Duration="0:0:0.1" 
+                                                Storyboard.TargetProperty="Margin"
+                                            />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Image.Triggers>
+                        </Image>
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="8">
                             <StackPanel Margin="5">
-                                <Image x:Name="img5" Visibility="Collapsed" Height="200" Width="300" Source="Img/Oedipus.jpg" >
-                                </Image>
+
                                 <TextBlock x:Name="tb5">
                                 Вы заходите в пятую комнату. Голос спрашивает у вас: "Кто ходит на четырёх ногах утром, на двух днём и на трёх ночью?"
                                 </TextBlock>
@@ -268,7 +325,6 @@
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="8">
                             <StackPanel Margin="5">
                                 <TextBlock x:Name="tb6">
-                                    
                                 </TextBlock>
                                 <TextBox x:Name="textBox6" Margin="0,5,0,5" Visibility="Collapsed" FontFamily="Monotype Corsiva" FontSize="18"/>
                                 <Button x:Name="otv6" Visibility="Collapsed" HorizontalAlignment="Center" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv6_Click">

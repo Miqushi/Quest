@@ -18,22 +18,6 @@ namespace Quest
         {
             Cursor = Cursors.Arrow;
         }
-        private void home_MouseEnter(object sender, MouseEventArgs e)
-        {
-            Cursor = Cursors.Hand;
-        }
-        private void home_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Cursor = Cursors.Arrow;
-        }
-        private void help_MouseEnter(object sender, MouseEventArgs e)
-        {
-            Cursor = Cursors.Hand;
-        }
-        private void help_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Cursor = Cursors.Arrow;
-        }
         MainWindow main = new MainWindow();
         public void Damage()
         {
@@ -114,11 +98,6 @@ namespace Quest
             {
                 Cursor = Cursors.Arrow;
             }
-        }
-
-        private void Image_MouseEnter(object sender, MouseEventArgs e)
-        {
-
         }
     }
 }

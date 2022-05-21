@@ -13,22 +13,6 @@ namespace Quest
             InitializeComponent();
         }
         MainWindow main = new MainWindow();
-        private void home_MouseEnter(object sender, MouseEventArgs e)
-        {
-            Cursor = Cursors.Hand;
-        }
-        private void home_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Cursor = Cursors.Arrow;
-        }
-        private void help_MouseEnter(object sender, MouseEventArgs e)
-        {
-            Cursor = Cursors.Hand;
-        }
-        private void help_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Cursor = Cursors.Arrow;
-        }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Properties.Settings.Default.Save();
@@ -93,7 +77,6 @@ namespace Quest
                 tc.SelectedIndex = 1;
             }
         }
-
         private void Help(object sender, MouseButtonEventArgs e)
         {
             switch (tc.SelectedIndex)
@@ -207,7 +190,6 @@ namespace Quest
             if (otvet == "огонь")
             {
                 tb4.Text = Properties.Resources.riddle4;
-                img4.Visibility = Visibility.Visible;
                 textBox4.Visibility = Visibility.Collapsed;
                 otv4.Visibility = Visibility.Collapsed;
                 lvl += 1;
@@ -227,7 +209,6 @@ namespace Quest
             if (otvet == "эдип" || otvet == "человек")
             {
                 tb5.Text = Properties.Resources.riddle5;
-                img5.Visibility = Visibility.Visible;
                 textBox5.Visibility = Visibility.Collapsed;
                 otv5.Visibility = Visibility.Collapsed;
                 lvl += 1;
@@ -256,7 +237,6 @@ namespace Quest
                 Damage();
             }
         }
-
         private void next_Click(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.YearCount++;
