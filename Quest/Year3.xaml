@@ -29,7 +29,7 @@
             <ToolBar.Background>
                 <ImageBrush ImageSource="Img/bar.jpg"/>
             </ToolBar.Background>
-            <Image x:Name="home" Source="Img/back.png" Margin="2" ToolTip="Вернуться в главную комнату"/>
+            <Image x:Name="home" Source="Img/back.png" Margin="2" ToolTip="Вернуться в главную комнату" MouseDown="Back"/>
             <Image x:Name="help" Source="Img/help.png" Margin="2" ToolTip="Ответ на загадку"/>
             <Image x:Name="hp1" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp2" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
@@ -70,7 +70,15 @@
                         <ImageBrush ImageSource="Img/zad1_y3.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="caesar" Source="Img/House.jpeg" Margin="600,200,300,300" >
+                        <Image Source="Img/Сaesar.png" Margin="599,182,257,349" RenderTransformOrigin="0.5,0.5" Cursor="Arrow">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-1.759"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
                             <Image.Triggers>
                                 <EventTrigger RoutedEvent="Image.MouseEnter">
                                     <BeginStoryboard>
@@ -120,6 +128,31 @@
                         <ImageBrush ImageSource="Img/zad2_y3.jpg"/>
                     </Border.Background>
                     <Grid>
+                        <Image Source="Img/book.png" Margin="567,406,334,107" Cursor="Arrow">
+                            <Image.Triggers>
+                                <EventTrigger RoutedEvent="Image.MouseEnter">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation 
+                                                To="100" 
+                                                Duration="0:0:0.1" 
+                                                Storyboard.TargetProperty="Margin"
+                                            />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="Image.MouseLeave">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation 
+                                                Duration="0:0:0.1" 
+                                                Storyboard.TargetProperty="Margin"
+                                            />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Image.Triggers>
+                        </Image>
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
                             <Border.Effect>
                                 <DropShadowEffect BlurRadius="10" Color="#FFC973" ShadowDepth="0"></DropShadowEffect>
@@ -137,10 +170,10 @@
                 </Border>
             </TabItem>
             <TabItem Header="3">
-                
+
             </TabItem>
             <TabItem Header="4">
-                
+
             </TabItem>
             <TabItem Header="nextFloor">
 
