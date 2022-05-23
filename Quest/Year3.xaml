@@ -48,7 +48,7 @@
                         <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
                             <StackPanel Margin="5">
                                 <TextBlock>
-                                Вы поднимаетесь на третий этаж и видите перед собой 4 двери. Голос говорит Вам: "0"
+                                Вы поднимаетесь на третий этаж и видите перед собой 4 двери. Голос говорит Вам: "Это этаж шифров."
                                 </TextBlock>
                             </StackPanel>
                             <Border.Effect>
@@ -170,10 +170,103 @@
                 </Border>
             </TabItem>
             <TabItem Header="3">
-
+                <Border CornerRadius="5" Margin="2,0,2,5">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
+                    </Border.Effect>
+                    <Border.Background>
+                        <ImageBrush ImageSource="Img/zad3_y3.jpg"/>
+                    </Border.Background>
+                    <Grid>
+                        <TextBlock Margin="62,93,459,415" RenderTransformOrigin="0.5,0.5">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="5.399"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                            ---- .. ..-. .-. / .-- .. ...- . -. . .-. .-
+                            <TextBlock.Triggers>
+                                <EventTrigger RoutedEvent="TextBlock.MouseEnter">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                To="40"
+                                                Duration="0:0:0.1"
+                                                Storyboard.TargetProperty="FontSize"
+                                            />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="TextBlock.MouseLeave">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                Duration="0:0:0.1"
+                                                Storyboard.TargetProperty="FontSize"
+                                            />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </TextBlock.Triggers>
+                        </TextBlock>
+                        <TextBlock Text=".--. --- ... .-.. . -.. -. .. .--- / ---- .. ..-. .-." Margin="34,309,415,200" RenderTransformOrigin="0.5,0.5">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="0.121"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                            <TextBlock.Triggers>
+                                <EventTrigger RoutedEvent="TextBlock.MouseEnter">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                To="40"
+                                                Duration="0:0:0.1"
+                                                Storyboard.TargetProperty="FontSize"
+                                            />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="TextBlock.MouseLeave">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                Duration="0:0:0.1"
+                                                Storyboard.TargetProperty="FontSize"
+                                            />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </TextBlock.Triggers>
+                        </TextBlock>
+                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="10" Color="#FFC973" ShadowDepth="0"></DropShadowEffect>
+                            </Border.Effect>
+                            <Border.Background>
+                                <ImageBrush ImageSource="Img/fon.jpg"/>
+                            </Border.Background>
+                            <StackPanel Margin="5">
+                                <TextBlock>
+                                    Вы заходите в третий кабинет. На стене нацарапаны какие-то символы.
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Border>
             </TabItem>
             <TabItem Header="4">
-
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="Img/House.jpeg"/>
+                    </Grid.Background>
+                </Grid>
             </TabItem>
             <TabItem Header="nextFloor">
 

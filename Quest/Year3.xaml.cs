@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Media;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
@@ -84,7 +85,6 @@ namespace Quest
         private void hall_MouseMove(object sender, MouseEventArgs e)
         {
             Point p = e.GetPosition(this);
-
             if ((p.X > 110 && p.X < 165) && (p.Y > 221 && p.Y < 485) ||
             (p.X > 200 && p.X < 230) && (p.Y > 212 && p.Y < 458) ||
             (p.X > 290 && p.X < 313) && (p.Y > 272 && p.Y < 419) ||
