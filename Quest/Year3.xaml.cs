@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Media;
 using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media.Animation;
 
 namespace Quest
 {
@@ -45,12 +43,10 @@ namespace Quest
         {
             tc.SelectedIndex = 0;
         }
-
-        private void Help(object sender, MouseButtonEventArgs e)
+        private void help_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            MessageBox.Show("На этом этаже - без подсказок", "Подсказки");
         }
-
         private void Window_Closed(object sender, EventArgs e)
         {
             Properties.Settings.Default.Save();
@@ -99,5 +95,48 @@ namespace Quest
                 Cursor = Cursors.Arrow;
             }
         }
+        private void Riddle5()
+        {
+            string otvet = textBox5.Text.Trim().ToLower();
+            if (otvet == "граммофон")
+            {
+                textBlock5.Text = "Это правильный ответ и вы проходите дальше";
+                textBox5.Visibility = Visibility.Collapsed;
+                otv5.Visibility = Visibility.Collapsed;
+                next.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Damage();
+            }
+        }
+        private void otv5_Click(object sender, RoutedEventArgs e)
+        {
+            Riddle5();
+        }
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (tc.SelectedIndex)
+            {
+                case 5:
+                    if (e.Key == Key.Enter)
+                    {
+                        Riddle5();
+                    }
+                    break;
+
+            }
+        }
+        private void next_Click(object sender, RoutedEventArgs e)
+        {
+            if (Properties.Settings.Default.YearCount == 2)
+            {
+                Properties.Settings.Default.YearCount++;
+            }
+            main.Show();
+            Close();
+        }
+
+        
     }
 }

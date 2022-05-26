@@ -23,6 +23,30 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <Style x:Key="Content">
+            <Setter Property="Border.Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Border.Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="Img/fon.jpg"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Border.CornerRadius" Value="10"/>
+            <Setter Property="Border.Margin" Value="8"/>
+            <Setter Property="Border.VerticalAlignment" Value="Bottom"/>
+        </Style>
+        <Style x:Key="BackBorder">
+            <Setter Property="Border.Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Border.Margin" Value="2,0,2,5"/>
+            <Setter Property="Border.CornerRadius" Value="5"/>
+        </Style>
     </Window.Resources>
     <Grid x:Name="basis" Background="Black">
         <ToolBar x:Name="toolBar" Margin="4" VerticalAlignment="Top" Height="40" Panel.ZIndex="1">
@@ -37,21 +61,12 @@
         </ToolBar>
         <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" >
             <TabItem Header="-1">
-                <Border CornerRadius="5" Margin="2,0,2,5">
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
-                    </Border.Effect>
+                <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
                         <ImageBrush ImageSource="Img/outdoor.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="10" Color="#FFC973" ShadowDepth="0"></DropShadowEffect>
-                            </Border.Effect>
-                            <Border.Background>
-                                <ImageBrush ImageSource="Img/fon.jpg"/>
-                            </Border.Background>
+                        <Border Style="{StaticResource Content}">
                             <StackPanel Margin="5,5,5,0">
                                 <TextBlock>
                                 Вы начинаете свое путешествие. После долгого блуждания по лесу вы встречаете одиноко стоящее здание. Вы решаете подйти к нему и видите табло УО "БГАЭК". На двери весит замок, а рядом надпись: "Код для замка - дата появления этого места."
@@ -73,40 +88,26 @@
                 </Border>
             </TabItem>
             <TabItem Header="0" x:Name="tabItemHall" MouseDown="tabItemHall_MouseDown">
-                <Border x:Name="hall" CornerRadius="5" Margin="2,0,2,5" MouseMove="hall_MouseMove" MouseLeave="hall_MouseLeave">
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
-                    </Border.Effect>
+                <Border x:Name="hall" Style="{StaticResource BackBorder}" MouseMove="hall_MouseMove" MouseLeave="hall_MouseLeave">
                     <Border.Background>
                         <ImageBrush ImageSource="Img/hall.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="8">
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="0"/>
-                            </Border.Effect>
-                            <Border.Background>
-                                <ImageBrush ImageSource="Img/fon.jpg"/>
-                            </Border.Background>
-                            <StackPanel Margin="5">
-                                <TextBlock>
+                        <Border Style="{StaticResource Content}" >
+                            <TextBlock Margin="5">
                                 Вы заходите внутрь и вдруг дверь сзади захлопывается. Вы слышите голос: "Теперь, чтобы выбраться отсюда, тебе надо пройти 4 этажа с загадками и найти ключ." Вы видете перед собой шесть дверей, шестая ведет на другой этаж, но она закрыта.
-                                </TextBlock>
-                            </StackPanel>
+                            </TextBlock>
                         </Border>
                     </Grid>
                 </Border>
             </TabItem>
             <TabItem Header="1">
-                <Border CornerRadius="5" Margin="2,0,2,5">
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
-                    </Border.Effect>
+                <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
                         <ImageBrush ImageSource="Img/zad1.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="8">
+                        <Border Style="{StaticResource Content}">
                             <StackPanel Margin="5">
                                 <Image x:Name="img1" Visibility="Collapsed" Height="200" Width="300" Source="Img/olive.png" MouseDown="img1_MouseDown"/>
                                 <TextBlock x:Name="tbIst">
@@ -120,26 +121,17 @@
                                     </Button.Background>
                                 </Button>
                             </StackPanel>
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="0"/>
-                            </Border.Effect>
-                            <Border.Background>
-                                <ImageBrush ImageSource="Img/fon.jpg"/>
-                            </Border.Background>
                         </Border>
                     </Grid>
                 </Border>
             </TabItem>
-            <TabItem Header="2" >
-                <Border CornerRadius="5" Margin="2,0,2,5">
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
-                    </Border.Effect>
+            <TabItem Header="2">
+                <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
                         <ImageBrush ImageSource="Img/zad2.jpg"></ImageBrush>
                     </Border.Background>
                     <Grid>
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="8">
+                        <Border Style="{StaticResource Content}">
                             <StackPanel Margin="5,5,5,0">
                                 <Image x:Name="img2" Visibility="Collapsed" Height="200" Width="200" Source="Img/tetra.png" MouseDown="img2_MouseDown">
                                 </Image>
@@ -158,26 +150,17 @@
                                     <ListBoxItem>33</ListBoxItem>
                                 </ListBox>
                             </StackPanel>
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="0"></DropShadowEffect>
-                            </Border.Effect>
-                            <Border.Background>
-                                <ImageBrush ImageSource="Img/fon.jpg"></ImageBrush>
-                            </Border.Background>
                         </Border>
                     </Grid>
                 </Border>
             </TabItem>
             <TabItem Header="3" >
-                <Border CornerRadius="5" Margin="2,0,2,5">
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
-                    </Border.Effect>
+                <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
                         <ImageBrush ImageSource="Img/zad3.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="8">
+                        <Border Style="{StaticResource Content}">
                             <StackPanel Margin="5">
                                 <Image x:Name="img3" Visibility="Collapsed" Height="200" Width="300" Source="Img/list.png" MouseDown="img3_MouseDown"/>
                                 <TextBlock x:Name="tb3" ToolTip="Слово или словосочетание, образованное путём перестановки букв, составляющих другое слово (пила-липа).">
@@ -190,32 +173,31 @@
                                     </Button.Background>
                                 </Button>
                             </StackPanel>
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="0"/>
-                            </Border.Effect>
-                            <Border.Background>
-                                <ImageBrush ImageSource="Img/fon.jpg"/>
-                            </Border.Background>
                         </Border>
                     </Grid>
                 </Border>
             </TabItem>
             <TabItem Header="4">
-                <Border CornerRadius="5" Margin="2,0,2,5">
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
-                    </Border.Effect>
+                <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
                         <ImageBrush ImageSource="Img/zad4.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="img4" Source="Img/prometheus.jpg" Margin="772,196,132,259">
+                        <Image x:Name="img4" Source="Img/prometheus.jpg" Margin="293,190,611,265" RenderTransformOrigin="0.5,0.5" Cursor="Arrow">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="2.658"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
                             <Image.Triggers>
                                 <EventTrigger RoutedEvent="Image.MouseEnter">
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <ThicknessAnimation 
-                                                To="600,50,100,200" 
+                                                To="50,100,250,150" 
                                                 Duration="0:0:0.1" 
                                                 Storyboard.TargetProperty="Margin"
                                             />
@@ -234,7 +216,7 @@
                                 </EventTrigger>
                             </Image.Triggers>
                         </Image>
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="8">
+                        <Border Style="{StaticResource Content}">
                             <StackPanel Margin="5">
                                 <TextBlock x:Name="tb4">
                                 Вы заходите в четвертую комнату. Голос говорит очередную загадку: "Ветер его колышет и возбуждает. Все, что видит, он пожирает. Если его не усмирить – это конец."
@@ -246,21 +228,12 @@
                                     </Button.Background>
                                 </Button>
                             </StackPanel>
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="0"></DropShadowEffect>
-                            </Border.Effect>
-                            <Border.Background>
-                                <ImageBrush ImageSource="Img/fon.jpg"></ImageBrush>
-                            </Border.Background>
                         </Border>
                     </Grid>
                 </Border>
             </TabItem>
             <TabItem Header="5">
-                <Border CornerRadius="5" Margin="2,0,2,5">
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
-                    </Border.Effect>
+                <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
                         <ImageBrush ImageSource="Img/zad5.jpg"/>
                     </Border.Background>
@@ -290,9 +263,8 @@
                                 </EventTrigger>
                             </Image.Triggers>
                         </Image>
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="8">
+                        <Border Style="{StaticResource Content}">
                             <StackPanel Margin="5">
-
                                 <TextBlock x:Name="tb5">
                                 Вы заходите в пятую комнату. Голос спрашивает у вас: "Кто ходит на четырёх ногах утром, на двух днём и на трёх ночью?"
                                 </TextBlock>
@@ -303,26 +275,17 @@
                                     </Button.Background>
                                 </Button>
                             </StackPanel>
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="0"/>
-                            </Border.Effect>
-                            <Border.Background>
-                                <ImageBrush ImageSource="Img/fon.jpg"/>
-                            </Border.Background>
                         </Border>
                     </Grid>
                 </Border>
             </TabItem>
             <TabItem Header="2 этаж" GotFocus="TabItem_GotFocus">
-                <Border CornerRadius="5" Margin="2,0,2,5">
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
-                    </Border.Effect>
+                <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
                         <ImageBrush ImageSource="Img/House.jpeg"/>
                     </Border.Background>
                     <Grid>
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="8">
+                        <Border Style="{StaticResource Content}">
                             <StackPanel Margin="5">
                                 <TextBlock x:Name="tb6">
                                 </TextBlock>
@@ -338,12 +301,6 @@
                                     </Button.Background>
                                 </Button>
                             </StackPanel>
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="0"/>
-                            </Border.Effect>
-                            <Border.Background>
-                                <ImageBrush ImageSource="Img/fon.jpg"/>
-                            </Border.Background>
                         </Border>
                     </Grid>
                 </Border>

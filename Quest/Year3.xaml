@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Quest"
         mc:Ignorable="d"
-        Title="Этаж 3" MinHeight="450" Height="650" Width="1000" MinWidth="650"  WindowStartupLocation="CenterScreen" Topmost="True" Icon="/icon.ico" Closed="Window_Closed">
+        Title="Этаж 3" MinHeight="450" Height="650" Width="1000" MinWidth="650"  WindowStartupLocation="CenterScreen" Topmost="True" Icon="/icon.ico" Closed="Window_Closed" KeyDown="Window_KeyDown">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Monotype Corsiva"/>
@@ -23,6 +23,30 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <Style x:Key="Content">
+            <Setter Property="Border.Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Border.Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="Img/fon.jpg"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Border.CornerRadius" Value="10"/>
+            <Setter Property="Border.Margin" Value="8"/>
+            <Setter Property="Border.VerticalAlignment" Value="Bottom"/>
+        </Style>
+        <Style x:Key="BackBorder">
+            <Setter Property="Border.Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Border.Margin" Value="2,0,2,5"/>
+            <Setter Property="Border.CornerRadius" Value="5"/>
+        </Style>
     </Window.Resources>
     <Grid Background="Black">
         <ToolBar x:Name="toolBar" Margin="4" VerticalAlignment="Top" Height="40" Panel.ZIndex="1">
@@ -30,42 +54,26 @@
                 <ImageBrush ImageSource="Img/bar.jpg"/>
             </ToolBar.Background>
             <Image x:Name="home" Source="Img/back.png" Margin="2" ToolTip="Вернуться в главную комнату" MouseDown="Back"/>
-            <Image x:Name="help" Source="Img/help.png" Margin="2" ToolTip="Ответ на загадку"/>
+            <Image x:Name="help" Source="Img/help.png" Margin="2" ToolTip="Ответ на загадку" MouseDown="help_MouseDown" />
             <Image x:Name="hp1" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp2" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
             <Image x:Name="hp3" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
         </ToolBar>
         <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" >
             <TabItem Header="0" x:Name="tabItemHally3" MouseDown="tabItemHally3_MouseDown">
-                <Border x:Name="hall" CornerRadius="5" Margin="2,0,2,5" MouseMove="hall_MouseMove" MouseLeave="hall_MouseLeave">
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
-                    </Border.Effect>
+                <Border x:Name="hall"  MouseMove="hall_MouseMove" MouseLeave="hall_MouseLeave" Style="{StaticResource BackBorder}">
                     <Border.Background>
                         <ImageBrush ImageSource="Img/y3_hall.jpg"/>
                     </Border.Background>
-                    <Grid>
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
-                            <StackPanel Margin="5">
-                                <TextBlock>
+                    <Border Style="{StaticResource Content}">
+                        <TextBlock Margin="5">
                                 Вы поднимаетесь на третий этаж и видите перед собой 4 двери. Голос говорит Вам: "Это этаж шифров."
-                                </TextBlock>
-                            </StackPanel>
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="0"/>
-                            </Border.Effect>
-                            <Border.Background>
-                                <ImageBrush ImageSource="Img/fon.jpg"/>
-                            </Border.Background>
-                        </Border>
-                    </Grid>
+                        </TextBlock>
+                    </Border>
                 </Border>
             </TabItem>
             <TabItem Header="1">
-                <Border CornerRadius="10" Margin="2,0,2,5">
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
-                    </Border.Effect>
+                <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
                         <ImageBrush ImageSource="Img/zad1_y3.jpg"/>
                     </Border.Background>
@@ -103,27 +111,16 @@
                                 </EventTrigger>
                             </Image.Triggers>
                         </Image>
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
-                            <StackPanel Margin="5">
-                                <TextBlock Margin="1" TextWrapping="Wrap" FontFamily="Monotype Corsiva" FontSize="20" >
+                        <Border Style="{StaticResource Content}">
+                            <TextBlock Margin="5">
                                     Вы заходите в кабинет. На доске висел лист.
-                                </TextBlock>
-                            </StackPanel>
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="1"></DropShadowEffect>
-                            </Border.Effect>
-                            <Border.Background>
-                                <ImageBrush ImageSource="Img/fon.jpg"></ImageBrush>
-                            </Border.Background>
+                            </TextBlock>
                         </Border>
                     </Grid>
                 </Border>
             </TabItem>
             <TabItem Header="2">
-                <Border CornerRadius="5" Margin="2,0,2,5">
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
-                    </Border.Effect>
+                <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
                         <ImageBrush ImageSource="Img/zad2_y3.jpg"/>
                     </Border.Background>
@@ -153,27 +150,16 @@
                                 </EventTrigger>
                             </Image.Triggers>
                         </Image>
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="10" Color="#FFC973" ShadowDepth="0"></DropShadowEffect>
-                            </Border.Effect>
-                            <Border.Background>
-                                <ImageBrush ImageSource="Img/fon.jpg"/>
-                            </Border.Background>
-                            <StackPanel Margin="5">
-                                <TextBlock>
+                        <Border Style="{StaticResource Content}">
+                            <TextBlock Margin="5">
                                     Вы заходите во второй кабинет. На столе лежит неизвестная книга, а на ней наклеена записка.
-                                </TextBlock>
-                            </StackPanel>
+                            </TextBlock>
                         </Border>
                     </Grid>
                 </Border>
             </TabItem>
             <TabItem Header="3">
-                <Border CornerRadius="5" Margin="2,0,2,5">
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
-                    </Border.Effect>
+                <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
                         <ImageBrush ImageSource="Img/zad3_y3.jpg"/>
                     </Border.Background>
@@ -187,7 +173,7 @@
                                     <TranslateTransform/>
                                 </TransformGroup>
                             </TextBlock.RenderTransform>
-                            ---- .. ..-. .-. / .-- .. ...- . -. . .-. .-
+                            ---- .. ..-. .-. ..- ..-- --.- .. . / - .- -... .-.. .. -.-. -.--
                             <TextBlock.Triggers>
                                 <EventTrigger RoutedEvent="TextBlock.MouseEnter">
                                     <BeginStoryboard>
@@ -212,7 +198,7 @@
                                 </EventTrigger>
                             </TextBlock.Triggers>
                         </TextBlock>
-                        <TextBlock Text=".--. --- ... .-.. . -.. -. .. .--- / ---- .. ..-. .-." Margin="34,309,415,200" RenderTransformOrigin="0.5,0.5">
+                        <TextBlock Text="- .-. .. ... . -- ..- ... .-" Margin="34,309,415,200" RenderTransformOrigin="0.5,0.5">
                             <TextBlock.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
@@ -245,31 +231,50 @@
                                 </EventTrigger>
                             </TextBlock.Triggers>
                         </TextBlock>
-                        <Border CornerRadius="10" VerticalAlignment="Bottom" Margin="10">
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="10" Color="#FFC973" ShadowDepth="0"></DropShadowEffect>
-                            </Border.Effect>
-                            <Border.Background>
-                                <ImageBrush ImageSource="Img/fon.jpg"/>
-                            </Border.Background>
-                            <StackPanel Margin="5">
-                                <TextBlock>
+                        <Border Style="{StaticResource Content}">
+                            <TextBlock Margin="5">
                                     Вы заходите в третий кабинет. На стене нацарапаны какие-то символы.
-                                </TextBlock>
-                            </StackPanel>
+                            </TextBlock>
                         </Border>
                     </Grid>
                 </Border>
             </TabItem>
             <TabItem Header="4">
-                <Grid>
-                    <Grid.Background>
-                        <ImageBrush ImageSource="Img/House.jpeg"/>
-                    </Grid.Background>
-                </Grid>
+                <Border Style="{StaticResource BackBorder}">
+                    <Border.Background>
+                        <ImageBrush ImageSource="Img/zad4_y3.jpg"/>
+                    </Border.Background>
+                    <Border Style="{StaticResource Content}">
+                        <TextBlock Margin="5">
+                        Вы заходите во четвертый кабинет. Голос говорит вам зашифрованный текст: Цыунбвзъ, шжпжя, йвщщбвукфб – в пщжсч ъйыов ив ьлфб.
+                        </TextBlock>
+                    </Border>
+                </Border>
             </TabItem>
             <TabItem Header="nextFloor">
-
+                <Border Style="{StaticResource BackBorder}">
+                    <Border.Background>
+                        <ImageBrush ImageSource="Img/House.jpeg"/>
+                    </Border.Background>
+                    <Border Style="{StaticResource Content}">
+                        <StackPanel Margin="5">
+                            <TextBlock x:Name="textBlock5">
+                            Введите ответ на загадку из предыдущей комнаты, чтобы пройти дальше
+                            </TextBlock>
+                            <TextBox x:Name="textBox5" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18" Cursor="IBeam"/>
+                            <Button x:Name="otv5" HorizontalAlignment="Center" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Cursor="Hand" Click="otv5_Click">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="Img/button.png"/>
+                                </Button.Background>
+                            </Button>
+                            <Button x:Name="next" HorizontalAlignment="Center" Content="Дальше" Visibility="Collapsed" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Cursor="Hand" Click="next_Click">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="Img/button.png"/>
+                                </Button.Background>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                </Border>
             </TabItem>
         </TabControl>
     </Grid>

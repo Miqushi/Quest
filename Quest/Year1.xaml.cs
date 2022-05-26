@@ -239,7 +239,10 @@ namespace Quest
         }
         private void next_Click(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.YearCount++;
+            if(Properties.Settings.Default.YearCount == 0)
+            {
+                Properties.Settings.Default.YearCount++;
+            }
             main.Show();
             Close();
         }
