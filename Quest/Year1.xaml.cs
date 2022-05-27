@@ -305,8 +305,10 @@ namespace Quest
             MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
             double[] door1 = new double[4] { 0.6842532467532468, 0.7451298701298701, 0.3994778067885117, 0.8133159268929504 };
             double[] door2 = new double[4] { 0.5332792207792208, 0.549512987012987, 0.4843342036553525, 0.7428198433420366 };
-            double[] door3 = new double[4];
-
+            double[] door3 = new double[4] { 0.4594155844155844, 0.4805194805194805, 0.5169712793733681, 0.706266318537859 };
+            double[] door4 = new double[4] {0.4188311688311688,0.4342532467532468,0.5274151436031332,0.695822454308094 };
+            //985.6
+            //612.8
             if (p.X > basis.ActualWidth * door1[0] && p.X < basis.ActualWidth * door1[1] &&
                 p.Y > basis.ActualHeight * door1[2] && p.Y < basis.ActualHeight * door1[3])
             {
@@ -317,14 +319,18 @@ namespace Quest
             {
                 //tc.SelectedIndex = 3;
             }
-            //if ((p.X > 450 && p.X < 473) && (p.Y > 317 && p.Y < 432))
-            //{
-            //    tc.SelectedIndex = 4;
-            //}
-            //if ((p.X > 413 && p.X < 430) && (p.Y > 322 && p.Y < 422))
-            //{
-            //    tc.SelectedIndex = 5;
-            //}
+            if (p.X > basis.ActualWidth * door3[0] && p.X < basis.ActualWidth * door3[1] &&
+                p.Y > basis.ActualHeight * door3[2] && p.Y < basis.ActualHeight * door3[3])
+            {
+                //MessageBox.Show("yep");
+                //tc.SelectedIndex = 4;
+            }
+            if (p.X > basis.ActualWidth * door4[0] && p.X < basis.ActualWidth * door4[1] &&
+                p.Y > basis.ActualHeight * door4[2] && p.Y < basis.ActualHeight * door4[3])
+            {
+                MessageBox.Show("asd");
+                //tc.SelectedIndex = 5;
+            }
             //if ((p.X > 338 && p.X < 386) && (p.Y > 319 && p.Y < 418))
             //{
             //    tc.SelectedIndex = 6;
