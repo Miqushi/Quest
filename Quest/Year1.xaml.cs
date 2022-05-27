@@ -282,52 +282,57 @@ namespace Quest
         {
             Point p = e.GetPosition(this);
 
-            if ((p.X > 668 && p.X < 734) && (p.Y > 250 && p.Y < 500) ||
-            (p.X > 524 && p.X < 540) && (p.Y > 297 && p.Y < 450) ||
-            (p.X > 450 && p.X < 473) && (p.Y > 317 && p.Y < 432) ||
-            (p.X > 413 && p.X < 430) && (p.Y > 322 && p.Y < 422) ||
-            (p.X > 338 && p.X < 386) && (p.Y > 319 && p.Y < 418) ||
-            (p.X > 79 && p.X < 201) && (p.Y > 306 && p.Y < 460)
-            )
-            {
-                Cursor = Cursors.Hand;
-            }
-            else
-            {
-                Cursor = Cursors.Arrow;
-            }
+            //if ((p.X > 668 && p.X < 734) && (p.Y > 250 && p.Y < 500) ||
+            //(p.X > 524 && p.X < 540) && (p.Y > 297 && p.Y < 450) ||
+            //(p.X > 450 && p.X < 473) && (p.Y > 317 && p.Y < 432) ||
+            //(p.X > 413 && p.X < 430) && (p.Y > 322 && p.Y < 422) ||
+            //(p.X > 338 && p.X < 386) && (p.Y > 319 && p.Y < 418) ||
+            //(p.X > 79 && p.X < 201) && (p.Y > 306 && p.Y < 460)
+            //)
+            //{
+            //    Cursor = Cursors.Hand;
+            //}
+            //else
+            //{
+            //    Cursor = Cursors.Arrow;
+            //}
 
         }
 
         private void tabItemHall_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Point p = e.GetPosition(this);
-            //MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
+            MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
+            double[] door1 = new double[4] { 0.6842532467532468, 0.7451298701298701, 0.3994778067885117, 0.8133159268929504 };
+            double[] door2 = new double[4] { 0.5332792207792208, 0.549512987012987, 0.4843342036553525, 0.7428198433420366 };
+            double[] door3 = new double[4];
 
-            if ((p.X > 668 && p.X < 734) && (p.Y > 250 && p.Y < 500))
+            if (p.X > basis.ActualWidth * door1[0] && p.X < basis.ActualWidth * door1[1] &&
+                p.Y > basis.ActualHeight * door1[2] && p.Y < basis.ActualHeight * door1[3])
             {
-                tc.SelectedIndex = 2;
+                //tc.SelectedIndex = 2;
             }
-            if ((p.X > 524 && p.X < 540) && (p.Y > 297 && p.Y < 450))
+            if (p.X > basis.ActualWidth * door2[0] && p.X < basis.ActualWidth * door2[1] &&
+                p.Y > basis.ActualHeight * door2[2] && p.Y < basis.ActualHeight * door2[3])
             {
-                tc.SelectedIndex = 3;
+                //tc.SelectedIndex = 3;
             }
-            if ((p.X > 450 && p.X < 473) && (p.Y > 317 && p.Y < 432))
-            {
-                tc.SelectedIndex = 4;
-            }
-            if ((p.X > 413 && p.X < 430) && (p.Y > 322 && p.Y < 422))
-            {
-                tc.SelectedIndex = 5;
-            }
-            if ((p.X > 338 && p.X < 386) && (p.Y > 319 && p.Y < 418))
-            {
-                tc.SelectedIndex = 6;
-            }
-            if ((p.X > 79 && p.X < 201) && (p.Y > 306 && p.Y < 460))
-            {
-                tc.SelectedIndex = 7;
-            }
+            //if ((p.X > 450 && p.X < 473) && (p.Y > 317 && p.Y < 432))
+            //{
+            //    tc.SelectedIndex = 4;
+            //}
+            //if ((p.X > 413 && p.X < 430) && (p.Y > 322 && p.Y < 422))
+            //{
+            //    tc.SelectedIndex = 5;
+            //}
+            //if ((p.X > 338 && p.X < 386) && (p.Y > 319 && p.Y < 418))
+            //{
+            //    tc.SelectedIndex = 6;
+            //}
+            //if ((p.X > 79 && p.X < 201) && (p.Y > 306 && p.Y < 460))
+            //{
+            //    tc.SelectedIndex = 7;
+            //}
 
         }
 
