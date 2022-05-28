@@ -48,7 +48,7 @@
             <Setter Property="Border.CornerRadius" Value="5"/>
         </Style>
     </Window.Resources>
-    <Grid Background="Black">
+    <Grid x:Name="basis" Background="Black">
         <ToolBar x:Name="toolBar" Margin="4" VerticalAlignment="Top" Height="40" Panel.ZIndex="1">
             <ToolBar.Background>
                 <ImageBrush ImageSource="Img/bar.jpg"/>

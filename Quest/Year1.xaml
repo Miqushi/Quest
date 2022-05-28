@@ -10,7 +10,7 @@
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Monotype Corsiva"/>
-            <Setter Property="FontSize" Value="19"/>
+            <Setter Property="FontSize" Value="20"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
         <Style TargetType="Image">
@@ -90,7 +90,7 @@
             <TabItem Header="0" x:Name="tabItemHall" MouseDown="tabItemHall_MouseDown">
                 <Border x:Name="hall" Style="{StaticResource BackBorder}" MouseMove="hall_MouseMove" MouseLeave="hall_MouseLeave">
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/hall.jpg"/>
+                        <ImageBrush ImageSource="Img/y1_hall.jpg"/>
                     </Border.Background>
                     <Grid>
                         <Border Style="{StaticResource Content}" >

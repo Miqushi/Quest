@@ -118,17 +118,17 @@ namespace Quest
         }
         private void img1_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("По легенде первое оливковое дерево подарила людям богиня Афина, когда выиграла свой спор с Посейдоном о том, кому быть покровителем Афин. В Греции считалось, что первое оливковое дерево возникло из копья богини Афины, которое она воткнула на Афинском Акрополе.", "Информация");
+            MessageBox.Show(Properties.Resources.img1, "Информация");
         }
 
         private void img2_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Тетраэдр является треугольной пирамидой при принятии любой из граней за основание. У тетраэдра 4 грани, 4 вершины и 6 рёбер. Тетраэдр, у которого все грани — равносторонние треугольники, называется правильным. Правильный тетраэдр является одним из пяти правильных многогранников.", "Информация");
+            MessageBox.Show(Properties.Resources.img2, "Информация");
         }
 
         private void img3_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Прародителем анаграммы однако считают поэта и учёного Ликофрона", "Информация");
+            MessageBox.Show(Properties.Resources.img3, "Информация");
         }
         private void Riddle1()
         {
@@ -239,7 +239,7 @@ namespace Quest
         }
         private void next_Click(object sender, RoutedEventArgs e)
         {
-            if(Properties.Settings.Default.YearCount == 0)
+            if (Properties.Settings.Default.YearCount == 0)
             {
                 Properties.Settings.Default.YearCount++;
             }
@@ -277,25 +277,38 @@ namespace Quest
                     break;
             }
         }
+        double[] door1 = new double[4] { 0.6843, 0.7451, 0.3995, 0.8133 };
+        double[] door2 = new double[4] { 0.5333, 0.5495, 0.4843, 0.7428 };
+        double[] door3 = new double[4] { 0.4594, 0.4805, 0.5170, 0.7063 };
+        double[] door4 = new double[4] { 0.4188, 0.4343, 0.5274, 0.6958 };
+        double[] door5 = new double[4] { 0.3389, 0.3876, 0.5140, 0.6805 };
+        double[] door6 = new double[4] { 0.0802, 0.2019, 0.49935, 0.7523 };
 
         private void hall_MouseMove(object sender, MouseEventArgs e)
         {
             Point p = e.GetPosition(this);
-
-            //if ((p.X > 668 && p.X < 734) && (p.Y > 250 && p.Y < 500) ||
-            //(p.X > 524 && p.X < 540) && (p.Y > 297 && p.Y < 450) ||
-            //(p.X > 450 && p.X < 473) && (p.Y > 317 && p.Y < 432) ||
-            //(p.X > 413 && p.X < 430) && (p.Y > 322 && p.Y < 422) ||
-            //(p.X > 338 && p.X < 386) && (p.Y > 319 && p.Y < 418) ||
-            //(p.X > 79 && p.X < 201) && (p.Y > 306 && p.Y < 460)
-            //)
-            //{
-            //    Cursor = Cursors.Hand;
-            //}
-            //else
-            //{
-            //    Cursor = Cursors.Arrow;
-            //}
+            double x = basis.ActualWidth;
+            double y = basis.ActualHeight;
+            if (p.X > x * door1[0] && p.X < x * door1[1] &&
+                p.Y > y * door1[2] && p.Y < y * door1[3] ||
+            p.X > x * door2[0] && p.X < x * door2[1] &&
+                p.Y > y * door2[2] && p.Y < y * door2[3] ||
+            p.X > x * door3[0] && p.X < x * door3[1] &&
+                p.Y > y * door3[2] && p.Y < y * door3[3] ||
+            p.X > x * door4[0] && p.X < x * door4[1] &&
+                p.Y > y * door4[2] && p.Y < y * door4[3] ||
+            p.X > x * door5[0] && p.X < x * door5[1] &&
+                p.Y > y * door5[2] && p.Y < y * door5[3] ||
+            p.X > x * door6[0] && p.X < x * door6[1] &&
+                p.Y > y * door6[2] && p.Y < y * door6[3]
+            )
+            {
+                Cursor = Cursors.Hand;
+            }
+            else
+            {
+                Cursor = Cursors.Arrow;
+            }
 
         }
 
@@ -303,43 +316,39 @@ namespace Quest
         {
             Point p = e.GetPosition(this);
             //MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
-            double[] door1 = new double[4] { 0.6842532467532468, 0.7451298701298701, 0.3994778067885117, 0.8133159268929504 };
-            double[] door2 = new double[4] { 0.5332792207792208, 0.549512987012987, 0.4843342036553525, 0.7428198433420366 };
-            double[] door3 = new double[4] { 0.4594155844155844, 0.4805194805194805, 0.5169712793733681, 0.706266318537859 };
-            double[] door4 = new double[4] { 0.4188311688311688, 0.4342532467532468, 0.5274151436031332, 0.695822454308094 };
-            double[] door5 = new double[4] { 0.3388798701298701, 0.3875811688311688, 0.5140339425587467, 0.6804830287206266 };
 
             //985.6
             //612.8
             if (p.X > basis.ActualWidth * door1[0] && p.X < basis.ActualWidth * door1[1] &&
                 p.Y > basis.ActualHeight * door1[2] && p.Y < basis.ActualHeight * door1[3])
             {
-                //tc.SelectedIndex = 2;
+                tc.SelectedIndex = 2;
             }
             if (p.X > basis.ActualWidth * door2[0] && p.X < basis.ActualWidth * door2[1] &&
                 p.Y > basis.ActualHeight * door2[2] && p.Y < basis.ActualHeight * door2[3])
             {
-                //tc.SelectedIndex = 3;
+                tc.SelectedIndex = 3;
             }
             if (p.X > basis.ActualWidth * door3[0] && p.X < basis.ActualWidth * door3[1] &&
                 p.Y > basis.ActualHeight * door3[2] && p.Y < basis.ActualHeight * door3[3])
             {
-                //tc.SelectedIndex = 4;
+                tc.SelectedIndex = 4;
             }
             if (p.X > basis.ActualWidth * door4[0] && p.X < basis.ActualWidth * door4[1] &&
                 p.Y > basis.ActualHeight * door4[2] && p.Y < basis.ActualHeight * door4[3])
             {
-                //tc.SelectedIndex = 5;
+                tc.SelectedIndex = 5;
             }
             if (p.X > basis.ActualWidth * door5[0] && p.X < basis.ActualWidth * door5[1] &&
                 p.Y > basis.ActualHeight * door5[2] && p.Y < basis.ActualHeight * door5[3])
             {
-                //tc.SelectedIndex = 6;
+                tc.SelectedIndex = 6;
             }
-            //if ((p.X > 79 && p.X < 201) && (p.Y > 306 && p.Y < 460))
-            //{
-            //    tc.SelectedIndex = 7;
-            //}
+            if (p.X > basis.ActualWidth * door6[0] && p.X < basis.ActualWidth * door6[1] &&
+                p.Y > basis.ActualHeight * door6[2] && p.Y < basis.ActualHeight * door6[3])
+            {
+                tc.SelectedIndex = 7;
+            }
 
         }
 
@@ -360,6 +369,6 @@ namespace Quest
         private void hall_MouseLeave(object sender, MouseEventArgs e)
         {
             Cursor = Cursors.Arrow;
-        } 
+        }
     }
 }

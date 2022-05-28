@@ -52,27 +52,43 @@ namespace Quest
             Properties.Settings.Default.Save();
             main.Show();
         }
+        double[] door1 = new double[4] { 0.1126, 0.1441, 0.3623, 0.7963 };
+        double[] door2 = new double[4] { 0.2039, 0.2334, 0.4259, 0.7507 };
+        double[] door3 = new double[4] { 0.2953, 0.3166, 0.4422, 0.6952 };
+        double[] door4 = new double[4] { 0.3521, 0.4200, 0.4439, 0.6665 };
+        double[] door5 = new double[4] { 0.6149, 0.7660, 0.4047, 0.7262 };
 
         private void tabItemHally3_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Point p = e.GetPosition(this);
-            if ((p.X > 110 && p.X < 165) && (p.Y > 221 && p.Y < 485))
+            //MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
+            double x = basis.ActualWidth;
+            double y = basis.ActualHeight;
+            //985.6
+            //612.8
+
+            if (p.X > x * door1[0] && p.X < x * door1[1] &&
+                p.Y > y * door1[2] && p.Y < y * door1[3])
             {
                 tc.SelectedIndex = 1;
             }
-            if ((p.X > 200 && p.X < 230) && (p.Y > 212 && p.Y < 458))
+            if (p.X > x * door2[0] && p.X < x * door2[1] &&
+                p.Y > y * door2[2] && p.Y < y * door2[3])
             {
                 tc.SelectedIndex = 2;
             }
-            if ((p.X > 290 && p.X < 313) && (p.Y > 272 && p.Y < 419))
+            if (p.X > x * door3[0] && p.X < x * door3[1] &&
+                p.Y > y * door3[2] && p.Y < y * door3[3])
             {
                 tc.SelectedIndex = 3;
             }
-            if ((p.X > 347 && p.X < 417) && (p.Y > 273 && p.Y < 413))
+            if (p.X > x * door4[0] && p.X < x * door4[1] &&
+                p.Y > y * door4[2] && p.Y < y * door4[3])
             {
                 tc.SelectedIndex = 4;
             }
-            if ((p.X > 597 && p.X < 751) && (p.Y > 249 && p.Y < 449))
+            if (p.X > x * door5[0] && p.X < x * door5[1] &&
+                p.Y > y * door5[2] && p.Y < y * door5[3])
             {
                 tc.SelectedIndex = 5;
             }
@@ -80,12 +96,14 @@ namespace Quest
 
         private void hall_MouseMove(object sender, MouseEventArgs e)
         {
+            double x = basis.ActualWidth;
+            double y = basis.ActualHeight;
             Point p = e.GetPosition(this);
-            if ((p.X > 110 && p.X < 165) && (p.Y > 221 && p.Y < 485) ||
-            (p.X > 200 && p.X < 230) && (p.Y > 212 && p.Y < 458) ||
-            (p.X > 290 && p.X < 313) && (p.Y > 272 && p.Y < 419) ||
-            (p.X > 347 && p.X < 417) && (p.Y > 273 && p.Y < 413) ||
-            (p.X > 597 && p.X < 751) && (p.Y > 249 && p.Y < 449)
+            if (p.X > x * door1[0] && p.X < x * door1[1] && p.Y > y * door1[2] && p.Y < y * door1[3] ||
+            p.X > x * door2[0] && p.X < x * door2[1] && p.Y > y * door2[2] && p.Y < y * door2[3] ||
+            p.X > x * door3[0] && p.X < x * door3[1] && p.Y > y * door3[2] && p.Y < y * door3[3] ||
+            p.X > x * door4[0] && p.X < x * door4[1] && p.Y > y * door4[2] && p.Y < y * door4[3] ||
+            p.X > x * door5[0] && p.X < x * door5[1] &&  p.Y > y * door5[2] && p.Y < y * door5[3]
             )
             {
                 Cursor = Cursors.Hand;
