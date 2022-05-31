@@ -319,33 +319,36 @@ namespace Quest
 
             //985.6
             //612.8
-            if (p.X > basis.ActualWidth * door1[0] && p.X < basis.ActualWidth * door1[1] &&
-                p.Y > basis.ActualHeight * door1[2] && p.Y < basis.ActualHeight * door1[3])
+
+            double x = basis.ActualWidth;
+            double y = basis.ActualHeight;
+            if (p.X > x * door1[0] && p.X < x * door1[1] &&
+                p.Y > y * door1[2] && p.Y < y * door1[3])
             {
                 tc.SelectedIndex = 2;
             }
-            if (p.X > basis.ActualWidth * door2[0] && p.X < basis.ActualWidth * door2[1] &&
-                p.Y > basis.ActualHeight * door2[2] && p.Y < basis.ActualHeight * door2[3])
+            if (p.X > x * door2[0] && p.X < x * door2[1] &&
+                p.Y > y * door2[2] && p.Y < y * door2[3])
             {
                 tc.SelectedIndex = 3;
             }
-            if (p.X > basis.ActualWidth * door3[0] && p.X < basis.ActualWidth * door3[1] &&
-                p.Y > basis.ActualHeight * door3[2] && p.Y < basis.ActualHeight * door3[3])
+            if (p.X > x * door3[0] && p.X < x * door3[1] &&
+                p.Y > y * door3[2] && p.Y < y * door3[3])
             {
                 tc.SelectedIndex = 4;
             }
-            if (p.X > basis.ActualWidth * door4[0] && p.X < basis.ActualWidth * door4[1] &&
-                p.Y > basis.ActualHeight * door4[2] && p.Y < basis.ActualHeight * door4[3])
+            if (p.X > x * door4[0] && p.X < x * door4[1] &&
+                p.Y > y * door4[2] && p.Y < y * door4[3])
             {
                 tc.SelectedIndex = 5;
             }
-            if (p.X > basis.ActualWidth * door5[0] && p.X < basis.ActualWidth * door5[1] &&
-                p.Y > basis.ActualHeight * door5[2] && p.Y < basis.ActualHeight * door5[3])
+            if (p.X > x * door5[0] && p.X < x * door5[1] &&
+                p.Y > y * door5[2] && p.Y < y * door5[3])
             {
                 tc.SelectedIndex = 6;
             }
-            if (p.X > basis.ActualWidth * door6[0] && p.X < basis.ActualWidth * door6[1] &&
-                p.Y > basis.ActualHeight * door6[2] && p.Y < basis.ActualHeight * door6[3])
+            if (p.X > x * door6[0] && p.X < x * door6[1] &&
+                p.Y > y * door6[2] && p.Y < y * door6[3])
             {
                 tc.SelectedIndex = 7;
             }
