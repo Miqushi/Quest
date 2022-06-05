@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Quest"
         mc:Ignorable="d"
-        Title="Этаж 1" MinHeight="450" Height="650" Width="1000" MinWidth="650" Closing="Window_Closing" WindowStartupLocation="CenterScreen" Icon="/icon.ico" KeyDown="Window_KeyDown" Loaded="Window_Loaded">
+        Title="Этаж 1" MinHeight="450" Height="720" Width="1280" MinWidth="650" Closing="Window_Closing" WindowStartupLocation="CenterScreen" Icon="/icon.ico" KeyDown="Window_KeyDown" Loaded="Window_Loaded">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Monotype Corsiva"/>
@@ -48,7 +48,7 @@
             <Setter Property="Border.CornerRadius" Value="5"/>
         </Style>
     </Window.Resources>
-    <Grid x:Name="basis" Background="Black">
+    <Grid x:Name="basis" Background="Black" >
         <ToolBar x:Name="toolBar" Margin="4" VerticalAlignment="Top" Height="40" Panel.ZIndex="1">
             <ToolBar.Background>
                 <ImageBrush ImageSource="Img/bar.jpg"></ImageBrush>
@@ -56,10 +56,10 @@
             <Image x:Name="home" Source="Img/back.png" Margin="2" MouseDown="Back" ToolTip="Вернуться в главную комнату"/>
             <Image x:Name="help" Source="Img/help.png" Margin="2" MouseDown="Help" ToolTip="Ответ на загадку"/>
             <Image x:Name="hp1" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
-            <Image x:Name="hp2" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
-            <Image x:Name="hp3" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
+            <Image x:Name="hp2" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
+            <Image x:Name="hp3" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
         </ToolBar>
-        <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" >
+        <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" MouseDown="tc_MouseDown" MouseMove="tc_MouseMove" >
             <TabItem Header="-1">
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
@@ -87,8 +87,8 @@
                     </Grid>
                 </Border>
             </TabItem>
-            <TabItem Header="0" x:Name="tabItemHall" MouseDown="tabItemHall_MouseDown">
-                <Border x:Name="hall" Style="{StaticResource BackBorder}" MouseMove="hall_MouseMove" MouseLeave="hall_MouseLeave">
+            <TabItem Header="0" x:Name="tabItemHall">
+                <Border x:Name="hall" Style="{StaticResource BackBorder}">
                     <Border.Background>
                         <ImageBrush ImageSource="Img/y1_hall.jpg"/>
                     </Border.Background>
@@ -107,15 +107,24 @@
                         <ImageBrush ImageSource="Img/zad1.jpg"/>
                     </Border.Background>
                     <Grid>
+                            <Image x:Name="img1" Visibility="Collapsed" Height="200" Width="300" Source="Img/olive.png" MouseDown="img1_MouseDown" Margin="54,63,632,316" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="2.273"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
                         <Border Style="{StaticResource Content}">
                             <StackPanel Margin="5">
-                                <Image x:Name="img1" Visibility="Collapsed" Height="200" Width="300" Source="Img/olive.png" MouseDown="img1_MouseDown"/>
                                 <TextBlock x:Name="tbIst">
                                 Вы заходите в первую комнату. Пройдя дальше, и, осмотревшись по сторонам, Вы вновь слышите голос: Китайские мастера боевых искусств говорили, что драка - для дураков, для умных - победа. А что, по их мнению - для мудрых?
                                 </TextBlock>
                                 <TextBox x:Name="textBox1" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18">
                                 </TextBox>
-                                <Button x:Name="otv1" HorizontalAlignment="Center" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="20" Click="Button_Click" Cursor="Hand">
+                                <Button x:Name="otv1" HorizontalAlignment="Center" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="20" Click="otv_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="Img/button.png"/>
                                     </Button.Background>
@@ -131,12 +140,11 @@
                         <ImageBrush ImageSource="Img/zad2.jpg"></ImageBrush>
                     </Border.Background>
                     <Grid>
+                        <Image x:Name="img2" Source="Img/tetra.png" Visibility="Collapsed" MouseDown="img2_MouseDown" Margin="90,91,692,288"/>
                         <Border Style="{StaticResource Content}">
                             <StackPanel Margin="5,5,5,0">
-                                <Image x:Name="img2" Visibility="Collapsed" Height="200" Width="200" Source="Img/tetra.png" MouseDown="img2_MouseDown">
-                                </Image>
                                 <TextBlock x:Name="tbMath">
-                                Вы заходите во вторую комнату. Вы видете сейф, а рядом записка с загадкой: У женщины спросили: "Сколько Вам лет?". Она ответила: "30, не считая суббот и воскресений". Сколько ей лет?
+                                Вы заходите во вторую комнату. Вы видете шкатулку, а рядом записка с загадкой: У женщины спросили: "Сколько Вам лет?". Она ответила: "30, не считая суббот и воскресений". Сколько ей лет?
                                 </TextBlock>
                                 <ListBox x:Name="lb4" SelectionChanged="lb4_SelectionChanged"  FontFamily="Monotype Corsiva" FontSize="18">
                                     <ListBox.ItemsPanel>
@@ -160,14 +168,23 @@
                         <ImageBrush ImageSource="Img/zad3.jpg"/>
                     </Border.Background>
                     <Grid>
+                        <Image x:Name="img3" Visibility="Collapsed" Source="Img/list.png" MouseDown="img3_MouseDown" Margin="72,160,733,272" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="3.818"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
                         <Border Style="{StaticResource Content}">
                             <StackPanel Margin="5">
-                                <Image x:Name="img3" Visibility="Collapsed" Height="200" Width="300" Source="Img/list.png" MouseDown="img3_MouseDown"/>
                                 <TextBlock x:Name="tb3" ToolTip="Слово или словосочетание, образованное путём перестановки букв, составляющих другое слово (пила-липа).">
                                 Вы заходите в третюю комнату. На столе лежит один листок. В нем анограмма: Читаем мы направо смело - Геометрическое тело. Прочтем же справа мы налево - Увидим разновидность древа. (ответ пишите слитно, через дефис)
                                 </TextBlock>
                                 <TextBox x:Name="textBox2" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18"/>
-                                <Button x:Name="otv3" HorizontalAlignment="Center"  Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv3_Click">
+                                <Button x:Name="otv3" HorizontalAlignment="Center"  Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="Img/button.png"/>
                                     </Button.Background>
@@ -183,15 +200,7 @@
                         <ImageBrush ImageSource="Img/zad4.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="img4" Source="Img/prometheus.jpg" Margin="293,190,611,265" RenderTransformOrigin="0.5,0.5" Cursor="Arrow">
-                            <Image.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform/>
-                                    <RotateTransform Angle="2.658"/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
-                            </Image.RenderTransform>
+                        <Image x:Name="img4" Source="Img/prometheus.jpg" Margin="617,200,562,323" RenderTransformOrigin="0.5,0.5" Cursor="Arrow">
                             <Image.Triggers>
                                 <EventTrigger RoutedEvent="Image.MouseEnter">
                                     <BeginStoryboard>
@@ -222,7 +231,7 @@
                                 Вы заходите в четвертую комнату. Голос говорит очередную загадку: "Ветер его колышет и возбуждает. Все, что видит, он пожирает. Если его не усмирить – это конец."
                                 </TextBlock>
                                 <TextBox x:Name="textBox4" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18"/>
-                                <Button x:Name="otv4" HorizontalAlignment="Center"  Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv4_Click">
+                                <Button x:Name="otv4" HorizontalAlignment="Center"  Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="Img/button.png"/>
                                     </Button.Background>
@@ -238,13 +247,13 @@
                         <ImageBrush ImageSource="Img/zad5.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="img5" Source="Img/Oedipus.jpg" Margin="391,188,529,255" >
+                        <Image x:Name="img5" Source="Img/Oedipus.jpg" Margin="241,194,679,249" >
                             <Image.Triggers>
                                 <EventTrigger RoutedEvent="Image.MouseEnter">
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <ThicknessAnimation 
-                                                To="50,50,50,150" 
+                                                To="50,50,350,150" 
                                                 Duration="0:0:0.1" 
                                                 Storyboard.TargetProperty="Margin"
                                             />
@@ -269,7 +278,7 @@
                                 Вы заходите в пятую комнату. Голос спрашивает у вас: "Кто ходит на четырёх ногах утром, на двух днём и на трёх ночью?"
                                 </TextBlock>
                                 <TextBox x:Name="textBox5" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18"/>
-                                <Button x:Name="otv5" HorizontalAlignment="Center" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv5_Click">
+                                <Button x:Name="otv5" HorizontalAlignment="Center" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="Img/button.png"/>
                                     </Button.Background>
@@ -279,7 +288,7 @@
                     </Grid>
                 </Border>
             </TabItem>
-            <TabItem Header="2 этаж" GotFocus="TabItem_GotFocus">
+            <TabItem Header="2 этаж" GotFocus="TabItem_GotFocus" HorizontalAlignment="Right" Margin="0,0,-2,-2" Width="51">
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
                         <ImageBrush ImageSource="Img/House.jpeg"/>
@@ -290,7 +299,7 @@
                                 <TextBlock x:Name="tb6">
                                 </TextBlock>
                                 <TextBox x:Name="textBox6" Margin="0,5,0,5" Visibility="Collapsed" FontFamily="Monotype Corsiva" FontSize="18"/>
-                                <Button x:Name="otv6" Visibility="Collapsed" HorizontalAlignment="Center" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv6_Click">
+                                <Button x:Name="otv6" Visibility="Collapsed" HorizontalAlignment="Center" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="Img/button.png"/>
                                     </Button.Background>

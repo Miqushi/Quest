@@ -116,20 +116,20 @@ namespace Quest
                 Damage();
             }
         }
+
         private void img1_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show(Properties.Resources.img1, "Информация");
         }
-
         private void img2_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show(Properties.Resources.img2, "Информация");
         }
-
         private void img3_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show(Properties.Resources.img3, "Информация");
         }
+
         private void Riddle1()
         {
             string otvet = textBox1.Text.Trim().ToLower();
@@ -146,10 +146,7 @@ namespace Quest
                 Damage();
             }
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Riddle1();
-        }
+        
         private void lb4_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (lb4.SelectedIndex == 1)
@@ -180,10 +177,6 @@ namespace Quest
                 Damage();
             }
         }
-        private void otv3_Click(object sender, RoutedEventArgs e)
-        {
-            Riddle3();
-        }
         private void Riddle4()
         {
             string otvet = textBox4.Text.Trim().ToLower();
@@ -198,10 +191,6 @@ namespace Quest
             {
                 Damage();
             }
-        }
-        private void otv4_Click(object sender, RoutedEventArgs e)
-        {
-            Riddle4();
         }
         private void Riddle5()
         {
@@ -218,11 +207,7 @@ namespace Quest
                 Damage();
             }
         }
-        private void otv5_Click(object sender, RoutedEventArgs e)
-        {
-            Riddle5();
-        }
-        private void otv6_Click(object sender, RoutedEventArgs e)
+        private void Riddle6()
         {
             string otvet = textBox6.Text.Trim().ToLower();
             if (otvet == "греция" || otvet == "древняя греция")
@@ -235,6 +220,27 @@ namespace Quest
             else
             {
                 Damage();
+            }
+        }
+        private void otv_Click(object sender, RoutedEventArgs e)
+        {
+            switch (tc.SelectedIndex)
+            {
+                case 2:
+                        Riddle1();
+                    break;
+                case 4:
+                        Riddle3();
+                    break;
+                case 5:
+                        Riddle4();
+                    break;
+                case 6:
+                        Riddle5();
+                    break;
+                case 7:
+                        Riddle6();
+                    break;
             }
         }
         private void next_Click(object sender, RoutedEventArgs e)
@@ -253,106 +259,25 @@ namespace Quest
             {
                 case 2:
                     if (e.Key == Key.Enter)
-                    {
                         Riddle1();
-                    }
                     break;
                 case 4:
                     if (e.Key == Key.Enter)
-                    {
                         Riddle3();
-                    }
                     break;
                 case 5:
                     if (e.Key == Key.Enter)
-                    {
                         Riddle4();
-                    }
                     break;
                 case 6:
                     if (e.Key == Key.Enter)
-                    {
                         Riddle5();
-                    }
+                    break;
+                case 7:
+                    if (e.Key == Key.Enter)
+                        Riddle6();
                     break;
             }
-        }
-        double[] door1 = new double[4] { 0.6843, 0.7451, 0.3995, 0.8133 };
-        double[] door2 = new double[4] { 0.5333, 0.5495, 0.4843, 0.7428 };
-        double[] door3 = new double[4] { 0.4594, 0.4805, 0.5170, 0.7063 };
-        double[] door4 = new double[4] { 0.4188, 0.4343, 0.5274, 0.6958 };
-        double[] door5 = new double[4] { 0.3389, 0.3876, 0.5140, 0.6805 };
-        double[] door6 = new double[4] { 0.0802, 0.2019, 0.49935, 0.7523 };
-
-        private void hall_MouseMove(object sender, MouseEventArgs e)
-        {
-            Point p = e.GetPosition(this);
-            double x = basis.ActualWidth;
-            double y = basis.ActualHeight;
-            if (p.X > x * door1[0] && p.X < x * door1[1] &&
-                p.Y > y * door1[2] && p.Y < y * door1[3] ||
-            p.X > x * door2[0] && p.X < x * door2[1] &&
-                p.Y > y * door2[2] && p.Y < y * door2[3] ||
-            p.X > x * door3[0] && p.X < x * door3[1] &&
-                p.Y > y * door3[2] && p.Y < y * door3[3] ||
-            p.X > x * door4[0] && p.X < x * door4[1] &&
-                p.Y > y * door4[2] && p.Y < y * door4[3] ||
-            p.X > x * door5[0] && p.X < x * door5[1] &&
-                p.Y > y * door5[2] && p.Y < y * door5[3] ||
-            p.X > x * door6[0] && p.X < x * door6[1] &&
-                p.Y > y * door6[2] && p.Y < y * door6[3]
-            )
-            {
-                Cursor = Cursors.Hand;
-            }
-            else
-            {
-                Cursor = Cursors.Arrow;
-            }
-
-        }
-
-        private void tabItemHall_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            Point p = e.GetPosition(this);
-            //MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
-
-            //985.6
-            //612.8
-
-            double x = basis.ActualWidth;
-            double y = basis.ActualHeight;
-            if (p.X > x * door1[0] && p.X < x * door1[1] &&
-                p.Y > y * door1[2] && p.Y < y * door1[3])
-            {
-                tc.SelectedIndex = 2;
-            }
-            if (p.X > x * door2[0] && p.X < x * door2[1] &&
-                p.Y > y * door2[2] && p.Y < y * door2[3])
-            {
-                tc.SelectedIndex = 3;
-            }
-            if (p.X > x * door3[0] && p.X < x * door3[1] &&
-                p.Y > y * door3[2] && p.Y < y * door3[3])
-            {
-                tc.SelectedIndex = 4;
-            }
-            if (p.X > x * door4[0] && p.X < x * door4[1] &&
-                p.Y > y * door4[2] && p.Y < y * door4[3])
-            {
-                tc.SelectedIndex = 5;
-            }
-            if (p.X > x * door5[0] && p.X < x * door5[1] &&
-                p.Y > y * door5[2] && p.Y < y * door5[3])
-            {
-                tc.SelectedIndex = 6;
-            }
-            if (p.X > x * door6[0] && p.X < x * door6[1] &&
-                p.Y > y * door6[2] && p.Y < y * door6[3])
-            {
-                tc.SelectedIndex = 7;
-            }
-
         }
 
         private void TabItem_GotFocus(object sender, RoutedEventArgs e)
@@ -369,9 +294,207 @@ namespace Quest
             }
         }
 
-        private void hall_MouseLeave(object sender, MouseEventArgs e)
+        readonly double[,] door =
+        {{964/ 1265.6, 1039.2/ 1265.6, 190.4/ 682.4, 533.6/ 682.4 },
+        { 748/ 1265.6, 784.8/ 1265.6, 256.8/ 682.4, 468/ 682.4},
+        { 668.4/ 1265.6, 696.8/ 1265.6, 290.4/ 682.4, 442.2/ 682.4},
+        { 612/ 1265.6, 638.4/ 1265.6, 304/ 682.4, 421.6/ 682.4 },
+        { 520/ 1265.6, 559/ 1265.6, 298/ 682.4, 406/ 682.4 },
+        { 196.8/ 1265.6, 355.2/ 1265.6, 280/ 682.4, 497.2/ 682.4 },
+        };
+        readonly double[,] exit = { { 0.7163, 0.8198, 0.1893, 0.8159 },
+        { 653.6 / 985.6, 717 / 985.6, 160 / 612.8, 509 / 612.8 },
+        { 993.6 / 1265.6, 1108 / 1265.6, 94.4 / 682.4, 466 / 682.4 },
+        { 1055 / 1265.6, 1141 / 1265.6, 196 / 682.4, 480.8 / 682.4 },
+        { 1039.2 / 1265.6, 1169.2 / 1265.6, 120.8 / 682.4, 526.4 / 682.4 }};
+        private void tc_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Cursor = Cursors.Arrow;
+            Point p = e.GetPosition(this);
+            //MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
+
+            //1265.6
+            //682.4
+            double x = basis.ActualWidth;
+            double y = basis.ActualHeight;
+            switch (tc.SelectedIndex)
+            {
+                case 1:
+                    {
+                        if (p.X > x * door[0, 0] && p.X < x * door[0, 1] &&
+                            p.Y > y * door[0, 2] && p.Y < y * door[0, 3])
+                        {
+                            tc.SelectedIndex = 2;
+                        }
+                        if (p.X > x * door[1, 0] && p.X < x * door[1, 1] &&
+                            p.Y > y * door[1, 2] && p.Y < y * door[1, 3])
+                        {
+                            tc.SelectedIndex = 3;
+                        }
+                        if (p.X > x * door[2, 0] && p.X < x * door[2, 1] &&
+                            p.Y > y * door[2, 2] && p.Y < y * door[2, 3])
+                        {
+                            tc.SelectedIndex = 4;
+                        }
+                        if (p.X > x * door[3, 0] && p.X < x * door[3, 1] &&
+                            p.Y > y * door[3, 2] && p.Y < y * door[3, 3])
+                        {
+                            tc.SelectedIndex = 5;
+                        }
+                        if (p.X > x * door[4, 0] && p.X < x * door[4, 1] &&
+                            p.Y > y * door[4, 2] && p.Y < y * door[4, 3])
+                        {
+                            tc.SelectedIndex = 6;
+                        }
+                        if (p.X > x * door[5, 0] && p.X < x * door[5, 1] &&
+                            p.Y > y * door[5, 2] && p.Y < y * door[5, 3])
+                        {
+                            tc.SelectedIndex = 7;
+                        }
+                    }
+                    break;
+                case 2:
+                    {
+                        if (p.X > x * exit[0, 0] && p.X < x * exit[0, 1] &&
+                            p.Y > y * exit[0, 2] && p.Y < y * exit[0, 3])
+                        {
+                            tc.SelectedIndex = 1;
+                        }
+                    }
+                    break;
+                case 3:
+                    {
+                        if (p.X > x * exit[1, 0] && p.X < x * exit[1, 1] &&
+                            p.Y > y * exit[1, 2] && p.Y < y * exit[1, 3])
+                        {
+                            tc.SelectedIndex = 1;
+                        }
+                    }
+                    break;
+                case 4:
+                    {
+                        if (p.X > x * exit[2, 0] && p.X < x * exit[2, 1] &&
+                            p.Y > y * exit[2, 2] && p.Y < y * exit[2, 3])
+                        {
+                            tc.SelectedIndex = 1;
+                        }
+                    }
+                    break;
+                case 5:
+                    {
+                        if (p.X > x * exit[3, 0] && p.X < x * exit[3, 1] &&
+                            p.Y > y * exit[3, 2] && p.Y < y * exit[3, 3])
+                        {
+                            tc.SelectedIndex = 1;
+                        }
+                    }
+                    break;
+                case 6:
+                    {
+                        if (p.X > x * exit[4, 0] && p.X < x * exit[4, 1] &&
+                            p.Y > y * exit[4, 2] && p.Y < y * exit[4, 3])
+                        {
+                            tc.SelectedIndex = 1;
+                        }
+                    }
+                    break;
+            }
+        }
+        private void tc_MouseMove(object sender, MouseEventArgs e)
+        {
+            Point p = e.GetPosition(this);
+            double x = basis.ActualWidth;
+            double y = basis.ActualHeight;
+            switch (tc.SelectedIndex)
+            {
+                case 1:
+                    {
+                        if (p.X > x * door[0, 0] && p.X < x * door[0, 1] &&
+                        p.Y > y * door[0, 2] && p.Y < y * door[0, 3] ||
+                            p.X > x * door[1, 0] && p.X < x * door[1, 1] &&
+                        p.Y > y * door[1, 2] && p.Y < y * door[1, 3] ||
+                            p.X > x * door[2, 0] && p.X < x * door[2, 1] &&
+                        p.Y > y * door[2, 2] && p.Y < y * door[2, 3] ||
+                            p.X > x * door[3, 0] && p.X < x * door[3, 1] &&
+                        p.Y > y * door[3, 2] && p.Y < y * door[3, 3] ||
+                            p.X > x * door[4, 0] && p.X < x * door[4, 1] &&
+                        p.Y > y * door[4, 2] && p.Y < y * door[4, 3] ||
+                            p.X > x * door[5, 0] && p.X < x * door[5, 1] &&
+                        p.Y > y * door[5, 2] && p.Y < y * door[5, 3])
+                        {
+                            Cursor = Cursors.Hand;
+                        }
+                        else
+                        {
+                            Cursor = Cursors.Arrow;
+                        }
+                    }
+                    break;
+                case 2:
+                    {
+                        if (p.X > x * exit[0, 0] && p.X < x * exit[0, 1] &&
+                            p.Y > y * exit[0, 2] && p.Y < y * exit[0, 3])
+                        {
+                            Cursor = Cursors.Hand;
+                        }
+                        else
+                        {
+                            Cursor = Cursors.Arrow;
+                        }
+                    }
+                    break;
+                case 3:
+                    {
+                        if (p.X > x * exit[1, 0] && p.X < x * exit[1, 1] &&
+                            p.Y > y * exit[1, 2] && p.Y < y * exit[1, 3])
+                        {
+                            Cursor = Cursors.Hand;
+                        }
+                        else
+                        {
+                            Cursor = Cursors.Arrow;
+                        }
+                    }
+                    break;
+                case 4:
+                    {
+                        if (p.X > x * exit[2, 0] && p.X < x * exit[2, 1] &&
+                            p.Y > y * exit[2, 2] && p.Y < y * exit[2, 3])
+                        {
+                            Cursor = Cursors.Hand;
+                        }
+                        else
+                        {
+                            Cursor = Cursors.Arrow;
+                        }
+                    }
+                    break;
+                case 5:
+                    {
+                        if (p.X > x * exit[3, 0] && p.X < x * exit[3, 1] &&
+                            p.Y > y * exit[3, 2] && p.Y < y * exit[3, 3])
+                        {
+                            Cursor = Cursors.Hand;
+                        }
+                        else
+                        {
+                            Cursor = Cursors.Arrow;
+                        }
+                    }
+                    break;
+                case 6:
+                    {
+                        if (p.X > x * exit[4, 0] && p.X < x * exit[4, 1] &&
+                            p.Y > y * exit[4, 2] && p.Y < y * exit[4, 3])
+                        {
+                            Cursor = Cursors.Hand;
+                        }
+                        else
+                        {
+                            Cursor = Cursors.Arrow;
+                        }
+                    }
+                    break;
+            }
         }
     }
 }
