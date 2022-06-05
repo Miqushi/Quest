@@ -288,7 +288,7 @@
                     </Grid>
                 </Border>
             </TabItem>
-            <TabItem Header="2 этаж" GotFocus="TabItem_GotFocus" HorizontalAlignment="Right" Margin="0,0,-2,-2" Width="51">
+            <TabItem Header="2 этаж" GotFocus="TabItem_GotFocus">
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
                         <ImageBrush ImageSource="Img/House.jpeg"/>
