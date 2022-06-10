@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Quest"
         mc:Ignorable="d"
-        Title="Этаж 3" MinHeight="450" Height="650" Width="1000" MinWidth="650"  WindowStartupLocation="CenterScreen" Topmost="True" Icon="/icon.ico" Closed="Window_Closed" KeyDown="Window_KeyDown">
+        Title="Этаж 3" MinHeight="450" Height="720" Width="1280" MinWidth="650"  WindowStartupLocation="CenterScreen" Topmost="True" Icon="/icon.ico" Closed="Window_Closed" KeyDown="Window_KeyDown">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Monotype Corsiva"/>

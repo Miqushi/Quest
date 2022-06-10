@@ -146,7 +146,7 @@ namespace Quest
                 Damage();
             }
         }
-        
+
         private void lb4_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (lb4.SelectedIndex == 1)
@@ -227,19 +227,19 @@ namespace Quest
             switch (tc.SelectedIndex)
             {
                 case 2:
-                        Riddle1();
+                    Riddle1();
                     break;
                 case 4:
-                        Riddle3();
+                    Riddle3();
                     break;
                 case 5:
-                        Riddle4();
+                    Riddle4();
                     break;
                 case 6:
-                        Riddle5();
+                    Riddle5();
                     break;
                 case 7:
-                        Riddle6();
+                    Riddle6();
                     break;
             }
         }
@@ -494,6 +494,25 @@ namespace Quest
                         }
                     }
                     break;
+                default:
+                    Cursor = Cursors.Arrow;
+                    break;
+            }
+        }
+
+        private void PopupBox_Opened(object sender, RoutedEventArgs e)
+        {
+            if (img1.Visibility == Visibility.Visible)
+            {
+                img1Popup.Visibility = Visibility.Visible;
+            }
+            if (img2.Visibility == Visibility.Visible)
+            {
+                img2Popup.Visibility = Visibility.Visible;
+            }
+            if (img3.Visibility == Visibility.Visible)
+            {
+                img3Popup.Visibility = Visibility.Visible;
             }
         }
     }

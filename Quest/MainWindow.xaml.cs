@@ -18,10 +18,6 @@ namespace Quest
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    static class year
-    {
-        public static int x { get; set; } = 0;
-    }
     public partial class MainWindow : Window
     {
         public MainWindow()

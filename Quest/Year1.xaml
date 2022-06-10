@@ -6,7 +6,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Quest"
         mc:Ignorable="d"
-        Title="Этаж 1" MinHeight="450" Height="720" Width="1280" MinWidth="650" Closing="Window_Closing" WindowStartupLocation="CenterScreen" Icon="/icon.ico" KeyDown="Window_KeyDown" Loaded="Window_Loaded">
+        Title="Этаж 1" MinHeight="450" Height="720" Width="1280" MinWidth="650" 
+        Closing="Window_Closing" WindowStartupLocation="CenterScreen" Icon="/icon.ico" 
+        KeyDown="Window_KeyDown" Loaded="Window_Loaded">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Monotype Corsiva"/>
@@ -55,9 +57,20 @@
             </ToolBar.Background>
             <Image x:Name="home" Source="Img/back.png" Margin="2" MouseDown="Back" ToolTip="Вернуться в главную комнату"/>
             <Image x:Name="help" Source="Img/help.png" Margin="2" MouseDown="Help" ToolTip="Ответ на загадку"/>
+            <materialDesign:PopupBox Margin="0,2,0,0"  HorizontalAlignment="Right" VerticalAlignment="Top" PlacementMode="BottomAndAlignCentres" ToolTip="Инвентарь" Opened="PopupBox_Opened">
+                <materialDesign:PopupBox.ToggleContent>
+                    <Image Height="33" Width="33" Source="Img/inv.png"></Image>
+                </materialDesign:PopupBox.ToggleContent>
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="img1Popup" Height="100" Width="100" Visibility="Collapsed" Source="Img/olive.png"/>
+                    <Image x:Name="img2Popup" Height="100" Width="100" Visibility="Collapsed" Source="Img/tetra.png"/>
+                    <Image x:Name="img3Popup" Height="100" Width="100" Visibility="Collapsed" Source="Img/list.png"/>
+                </StackPanel>
+            </materialDesign:PopupBox>
             <Image x:Name="hp1" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp2" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp3" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
+            
         </ToolBar>
         <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" MouseDown="tc_MouseDown" MouseMove="tc_MouseMove" >
             <TabItem Header="-1">
@@ -107,7 +120,7 @@
                         <ImageBrush ImageSource="Img/zad1.jpg"/>
                     </Border.Background>
                     <Grid>
-                            <Image x:Name="img1" Visibility="Collapsed" Height="200" Width="300" Source="Img/olive.png" MouseDown="img1_MouseDown" Margin="54,63,632,316" RenderTransformOrigin="0.5,0.5">
+                        <Image x:Name="img1" Visibility="Collapsed" Height="200" Width="300" Source="Img/olive.png" MouseDown="img1_MouseDown" Margin="54,63,632,316" RenderTransformOrigin="0.5,0.5">
                             <Image.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
@@ -124,7 +137,7 @@
                                 </TextBlock>
                                 <TextBox x:Name="textBox1" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18">
                                 </TextBox>
-                                <Button x:Name="otv1" HorizontalAlignment="Center" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="20" Click="otv_Click">
+                                <Button x:Name="otv1" HorizontalAlignment="Center" Content="Ответить"  BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="20" Click="otv_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="Img/button.png"/>
                                     </Button.Background>
