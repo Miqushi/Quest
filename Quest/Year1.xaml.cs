@@ -1,6 +1,9 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Animation;
+
 namespace Quest
 {
     /// <summary>
@@ -127,7 +130,13 @@ namespace Quest
         }
         private void img3_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show(Properties.Resources.img3, "Информация");
+            var animation = new ThicknessAnimation();
+            animation.To = new Thickness(0,50,450,150);
+            animation.Duration = TimeSpan.FromSeconds(1);
+            img3.BeginAnimation(MarginProperty, animation);
+            tb3.Text = Properties.Resources.img3;
+            textBox3.Visibility = Visibility.Visible;
+            otv3.Visibility = Visibility.Visible;
         }
 
         private void Riddle1()
@@ -163,11 +172,11 @@ namespace Quest
         }
         private void Riddle3()
         {
-            string otvet = textBox2.Text.Trim().ToLower();
+            string otvet = textBox3.Text.Trim().ToLower();
             if (otvet == "куб-бук" || otvet == "бук-куб")
             {
                 tb3.Text = Properties.Resources.riddle3;
-                textBox2.Visibility = Visibility.Collapsed;
+                textBox3.Visibility = Visibility.Collapsed;
                 otv3.Visibility = Visibility.Collapsed;
                 img3.Visibility = Visibility.Visible;
                 lvl += 1;

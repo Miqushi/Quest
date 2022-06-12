@@ -51,13 +51,13 @@
         </Style>
     </Window.Resources>
     <Grid x:Name="basis" Background="Black" >
-        <ToolBar x:Name="toolBar" Margin="4" VerticalAlignment="Top" Height="40" Panel.ZIndex="1">
+        <ToolBar x:Name="toolBar" Margin="4" VerticalAlignment="Top" Height="40">
             <ToolBar.Background>
-                <ImageBrush ImageSource="Img/bar.jpg"></ImageBrush>
+                <ImageBrush ImageSource="Img/bar.jpg"/>
             </ToolBar.Background>
             <Image x:Name="home" Source="Img/back.png" Margin="2" MouseDown="Back" ToolTip="Вернуться в главную комнату"/>
             <Image x:Name="help" Source="Img/help.png" Margin="2" MouseDown="Help" ToolTip="Ответ на загадку"/>
-            <materialDesign:PopupBox Margin="0,2,0,0"  HorizontalAlignment="Right" VerticalAlignment="Top" PlacementMode="BottomAndAlignCentres" ToolTip="Инвентарь" Opened="PopupBox_Opened">
+            <materialDesign:PopupBox Margin="0,2,0,0"  HorizontalAlignment="Right" VerticalAlignment="Top" PlacementMode="BottomAndAlignLeftEdges"  ToolTip="Инвентарь" Opened="PopupBox_Opened">
                 <materialDesign:PopupBox.ToggleContent>
                     <Image Height="33" Width="33" Source="Img/inv.png"></Image>
                 </materialDesign:PopupBox.ToggleContent>
@@ -67,9 +67,9 @@
                     <Image x:Name="img3Popup" Height="100" Width="100" Visibility="Collapsed" Source="Img/list.png"/>
                 </StackPanel>
             </materialDesign:PopupBox>
-            <Image x:Name="hp1" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
-            <Image x:Name="hp2" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
-            <Image x:Name="hp3" Source="Img/hp.png" Visibility="Hidden" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
+            <Image x:Name="hp1" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
+            <Image x:Name="hp2" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
+            <Image x:Name="hp3" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
             
         </ToolBar>
         <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" MouseDown="tc_MouseDown" MouseMove="tc_MouseMove" >
@@ -181,23 +181,35 @@
                         <ImageBrush ImageSource="Img/zad3.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="img3" Visibility="Collapsed" Source="Img/list.png" MouseDown="img3_MouseDown" Margin="72,160,733,272" RenderTransformOrigin="0.5,0.5">
+                        <Image x:Name="img3" Source="Img/list.png" MouseDown="img3_MouseDown" Margin="215,141,928,373" RenderTransformOrigin="0.5,0.5" Cursor="Arrow">
                             <Image.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
                                     <SkewTransform/>
-                                    <RotateTransform Angle="3.818"/>
+                                    <RotateTransform Angle="1.66"/>
                                     <TranslateTransform/>
                                 </TransformGroup>
                             </Image.RenderTransform>
+                            <Image.Triggers>
+                                <EventTrigger RoutedEvent="Image.MouseLeave">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation 
+                                                Duration="0:0:0.1" 
+                                                Storyboard.TargetProperty="Margin"
+                                            />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Image.Triggers>
                         </Image>
                         <Border Style="{StaticResource Content}">
                             <StackPanel Margin="5">
                                 <TextBlock x:Name="tb3" ToolTip="Слово или словосочетание, образованное путём перестановки букв, составляющих другое слово (пила-липа).">
-                                Вы заходите в третюю комнату. На столе лежит один листок. В нем анограмма: Читаем мы направо смело - Геометрическое тело. Прочтем же справа мы налево - Увидим разновидность древа. (ответ пишите слитно, через дефис)
+                                Вы заходите в третюю комнату. На доске висел листок.
                                 </TextBlock>
-                                <TextBox x:Name="textBox2" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18"/>
-                                <Button x:Name="otv3" HorizontalAlignment="Center"  Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv_Click">
+                                <TextBox x:Name="textBox3" Visibility="Collapsed" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18"/>
+                                <Button x:Name="otv3" Visibility="Collapsed" HorizontalAlignment="Center" Content="Ответить" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="Img/button.png"/>
                                     </Button.Background>
