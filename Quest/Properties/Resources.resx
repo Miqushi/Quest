@@ -117,7 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ChestClick" xml:space="preserve">
+    <value>Вы подходите к сундуку, и видите, что он закрыт на кодовый замок.  Голос говорит вам: У женщины спросили: "Сколько Вам лет?". Она ответила: "30, не считая суббот и воскресений". Сколько ей лет?</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ChestOpen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Img\ChestOpen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Img\icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -134,10 +140,10 @@
     <value>Перед вами появляется оливковая ветвь. Вы берете ее и идете дальше</value>
   </data>
   <data name="riddle2" xml:space="preserve">
-    <value>Шкатулка. Внутри ее лежал тетраэдр. Вы берете его и отправляетесь исследовать другие комнаты</value>
+    <value>Сундук открылся. Внутри его почему-то лежала фигура, а именно: тетраэдр. Вы берете его и идете исследовать другие кабинеты.</value>
   </data>
   <data name="riddle3" xml:space="preserve">
-    <value>Дверь отворилась. Вы берете листок с анограммой и шагаете исследовать помещения дальше</value>
+    <value>Дверь отворилась. Вы берете листок с анограммой и выходите, продолжая исследования</value>
   </data>
   <data name="riddle4" xml:space="preserve">
     <value>По древнейшей версии мифа, Прометей похитил огонь у Гефеста, унёс с Олимпа и передал его людям. Он совершил это, скрыв искру в полом стебле тростника (нарфекс) и показал людям, как его сохранять, присыпая золой. В истолковании, он изобрёл «огневые палочки», от которых загорается огонь. В наказание Зевс направит людям первую женщину — Пандору. По версии мифа, заполучить огонь Прометею помогла Афина.</value>

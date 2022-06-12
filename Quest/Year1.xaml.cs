@@ -2,7 +2,9 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Media.Imaging;
 
 namespace Quest
 {
@@ -130,15 +132,31 @@ namespace Quest
         }
         private void img3_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            
             var animation = new ThicknessAnimation();
-            animation.To = new Thickness(0,50,450,150);
+            animation.To = new Thickness(0,50,550,150);
             animation.Duration = TimeSpan.FromSeconds(1);
             img3.BeginAnimation(MarginProperty, animation);
-            tb3.Text = Properties.Resources.img3;
-            textBox3.Visibility = Visibility.Visible;
-            otv3.Visibility = Visibility.Visible;
+            if (img3.Name != "List")
+            {
+                tb3.Text = Properties.Resources.img3;
+                textBox3.Visibility = Visibility.Visible;
+                otv3.Visibility = Visibility.Visible;
+            }
         }
 
+        private void Chest_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var animation = new ThicknessAnimation();
+            animation.To = new Thickness(500,200,300,100);
+            animation.Duration = TimeSpan.FromSeconds(0.5);
+            Chest.BeginAnimation(MarginProperty, animation);
+            if (Chest.Name != "ChestOpen")
+            {
+                tbMath.Text = Properties.Resources.ChestClick;
+                lb4.Visibility = Visibility.Visible;
+            }
+        }
         private void Riddle1()
         {
             string otvet = textBox1.Text.Trim().ToLower();
@@ -162,7 +180,8 @@ namespace Quest
             {
                 tbMath.Text = Properties.Resources.riddle2;
                 lb4.Visibility = Visibility.Collapsed;
-                img2.Visibility = Visibility.Visible;
+                Chest.Source = BitmapFrame.Create(new Uri(@"pack://application:,,,/Img/ChestOpen.png"));
+                Chest.Name = "ChestOpen";
                 lvl += 1;
             }
             else
@@ -180,6 +199,7 @@ namespace Quest
                 otv3.Visibility = Visibility.Collapsed;
                 img3.Visibility = Visibility.Visible;
                 lvl += 1;
+                img3.Name = "List";
             }
             else
             {
@@ -515,14 +535,16 @@ namespace Quest
             {
                 img1Popup.Visibility = Visibility.Visible;
             }
-            if (img2.Visibility == Visibility.Visible)
+            if (Chest.Name == "ChestOpen")
             {
                 img2Popup.Visibility = Visibility.Visible;
             }
-            if (img3.Visibility == Visibility.Visible)
+            if (img3.Name == "List")
             {
                 img3Popup.Visibility = Visibility.Visible;
             }
         }
+
+
     }
 }

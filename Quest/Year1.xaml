@@ -70,7 +70,7 @@
             <Image x:Name="hp1" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp2" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp3" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
-            
+
         </ToolBar>
         <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" MouseDown="tc_MouseDown" MouseMove="tc_MouseMove" >
             <TabItem Header="-1">
@@ -153,13 +153,23 @@
                         <ImageBrush ImageSource="Img/zad2.jpg"></ImageBrush>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="img2" Source="Img/tetra.png" Visibility="Collapsed" MouseDown="img2_MouseDown" Margin="90,91,692,288"/>
+                        <Image Name="Chest" Source="Img/ChestClose.png" Margin="710,459,434,74" MouseDown="Chest_MouseDown">
+                            <Image.Triggers>
+                                <EventTrigger RoutedEvent="Image.MouseLeave">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation Duration="0:0:0.1" Storyboard.TargetProperty="Margin"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Image.Triggers>
+                        </Image>
                         <Border Style="{StaticResource Content}">
                             <StackPanel Margin="5,5,5,0">
                                 <TextBlock x:Name="tbMath">
-                                Вы заходите во вторую комнату. Вы видете шкатулку, а рядом записка с загадкой: У женщины спросили: "Сколько Вам лет?". Она ответила: "30, не считая суббот и воскресений". Сколько ей лет?
+                                Вы заходите во вторую комнату. В углу стоял какой-то сундук.
                                 </TextBlock>
-                                <ListBox x:Name="lb4" SelectionChanged="lb4_SelectionChanged"  FontFamily="Monotype Corsiva" FontSize="18">
+                                <ListBox x:Name="lb4" SelectionChanged="lb4_SelectionChanged" Visibility="Collapsed" FontFamily="Monotype Corsiva" FontSize="18">
                                     <ListBox.ItemsPanel>
                                         <ItemsPanelTemplate>
                                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
@@ -181,7 +191,7 @@
                         <ImageBrush ImageSource="Img/zad3.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="img3" Source="Img/list.png" MouseDown="img3_MouseDown" Margin="215,141,928,373" RenderTransformOrigin="0.5,0.5" Cursor="Arrow">
+                        <Image x:Name="img3" Source="Img/list.png" MouseDown="img3_MouseDown" Margin="215,141,928,373" RenderTransformOrigin="0.5,0.5">
                             <Image.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
@@ -272,7 +282,15 @@
                         <ImageBrush ImageSource="Img/zad5.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="img5" Source="Img/Oedipus.jpg" Margin="241,194,679,249" >
+                        <Image x:Name="img5" Source="Img/Oedipus.jpg" Margin="306,154,883,338" RenderTransformOrigin="0.5,0.5" >
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="2.462"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
                             <Image.Triggers>
                                 <EventTrigger RoutedEvent="Image.MouseEnter">
                                     <BeginStoryboard>

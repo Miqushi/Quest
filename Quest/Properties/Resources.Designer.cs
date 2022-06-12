@@ -61,6 +61,25 @@ namespace Quest.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы подходите к сундуку, и видите, что он закрыт на кодовый замок.  Голос говорит вам: У женщины спросили: &quot;Сколько Вам лет?&quot;. Она ответила: &quot;30, не считая суббот и воскресений&quot;. Сколько ей лет?.
+        /// </summary>
+        internal static string ChestClick {
+            get {
+                return ResourceManager.GetString("ChestClick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChestOpen {
+            get {
+                object obj = ResourceManager.GetObject("ChestOpen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
         /// </summary>
         internal static System.Drawing.Icon icon {
@@ -107,7 +126,7 @@ namespace Quest.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Шкатулка. Внутри ее лежал тетраэдр. Вы берете его и отправляетесь исследовать другие комнаты.
+        ///   Ищет локализованную строку, похожую на Сундук открылся. Внутри его почему-то лежала фигура, а именно: тетраэдр. Вы берете его и идете исследовать другие кабинеты..
         /// </summary>
         internal static string riddle2 {
             get {
@@ -116,7 +135,7 @@ namespace Quest.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Дверь отворилась. Вы берете листок с анограммой и шагаете исследовать помещения дальше.
+        ///   Ищет локализованную строку, похожую на Дверь отворилась. Вы берете листок с анограммой и выходите, продолжая исследования.
         /// </summary>
         internal static string riddle3 {
             get {
