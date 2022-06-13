@@ -23,5 +23,11 @@ namespace Quest
         {
             InitializeComponent();
         }
+        readonly MainWindow main = new MainWindow();
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Save();
+            main.Show();
+        }
     }
 }

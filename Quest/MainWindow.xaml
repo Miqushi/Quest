@@ -37,7 +37,7 @@
                             <ImageBrush ImageSource="Img/button.png"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="curs4" Margin="10,3" Content="IV курс" Height="47" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" >
+                    <Button x:Name="curs4" Margin="10,3" Content="IV курс" Height="47" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="curs4_Click" Cursor="Hand" >
                         <Button.Background>
                             <ImageBrush ImageSource="Img/button.png"/>
                         </Button.Background>

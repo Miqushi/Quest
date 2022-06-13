@@ -117,7 +117,7 @@
             <TabItem Header="1">
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/zad1.jpg"/>
+                        <ImageBrush ImageSource="Img/cab1_y1.jpg"/>
                     </Border.Background>
                     <Grid>
                         <Image x:Name="img1" Visibility="Collapsed" Height="200" Width="300" Source="Img/olive.png" MouseDown="img1_MouseDown" Margin="54,63,632,316" RenderTransformOrigin="0.5,0.5">
@@ -150,19 +150,11 @@
             <TabItem Header="2">
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/zad2.jpg"></ImageBrush>
+                        <ImageBrush ImageSource="Img/cab2_y1.jpg"></ImageBrush>
                     </Border.Background>
                     <Grid>
-                        <Image Name="Chest" Source="Img/ChestClose.png" Margin="710,459,434,74" MouseDown="Chest_MouseDown">
-                            <Image.Triggers>
-                                <EventTrigger RoutedEvent="Image.MouseLeave">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ThicknessAnimation Duration="0:0:0.1" Storyboard.TargetProperty="Margin"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                            </Image.Triggers>
+                        <Image Name="Chest" Source="Img/ChestClose.png" Margin="710,459,434,74" 
+                               MouseLeftButtonDown="Chest_MouseLeftButtonDown" MouseRightButtonDown="Chest_MouseRightButtonDown">
                         </Image>
                         <Border Style="{StaticResource Content}">
                             <StackPanel Margin="5,5,5,0">
@@ -188,10 +180,11 @@
             <TabItem Header="3" >
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/zad3.jpg"/>
+                        <ImageBrush ImageSource="Img/cab3_y1.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="img3" Source="Img/list.png" MouseDown="img3_MouseDown" Margin="215,141,928,373" RenderTransformOrigin="0.5,0.5">
+                        <Image x:Name="img3" Source="Img/list.png"  Margin="215,141,928,373" RenderTransformOrigin="0.5,0.5" 
+                               MouseLeftButtonDown="img3_MouseLeftButtonDown" MouseRightButtonDown="img3_MouseRightButtonDown">
                             <Image.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
@@ -200,18 +193,6 @@
                                     <TranslateTransform/>
                                 </TransformGroup>
                             </Image.RenderTransform>
-                            <Image.Triggers>
-                                <EventTrigger RoutedEvent="Image.MouseLeave">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ThicknessAnimation 
-                                                Duration="0:0:0.1" 
-                                                Storyboard.TargetProperty="Margin"
-                                            />
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                            </Image.Triggers>
                         </Image>
                         <Border Style="{StaticResource Content}">
                             <StackPanel Margin="5">
@@ -232,10 +213,10 @@
             <TabItem Header="4">
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/zad4.jpg"/>
+                        <ImageBrush ImageSource="Img/cab4_y1.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="img4" Source="Img/prometheus.jpg" Margin="617,200,562,323" RenderTransformOrigin="0.5,0.5" Cursor="Arrow">
+                        <Image x:Name="img4" Source="Img/prometheus.jpg" Margin="546,214,633,309" RenderTransformOrigin="0.5,0.5">
                             <Image.Triggers>
                                 <EventTrigger RoutedEvent="Image.MouseEnter">
                                     <BeginStoryboard>
@@ -279,7 +260,7 @@
             <TabItem Header="5">
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/zad5.jpg"/>
+                        <ImageBrush ImageSource="Img/cab5_y1.jpg"/>
                     </Border.Background>
                     <Grid>
                         <Image x:Name="img5" Source="Img/Oedipus.jpg" Margin="306,154,883,338" RenderTransformOrigin="0.5,0.5" >

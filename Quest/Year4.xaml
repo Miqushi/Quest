@@ -1,0 +1,149 @@
+﻿<Window x:Class="Quest.Year4"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Quest"
+        mc:Ignorable="d"
+        Title="Этаж 4" MinHeight="450" Height="720" Width="1280" MinWidth="650"  
+        WindowStartupLocation="CenterScreen" Icon="/icon.ico" Closed="Window_Closed" Loaded="Window_Loaded" >
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Monotype Corsiva"/>
+            <Setter Property="FontSize" Value="19"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style TargetType="Image">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="False">
+                    <Setter Property="Cursor" Value="Arrow"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Content">
+            <Setter Property="Border.Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="5" Color="#FFC973" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Border.Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="Img/fon.jpg"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Border.CornerRadius" Value="10"/>
+            <Setter Property="Border.Margin" Value="8"/>
+            <Setter Property="Border.VerticalAlignment" Value="Bottom"/>
+        </Style>
+        <Style x:Key="BackBorder">
+            <Setter Property="Border.Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Border.Margin" Value="2,0,2,5"/>
+            <Setter Property="Border.CornerRadius" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="Black">
+        <ToolBar x:Name="toolBar" Margin="4" VerticalAlignment="Top" Height="40">
+            <ToolBar.Background>
+                <ImageBrush ImageSource="Img/bar.jpg"/>
+            </ToolBar.Background>
+            <Image x:Name="home" Source="Img/back.png" Margin="2" ToolTip="Вернуться в главную комнату"/>
+            <Image x:Name="help" Source="Img/help.png" Margin="2" ToolTip="Ответ на загадку"/>
+            <Image x:Name="hp1" Visibility="Collapsed" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
+            <Image x:Name="hp2" Visibility="Collapsed" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
+            <Image x:Name="hp3" Visibility="Collapsed" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
+        </ToolBar>
+        <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom">
+            <TabItem Header="0">
+                <Border x:Name="hall" Style="{StaticResource BackBorder}">
+                    <Border.Background>
+                        <ImageBrush ImageSource="Img/y4_hall.jpg"/>
+                    </Border.Background>
+                    <Border Style="{StaticResource Content}">
+                        <TextBlock Margin="5">
+                                Escape
+                        </TextBlock>
+                    </Border>
+                </Border>
+            </TabItem>
+            <TabItem Header="1">
+                <Border Style="{StaticResource BackBorder}">
+                    <Border.Background>
+                        <ImageBrush ImageSource="Img/cab1_y4.jpg"/>
+                    </Border.Background>
+                    <Border Style="{StaticResource Content}">
+                        <TextBlock Margin="5">
+                                1
+                        </TextBlock>
+                    </Border>
+                </Border>
+            </TabItem>
+            <TabItem Header="2">
+                <Border Style="{StaticResource BackBorder}">
+                    <Border.Background>
+                        <ImageBrush ImageSource="Img/cab1_y4.jpg"/>
+                    </Border.Background>
+                    <Border Style="{StaticResource Content}">
+                        <TextBlock Margin="5">
+                                2
+                        </TextBlock>
+                    </Border>
+                </Border>
+            </TabItem>
+            <TabItem Header="3">
+                <Border Style="{StaticResource BackBorder}">
+                    <Border.Background>
+                        <ImageBrush ImageSource="Img/cab1_y4.jpg"/>
+                    </Border.Background>
+                    <Border Style="{StaticResource Content}">
+                        <TextBlock Margin="5">
+                                3
+                        </TextBlock>
+                    </Border>
+                </Border>
+            </TabItem>
+            <TabItem Header="4">
+                <Border Style="{StaticResource BackBorder}">
+                    <Border.Background>
+                        <ImageBrush ImageSource="Img/cab1_y4.jpg"/>
+                    </Border.Background>
+                    <Grid>
+                        <Grid Margin="863,305,337,273" Panel.ZIndex="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="b1" Grid.Row="0" Grid.Column="0" Background="Red" Click="Code_Click"/>
+                            <Button x:Name="b2" Grid.Row="0" Grid.Column="1" Background="Red" Click="Code_Click"/>
+                            <Button x:Name="b3" Grid.Row="0" Grid.Column="2" Background="Red" Click="Code_Click"/>
+                            <Button x:Name="b4" Grid.Row="1" Grid.Column="0" Background="Red" Click="Code_Click"/>
+                            <Button x:Name="b5" Grid.Row="1" Grid.Column="1" Background="Red" Click="Code_Click"/>
+                            <Button x:Name="b6" Grid.Row="1" Grid.Column="2" Background="Red" Click="Code_Click"/>
+                            <Button x:Name="b7" Grid.Row="2" Grid.Column="0" Background="Red" Click="Code_Click"/>
+                            <Button x:Name="b8" Grid.Row="2" Grid.Column="1" Background="Red" Click="Code_Click"/>
+                            <Button x:Name="b9" Grid.Row="2" Grid.Column="2" Background="Red" Click="Code_Click"/>
+                        </Grid>
+                        <Border Style="{StaticResource Content}">
+                            <TextBlock Margin="5">
+                             4
+                            </TextBlock>
+                        </Border>
+                    </Grid>
+                    
+                </Border>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

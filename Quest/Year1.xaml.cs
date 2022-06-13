@@ -2,7 +2,6 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 
@@ -48,7 +47,7 @@ namespace Quest
                     break;
             }
         }
-        public void Damage()
+        private void Damage()
         {
             MessageBox.Show("Ошибка", "Вы ошиблись. Попробуйте еще раз");
             Properties.Settings.Default.hp--;
@@ -121,42 +120,65 @@ namespace Quest
                 Damage();
             }
         }
-
         private void img1_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show(Properties.Resources.img1, "Информация");
         }
-        private void img2_MouseDown(object sender, MouseButtonEventArgs e)
+        private void img3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show(Properties.Resources.img2, "Информация");
-        }
-        private void img3_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            
-            var animation = new ThicknessAnimation();
-            animation.To = new Thickness(0,50,550,150);
-            animation.Duration = TimeSpan.FromSeconds(1);
-            img3.BeginAnimation(MarginProperty, animation);
-            if (img3.Name != "List")
+            if(e.ClickCount == 1)
             {
-                tb3.Text = Properties.Resources.img3;
-                textBox3.Visibility = Visibility.Visible;
-                otv3.Visibility = Visibility.Visible;
+                var animation = new ThicknessAnimation();
+                animation.To = new Thickness(0, 50, 550, 150);
+                animation.Duration = TimeSpan.FromSeconds(0.5);
+                img3.BeginAnimation(MarginProperty, animation);
+                if (img3.Name != "List")
+                {
+                    tb3.Text = Properties.Resources.ListClick;
+                    textBox3.Visibility = Visibility.Visible;
+                    otv3.Visibility = Visibility.Visible;
+                }
             }
+            else
+            {
+                MessageBox.Show(Properties.Resources.ListInfo, "Информация");
+            }
+            
         }
-
-        private void Chest_MouseDown(object sender, MouseButtonEventArgs e)
+        private void img3_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
             var animation = new ThicknessAnimation();
-            animation.To = new Thickness(500,200,300,100);
+            animation.Duration = TimeSpan.FromSeconds(0.5);
+            img3.BeginAnimation(MarginProperty, animation);
+        }
+        private void Chest_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if(e.ClickCount == 1)
+            {
+                var animation = new ThicknessAnimation();
+                animation.To = new Thickness(500, 200, 300, 100);
+                animation.Duration = TimeSpan.FromSeconds(0.5);
+                Chest.BeginAnimation(MarginProperty, animation);
+                if (Chest.Name != "ChestOpen")
+                {
+                    tbMath.Text = Properties.Resources.ChestClick;
+                    lb4.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                MessageBox.Show(Properties.Resources.ChestInfo,"Информация");
+            }
+            
+        }
+        private void Chest_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var animation = new ThicknessAnimation();
             animation.Duration = TimeSpan.FromSeconds(0.5);
             Chest.BeginAnimation(MarginProperty, animation);
-            if (Chest.Name != "ChestOpen")
-            {
-                tbMath.Text = Properties.Resources.ChestClick;
-                lb4.Visibility = Visibility.Visible;
-            }
         }
+
+        #region
         private void Riddle1()
         {
             string otvet = textBox1.Text.Trim().ToLower();
@@ -173,7 +195,6 @@ namespace Quest
                 Damage();
             }
         }
-
         private void lb4_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (lb4.SelectedIndex == 1)
@@ -281,7 +302,6 @@ namespace Quest
             main.Show();
             Close();
         }
-
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             switch (tc.SelectedIndex)
@@ -308,7 +328,6 @@ namespace Quest
                     break;
             }
         }
-
         private void TabItem_GotFocus(object sender, RoutedEventArgs e)
         {
             if (lvl == 5)
@@ -322,6 +341,7 @@ namespace Quest
                 tb6.Text = "Приходите позже, когда решите все задания";
             }
         }
+        #endregion
 
         readonly double[,] door =
         {{964/ 1265.6, 1039.2/ 1265.6, 190.4/ 682.4, 533.6/ 682.4 },
@@ -528,7 +548,6 @@ namespace Quest
                     break;
             }
         }
-
         private void PopupBox_Opened(object sender, RoutedEventArgs e)
         {
             if (img1.Visibility == Visibility.Visible)
@@ -543,8 +562,6 @@ namespace Quest
             {
                 img3Popup.Visibility = Visibility.Visible;
             }
-        }
-
-
+        }   
     }
 }

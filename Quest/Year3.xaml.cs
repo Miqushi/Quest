@@ -13,6 +13,30 @@ namespace Quest
         {
             InitializeComponent();
         }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            switch (Properties.Settings.Default.hp)
+            {
+                case 3:
+                    {
+                        hp1.Visibility = Visibility.Visible;
+                        hp2.Visibility = Visibility.Visible;
+                        hp3.Visibility = Visibility.Visible;
+                    }
+                    break;
+                case 2:
+                    {
+                        hp1.Visibility = Visibility.Visible;
+                        hp2.Visibility = Visibility.Visible;
+                    }
+                    break;
+                case 1:
+                    {
+                        hp1.Visibility = Visibility.Visible;
+                    }
+                    break;
+            }
+        }
         private void hall_MouseLeave(object sender, MouseEventArgs e)
         {
             Cursor = Cursors.Arrow;
@@ -52,11 +76,11 @@ namespace Quest
             Properties.Settings.Default.Save();
             main.Show();
         }
-        double[] door1 = new double[4] { 0.1126, 0.1441, 0.3623, 0.7963 };
-        double[] door2 = new double[4] { 0.2039, 0.2334, 0.4259, 0.7507 };
-        double[] door3 = new double[4] { 0.2953, 0.3166, 0.4422, 0.6952 };
-        double[] door4 = new double[4] { 0.3521, 0.4200, 0.4439, 0.6665 };
-        double[] door5 = new double[4] { 0.6149, 0.7660, 0.4047, 0.7262 };
+        double[,] door = { {0.1126, 0.1441, 0.3623, 0.7963 },
+                            { 0.2039, 0.2334, 0.4259, 0.7507 },
+                            { 0.2953, 0.3166, 0.4422, 0.6952 },
+                            { 0.3521, 0.4200, 0.4439, 0.6665 },
+                            { 0.6149, 0.7660, 0.4047, 0.7262 }};
 
         private void tabItemHally3_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -67,28 +91,28 @@ namespace Quest
             //985.6
             //612.8
 
-            if (p.X > x * door1[0] && p.X < x * door1[1] &&
-                p.Y > y * door1[2] && p.Y < y * door1[3])
+            if (p.X > x * door[0,0] && p.X < x * door[0,1] &&
+                p.Y > y * door[0,2] && p.Y < y * door[0,3])
             {
                 tc.SelectedIndex = 1;
             }
-            if (p.X > x * door2[0] && p.X < x * door2[1] &&
-                p.Y > y * door2[2] && p.Y < y * door2[3])
+            if (p.X > x * door[1,0] && p.X < x * door[1,1] &&
+                p.Y > y * door[1,2] && p.Y < y * door[1,3])
             {
                 tc.SelectedIndex = 2;
             }
-            if (p.X > x * door3[0] && p.X < x * door3[1] &&
-                p.Y > y * door3[2] && p.Y < y * door3[3])
+            if (p.X > x * door[2,0] && p.X < x * door[2,1] &&
+                p.Y > y * door[2,2] && p.Y < y * door[2,3])
             {
                 tc.SelectedIndex = 3;
             }
-            if (p.X > x * door4[0] && p.X < x * door4[1] &&
-                p.Y > y * door4[2] && p.Y < y * door4[3])
+            if (p.X > x * door[3,0] && p.X < x * door[3,1] &&
+                p.Y > y * door[3,2] && p.Y < y * door[3,3])
             {
                 tc.SelectedIndex = 4;
             }
-            if (p.X > x * door5[0] && p.X < x * door5[1] &&
-                p.Y > y * door5[2] && p.Y < y * door5[3])
+            if (p.X > x * door[4,0] && p.X < x * door[4,1] &&
+                p.Y > y * door[4,2] && p.Y < y * door[4,3])
             {
                 tc.SelectedIndex = 5;
             }
@@ -99,11 +123,11 @@ namespace Quest
             double x = basis.ActualWidth;
             double y = basis.ActualHeight;
             Point p = e.GetPosition(this);
-            if (p.X > x * door1[0] && p.X < x * door1[1] && p.Y > y * door1[2] && p.Y < y * door1[3] ||
-            p.X > x * door2[0] && p.X < x * door2[1] && p.Y > y * door2[2] && p.Y < y * door2[3] ||
-            p.X > x * door3[0] && p.X < x * door3[1] && p.Y > y * door3[2] && p.Y < y * door3[3] ||
-            p.X > x * door4[0] && p.X < x * door4[1] && p.Y > y * door4[2] && p.Y < y * door4[3] ||
-            p.X > x * door5[0] && p.X < x * door5[1] &&  p.Y > y * door5[2] && p.Y < y * door5[3]
+            if (p.X > x * door[0,0] && p.X < x * door[0,1] && p.Y > y * door[0,2] && p.Y < y * door[0,3] ||
+            p.X > x * door[1,0] && p.X < x * door[1,1] && p.Y > y * door[1,2] && p.Y < y * door[1,3] ||
+            p.X > x * door[2,0] && p.X < x * door[2,1] && p.Y > y * door[2,2] && p.Y < y * door[2,3] ||
+            p.X > x * door[3,0] && p.X < x * door[3,1] && p.Y > y * door[3,2] && p.Y < y * door[3,3] ||
+            p.X > x * door[4,0] && p.X < x * door[4,1] && p.Y > y * door[4,2] && p.Y < y * door[4,3]
             )
             {
                 Cursor = Cursors.Hand;
@@ -155,6 +179,6 @@ namespace Quest
             Close();
         }
 
-        
+
     }
 }

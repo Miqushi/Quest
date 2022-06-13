@@ -7,7 +7,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Quest"
         mc:Ignorable="d"
-        Title="Этаж 1" MinHeight="450" Height="550" Width="850" MinWidth="650" WindowStartupLocation="CenterScreen" Topmost="True" Icon="icon.ico">
+        Title="Этаж 2" MinHeight="450" Height="720" Width="1280" MinWidth="650" 
+        WindowStartupLocation="CenterScreen" Icon="icon.ico" Closed="Window_Closed">
     <Grid>
         
     </Grid>

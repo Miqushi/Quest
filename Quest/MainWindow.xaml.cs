@@ -29,7 +29,7 @@ namespace Quest
         {
             Year1 y1 = new Year1();
             y1.Show();
-            this.Close();
+            Close();
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -43,16 +43,21 @@ namespace Quest
         {
             Year2 y2 = new Year2();
             y2.Show();
-            this.Close();
+            Close();
         }
 
         private void curs3_Click(object sender, RoutedEventArgs e)
         {
             Year3 y3 = new Year3();
             y3.Show();
-            this.Close();
+            Close();
         }
 
-     
+        private void curs4_Click(object sender, RoutedEventArgs e)
+        {
+            Year4 y4 = new Year4();
+            y4.Show();
+            Close();
+        }
     }
 }

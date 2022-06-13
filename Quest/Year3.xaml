@@ -6,7 +6,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Quest"
         mc:Ignorable="d"
-        Title="Этаж 3" MinHeight="450" Height="720" Width="1280" MinWidth="650"  WindowStartupLocation="CenterScreen" Topmost="True" Icon="/icon.ico" Closed="Window_Closed" KeyDown="Window_KeyDown">
+        Title="Этаж 3" MinHeight="450" Height="720" Width="1280" MinWidth="650"  
+        WindowStartupLocation="CenterScreen" Icon="/icon.ico" 
+        Closed="Window_Closed" KeyDown="Window_KeyDown" Loaded="Window_Loaded">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Monotype Corsiva"/>
@@ -49,15 +51,15 @@
         </Style>
     </Window.Resources>
     <Grid x:Name="basis" Background="Black">
-        <ToolBar x:Name="toolBar" Margin="4" VerticalAlignment="Top" Height="40" Panel.ZIndex="1">
+        <ToolBar x:Name="toolBar" Margin="4" VerticalAlignment="Top" Height="40">
             <ToolBar.Background>
                 <ImageBrush ImageSource="Img/bar.jpg"/>
             </ToolBar.Background>
             <Image x:Name="home" Source="Img/back.png" Margin="2" ToolTip="Вернуться в главную комнату" MouseDown="Back"/>
             <Image x:Name="help" Source="Img/help.png" Margin="2" ToolTip="Ответ на загадку" MouseDown="help_MouseDown" />
-            <Image x:Name="hp1" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней"/>
-            <Image x:Name="hp2" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
-            <Image x:Name="hp3" Source="Img/hp.png" HorizontalAlignment="Right" Margin="2" ToolTip="Количество жизней" />
+            <Image x:Name="hp1" Visibility="Collapsed" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
+            <Image x:Name="hp2" Visibility="Collapsed" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
+            <Image x:Name="hp3" Visibility="Collapsed" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
         </ToolBar>
         <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" >
             <TabItem Header="0" x:Name="tabItemHally3" MouseDown="tabItemHally3_MouseDown">
@@ -78,12 +80,12 @@
                         <ImageBrush ImageSource="Img/zad1_y3.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image Source="Img/Сaesar.png" Margin="599,182,257,349" RenderTransformOrigin="0.5,0.5" Cursor="Arrow">
+                        <Image Source="Img/Сaesar.png" Margin="761,216,305,358" RenderTransformOrigin="0.5,0.5">
                             <Image.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
                                     <SkewTransform/>
-                                    <RotateTransform Angle="-1.759"/>
+                                    <RotateTransform Angle="-1.954"/>
                                     <TranslateTransform/>
                                 </TransformGroup>
                             </Image.RenderTransform>
@@ -125,7 +127,7 @@
                         <ImageBrush ImageSource="Img/zad2_y3.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image Source="Img/book.png" Margin="567,406,334,107" Cursor="Arrow">
+                        <Image Source="Img/book.png" Margin="739,444,382,106" Cursor="Arrow">
                             <Image.Triggers>
                                 <EventTrigger RoutedEvent="Image.MouseEnter">
                                     <BeginStoryboard>
@@ -164,7 +166,7 @@
                         <ImageBrush ImageSource="Img/zad3_y3.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <TextBlock Margin="62,93,459,415" RenderTransformOrigin="0.5,0.5">
+                        <TextBlock Margin="46,123,475,385" RenderTransformOrigin="0.5,0.5">
                             <TextBlock.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
@@ -198,7 +200,7 @@
                                 </EventTrigger>
                             </TextBlock.Triggers>
                         </TextBlock>
-                        <TextBlock Text="- .-. .. ... . -- ..- ... .-" Margin="34,309,415,200" RenderTransformOrigin="0.5,0.5">
+                        <TextBlock Text="- .-. .. ... . -- ..- ... .-" Margin="25,333,614,207" RenderTransformOrigin="0.5,0.5">
                             <TextBlock.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
