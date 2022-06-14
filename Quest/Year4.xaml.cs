@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
 
 namespace Quest
 {
@@ -24,6 +17,10 @@ namespace Quest
             InitializeComponent();
         }
         MainWindow main = new MainWindow();
+        private void home_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            tabControl4.SelectedIndex = 0;
+        }
         private void Window_Closed(object sender, EventArgs e)
         {
             Properties.Settings.Default.Save();
@@ -58,7 +55,7 @@ namespace Quest
         private int _count = 0;
         private void Reset()
         {
-            if (_count > 3)
+            if (_count >= 3)
             {
                 b1.Background = new SolidColorBrush(Colors.Red);
                 b2.Background = new SolidColorBrush(Colors.Red);
@@ -75,7 +72,7 @@ namespace Quest
         }
         private void Code_Click(object sender, RoutedEventArgs e)
         {
-            if(e.Source == b1)
+            if (e.Source == b1)
             {
                 b1.Background = new SolidColorBrush(Colors.Green);
                 _trueCount++;
@@ -132,7 +129,7 @@ namespace Quest
                 b8.Background = new SolidColorBrush(Colors.Green);
                 _trueCount++;
                 _count++;
-                if(_trueCount == 3)
+                if (_trueCount == 3)
                 {
                     MessageBox.Show("sad");
                 }
@@ -145,6 +142,50 @@ namespace Quest
                 Reset();
             }
         }
+
         #endregion
+
+        private void ListBox_Selected(object sender, RoutedEventArgs e)
+        {
+            switch (tabControl4.SelectedIndex)
+            {
+                case 0:
+                    tabControl4.SelectedIndex = 1;
+                    break;
+                case 1:
+                    tabControl4.SelectedIndex = 2;
+                    break;
+                case 2:
+                    tabControl4.SelectedIndex = 3;
+                    break;
+                case 3:
+                    tabControl4.SelectedIndex = 4;
+                    break;
+            }
+
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch (lb1.SelectedIndex)
+            {
+                case 0:
+                    tabControl4.SelectedIndex = 1;
+                    break;
+                case 1:
+                    tabControl4.SelectedIndex = 2;
+                    break;
+                case 2:
+                    tabControl4.SelectedIndex = 3;
+                    break;
+                case 3:
+                    tabControl4.SelectedIndex = 4;
+                    break;
+            }
+            lb1.SetValue(ListBox.SelectedIndexProperty, DependencyProperty.UnsetValue);
+        }
+
+        
+
     }
 }

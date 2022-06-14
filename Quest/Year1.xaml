@@ -6,9 +6,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Quest"
         mc:Ignorable="d"
-        Title="Этаж 1" MinHeight="450" Height="720" Width="1280" MinWidth="650" 
+        Title="Этаж 1" MinHeight="450" MinWidth="800" Height="720" Width="1280" 
         Closing="Window_Closing" WindowStartupLocation="CenterScreen" Icon="/icon.ico" 
-        KeyDown="Window_KeyDown" Loaded="Window_Loaded">
+        KeyDown="Window_KeyDown" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Monotype Corsiva"/>
@@ -70,7 +70,6 @@
             <Image x:Name="hp1" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp2" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp3" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
-
         </ToolBar>
         <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" MouseDown="tc_MouseDown" MouseMove="tc_MouseMove" >
             <TabItem Header="-1">
@@ -120,7 +119,7 @@
                         <ImageBrush ImageSource="Img/cab1_y1.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="img1" Visibility="Collapsed" Height="200" Width="300" Source="Img/olive.png" MouseDown="img1_MouseDown" Margin="54,63,632,316" RenderTransformOrigin="0.5,0.5">
+                        <Image x:Name="img1" Visibility="Collapsed" Source="Img/olive.png" MouseDown="img1_MouseDown" Margin="110,101,916,372" RenderTransformOrigin="0.5,0.5" Cursor="Arrow">
                             <Image.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
@@ -154,7 +153,19 @@
                     </Border.Background>
                     <Grid>
                         <Image Name="Chest" Source="Img/ChestClose.png" Margin="710,459,434,74" 
-                               MouseLeftButtonDown="Chest_MouseLeftButtonDown" MouseRightButtonDown="Chest_MouseRightButtonDown">
+                               MouseLeftButtonDown="Chest_MouseLeftButtonDown">
+                            <Image.Triggers>
+                                <EventTrigger RoutedEvent="Image.MouseRightButtonDown">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation 
+                                                Duration="0:0:0.2" 
+                                                Storyboard.TargetProperty="Margin"
+                                            />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Image.Triggers>
                         </Image>
                         <Border Style="{StaticResource Content}">
                             <StackPanel Margin="5,5,5,0">
@@ -183,8 +194,8 @@
                         <ImageBrush ImageSource="Img/cab3_y1.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="img3" Source="Img/list.png"  Margin="215,141,928,373" RenderTransformOrigin="0.5,0.5" 
-                               MouseLeftButtonDown="img3_MouseLeftButtonDown" MouseRightButtonDown="img3_MouseRightButtonDown">
+                        <Image x:Name="img3" Source="Img/list.png"  Margin="209,133,923,367" RenderTransformOrigin="0.5,0.5" 
+                               MouseLeftButtonDown="img3_MouseLeftButtonDown">
                             <Image.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
@@ -193,6 +204,18 @@
                                     <TranslateTransform/>
                                 </TransformGroup>
                             </Image.RenderTransform>
+                            <Image.Triggers>
+                                <EventTrigger RoutedEvent="Image.MouseRightButtonDown">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation 
+                                                Duration="0:0:0.2" 
+                                                Storyboard.TargetProperty="Margin"
+                                            />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Image.Triggers>
                         </Image>
                         <Border Style="{StaticResource Content}">
                             <StackPanel Margin="5">
@@ -263,21 +286,13 @@
                         <ImageBrush ImageSource="Img/cab5_y1.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="img5" Source="Img/Oedipus.jpg" Margin="306,154,883,338" RenderTransformOrigin="0.5,0.5" >
-                            <Image.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform/>
-                                    <RotateTransform Angle="2.462"/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
-                            </Image.RenderTransform>
+                        <Image x:Name="img5" Source="Img/Oedipus.jpg" Margin="306,154,883,338">
                             <Image.Triggers>
                                 <EventTrigger RoutedEvent="Image.MouseEnter">
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <ThicknessAnimation 
-                                                To="50,50,350,150" 
+                                                To="150,50,250,150" 
                                                 Duration="0:0:0.1" 
                                                 Storyboard.TargetProperty="Margin"
                                             />

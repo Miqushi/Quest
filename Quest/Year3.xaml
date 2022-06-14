@@ -77,31 +77,31 @@
             <TabItem Header="1">
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/zad1_y3.jpg"/>
+                        <ImageBrush ImageSource="Img/cab1_y3.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image Source="Img/Сaesar.png" Margin="761,216,305,358" RenderTransformOrigin="0.5,0.5">
+                        <Image Source="Img/Сaesar.png" Margin="484,306,636,287" RenderTransformOrigin="0.5,0.5">
                             <Image.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
                                     <SkewTransform/>
-                                    <RotateTransform Angle="-1.954"/>
+                                    <RotateTransform Angle="3.011"/>
                                     <TranslateTransform/>
                                 </TransformGroup>
                             </Image.RenderTransform>
                             <Image.Triggers>
-                                <EventTrigger RoutedEvent="Image.MouseEnter">
+                                <EventTrigger RoutedEvent="Image.MouseLeftButtonDown">
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <ThicknessAnimation 
-                                                To="100" 
-                                                Duration="0:0:0.1" 
+                                                To="200" 
+                                                Duration="0:0:0.5" 
                                                 Storyboard.TargetProperty="Margin"
                                             />
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
-                                <EventTrigger RoutedEvent="Image.MouseLeave">
+                                <EventTrigger RoutedEvent="Image.MouseRightButtonDown">
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <ThicknessAnimation 

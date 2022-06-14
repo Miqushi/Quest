@@ -145,12 +145,6 @@ namespace Quest
             }
             
         }
-        private void img3_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            var animation = new ThicknessAnimation();
-            animation.Duration = TimeSpan.FromSeconds(0.5);
-            img3.BeginAnimation(MarginProperty, animation);
-        }
         private void Chest_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if(e.ClickCount == 1)
@@ -170,12 +164,6 @@ namespace Quest
                 MessageBox.Show(Properties.Resources.ChestInfo,"Информация");
             }
             
-        }
-        private void Chest_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            var animation = new ThicknessAnimation();
-            animation.Duration = TimeSpan.FromSeconds(0.5);
-            Chest.BeginAnimation(MarginProperty, animation);
         }
 
         #region
@@ -562,6 +550,19 @@ namespace Quest
             {
                 img3Popup.Visibility = Visibility.Visible;
             }
-        }   
+        }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            //1265.6
+            //682.4
+            double x = basis.ActualWidth;
+            double y = basis.ActualHeight;
+            img1.Margin = new Thickness(0.0869*x, 0.15 * y, 0.7239 * x, 0.5451* y);
+            Chest.Margin = new Thickness(0.561 * x, 0.6726 * y, 0.3430 * x, 0.1085 * y);
+            img3.Margin = new Thickness(0.1652 * x, 0.1950 * y, 0.7534 * x, 0.5381 * y);
+            img4.Margin = new Thickness(0.4 * x, 0.3 * y, 0.5 * x, 0.5 * y);
+            img5.Margin = new Thickness(0.4 * x, 0.3 * y, 0.5 * x, 0.5 * y);
+        }
     }
 }
