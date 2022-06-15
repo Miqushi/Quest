@@ -124,7 +124,7 @@
             <TabItem Header="2">
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/zad2_y3.jpg"/>
+                        <ImageBrush ImageSource="Img/cab2_y3.jpg"/>
                     </Border.Background>
                     <Grid>
                         <Image Source="Img/book.png" Margin="739,444,382,106" Cursor="Arrow">
@@ -163,7 +163,7 @@
             <TabItem Header="3">
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/zad3_y3.jpg"/>
+                        <ImageBrush ImageSource="Img/cab3_y3.jpg"/>
                     </Border.Background>
                     <Grid>
                         <TextBlock Margin="46,123,475,385" RenderTransformOrigin="0.5,0.5">
@@ -244,7 +244,7 @@
             <TabItem Header="4">
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/zad4_y3.jpg"/>
+                        <ImageBrush ImageSource="Img/cab4_y3.jpg"/>
                     </Border.Background>
                     <Border Style="{StaticResource Content}">
                         <TextBlock Margin="5">

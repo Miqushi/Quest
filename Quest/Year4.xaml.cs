@@ -165,10 +165,64 @@ namespace Quest
             lb1.SetValue(ListBox.SelectedIndexProperty, DependencyProperty.UnsetValue);
         }
 
-        private void Prompt1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void Prompt_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Prompt1.Visibility = Visibility.Collapsed;
-            Prompt1Pop.Visibility = Visibility.Visible;
+            if(e.Source == Prompt1)
+            {
+                Prompt1.Visibility = Visibility.Collapsed;
+                Prompt1Pop.Visibility = Visibility.Visible;
+            }
+            if (e.Source == Prompt2)
+            {
+                Prompt2.Visibility = Visibility.Collapsed;
+                Prompt2Pop.Visibility = Visibility.Visible;
+            }
+            if (e.Source == Prompt3)
+            {
+                Prompt3.Visibility = Visibility.Collapsed;
+                Prompt3Pop.Visibility = Visibility.Visible;
+            }
         }
+        #region
+        //Vector _relativeMousePos;
+        //FrameworkElement _draggedObject;
+        //void OnDragMove(object sender, MouseEventArgs e)
+        //{
+        //    UpdatePosition(e);
+        //}
+        //void UpdatePosition(MouseEventArgs e)
+        //{
+        //    var point = e.GetPosition(DragArena);
+        //    var newPos = point - _relativeMousePos;
+        //    Canvas.SetLeft(_draggedObject, newPos.X);
+        //    Canvas.SetTop(_draggedObject, newPos.Y);
+        //}
+        //void OnMouseUp(object sender, MouseButtonEventArgs e)
+        //{
+        //    FinishDrag(sender, e);
+        //    Mouse.Capture(null);
+        //}
+
+        //void OnLostCapture(object sender, MouseEventArgs e)
+        //{
+        //    FinishDrag(sender, e);
+        //}
+        //void FinishDrag(object sender, MouseEventArgs e)
+        //{
+        //    _draggedObject.MouseMove -= OnDragMove;
+        //    _draggedObject.LostMouseCapture -= OnLostCapture;
+        //    _draggedObject.MouseUp -= OnMouseUp;
+        //    UpdatePosition(e);
+        //}
+        //private void StartDrag(object sender, MouseButtonEventArgs e)
+        //{
+        //    _draggedObject = (FrameworkElement)sender;
+        //    _relativeMousePos = e.GetPosition(_draggedObject) - new Point();
+        //    _draggedObject.MouseMove += OnDragMove;
+        //    _draggedObject.LostMouseCapture += OnLostCapture;
+        //    _draggedObject.MouseUp += OnMouseUp;
+        //    Mouse.Capture(_draggedObject);
+        //}
+        #endregion
     }
 }
