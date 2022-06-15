@@ -58,17 +58,19 @@
             <ToolBar.Background>
                 <ImageBrush ImageSource="Img/bar.jpg"/>
             </ToolBar.Background>
-            <Image x:Name="home" Source="Img/back.png" Margin="2" ToolTip="Вернуться в главную комнату" MouseDown="home_MouseDown"/>
+
+                <Image x:Name="home" Source="Img/back.png" Margin="2" ToolTip="Вернуться в главную комнату" MouseDown="home_MouseDown"/>
+
             <Image x:Name="help" Source="Img/help.png" Margin="2" ToolTip="Ответ на загадку"/>
             <Image x:Name="hp1" Visibility="Collapsed" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp2" Visibility="Collapsed" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp3" Visibility="Collapsed" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
-            <materialDesign:PopupBox Margin="0,2,0,0"  PlacementMode="BottomAndAlignLeftEdges" ToolTip="Инвентарь">
+            <materialDesign:PopupBox  PlacementMode="BottomAndAlignLeftEdges" ToolTip="Инвентарь">
                 <materialDesign:PopupBox.ToggleContent>
                     <Image Height="33" Width="33" Source="Img/inv.png"></Image>
                 </materialDesign:PopupBox.ToggleContent>
                 <StackPanel Orientation="Horizontal">
-                    
+                    <Image x:Name="Prompt1Pop" Height="100" Width="100" Source="Img/Prompt1.jpg" Visibility="Collapsed"/>
                 </StackPanel>
             </materialDesign:PopupBox>
         </ToolBar>
@@ -95,7 +97,7 @@
                                 <ListBoxItem>4</ListBoxItem>
                             </ListBox>
                         </Grid>
-  
+
                     </Border>
                 </Border>
             </TabItem>
@@ -104,11 +106,24 @@
                     <Border.Background>
                         <ImageBrush ImageSource="Img/Cab1_y4.jpg" />
                     </Border.Background>
-                    <Border Style="{StaticResource Content}">
-                        <TextBlock Margin="5">
+                    <Grid>
+                        <Image x:Name="Prompt1" Source="Img/Prompt1.jpg" 
+                               Margin="655,96,549,499" MouseLeftButtonDown="Prompt1_MouseLeftButtonDown" RenderTransformOrigin="0.5,0.5" Cursor="Arrow">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="3.665"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                        <Border Style="{StaticResource Content}">
+                            <TextBlock Margin="5">
                                 1
-                        </TextBlock>
-                    </Border>
+                            </TextBlock>
+                        </Border>
+                    </Grid>
                 </Border>
             </TabItem>
             <TabItem Header="2">
@@ -116,11 +131,13 @@
                     <Border.Background>
                         <ImageBrush />
                     </Border.Background>
-                    <Border Style="{StaticResource Content}">
-                        <TextBlock Margin="5">
+                    <Grid>
+                        <Border Style="{StaticResource Content}">
+                            <TextBlock Margin="5">
                                 2
-                        </TextBlock>
-                    </Border>
+                            </TextBlock>
+                        </Border>
+                    </Grid>
                 </Border>
             </TabItem>
             <TabItem Header="3">

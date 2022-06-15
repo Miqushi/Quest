@@ -162,10 +162,8 @@ namespace Quest
             else
             {
                 MessageBox.Show(Properties.Resources.ChestInfo,"Информация");
-            }
-            
+            }   
         }
-
         #region
         private void Riddle1()
         {
@@ -330,7 +328,7 @@ namespace Quest
             }
         }
         #endregion
-
+        #region
         readonly double[,] door =
         {{964/ 1265.6, 1039.2/ 1265.6, 190.4/ 682.4, 533.6/ 682.4 },
         { 748/ 1265.6, 784.8/ 1265.6, 256.8/ 682.4, 468/ 682.4},
@@ -536,6 +534,7 @@ namespace Quest
                     break;
             }
         }
+        #endregion
         private void PopupBox_Opened(object sender, RoutedEventArgs e)
         {
             if (img1.Visibility == Visibility.Visible)

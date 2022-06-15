@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-
+using System.Windows.Media.Animation;
 
 namespace Quest
 {
@@ -145,26 +145,6 @@ namespace Quest
 
         #endregion
 
-        private void ListBox_Selected(object sender, RoutedEventArgs e)
-        {
-            switch (tabControl4.SelectedIndex)
-            {
-                case 0:
-                    tabControl4.SelectedIndex = 1;
-                    break;
-                case 1:
-                    tabControl4.SelectedIndex = 2;
-                    break;
-                case 2:
-                    tabControl4.SelectedIndex = 3;
-                    break;
-                case 3:
-                    tabControl4.SelectedIndex = 4;
-                    break;
-            }
-
-        }
-
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             switch (lb1.SelectedIndex)
@@ -185,7 +165,10 @@ namespace Quest
             lb1.SetValue(ListBox.SelectedIndexProperty, DependencyProperty.UnsetValue);
         }
 
-        
-
+        private void Prompt1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Prompt1.Visibility = Visibility.Collapsed;
+            Prompt1Pop.Visibility = Visibility.Visible;
+        }
     }
 }
