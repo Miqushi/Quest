@@ -71,7 +71,8 @@
             <Image x:Name="hp2" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp3" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
         </ToolBar>
-        <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" MouseDown="tc_MouseDown" MouseMove="tc_MouseMove" >
+        <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" 
+                    TabStripPlacement="Bottom" MouseLeftButtonDown="tc_MouseClick"  MouseMove="tc_MouseMove" >
             <TabItem Header="-1">
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>

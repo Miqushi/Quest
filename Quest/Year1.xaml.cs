@@ -128,9 +128,11 @@ namespace Quest
         {
             if(e.ClickCount == 1)
             {
-                var animation = new ThicknessAnimation();
-                animation.To = new Thickness(0, 50, 550, 150);
-                animation.Duration = TimeSpan.FromSeconds(0.5);
+                var animation = new ThicknessAnimation
+                {
+                    To = new Thickness(0, 50, 550, 150),
+                    Duration = TimeSpan.FromSeconds(0.5)
+                };
                 img3.BeginAnimation(MarginProperty, animation);
                 if (img3.Name != "List")
                 {
@@ -149,9 +151,11 @@ namespace Quest
         {
             if(e.ClickCount == 1)
             {
-                var animation = new ThicknessAnimation();
-                animation.To = new Thickness(500, 200, 300, 100);
-                animation.Duration = TimeSpan.FromSeconds(0.5);
+                var animation = new ThicknessAnimation
+                {
+                    To = new Thickness(500, 200, 300, 100),
+                    Duration = TimeSpan.FromSeconds(0.5)
+                };
                 Chest.BeginAnimation(MarginProperty, animation);
                 if (Chest.Name != "ChestOpen")
                 {
@@ -342,7 +346,7 @@ namespace Quest
         { 993.6 / 1265.6, 1108 / 1265.6, 94.4 / 682.4, 466 / 682.4 },
         { 1055 / 1265.6, 1141 / 1265.6, 196 / 682.4, 480.8 / 682.4 },
         { 1039.2 / 1265.6, 1169.2 / 1265.6, 120.8 / 682.4, 526.4 / 682.4 }};
-        private void tc_MouseDown(object sender, MouseButtonEventArgs e)
+        private void tc_MouseClick(object sender, MouseButtonEventArgs e)
         {
             Point p = e.GetPosition(this);
             //MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");

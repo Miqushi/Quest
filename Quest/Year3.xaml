@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="Этаж 3" MinHeight="450" Height="720" Width="1280" MinWidth="650"  
         WindowStartupLocation="CenterScreen" Icon="/icon.ico" 
-        Closed="Window_Closed" KeyDown="Window_KeyDown" Loaded="Window_Loaded">
+        Closed="Window_Closed" KeyDown="Window_KeyDown" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Monotype Corsiva"/>
@@ -61,9 +61,9 @@
             <Image x:Name="hp2" Visibility="Collapsed" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp3" Visibility="Collapsed" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
         </ToolBar>
-        <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" >
-            <TabItem Header="0" x:Name="tabItemHally3" MouseDown="tabItemHally3_MouseDown">
-                <Border x:Name="hall"  MouseMove="hall_MouseMove" MouseLeave="hall_MouseLeave" Style="{StaticResource BackBorder}">
+        <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" MouseLeftButtonDown="tc_MouseLeftButtonDown" >
+            <TabItem Header="0">
+                <Border x:Name="hall" Style="{StaticResource BackBorder}">
                     <Border.Background>
                         <ImageBrush ImageSource="Img/y3_hall.jpg"/>
                     </Border.Background>
@@ -80,7 +80,7 @@
                         <ImageBrush ImageSource="Img/cab1_y3.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image Source="Img/Сaesar.png" Margin="484,306,636,287" RenderTransformOrigin="0.5,0.5">
+                        <Image x:Name="Caesar" Source="Img/Сaesar.png" Margin="484,306,636,287" RenderTransformOrigin="0.5,0.5">
                             <Image.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
@@ -127,24 +127,24 @@
                         <ImageBrush ImageSource="Img/cab2_y3.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image Source="Img/book.png" Margin="739,444,382,106" Cursor="Arrow">
+                        <Image x:Name="Book" Source="Img/book.png" Margin="739,444,382,106">
                             <Image.Triggers>
-                                <EventTrigger RoutedEvent="Image.MouseEnter">
+                                <EventTrigger RoutedEvent="Image.MouseLeftButtonDown">
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <ThicknessAnimation 
                                                 To="100" 
-                                                Duration="0:0:0.1" 
+                                                Duration="0:0:0.5" 
                                                 Storyboard.TargetProperty="Margin"
                                             />
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
-                                <EventTrigger RoutedEvent="Image.MouseLeave">
+                                <EventTrigger RoutedEvent="Image.MouseRightButtonDown">
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <ThicknessAnimation 
-                                                Duration="0:0:0.1" 
+                                                Duration="0:0:0.5" 
                                                 Storyboard.TargetProperty="Margin"
                                             />
                                         </Storyboard>
@@ -166,7 +166,7 @@
                         <ImageBrush ImageSource="Img/cab3_y3.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <TextBlock Margin="46,123,475,385" RenderTransformOrigin="0.5,0.5">
+                        <TextBlock x:Name="Morse1" Margin="49,116,631,439" RenderTransformOrigin="0.5,0.5">
                             <TextBlock.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
@@ -177,7 +177,7 @@
                             </TextBlock.RenderTransform>
                             ---- .. ..-. .-. ..- ..-- --.- .. . / - .- -... .-.. .. -.-. -.--
                             <TextBlock.Triggers>
-                                <EventTrigger RoutedEvent="TextBlock.MouseEnter">
+                                <EventTrigger RoutedEvent="TextBlock.MouseLeftButtonDown">
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <DoubleAnimation
@@ -188,7 +188,7 @@
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
-                                <EventTrigger RoutedEvent="TextBlock.MouseLeave">
+                                <EventTrigger RoutedEvent="TextBlock.MouseRightButtonDown">
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <DoubleAnimation
@@ -200,17 +200,17 @@
                                 </EventTrigger>
                             </TextBlock.Triggers>
                         </TextBlock>
-                        <TextBlock Text="- .-. .. ... . -- ..- ... .-" Margin="25,333,614,207" RenderTransformOrigin="0.5,0.5">
+                        <TextBlock x:Name="Morse2" Text="- .-. .. ... . -- ..- ... .-" Margin="22,308,877,253" RenderTransformOrigin="0.5,0.5">
                             <TextBlock.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
                                     <SkewTransform/>
-                                    <RotateTransform Angle="0.121"/>
+                                    <RotateTransform Angle="0.765"/>
                                     <TranslateTransform/>
                                 </TransformGroup>
                             </TextBlock.RenderTransform>
                             <TextBlock.Triggers>
-                                <EventTrigger RoutedEvent="TextBlock.MouseEnter">
+                                <EventTrigger RoutedEvent="TextBlock.MouseLeftButtonDown">
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <DoubleAnimation
@@ -221,7 +221,7 @@
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
-                                <EventTrigger RoutedEvent="TextBlock.MouseLeave">
+                                <EventTrigger RoutedEvent="TextBlock.MouseRightButtonDown">
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <DoubleAnimation
