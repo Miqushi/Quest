@@ -554,7 +554,6 @@ namespace Quest
                 img3Popup.Visibility = Visibility.Visible;
             }
         }
-
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             //1265.6

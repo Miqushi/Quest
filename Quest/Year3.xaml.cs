@@ -38,7 +38,7 @@ namespace Quest
             }
         }
 
-        MainWindow main = new MainWindow();
+        readonly MainWindow main = new MainWindow();
         public void Damage()
         {
             MessageBox.Show("Ошибка", "Вы ошиблись. Попробуйте еще раз");
@@ -73,7 +73,6 @@ namespace Quest
             Properties.Settings.Default.Save();
             main.Show();
         }
-
         private void Riddle5()
         {
             string otvet = textBox5.Text.Trim().ToLower();
@@ -123,7 +122,7 @@ namespace Quest
             Caesar.Margin = new Thickness(0.38 * x, 0.45 * y, 0.50 * x, 0.42 * y);
             Book.Margin = new Thickness(0.58 * x, 0.65 * y, 0.30 * x, 0.16 * y);
             Morse1.Margin = new Thickness(0.03 * x, 0.18 * y, 0.38 * x, 0.54 * y);
-            Morse2.Margin = new Thickness(0.02 * x, 0.46 * y, 0.68 * x, 0.37 * y);
+            Morse2.Margin   = new Thickness(0.02 * x, 0.46 * y, 0.68 * x, 0.37 * y);
         }
         #region
         readonly double[,] door = { {0.1126, 0.1441, 0.3623, 0.7963 },
@@ -196,9 +195,72 @@ namespace Quest
                         tc.SelectedIndex = 0;
                     }
                     break;
-
+            }
+        }
+        private void tc_MouseMove(object sender, MouseEventArgs e)
+        {
+            Point p = e.GetPosition(this);
+            //MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
+            double x = basis.ActualWidth;
+            double y = basis.ActualHeight;
+            switch (tc.SelectedIndex)
+            {
+                case 0:
+                    if (p.X > x * door[0, 0] && p.X < x * door[0, 1] &&
+                        p.Y > y * door[0, 2] && p.Y < y * door[0, 3] ||
+                            p.X > x * door[1, 0] && p.X < x * door[1, 1] &&
+                        p.Y > y * door[1, 2] && p.Y < y * door[1, 3] ||
+                            p.X > x * door[2, 0] && p.X < x * door[2, 1] &&
+                        p.Y > y * door[2, 2] && p.Y < y * door[2, 3] ||
+                            p.X > x * door[3, 0] && p.X < x * door[3, 1] &&
+                        p.Y > y * door[3, 2] && p.Y < y * door[3, 3] ||
+                            p.X > x * door[4, 0] && p.X < x * door[4, 1] &&
+                        p.Y > y * door[4, 2] && p.Y < y * door[4, 3])
+                    {
+                        Cursor = Cursors.Hand;
+                    }
+                    else
+                    {
+                        Cursor = Cursors.Arrow;
+                    }
+                    break;
+                case 1:
+                    if (p.X > x * exit[0, 0] && p.X < x * exit[0, 1] &&
+                    p.Y > y * exit[0, 2] && p.Y < y * exit[0, 3])
+                    {
+                        Cursor = Cursors.Hand;
+                    }
+                    else
+                    {
+                        Cursor = Cursors.Arrow;
+                    }
+                    break;
+                case 3:
+                    if (p.X > x * exit[2, 0] && p.X < x * exit[2, 1] &&
+                    p.Y > y * exit[2, 2] && p.Y < y * exit[2, 3])
+                    {
+                        Cursor = Cursors.Hand;
+                    }
+                    else
+                    {
+                        Cursor = Cursors.Arrow;
+                    }
+                    break;
+                case 4:
+                    if (p.X > x * exit[3, 0] && p.X < x * exit[3, 1] &&
+                    p.Y > y * exit[3, 2] && p.Y < y * exit[3, 3])
+                    {
+                        Cursor = Cursors.Hand;
+                    }
+                    else
+                    {
+                        Cursor = Cursors.Arrow;
+                    }
+                    break;
             }
         }
         #endregion
+
+
     }
 }

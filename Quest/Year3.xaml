@@ -61,7 +61,9 @@
             <Image x:Name="hp2" Visibility="Collapsed" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp3" Visibility="Collapsed" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
         </ToolBar>
-        <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" MouseLeftButtonDown="tc_MouseLeftButtonDown" >
+        <TabControl x:Name="tc" Margin="2,46,2,-24" 
+                    BorderBrush="Transparent" Background="Transparent" 
+                    TabStripPlacement="Bottom" MouseLeftButtonDown="tc_MouseLeftButtonDown" MouseMove="tc_MouseMove" >
             <TabItem Header="0">
                 <Border x:Name="hall" Style="{StaticResource BackBorder}">
                     <Border.Background>
