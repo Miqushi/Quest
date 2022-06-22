@@ -19,7 +19,7 @@ namespace Quest
         MainWindow main = new MainWindow();
         private void home_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            tabControl4.SelectedIndex = 0;
+            tc.SelectedIndex = 0;
         }
         private void Window_Closed(object sender, EventArgs e)
         {
@@ -144,27 +144,6 @@ namespace Quest
         }
 
         #endregion
-
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            switch (lb1.SelectedIndex)
-            {
-                case 0:
-                    tabControl4.SelectedIndex = 1;
-                    break;
-                case 1:
-                    tabControl4.SelectedIndex = 2;
-                    break;
-                case 2:
-                    tabControl4.SelectedIndex = 3;
-                    break;
-                case 3:
-                    tabControl4.SelectedIndex = 4;
-                    break;
-            }
-            lb1.SetValue(ListBox.SelectedIndexProperty, DependencyProperty.UnsetValue);
-        }
-
         private void Prompt_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if(e.Source == Prompt1)
@@ -184,45 +163,193 @@ namespace Quest
             }
         }
         #region
-        //Vector _relativeMousePos;
-        //FrameworkElement _draggedObject;
-        //void OnDragMove(object sender, MouseEventArgs e)
-        //{
-        //    UpdatePosition(e);
-        //}
-        //void UpdatePosition(MouseEventArgs e)
-        //{
-        //    var point = e.GetPosition(DragArena);
-        //    var newPos = point - _relativeMousePos;
-        //    Canvas.SetLeft(_draggedObject, newPos.X);
-        //    Canvas.SetTop(_draggedObject, newPos.Y);
-        //}
-        //void OnMouseUp(object sender, MouseButtonEventArgs e)
-        //{
-        //    FinishDrag(sender, e);
-        //    Mouse.Capture(null);
-        //}
+        Vector _relativeMousePos;
+        FrameworkElement _draggedObject;
+        void OnDragMove(object sender, MouseEventArgs e)
+        {
+            UpdatePosition(e);
+        }
+        void UpdatePosition(MouseEventArgs e)
+        {
+            var point = e.GetPosition(DragArena);
+            var newPos = point - _relativeMousePos;
+            Canvas.SetLeft(_draggedObject, newPos.X);
+            Canvas.SetTop(_draggedObject, newPos.Y);
+        }
+        void OnMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            FinishDrag(sender, e);
+            Mouse.Capture(null);
+        }
 
-        //void OnLostCapture(object sender, MouseEventArgs e)
-        //{
-        //    FinishDrag(sender, e);
-        //}
-        //void FinishDrag(object sender, MouseEventArgs e)
-        //{
-        //    _draggedObject.MouseMove -= OnDragMove;
-        //    _draggedObject.LostMouseCapture -= OnLostCapture;
-        //    _draggedObject.MouseUp -= OnMouseUp;
-        //    UpdatePosition(e);
-        //}
-        //private void StartDrag(object sender, MouseButtonEventArgs e)
-        //{
-        //    _draggedObject = (FrameworkElement)sender;
-        //    _relativeMousePos = e.GetPosition(_draggedObject) - new Point();
-        //    _draggedObject.MouseMove += OnDragMove;
-        //    _draggedObject.LostMouseCapture += OnLostCapture;
-        //    _draggedObject.MouseUp += OnMouseUp;
-        //    Mouse.Capture(_draggedObject);
-        //}
+        void OnLostCapture(object sender, MouseEventArgs e)
+        {
+            FinishDrag(sender, e);
+        }
+        void FinishDrag(object sender, MouseEventArgs e)
+        {
+            _draggedObject.MouseMove -= OnDragMove;
+            _draggedObject.LostMouseCapture -= OnLostCapture;
+            _draggedObject.MouseUp -= OnMouseUp;
+            UpdatePosition(e);
+        }
+        private void StartDrag(object sender, MouseButtonEventArgs e)
+        {
+            _draggedObject = (FrameworkElement)sender;
+            _relativeMousePos = e.GetPosition(_draggedObject) - new Point();
+            _draggedObject.MouseMove += OnDragMove;
+            _draggedObject.LostMouseCapture += OnLostCapture;
+            _draggedObject.MouseUp += OnMouseUp;
+            Mouse.Capture(_draggedObject);
+        }
         #endregion
+        #region
+        readonly double[,] door = { {0.177, 0.2953, 0.3906, 0.8030 },
+                            { 0.3876, 0.4521, 0.3845, 0.8269 },
+                            { 0.5875, 0.6925, 0.3152, 0.9296 },
+                            { 0.7739, 0.9067, 0.2405, 0.9296 }
+        };
+        readonly double[,] exit = { {0.8449, 0.9763, 0.1994, 0.7425 },
+                            { 0.8561, 0.9619, 0.1806, 0.5994 },
+                            { 0.8949, 0.9620,0.1887, 0.6483 },
+                            { 0.8727, 0.99, 0.3235, 0.7683 }
+        };
+        private void tc_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+            Point p = e.GetPosition(this);
+            double x = basis.ActualWidth;
+            double y = basis.ActualHeight;
+            switch (tc.SelectedIndex)
+            {
+                case 0:
+                    if (p.X > x * door[0, 0] && p.X < x * door[0, 1] &&
+                    p.Y > y * door[0, 2] && p.Y < y * door[0, 3])
+                    {
+                        tc.SelectedIndex = 1;
+                    }
+                    if (p.X > x * door[1, 0] && p.X < x * door[1, 1] &&
+                        p.Y > y * door[1, 2] && p.Y < y * door[1, 3])
+                    {
+                        tc.SelectedIndex = 2;
+                    }
+                    if (p.X > x * door[2, 0] && p.X < x * door[2, 1] &&
+                        p.Y > y * door[2, 2] && p.Y < y * door[2, 3])
+                    {
+                        tc.SelectedIndex = 3;
+                    }
+                    if (p.X > x * door[3, 0] && p.X < x * door[3, 1] &&
+                        p.Y > y * door[3, 2] && p.Y < y * door[3, 3])
+                    {
+                        tc.SelectedIndex = 4;
+                    }
+                    break;
+                case 1:
+                    if (p.X > x * exit[0, 0] && p.X < x * exit[0, 1] &&
+                    p.Y > y * exit[0, 2] && p.Y < y * exit[0, 3])
+                    {
+                        tc.SelectedIndex = 0;
+                    }
+                    break;
+                case 2:
+                    if (p.X > x * exit[1, 0] && p.X < x * exit[1, 1] &&
+                    p.Y > y * exit[1, 2] && p.Y < y * exit[1, 3])
+                    {
+                        tc.SelectedIndex = 0;
+                    }
+                    break;
+                case 3:
+                    if (p.X > x * exit[2, 0] && p.X < x * exit[2, 1] &&
+                    p.Y > y * exit[2, 2] && p.Y < y * exit[2, 3])
+                    {
+                        tc.SelectedIndex = 0;
+                    }
+                    break;
+                case 4:
+                    if (p.X > x * exit[3, 0] && p.X < x * exit[3, 1] &&
+                    p.Y > y * exit[3, 2] && p.Y < y * exit[3, 3])
+                    {
+                        tc.SelectedIndex = 0;
+                    }
+                    break;
+            }
+        }
+
+        private void tc_MouseMove(object sender, MouseEventArgs e)
+        {
+            Point p = e.GetPosition(this);
+            double x = basis.ActualWidth;
+            double y = basis.ActualHeight;
+            switch (tc.SelectedIndex)
+            {
+                case 0:
+                    if (p.X > x * door[0, 0] && p.X < x * door[0, 1] &&
+                        p.Y > y * door[0, 2] && p.Y < y * door[0, 3] ||
+                            p.X > x * door[1, 0] && p.X < x * door[1, 1] &&
+                        p.Y > y * door[1, 2] && p.Y < y * door[1, 3] ||
+                            p.X > x * door[2, 0] && p.X < x * door[2, 1] &&
+                        p.Y > y * door[2, 2] && p.Y < y * door[2, 3] ||
+                            p.X > x * door[3, 0] && p.X < x * door[3, 1] &&
+                        p.Y > y * door[3, 2] && p.Y < y * door[3, 3])
+                    {
+                        Cursor = Cursors.Hand;
+                    }
+                    else
+                    {
+                        Cursor = Cursors.Arrow;
+                    }
+                    break;
+                case 1:
+                    if (p.X > x * exit[0, 0] && p.X < x * exit[0, 1] &&
+                    p.Y > y * exit[0, 2] && p.Y < y * exit[0, 3])
+                    {
+                        Cursor = Cursors.Hand;
+                    }
+                    else
+                    {
+                        Cursor = Cursors.Arrow;
+                    }
+                    break;
+                case 2:
+                    if (p.X > x * exit[1, 0] && p.X < x * exit[1, 1] &&
+                    p.Y > y * exit[1, 2] && p.Y < y * exit[1, 3])
+                    {
+                        Cursor = Cursors.Hand;
+                    }
+                    else
+                    {
+                        Cursor = Cursors.Arrow;
+                    }
+                    break;
+                case 3:
+                    if (p.X > x * exit[2, 0] && p.X < x * exit[2, 1] &&
+                    p.Y > y * exit[2, 2] && p.Y < y * exit[2, 3])
+                    {
+                        Cursor = Cursors.Hand;
+                    }
+                    else
+                    {
+                        Cursor = Cursors.Arrow;
+                    }
+                    break;
+                case 4:
+                    if (p.X > x * exit[3, 0] && p.X < x * exit[3, 1] &&
+                    p.Y > y * exit[3, 2] && p.Y < y * exit[3, 3])
+                    {
+                        Cursor = Cursors.Hand;
+                    }
+                    else
+                    {
+                        Cursor = Cursors.Arrow;
+                    }
+                    break;
+            }
+        }
+        #endregion
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            tc.SelectedIndex = 5;
+        }
     }
 }

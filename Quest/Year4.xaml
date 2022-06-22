@@ -53,7 +53,7 @@
             <Setter Property="Button.BorderBrush" Value="Transparent"/>
         </Style>
     </Window.Resources>
-    <Grid Background="Black">
+    <Grid x:Name="basis" Background="Black">
         <ToolBar x:Name="toolBar" Margin="4" VerticalAlignment="Top" Height="40">
             <ToolBar.Background>
                 <ImageBrush ImageSource="Img/bar.jpg"/>
@@ -71,34 +71,23 @@
                     <Image x:Name="Prompt1Pop" Height="100" Width="100" Source="Img/Prompt1.jpg" Visibility="Collapsed"/>
                     <Image x:Name="Prompt2Pop" Height="100" Width="100" Source="Img/Prompt2.jpg" Visibility="Collapsed"/>
                     <Image x:Name="Prompt3Pop" Height="100" Width="100" Source="Img/Prompt3.jpg" Visibility="Collapsed"/>
-
                 </StackPanel>
             </materialDesign:PopupBox>
         </ToolBar>
-        <TabControl x:Name="tabControl4" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom">
+        <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" TabStripPlacement="Bottom" 
+                    MouseLeftButtonDown="tc_MouseLeftButtonDown" MouseMove="tc_MouseMove" >
             <TabItem Header="0">
                 <Border x:Name="hall" Style="{StaticResource BackBorder}">
                     <Border.Background>
                         <ImageBrush ImageSource="Img/y4_hall.jpg"/>
                     </Border.Background>
                     <Border Style="{StaticResource Content}">
-                        <Grid>
+                        <StackPanel>
+                            <Button Click="Button_Click"></Button>
                             <TextBlock Margin="5">
 
                             </TextBlock>
-                            <ListBox x:Name="lb1" SelectionChanged="ListBox_SelectionChanged" >
-                                <ListBox.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                                    </ItemsPanelTemplate>
-                                </ListBox.ItemsPanel>
-                                <ListBoxItem>1</ListBoxItem>
-                                <ListBoxItem>2</ListBoxItem>
-                                <ListBoxItem>3</ListBoxItem>
-                                <ListBoxItem>4</ListBoxItem>
-                            </ListBox>
-                        </Grid>
-
+                        </StackPanel>
                     </Border>
                 </Border>
             </TabItem>
@@ -109,13 +98,10 @@
                     </Border.Background>
                     <Grid>
                         <Image x:Name="Prompt1" Source="Img/Prompt1.jpg" 
-                               Margin="655,96,549,499" MouseLeftButtonDown="Prompt_MouseLeftButtonDown" RenderTransformOrigin="0.5,0.5">
+                               Margin="655,96,549,499" MouseLeftButtonDown="Prompt_MouseLeftButtonDown" RenderTransformOrigin="0.5,0.5" Cursor="Arrow">
                             <Image.RenderTransform>
                                 <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform/>
                                     <RotateTransform Angle="3.665"/>
-                                    <TranslateTransform/>
                                 </TransformGroup>
                             </Image.RenderTransform>
                         </Image>
@@ -190,6 +176,19 @@
                             </TextBlock>
                         </Border>
                     </Grid>
+                </Border>
+            </TabItem>
+            <TabItem Header="4">
+                <Border Style="{StaticResource BackBorder}">
+                    <Border.Background>
+                        Black
+                    </Border.Background>
+                    <Canvas x:Name="DragArena">
+                        <Image Source="Img/back.png" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="107" Canvas.Top="162"/>
+                        <Image Source="Img/help.png" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="254" Canvas.Top="171"/>
+                        <Image Source="Img/back.png" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="127" Canvas.Top="324"/>
+                        <Image Source="Img/help.png" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="254" Canvas.Top="324" Cursor="Arrow"/>
+                    </Canvas>
                 </Border>
             </TabItem>
         </TabControl>

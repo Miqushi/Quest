@@ -139,10 +139,7 @@ namespace Quest
         };
         private void tc_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            //1265.6
-            //682.4
             Point p = e.GetPosition(this);
-            //MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
             double x = basis.ActualWidth;
             double y = basis.ActualHeight;
             switch (tc.SelectedIndex)
@@ -200,7 +197,6 @@ namespace Quest
         private void tc_MouseMove(object sender, MouseEventArgs e)
         {
             Point p = e.GetPosition(this);
-            //MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
             double x = basis.ActualWidth;
             double y = basis.ActualHeight;
             switch (tc.SelectedIndex)
@@ -260,7 +256,5 @@ namespace Quest
             }
         }
         #endregion
-
-
     }
 }
