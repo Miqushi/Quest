@@ -178,7 +178,7 @@
                     </Grid>
                 </Border>
             </TabItem>
-            <TabItem Header="4">
+            <TabItem Header="extra">
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
                         Black

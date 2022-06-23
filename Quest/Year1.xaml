@@ -135,8 +135,7 @@
                                 <TextBlock x:Name="tbIst">
                                 Вы заходите в первую комнату. Пройдя дальше, и, осмотревшись по сторонам, Вы вновь слышите голос: Китайские мастера боевых искусств говорили, что драка - для дураков, для умных - победа. А что, по их мнению - для мудрых?
                                 </TextBlock>
-                                <TextBox materialDesign:HintAssist.FontFamily="Arial" x:Name="textBox1" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18" Cursor="IBeam">
-                                </TextBox>
+                                <TextBox x:Name="textBox1" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18"/>
                                 <Button x:Name="otv1" HorizontalAlignment="Center" Content="Ответить"  BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="20" Click="otv_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="Img/button.png"/>
