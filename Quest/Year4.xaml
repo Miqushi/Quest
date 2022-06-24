@@ -98,10 +98,12 @@
                     </Border.Background>
                     <Grid>
                         <Image x:Name="Prompt1" Source="Img/Prompt1.jpg" 
-                               Margin="655,96,549,499" MouseLeftButtonDown="Prompt_MouseLeftButtonDown" RenderTransformOrigin="0.5,0.5" Cursor="Arrow">
+                               Margin="661,102,553,500" MouseLeftButtonDown="Prompt_MouseLeftButtonDown" RenderTransformOrigin="0.5,0.5">
                             <Image.RenderTransform>
                                 <TransformGroup>
-                                    <RotateTransform Angle="3.665"/>
+                                    <SkewTransform AngleY="5"/>
+                                    <RotateTransform Angle="0.674"/>
+                                    <TranslateTransform/>
                                 </TransformGroup>
                             </Image.RenderTransform>
                         </Image>
@@ -119,7 +121,7 @@
                         <ImageBrush ImageSource="Img/Cab2_y4.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="Prompt2" Source="Img/Prompt2.jpg" Margin="523,89,679,497" MouseLeftButtonDown="Prompt_MouseLeftButtonDown"/>
+                        <Image x:Name="Prompt2" Source="Img/Prompt2.jpg" Margin="529,104,686,494" MouseLeftButtonDown="Prompt_MouseLeftButtonDown"/>
                         <Border Style="{StaticResource Content}">
                             <TextBlock Margin="5">
                                 2
@@ -134,7 +136,8 @@
                         <ImageBrush ImageSource="Img/Cab3_y4.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="Prompt3" Source="Img/Prompt3.jpg" MouseLeftButtonDown="Prompt_MouseLeftButtonDown" Margin="78,230,1142,370"/>
+                        <Image x:Name="Prompt3" Source="Img/Prompt3.jpg" MouseLeftButtonDown="Prompt_MouseLeftButtonDown" Margin="84,228,1138,378"/>
+                        <Image Source="Img/bw.png" Margin="166,393,1058,215" Cursor="Arrow"> </Image>
                         <Border Style="{StaticResource Content}">
                             <TextBlock Margin="5">
                             3
@@ -149,7 +152,7 @@
                         <ImageBrush ImageSource="Img/cab4_y4.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Grid Margin="857,294,331,277">
+                        <Grid Margin="851,294,337,277">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
                                 <RowDefinition/>
