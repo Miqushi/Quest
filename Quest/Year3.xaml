@@ -84,12 +84,7 @@
                     <Grid>
                         <Image x:Name="Caesar" Source="Img/Сaesar.png" Margin="484,306,636,287" RenderTransformOrigin="0.5,0.5">
                             <Image.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform/>
                                     <RotateTransform Angle="1.069"/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
                             </Image.RenderTransform>
                             <Image.Triggers>
                                 <EventTrigger RoutedEvent="Image.MouseLeftButtonDown">
@@ -170,12 +165,7 @@
                     <Grid>
                         <TextBlock x:Name="Morse1" Margin="49,116,631,439" RenderTransformOrigin="0.5,0.5">
                             <TextBlock.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform/>
                                     <RotateTransform Angle="5.399"/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
                             </TextBlock.RenderTransform>
                             ---- .. ..-. .-. ..- ..-- --.- .. . / - .- -... .-.. .. -.-. -.--
                             <TextBlock.Triggers>
@@ -204,12 +194,7 @@
                         </TextBlock>
                         <TextBlock x:Name="Morse2" Text="- .-. .. ... . -- ..- ... .-" Margin="22,308,877,253" RenderTransformOrigin="0.5,0.5">
                             <TextBlock.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform/>
                                     <RotateTransform Angle="0.765"/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
                             </TextBlock.RenderTransform>
                             <TextBlock.Triggers>
                                 <EventTrigger RoutedEvent="TextBlock.MouseLeftButtonDown">

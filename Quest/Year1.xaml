@@ -120,12 +120,11 @@
                         <ImageBrush ImageSource="Img/cab1_y1.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="img1" Visibility="Collapsed" Source="Img/olive.png" MouseDown="img1_MouseDown" Margin="110,101,916,372" RenderTransformOrigin="0.5,0.5" Cursor="Arrow">
+                        <Image x:Name="img1" Visibility="Collapsed" Source="Img/olive.png" MouseLeftButtonDown="img1_MouseDown" Margin="128,83,898,390" RenderTransformOrigin="0.5,0.5" Cursor="Arrow">
                             <Image.RenderTransform>
                                 <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform/>
-                                    <RotateTransform Angle="2.273"/>
+                                    <SkewTransform AngleX="-10"/>
+                                    <RotateTransform Angle="1.249"/>
                                     <TranslateTransform/>
                                 </TransformGroup>
                             </Image.RenderTransform>
@@ -172,7 +171,7 @@
                                 <TextBlock x:Name="tbMath">
                                 Вы заходите во вторую комнату. В углу стоял какой-то сундук.
                                 </TextBlock>
-                                <ListBox x:Name="lb4" SelectionChanged="lb4_SelectionChanged" Visibility="Collapsed" FontFamily="Monotype Corsiva" FontSize="18">
+                                <ListBox x:Name="lb4" SelectionChanged="Riddle2" Visibility="Collapsed" FontFamily="Monotype Corsiva" FontSize="18">
                                     <ListBox.ItemsPanel>
                                         <ItemsPanelTemplate>
                                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
@@ -194,15 +193,10 @@
                         <ImageBrush ImageSource="Img/cab3_y1.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="img3" Source="Img/list.png"  Margin="209,133,923,367" RenderTransformOrigin="0.5,0.5" 
+                        <Image x:Name="img3" Source="Img/list.png"  Margin="210,133,922,367" RenderTransformOrigin="0.5,0.5" 
                                MouseLeftButtonDown="img3_MouseLeftButtonDown">
                             <Image.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform/>
-                                    <RotateTransform Angle="1.66"/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
+                                <RotateTransform Angle="1.66"/>
                             </Image.RenderTransform>
                             <Image.Triggers>
                                 <EventTrigger RoutedEvent="Image.MouseRightButtonDown">
@@ -239,7 +233,10 @@
                         <ImageBrush ImageSource="Img/cab4_y1.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="img4" Source="Img/prometheus.jpg" Margin="546,214,633,309" RenderTransformOrigin="0.5,0.5">
+                        <Image x:Name="img4" Source="Img/prometheus.jpg" Margin="554,214,625,309" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <RotateTransform Angle="1.395"/>
+                            </Image.RenderTransform>
                             <Image.Triggers>
                                 <EventTrigger RoutedEvent="Image.MouseEnter">
                                     <BeginStoryboard>
@@ -286,7 +283,10 @@
                         <ImageBrush ImageSource="Img/cab5_y1.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="img5" Source="Img/Oedipus.jpg" Margin="306,154,883,338">
+                        <Image x:Name="img5" Source="Img/Oedipus.jpg" Margin="304,162,885,340" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                               <RotateTransform Angle="1.89"/>
+                            </Image.RenderTransform>
                             <Image.Triggers>
                                 <EventTrigger RoutedEvent="Image.MouseEnter">
                                     <BeginStoryboard>

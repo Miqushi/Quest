@@ -122,6 +122,7 @@ namespace Quest
         }
         private void img1_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            if(e.ClickCount == 2)
             MessageBox.Show(Properties.Resources.img1, "Информация");
         }
         private void img3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -185,7 +186,7 @@ namespace Quest
                 Damage();
             }
         }
-        private void lb4_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Riddle2(object sender, SelectionChangedEventArgs e)
         {
             if (lb4.SelectedIndex == 1)
             {

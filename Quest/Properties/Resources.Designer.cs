@@ -61,6 +61,36 @@ namespace Quest.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bb {
+            get {
+                object obj = ResourceManager.GetObject("bb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg {
+            get {
+                object obj = ResourceManager.GetObject("bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bw {
+            get {
+                object obj = ResourceManager.GetObject("bw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вы подходите к сундуку, и видите, что он закрыт на кодовый замок.  Голос говорит вам: У женщины спросили: &quot;Сколько Вам лет?&quot;. Она ответила: &quot;30, не считая суббот и воскресений&quot;. Сколько ей лет?.
         /// </summary>
         internal static string ChestClick {

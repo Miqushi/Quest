@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
+using System.Windows.Media.Imaging;
 
 namespace Quest
 {
@@ -17,10 +17,7 @@ namespace Quest
             InitializeComponent();
         }
         MainWindow main = new MainWindow();
-        private void home_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            tc.SelectedIndex = 0;
-        }
+        private void home_MouseDown(object sender, MouseButtonEventArgs e) => tc.SelectedIndex = 0;
         private void Window_Closed(object sender, EventArgs e)
         {
             Properties.Settings.Default.Save();
@@ -55,6 +52,10 @@ namespace Quest
         private int _count = 0;
         private void Reset()
         {
+            if (_trueCount == 3)
+            {
+                MessageBox.Show("sad");
+            }
             if (_count >= 3)
             {
                 b1.Background = new SolidColorBrush(Colors.Red);
@@ -72,81 +73,24 @@ namespace Quest
         }
         private void Code_Click(object sender, RoutedEventArgs e)
         {
-            if (e.Source == b1)
+            Button x = (Button)sender;
+            x.Background = new SolidColorBrush(Colors.Green);
+            if (x.Name == "b1" || x.Name == "b6" || x.Name == "b8")
             {
-                b1.Background = new SolidColorBrush(Colors.Green);
                 _trueCount++;
                 _count++;
-                if (_trueCount == 3)
-                {
-                    MessageBox.Show("sad");
-                }
-                Reset();
             }
-            if (e.Source == b2)
+            else
             {
-                b2.Background = new SolidColorBrush(Colors.Green);
                 _count++;
-                Reset();
             }
-            if (e.Source == b3)
-            {
-                b3.Background = new SolidColorBrush(Colors.Green);
-                _count++;
-                Reset();
-            }
-            if (e.Source == b4)
-            {
-                b4.Background = new SolidColorBrush(Colors.Green);
-                _count++;
-                Reset();
-            }
-            if (e.Source == b5)
-            {
-                b5.Background = new SolidColorBrush(Colors.Green);
-                _count++;
-                Reset();
-            }
-            if (e.Source == b6)
-            {
-                b6.Background = new SolidColorBrush(Colors.Green);
-                _trueCount++;
-                _count++;
-                if (_trueCount == 3)
-                {
-                    MessageBox.Show("sad");
-                }
-                Reset();
-            }
-            if (e.Source == b7)
-            {
-                b7.Background = new SolidColorBrush(Colors.Green);
-                _count++;
-                Reset();
-            }
-            if (e.Source == b8)
-            {
-                b8.Background = new SolidColorBrush(Colors.Green);
-                _trueCount++;
-                _count++;
-                if (_trueCount == 3)
-                {
-                    MessageBox.Show("sad");
-                }
-                Reset();
-            }
-            if (e.Source == b9)
-            {
-                b9.Background = new SolidColorBrush(Colors.Green);
-                _count++;
-                Reset();
-            }
+            Reset();
         }
 
         #endregion
         private void Prompt_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if(e.Source == Prompt1)
+            if (e.Source == Prompt1)
             {
                 Prompt1.Visibility = Visibility.Collapsed;
                 Prompt1Pop.Visibility = Visibility.Visible;
@@ -216,8 +160,9 @@ namespace Quest
         };
         private void tc_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
             Point p = e.GetPosition(this);
+            //MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
+
             double x = basis.ActualWidth;
             double y = basis.ActualHeight;
             switch (tc.SelectedIndex)
@@ -256,6 +201,11 @@ namespace Quest
                     p.Y > y * exit[1, 2] && p.Y < y * exit[1, 3])
                     {
                         tc.SelectedIndex = 0;
+                    }
+                    if (p.X > x * 0.071 && p.X < x * 0.4186 &&
+                    p.Y > y * 0.6381 && p.Y < y * 0.7994)
+                    {
+                        tc.SelectedIndex = 5;
                     }
                     break;
                 case 3:
@@ -312,7 +262,9 @@ namespace Quest
                     break;
                 case 2:
                     if (p.X > x * exit[1, 0] && p.X < x * exit[1, 1] &&
-                    p.Y > y * exit[1, 2] && p.Y < y * exit[1, 3])
+                    p.Y > y * exit[1, 2] && p.Y < y * exit[1, 3]||
+                    p.X > x * 0.071 && p.X < x * 0.4186 &&
+                    p.Y > y * 0.6381 && p.Y < y * 0.7994)
                     {
                         Cursor = Cursors.Hand;
                     }
@@ -346,10 +298,27 @@ namespace Quest
             }
         }
         #endregion
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private int _butCount;
+        private void But_LeftClick(object sender, MouseButtonEventArgs e)
         {
-            tc.SelectedIndex = 5;
+            Image x = (Image)sender;
+            x.Source = BitmapFrame.Create(new Uri(@"pack://application:,,,/Img/bg.png"));
+            _butCount++;
+            switch (_butCount)
+            {
+                case 1:
+                    bw1.Source = BitmapFrame.Create(new Uri(@"pack://application:,,,/Img/bg.png"));
+                    break;
+                case 2:
+                    bw2.Source = BitmapFrame.Create(new Uri(@"pack://application:,,,/Img/bg.png"));
+                    break;
+                case 3:
+                    bw3.Source = BitmapFrame.Create(new Uri(@"pack://application:,,,/Img/bg.png"));
+                    break;
+                case 4:
+                    bw4.Source = BitmapFrame.Create(new Uri(@"pack://application:,,,/Img/bg.png"));
+                    break;
+            }
         }
     }
 }

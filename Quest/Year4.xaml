@@ -83,7 +83,6 @@
                     </Border.Background>
                     <Border Style="{StaticResource Content}">
                         <StackPanel>
-                            <Button Click="Button_Click"></Button>
                             <TextBlock Margin="5">
 
                             </TextBlock>
@@ -97,13 +96,13 @@
                         <ImageBrush ImageSource="Img/Cab1_y4.jpg" />
                     </Border.Background>
                     <Grid>
+                        <Image Source="Img/bw.png" Margin="310,10,900,600" MouseLeftButtonDown="But_LeftClick"/>
                         <Image x:Name="Prompt1" Source="Img/Prompt1.jpg" 
                                Margin="661,102,553,500" MouseLeftButtonDown="Prompt_MouseLeftButtonDown" RenderTransformOrigin="0.5,0.5">
                             <Image.RenderTransform>
                                 <TransformGroup>
                                     <SkewTransform AngleY="5"/>
                                     <RotateTransform Angle="0.674"/>
-                                    <TranslateTransform/>
                                 </TransformGroup>
                             </Image.RenderTransform>
                         </Image>
@@ -121,6 +120,7 @@
                         <ImageBrush ImageSource="Img/Cab2_y4.jpg"/>
                     </Border.Background>
                     <Grid>
+                        <Image Source="Img/bw.png" Margin="850,408,371,200" MouseLeftButtonDown="But_LeftClick"/>
                         <Image x:Name="Prompt2" Source="Img/Prompt2.jpg" Margin="529,104,686,494" MouseLeftButtonDown="Prompt_MouseLeftButtonDown"/>
                         <Border Style="{StaticResource Content}">
                             <TextBlock Margin="5">
@@ -136,8 +136,17 @@
                         <ImageBrush ImageSource="Img/Cab3_y4.jpg"/>
                     </Border.Background>
                     <Grid>
+                        <StackPanel Orientation="Horizontal" Margin="863,256,255,329" RenderTransformOrigin="0.5,0.5">
+                            <StackPanel.RenderTransform>
+                                <RotateTransform Angle="0.563"/>
+                            </StackPanel.RenderTransform>
+                            <Image x:Name="bw1" Margin="2" Height="30" Source="Img/bb.png"/>
+                            <Image x:Name="bw2" Margin="2" Height="30" Source="Img/bb.png"/>
+                            <Image x:Name="bw3" Margin="2" Height="30" Source="Img/bb.png"/>
+                            <Image x:Name="bw4" Margin="2" Height="30" Source="Img/bb.png"/>
+                        </StackPanel>
                         <Image x:Name="Prompt3" Source="Img/Prompt3.jpg" MouseLeftButtonDown="Prompt_MouseLeftButtonDown" Margin="84,228,1138,378"/>
-                        <Image Source="Img/bw.png" Margin="166,393,1058,215" Cursor="Arrow"> </Image>
+                        <Image Source="Img/bw.png" Margin="166,398,1050,215" MouseLeftButtonDown="But_LeftClick"></Image>
                         <Border Style="{StaticResource Content}">
                             <TextBlock Margin="5">
                             3
@@ -152,6 +161,7 @@
                         <ImageBrush ImageSource="Img/cab4_y4.jpg"/>
                     </Border.Background>
                     <Grid>
+                        <Image Source="Img/Bw.png" Margin="152,178,1080,430" MouseLeftButtonDown="But_LeftClick"/>
                         <Grid Margin="851,294,337,277">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
