@@ -55,6 +55,12 @@ namespace Quest
             if (_trueCount == 3)
             {
                 MessageBox.Show("sad");
+                Prompt1.Visibility = Visibility.Collapsed;
+                Prompt1Pop.Visibility = Visibility.Collapsed;
+                Prompt2.Visibility = Visibility.Collapsed;
+                Prompt2Pop.Visibility = Visibility.Collapsed;
+                Prompt3.Visibility = Visibility.Collapsed;
+                Prompt3Pop.Visibility = Visibility.Collapsed; 
             }
             if (_count >= 3)
             {
@@ -145,6 +151,7 @@ namespace Quest
             _draggedObject.LostMouseCapture += OnLostCapture;
             _draggedObject.MouseUp += OnMouseUp;
             Mouse.Capture(_draggedObject);
+            
         }
         #endregion
         #region

@@ -98,7 +98,7 @@
                     <Grid>
                         <Grid Margin="289,211,881,342" RenderTransformOrigin="0.5,0.5">
                             <Grid.RenderTransform>
-                                    <RotateTransform Angle="2.951"/>
+                                <RotateTransform Angle="2.951"/>
                             </Grid.RenderTransform>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
@@ -215,10 +215,10 @@
                         Black
                     </Border.Background>
                     <Canvas x:Name="DragArena">
-                        <Image Source="Img/back.png" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="107" Canvas.Top="162"/>
-                        <Image Source="Img/help.png" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="254" Canvas.Top="171"/>
-                        <Image Source="Img/back.png" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="127" Canvas.Top="324"/>
-                        <Image Source="Img/help.png" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="254" Canvas.Top="324" Cursor="Arrow"/>
+                        <Image Name="Puzzle1" Source="Img/code4.jpg" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="107" Canvas.Top="162"/>
+                        <Image Name="Puzzle2" Source="Img/code3.jpg" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="254" Canvas.Top="171"/>
+                        <Image Name="Puzzle3" Source="Img/code1.jpg" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="127" Canvas.Top="324"/>
+                        <Image Name="Puzzle4" Source="Img/code2.jpg" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="254" Canvas.Top="323"/>
                     </Canvas>
                 </Border>
             </TabItem>
