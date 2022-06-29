@@ -319,6 +319,34 @@ namespace Quest
                     bw4.Source = BitmapFrame.Create(new Uri(@"pack://application:,,,/Img/bg.png"));
                     break;
             }
+            
+        }
+        private int _countClick = 1;
+        private void ChangeNumber(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock tmp = (TextBlock)sender;
+            if (_countClick > 4)
+                _countClick = 1;
+            switch (_countClick)
+            {
+                case 1:
+                    tmp.Text = "1";
+                    break;
+                case 2:
+                    tmp.Text = "2";
+                    break;
+                case 3:
+                    tmp.Text = "3";
+                    break;
+                case 4:
+                    tmp.Text = "4";
+                    break;
+            }
+            _countClick++;
+            if(Code1.Text == "4" && Code2.Text == "1" && Code3.Text == "2" && Code4.Text == "3")
+            {
+                MessageBox.Show("zxc");
+            }
         }
     }
 }

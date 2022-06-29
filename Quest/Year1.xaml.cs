@@ -22,7 +22,7 @@ namespace Quest
             Properties.Settings.Default.Save();
             main.Show();
         }
-        public int lvl = 0;
+        int lvl = 0;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             switch (Properties.Settings.Default.hp)
@@ -76,10 +76,7 @@ namespace Quest
         }
         private void Back(object sender, MouseButtonEventArgs e)
         {
-            if (tc.SelectedIndex != 0)
-            {
-                tc.SelectedIndex = 1;
-            }
+            if (tc.SelectedIndex != 0) tc.SelectedIndex = 1;
         }
         private void Help(object sender, MouseButtonEventArgs e)
         {
@@ -115,11 +112,9 @@ namespace Quest
                 tc.SelectedIndex = 1;
                 //lb1.SetValue(ListBox.SelectedIndexProperty, DependencyProperty.UnsetValue);
             }
-            else
-            {
-                Damage();
-            }
+            else Damage();
         }
+        #region ImgInfo
         private void img1_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if(e.ClickCount == 2)
@@ -142,10 +137,7 @@ namespace Quest
                     otv3.Visibility = Visibility.Visible;
                 }
             }
-            else
-            {
-                MessageBox.Show(Properties.Resources.ListInfo, "Информация");
-            }
+            else MessageBox.Show(Properties.Resources.ListInfo, "Информация");
             
         }
         private void Chest_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -164,12 +156,10 @@ namespace Quest
                     lb4.Visibility = Visibility.Visible;
                 }
             }
-            else
-            {
-                MessageBox.Show(Properties.Resources.ChestInfo,"Информация");
-            }   
+            else MessageBox.Show(Properties.Resources.ChestInfo,"Информация");  
         }
-        #region
+        #endregion
+        #region Riddle
         private void Riddle1()
         {
             string otvet = textBox1.Text.Trim().ToLower();
@@ -181,10 +171,7 @@ namespace Quest
                 img1.Visibility = Visibility.Visible;
                 lvl += 1;
             }
-            else
-            {
-                Damage();
-            }
+            else Damage();
         }
         private void Riddle2(object sender, SelectionChangedEventArgs e)
         {
@@ -196,10 +183,7 @@ namespace Quest
                 Chest.Name = "ChestOpen";
                 lvl += 1;
             }
-            else
-            {
-                Damage();
-            }
+            else Damage();
         }
         private void Riddle3()
         {
@@ -213,10 +197,7 @@ namespace Quest
                 lvl += 1;
                 img3.Name = "List";
             }
-            else
-            {
-                Damage();
-            }
+            else Damage();
         }
         private void Riddle4()
         {
@@ -228,10 +209,7 @@ namespace Quest
                 otv4.Visibility = Visibility.Collapsed;
                 lvl += 1;
             }
-            else
-            {
-                Damage();
-            }
+            else Damage();
         }
         private void Riddle5()
         {
@@ -243,10 +221,7 @@ namespace Quest
                 otv5.Visibility = Visibility.Collapsed;
                 lvl += 1;
             }
-            else
-            {
-                Damage();
-            }
+            else Damage();
         }
         private void Riddle6()
         {
@@ -258,10 +233,7 @@ namespace Quest
                 otv6.Visibility = Visibility.Collapsed;
                 next.Visibility = Visibility.Visible;
             }
-            else
-            {
-                Damage();
-            }
+            else Damage();
         }
         private void otv_Click(object sender, RoutedEventArgs e)
         {
@@ -287,9 +259,7 @@ namespace Quest
         private void next_Click(object sender, RoutedEventArgs e)
         {
             if (Properties.Settings.Default.YearCount == 0)
-            {
                 Properties.Settings.Default.YearCount++;
-            }
             main.Show();
             Close();
         }
@@ -333,7 +303,7 @@ namespace Quest
             }
         }
         #endregion
-        #region
+        #region MouseClick
         readonly double[,] door =
         {{964/ 1265.6, 1039.2/ 1265.6, 190.4/ 682.4, 533.6/ 682.4 },
         { 748/ 1265.6, 784.8/ 1265.6, 256.8/ 682.4, 468/ 682.4},

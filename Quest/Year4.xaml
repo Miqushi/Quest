@@ -90,12 +90,29 @@
                     </Border>
                 </Border>
             </TabItem>
-            <TabItem Header="1">
+            <TabItem Header="1" Margin="-2,0,-2,0">
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
                         <ImageBrush ImageSource="Img/Cab1_y4.jpg" />
                     </Border.Background>
                     <Grid>
+                        <Grid Margin="289,211,881,342" RenderTransformOrigin="0.5,0.5">
+                            <Grid.RenderTransform>
+                                    <RotateTransform Angle="2.951"/>
+                            </Grid.RenderTransform>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock x:Name="Code1" Grid.Row="0" Grid.Column="0" Text="1" FontSize="40" MouseLeftButtonDown="ChangeNumber"/>
+                            <TextBlock x:Name="Code2" Grid.Row="0" Grid.Column="1" Text="1" FontSize="40" MouseLeftButtonDown="ChangeNumber"/>
+                            <TextBlock x:Name="Code3" Grid.Row="1" Grid.Column="0" Text="1" FontSize="40" MouseLeftButtonDown="ChangeNumber"/>
+                            <TextBlock x:Name="Code4" Grid.Row="1" Grid.Column="1" Text="1" FontSize="40" MouseLeftButtonDown="ChangeNumber"/>
+                        </Grid>
                         <Image Source="Img/bw.png" Margin="310,10,900,600" MouseLeftButtonDown="But_LeftClick"/>
                         <Image x:Name="Prompt1" Source="Img/Prompt1.jpg" 
                                Margin="661,102,553,500" MouseLeftButtonDown="Prompt_MouseLeftButtonDown" RenderTransformOrigin="0.5,0.5">
@@ -136,6 +153,7 @@
                         <ImageBrush ImageSource="Img/Cab3_y4.jpg"/>
                     </Border.Background>
                     <Grid>
+                        <Image Margin="415,180,721,372"></Image>
                         <StackPanel Orientation="Horizontal" Margin="863,256,255,329" RenderTransformOrigin="0.5,0.5">
                             <StackPanel.RenderTransform>
                                 <RotateTransform Angle="0.563"/>

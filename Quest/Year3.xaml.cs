@@ -66,7 +66,21 @@ namespace Quest
         }
         private void help_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("На этом этаже - без подсказок", "Подсказки");
+            switch (tc.SelectedIndex)
+            {
+                case 1:
+                    MessageBox.Show("Это шифр Цезаря. Число сдвига: номер этого императора");
+                    break;
+                case 2:
+                    MessageBox.Show("Это книжный (Библейский) шифр. 1-ая цифра - глава. 2-ая цифра -  абзац 3-ая цифра - предложение 4-ая цифра -  слово");
+                    break;
+                case 3:
+                    MessageBox.Show("Это морзянка (Код Морзе)");
+                    break;
+                case 4:
+                    MessageBox.Show("Подсказка в предыдущей комнате (с морзянкой)");
+                    break;
+            }
         }
         private void Window_Closed(object sender, EventArgs e)
         {
