@@ -17,6 +17,7 @@ namespace Quest
             InitializeComponent();
         }
         MainWindow main = new MainWindow();
+        int puzzleCount;
         private void home_MouseDown(object sender, MouseButtonEventArgs e) => tc.SelectedIndex = 0;
         private void Window_Closed(object sender, EventArgs e)
         {
@@ -48,13 +49,13 @@ namespace Quest
             }
         }
         #region
-        private int _trueCount = 0;
-        private int _count = 0;
+        private int _trueCount, _count = 0;
         private void Reset()
         {
             if (_trueCount == 3)
             {
-                MessageBox.Show("sad");
+                MessageBox.Show("Вы нашли 2 части пазла");
+                puzzleCount++;
                 Prompt1.Visibility = Visibility.Collapsed;
                 Prompt1Pop.Visibility = Visibility.Collapsed;
                 Prompt2.Visibility = Visibility.Collapsed;
@@ -212,7 +213,8 @@ namespace Quest
                     if (p.X > x * 0.071 && p.X < x * 0.4186 &&
                     p.Y > y * 0.6381 && p.Y < y * 0.7994)
                     {
-                        tc.SelectedIndex = 5;
+                        if (puzzleCount != 2) MessageBox.Show("Найдите все части пазла, чтобы выполнить задание");
+                        else tc.SelectedIndex = 5;
                     }
                     break;
                 case 3:
@@ -331,6 +333,7 @@ namespace Quest
         private int _countClick = 1;
         private void ChangeNumber(object sender, MouseButtonEventArgs e)
         {
+            
             TextBlock tmp = (TextBlock)sender;
             if (_countClick > 4)
                 _countClick = 1;
@@ -352,7 +355,8 @@ namespace Quest
             _countClick++;
             if(Code1.Text == "4" && Code2.Text == "1" && Code3.Text == "2" && Code4.Text == "3")
             {
-                MessageBox.Show("zxc");
+                MessageBox.Show("Вы получили две части пазла");
+                puzzleCount++;
             }
         }
     }

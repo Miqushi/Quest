@@ -90,7 +90,7 @@
                     </Border>
                 </Border>
             </TabItem>
-            <TabItem Header="1" Margin="-2,0,-2,0">
+            <TabItem Header="1">
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
                         <ImageBrush ImageSource="Img/Cab1_y4.jpg" />
@@ -215,10 +215,10 @@
                         Black
                     </Border.Background>
                     <Canvas x:Name="DragArena">
-                        <Image Name="Puzzle1" Source="Img/code4.jpg" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="107" Canvas.Top="162"/>
-                        <Image Name="Puzzle2" Source="Img/code3.jpg" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="254" Canvas.Top="171"/>
-                        <Image Name="Puzzle3" Source="Img/code1.jpg" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="127" Canvas.Top="324"/>
-                        <Image Name="Puzzle4" Source="Img/code2.jpg" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="254" Canvas.Top="323"/>
+                        <Image Name="Puzzle1" Source="Img/code4.jpg" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="566" Canvas.Top="226"/>
+                        <Image Name="Puzzle2" Source="Img/code3.jpg" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="566" Canvas.Top="251"/>
+                        <Image Name="Puzzle3" Source="Img/code1.jpg" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="585" Canvas.Top="226" Cursor="Arrow"/>
+                        <Image Name="Puzzle4" Source="Img/code2.jpg" MouseLeftButtonDown="StartDrag" Height="98" Width="96" Canvas.Left="585" Canvas.Top="250"/>
                     </Canvas>
                 </Border>
             </TabItem>
