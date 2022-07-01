@@ -46,7 +46,11 @@
             </Grid>
         </Border>
         <ToolBar Margin="2" VerticalAlignment="Top" Height="40">
-                <ToolBar.Background>
+            <Image Source="Img/Reference.png" Margin="2"/>
+            <Image x:Name="hp1" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
+            <Image x:Name="hp2" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
+            <Image x:Name="hp3" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
+            <ToolBar.Background>
                 <ImageBrush ImageSource="Img/bar.jpg"/>
             </ToolBar.Background>
         </ToolBar>

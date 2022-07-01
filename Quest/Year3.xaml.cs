@@ -60,10 +60,7 @@ namespace Quest
                 Close();
             }
         }
-        private void Back(object sender, MouseButtonEventArgs e)
-        {
-            tc.SelectedIndex = 0;
-        }
+        private void Back(object sender, MouseButtonEventArgs e) => tc.SelectedIndex = 0;
         private void help_MouseDown(object sender, MouseButtonEventArgs e)
         {
             switch (tc.SelectedIndex)

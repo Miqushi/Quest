@@ -35,8 +35,29 @@ namespace Quest
         {
             //if (Properties.Settings.Default.YearCount == 0)
             //{
-                
+
             //}
+            switch (Properties.Settings.Default.hp)
+            {
+                case 3:
+                    {
+                        hp1.Visibility = Visibility.Visible;
+                        hp2.Visibility = Visibility.Visible;
+                        hp3.Visibility = Visibility.Visible;
+                    }
+                    break;
+                case 2:
+                    {
+                        hp1.Visibility = Visibility.Visible;
+                        hp2.Visibility = Visibility.Visible;
+                    }
+                    break;
+                case 1:
+                    {
+                        hp1.Visibility = Visibility.Visible;
+                    }
+                    break;
+            }
         }
 
         private void curs2_Click(object sender, RoutedEventArgs e)

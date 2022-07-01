@@ -190,9 +190,6 @@
     <Resource Include="Img\list.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Img\help.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Img\back.png" />
   </ItemGroup>
   <ItemGroup>
@@ -293,6 +290,15 @@
     <Resource Include="Img\code2.jpg" />
     <Resource Include="Img\code3.jpg" />
     <Resource Include="Img\code4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\Reference.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" />

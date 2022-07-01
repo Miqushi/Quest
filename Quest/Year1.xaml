@@ -67,9 +67,9 @@
                     <Image x:Name="img3Popup" Height="100" Width="100" Visibility="Collapsed" Source="Img/list.png"/>
                 </StackPanel>
             </materialDesign:PopupBox>
-            <Image x:Name="hp1" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
-            <Image x:Name="hp2" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
-            <Image x:Name="hp3" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
+            <Image x:Name="hp1" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней" Cursor="Arrow"/>
+            <Image x:Name="hp2" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней" Cursor="Arrow"/>
+            <Image x:Name="hp3" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней" Cursor="Arrow"/>
         </ToolBar>
         <TabControl x:Name="tc" Margin="2,46,2,-24" BorderBrush="Transparent" Background="Transparent" 
                     TabStripPlacement="Bottom" MouseLeftButtonDown="tc_MouseClick"  MouseMove="tc_MouseMove" >

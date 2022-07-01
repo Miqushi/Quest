@@ -57,9 +57,9 @@
             </ToolBar.Background>
             <Image x:Name="home" Source="Img/back.png" Margin="2" ToolTip="Вернуться в главную комнату" MouseDown="Back"/>
             <Image x:Name="help" Source="Img/help.png" Margin="2" ToolTip="Ответ на загадку" MouseDown="help_MouseDown" />
-            <Image x:Name="hp1" Visibility="Collapsed" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
-            <Image x:Name="hp2" Visibility="Collapsed" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
-            <Image x:Name="hp3" Visibility="Collapsed" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
+            <Image x:Name="hp1" Visibility="Hidden" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
+            <Image x:Name="hp2" Visibility="Hidden" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
+            <Image x:Name="hp3" Visibility="Hidden" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
         </ToolBar>
         <TabControl x:Name="tc" Margin="2,46,2,-24" 
                     BorderBrush="Transparent" Background="Transparent" 
