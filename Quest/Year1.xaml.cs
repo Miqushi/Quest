@@ -17,6 +17,8 @@ namespace Quest
             InitializeComponent();
         }
         MainWindow main = new MainWindow();
+        Year1 year1;
+        Damage damage = new Damage();
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Properties.Settings.Default.Save();
@@ -171,7 +173,10 @@ namespace Quest
                 img1.Visibility = Visibility.Visible;
                 lvl += 1;
             }
-            else Damage();
+            else
+            {
+                damage.DealingDamage(hp1, hp2, hp3, year1);
+            }
         }
         private void Riddle2(object sender, SelectionChangedEventArgs e)
         {
@@ -513,17 +518,11 @@ namespace Quest
         private void PopupBox_Opened(object sender, RoutedEventArgs e)
         {
             if (img1.Visibility == Visibility.Visible)
-            {
                 img1Popup.Visibility = Visibility.Visible;
-            }
             if (Chest.Name == "ChestOpen")
-            {
                 img2Popup.Visibility = Visibility.Visible;
-            }
             if (img3.Name == "List")
-            {
                 img3Popup.Visibility = Visibility.Visible;
-            }
         }
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {

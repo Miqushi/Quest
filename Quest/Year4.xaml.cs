@@ -93,8 +93,6 @@ namespace Quest
             }
             Reset();
         }
-
-        #endregion
         private void Prompt_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (e.Source == Prompt1)
@@ -113,6 +111,7 @@ namespace Quest
                 Prompt3Pop.Visibility = Visibility.Visible;
             }
         }
+        #endregion
         #region
         Vector _relativeMousePos;
         FrameworkElement _draggedObject;
@@ -178,38 +177,26 @@ namespace Quest
                 case 0:
                     if (p.X > x * door[0, 0] && p.X < x * door[0, 1] &&
                     p.Y > y * door[0, 2] && p.Y < y * door[0, 3])
-                    {
                         tc.SelectedIndex = 1;
-                    }
                     if (p.X > x * door[1, 0] && p.X < x * door[1, 1] &&
                         p.Y > y * door[1, 2] && p.Y < y * door[1, 3])
-                    {
                         tc.SelectedIndex = 2;
-                    }
                     if (p.X > x * door[2, 0] && p.X < x * door[2, 1] &&
                         p.Y > y * door[2, 2] && p.Y < y * door[2, 3])
-                    {
                         tc.SelectedIndex = 3;
-                    }
                     if (p.X > x * door[3, 0] && p.X < x * door[3, 1] &&
                         p.Y > y * door[3, 2] && p.Y < y * door[3, 3])
-                    {
                         tc.SelectedIndex = 4;
-                    }
                     break;
                 case 1:
                     if (p.X > x * exit[0, 0] && p.X < x * exit[0, 1] &&
                     p.Y > y * exit[0, 2] && p.Y < y * exit[0, 3])
-                    {
                         tc.SelectedIndex = 0;
-                    }
                     break;
                 case 2:
                     if (p.X > x * exit[1, 0] && p.X < x * exit[1, 1] &&
                     p.Y > y * exit[1, 2] && p.Y < y * exit[1, 3])
-                    {
                         tc.SelectedIndex = 0;
-                    }
                     if (p.X > x * 0.071 && p.X < x * 0.4186 &&
                     p.Y > y * 0.6381 && p.Y < y * 0.7994)
                     {
@@ -220,16 +207,12 @@ namespace Quest
                 case 3:
                     if (p.X > x * exit[2, 0] && p.X < x * exit[2, 1] &&
                     p.Y > y * exit[2, 2] && p.Y < y * exit[2, 3])
-                    {
                         tc.SelectedIndex = 0;
-                    }
                     break;
                 case 4:
                     if (p.X > x * exit[3, 0] && p.X < x * exit[3, 1] &&
                     p.Y > y * exit[3, 2] && p.Y < y * exit[3, 3])
-                    {
                         tc.SelectedIndex = 0;
-                    }
                     break;
             }
         }
@@ -250,59 +233,34 @@ namespace Quest
                         p.Y > y * door[2, 2] && p.Y < y * door[2, 3] ||
                             p.X > x * door[3, 0] && p.X < x * door[3, 1] &&
                         p.Y > y * door[3, 2] && p.Y < y * door[3, 3])
-                    {
                         Cursor = Cursors.Hand;
-                    }
-                    else
-                    {
-                        Cursor = Cursors.Arrow;
-                    }
+                    else Cursor = Cursors.Arrow;
                     break;
                 case 1:
                     if (p.X > x * exit[0, 0] && p.X < x * exit[0, 1] &&
                     p.Y > y * exit[0, 2] && p.Y < y * exit[0, 3])
-                    {
                         Cursor = Cursors.Hand;
-                    }
-                    else
-                    {
-                        Cursor = Cursors.Arrow;
-                    }
+                    else Cursor = Cursors.Arrow;
                     break;
                 case 2:
                     if (p.X > x * exit[1, 0] && p.X < x * exit[1, 1] &&
                     p.Y > y * exit[1, 2] && p.Y < y * exit[1, 3]||
                     p.X > x * 0.071 && p.X < x * 0.4186 &&
                     p.Y > y * 0.6381 && p.Y < y * 0.7994)
-                    {
                         Cursor = Cursors.Hand;
-                    }
-                    else
-                    {
-                        Cursor = Cursors.Arrow;
-                    }
+                    else Cursor = Cursors.Arrow;
                     break;
                 case 3:
                     if (p.X > x * exit[2, 0] && p.X < x * exit[2, 1] &&
                     p.Y > y * exit[2, 2] && p.Y < y * exit[2, 3])
-                    {
                         Cursor = Cursors.Hand;
-                    }
-                    else
-                    {
-                        Cursor = Cursors.Arrow;
-                    }
+                    else Cursor = Cursors.Arrow;
                     break;
                 case 4:
                     if (p.X > x * exit[3, 0] && p.X < x * exit[3, 1] &&
                     p.Y > y * exit[3, 2] && p.Y < y * exit[3, 3])
-                    {
                         Cursor = Cursors.Hand;
-                    }
-                    else
-                    {
-                        Cursor = Cursors.Arrow;
-                    }
+                    else Cursor = Cursors.Arrow;
                     break;
             }
         }
@@ -358,6 +316,13 @@ namespace Quest
                 MessageBox.Show("Вы получили две части пазла");
                 puzzleCount++;
             }
+        }
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            double x = basis.ActualWidth;
+            double y = basis.ActualHeight;
+
+            bw1.Margin = new Thickness();
         }
     }
 }

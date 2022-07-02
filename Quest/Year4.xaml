@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:Quest"
         mc:Ignorable="d"
         Title="Этаж 4" MinHeight="450" Height="720" Width="1280" MinWidth="650"  
-        WindowStartupLocation="CenterScreen" Icon="/icon.ico" Closed="Window_Closed" Loaded="Window_Loaded" >
+        WindowStartupLocation="CenterScreen" Icon="/icon.ico" Closed="Window_Closed" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged" >
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Monotype Corsiva"/>
@@ -96,9 +96,24 @@
                         <ImageBrush ImageSource="Img/Cab1_y4.jpg" />
                     </Border.Background>
                     <Grid>
+                        <Grid Margin="298,137,901,452">
+                            <Grid.RenderTransform>
+                                <RotateTransform Angle="1.5"/>
+                            </Grid.RenderTransform>
+                            <Image Grid.Row="0" Grid.Column="0" Source="Img/figure4.png"/>
+                            <Image Grid.Row="1" Grid.Column="0" Source="Img/figure3.png"/>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                        </Grid>
                         <Grid Margin="289,211,881,342" RenderTransformOrigin="0.5,0.5">
                             <Grid.RenderTransform>
-                                <RotateTransform Angle="2.951"/>
+                                <RotateTransform Angle="1.5"/>
                             </Grid.RenderTransform>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
@@ -113,7 +128,7 @@
                             <TextBlock x:Name="Code3" Grid.Row="1" Grid.Column="0" Text="1" FontSize="40" MouseLeftButtonDown="ChangeNumber"/>
                             <TextBlock x:Name="Code4" Grid.Row="1" Grid.Column="1" Text="1" FontSize="40" MouseLeftButtonDown="ChangeNumber"/>
                         </Grid>
-                        <Image Source="Img/bw.png" Margin="310,10,900,600" MouseLeftButtonDown="But_LeftClick"/>
+                        <Image Source="Img/bw.png" Margin="318,10,906,600" MouseLeftButtonDown="But_LeftClick"/>
                         <Image x:Name="Prompt1" Source="Img/Prompt1.jpg" 
                                Margin="661,102,553,500" MouseLeftButtonDown="Prompt_MouseLeftButtonDown" RenderTransformOrigin="0.5,0.5">
                             <Image.RenderTransform>
@@ -158,10 +173,10 @@
                             <StackPanel.RenderTransform>
                                 <RotateTransform Angle="0.563"/>
                             </StackPanel.RenderTransform>
-                            <Image x:Name="bw1" Margin="2" Height="30" Source="Img/bb.png"/>
-                            <Image x:Name="bw2" Margin="2" Height="30" Source="Img/bb.png"/>
-                            <Image x:Name="bw3" Margin="2" Height="30" Source="Img/bb.png"/>
-                            <Image x:Name="bw4" Margin="2" Height="30" Source="Img/bb.png"/>
+                            <Image Name="bw1" Margin="2" Height="30" Source="Img/bb.png"/>
+                            <Image Name="bw2" Margin="2" Height="30" Source="Img/bb.png"/>
+                            <Image Name="bw3" Margin="2" Height="30" Source="Img/bb.png"/>
+                            <Image Name="bw4" Margin="2" Height="30" Source="Img/bb.png"/>
                         </StackPanel>
                         <Image x:Name="Prompt3" Source="Img/Prompt3.jpg" MouseLeftButtonDown="Prompt_MouseLeftButtonDown" Margin="84,228,1138,378"/>
                         <Image Source="Img/bw.png" Margin="166,398,1050,215" MouseLeftButtonDown="But_LeftClick"></Image>
