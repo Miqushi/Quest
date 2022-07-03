@@ -82,7 +82,7 @@
                         <ImageBrush ImageSource="Img/cab1_y3.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="Caesar" Source="Img/Сaesar.png" Margin="484,306,636,287" RenderTransformOrigin="0.5,0.5">
+                        <Image x:Name="Caesar" Source="Img/Сaesar.png" Margin="484,306,636,287" RenderTransformOrigin="0.5,0.5" Cursor="Arrow">
                             <Image.RenderTransform>
                                     <RotateTransform Angle="1.069"/>
                             </Image.RenderTransform>

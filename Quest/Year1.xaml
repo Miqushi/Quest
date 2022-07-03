@@ -135,7 +135,7 @@
                                 Вы заходите в первую комнату. Пройдя дальше, и, осмотревшись по сторонам, Вы вновь слышите голос: Китайские мастера боевых искусств говорили, что драка - для дураков, для умных - победа. А что, по их мнению - для мудрых?
                                 </TextBlock>
                                 <TextBox x:Name="textBox1" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18"/>
-                                <Button x:Name="otv1" HorizontalAlignment="Center" Content="Ответить"  BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="20" Click="otv_Click">
+                                <Button x:Name="otv1" HorizontalAlignment="Center" Content="Ответить"  BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="20" Click="Answer">
                                     <Button.Background>
                                         <ImageBrush ImageSource="Img/button.png"/>
                                     </Button.Background>
@@ -193,7 +193,7 @@
                         <ImageBrush ImageSource="Img/cab3_y1.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image x:Name="img3" Source="Img/list.png"  Margin="210,133,922,367" RenderTransformOrigin="0.5,0.5" 
+                        <Image x:Name="img3" Source="Img/list.png" Margin="210,133,922,367" 
                                MouseLeftButtonDown="img3_MouseLeftButtonDown">
                             <Image.RenderTransform>
                                 <RotateTransform Angle="1.66"/>
@@ -217,7 +217,7 @@
                                 Вы заходите в третюю комнату. На доске висел листок.
                                 </TextBlock>
                                 <TextBox x:Name="textBox3" Visibility="Collapsed" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18"/>
-                                <Button x:Name="otv3" Visibility="Collapsed" HorizontalAlignment="Center" Content="Ответить" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv_Click">
+                                <Button x:Name="otv3" Visibility="Collapsed" HorizontalAlignment="Center" Content="Ответить" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="Answer">
                                     <Button.Background>
                                         <ImageBrush ImageSource="Img/button.png"/>
                                     </Button.Background>
@@ -267,7 +267,7 @@
                                 Вы заходите в четвертую комнату. Голос говорит очередную загадку: "Ветер его колышет и возбуждает. Все, что видит, он пожирает. Если его не усмирить – это конец."
                                 </TextBlock>
                                 <TextBox x:Name="textBox4" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18"/>
-                                <Button x:Name="otv4" HorizontalAlignment="Center"  Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv_Click">
+                                <Button x:Name="otv4" HorizontalAlignment="Center"  Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="Answer">
                                     <Button.Background>
                                         <ImageBrush ImageSource="Img/button.png"/>
                                     </Button.Background>
@@ -317,7 +317,7 @@
                                 Вы заходите в пятую комнату. Голос спрашивает у вас: "Кто ходит на четырёх ногах утром, на двух днём и на трёх ночью?"
                                 </TextBlock>
                                 <TextBox x:Name="textBox5" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18"/>
-                                <Button x:Name="otv5" HorizontalAlignment="Center" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="otv_Click">
+                                <Button x:Name="otv5" HorizontalAlignment="Center" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="Answer">
                                     <Button.Background>
                                         <ImageBrush ImageSource="Img/button.png"/>
                                     </Button.Background>
@@ -338,7 +338,7 @@
                                 <TextBlock x:Name="tb6">
                                 </TextBlock>
                                 <TextBox x:Name="textBox6" Margin="0,5,0,5" Visibility="Collapsed" FontFamily="Monotype Corsiva" FontSize="18"/>
-                                <Button x:Name="otv6" Visibility="Collapsed" HorizontalAlignment="Center" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="otv_Click">
+                                <Button x:Name="otv6" Visibility="Collapsed" HorizontalAlignment="Center" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="Answer">
                                     <Button.Background>
                                         <ImageBrush ImageSource="Img/button.png"/>
                                     </Button.Background>

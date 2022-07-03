@@ -7,7 +7,9 @@
         xmlns:local="clr-namespace:Quest"
         mc:Ignorable="d"
         Title="Этаж 4" MinHeight="450" Height="720" Width="1280" MinWidth="650"  
-        WindowStartupLocation="CenterScreen" Icon="/icon.ico" Closed="Window_Closed" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged" >
+        WindowStartupLocation="CenterScreen" Icon="/icon.ico" 
+        Topmost="True"
+        Closed="Window_Closed" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged" >
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Monotype Corsiva"/>
@@ -96,12 +98,14 @@
                         <ImageBrush ImageSource="Img/Cab1_y4.jpg" />
                     </Border.Background>
                     <Grid>
-                        <Grid Margin="298,137,901,452">
+                        <Grid x:Name="Pictures" Margin="298,137,901,452">
                             <Grid.RenderTransform>
                                 <RotateTransform Angle="1.5"/>
                             </Grid.RenderTransform>
                             <Image Grid.Row="0" Grid.Column="0" Source="Img/figure4.png"/>
                             <Image Grid.Row="1" Grid.Column="0" Source="Img/figure3.png"/>
+                            <Image Grid.Row="0" Grid.Column="1" Source="Img/figure1.png"/>
+                            <Image Grid.Row="1" Grid.Column="1" Source="Img/figure2.png"/>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
@@ -111,7 +115,7 @@
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
                         </Grid>
-                        <Grid Margin="289,211,881,342" RenderTransformOrigin="0.5,0.5">
+                        <Grid x:Name="Code" Margin="289,211,881,342" RenderTransformOrigin="0.5,0.5">
                             <Grid.RenderTransform>
                                 <RotateTransform Angle="1.5"/>
                             </Grid.RenderTransform>
@@ -128,7 +132,7 @@
                             <TextBlock x:Name="Code3" Grid.Row="1" Grid.Column="0" Text="1" FontSize="40" MouseLeftButtonDown="ChangeNumber"/>
                             <TextBlock x:Name="Code4" Grid.Row="1" Grid.Column="1" Text="1" FontSize="40" MouseLeftButtonDown="ChangeNumber"/>
                         </Grid>
-                        <Image Source="Img/bw.png" Margin="318,10,906,600" MouseLeftButtonDown="But_LeftClick"/>
+                        <Image Name="bw1" Source="Img/bw.png" Margin="318,10,906,600" MouseLeftButtonDown="But_LeftClick" Cursor="Arrow"/>
                         <Image x:Name="Prompt1" Source="Img/Prompt1.jpg" 
                                Margin="661,102,553,500" MouseLeftButtonDown="Prompt_MouseLeftButtonDown" RenderTransformOrigin="0.5,0.5">
                             <Image.RenderTransform>
@@ -152,7 +156,7 @@
                         <ImageBrush ImageSource="Img/Cab2_y4.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image Source="Img/bw.png" Margin="850,408,371,200" MouseLeftButtonDown="But_LeftClick"/>
+                        <Image x:Name="bw2" Source="Img/bw.png" Margin="850,408,371,200" MouseLeftButtonDown="But_LeftClick"/>
                         <Image x:Name="Prompt2" Source="Img/Prompt2.jpg" Margin="529,104,686,494" MouseLeftButtonDown="Prompt_MouseLeftButtonDown"/>
                         <Border Style="{StaticResource Content}">
                             <TextBlock Margin="5">
@@ -168,18 +172,42 @@
                         <ImageBrush ImageSource="Img/Cab3_y4.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image Margin="415,180,721,372"></Image>
-                        <StackPanel Orientation="Horizontal" Margin="863,256,255,329" RenderTransformOrigin="0.5,0.5">
+                        <Image Name="imgHelp" Visibility="Collapsed" Margin="416,176,720,399" Panel.ZIndex="1" Source="Img/imgHelp.jpg">
+                            <Image.Triggers>
+                                <EventTrigger RoutedEvent="Image.MouseLeftButtonDown">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation 
+                                                To="50" 
+                                                Duration="0:0:0.5" 
+                                                Storyboard.TargetProperty="Margin"
+                                            />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="Image.MouseRightButtonDown">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation 
+                                                Duration="0:0:0.1" 
+                                                Storyboard.TargetProperty="Margin"
+                                            />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Image.Triggers>
+                        </Image>
+                        <StackPanel x:Name="butPanel" Orientation="Horizontal" Margin="863,246,253,334">
                             <StackPanel.RenderTransform>
                                 <RotateTransform Angle="0.563"/>
                             </StackPanel.RenderTransform>
-                            <Image Name="bw1" Margin="2" Height="30" Source="Img/bb.png"/>
-                            <Image Name="bw2" Margin="2" Height="30" Source="Img/bb.png"/>
-                            <Image Name="bw3" Margin="2" Height="30" Source="Img/bb.png"/>
-                            <Image Name="bw4" Margin="2" Height="30" Source="Img/bb.png"/>
+                            <Image Name="bb1" Margin="2" Height="30" Source="Img/bb.png"/>
+                            <Image Name="bb2" Margin="2" Height="30" Source="Img/bb.png"/>
+                            <Image Name="bb3" Margin="2" Height="30" Source="Img/bb.png"/>
+                            <Image Name="bb4" Margin="2" Height="30" Source="Img/bb.png"/>
                         </StackPanel>
                         <Image x:Name="Prompt3" Source="Img/Prompt3.jpg" MouseLeftButtonDown="Prompt_MouseLeftButtonDown" Margin="84,228,1138,378"/>
-                        <Image Source="Img/bw.png" Margin="166,398,1050,215" MouseLeftButtonDown="But_LeftClick"></Image>
+                        <Image x:Name="bw3" Source="Img/bw.png" Margin="166,398,1050,215" MouseLeftButtonDown="But_LeftClick"/>
                         <Border Style="{StaticResource Content}">
                             <TextBlock Margin="5">
                             3
@@ -194,8 +222,8 @@
                         <ImageBrush ImageSource="Img/cab4_y4.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image Source="Img/Bw.png" Margin="152,178,1080,430" MouseLeftButtonDown="But_LeftClick"/>
-                        <Grid Margin="851,294,337,277">
+                        <Image x:Name="bw4" Source="Img/Bw.png" Margin="152,178,1080,430" MouseLeftButtonDown="But_LeftClick"/>
+                        <Grid x:Name="butGrid" Margin="851,294,337,277">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
                                 <RowDefinition/>

@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace Quest
 {
@@ -20,14 +7,15 @@ namespace Quest
     /// </summary>
     public partial class MainWindow : Window
     {
+        Methods method = new Methods();
         public MainWindow()
         {
             InitializeComponent();
         }
-        
         private void curs1_Click(object sender, RoutedEventArgs e)
         {
             Year1 y1 = new Year1();
+            y1.year = y1;
             y1.Show();
             Close();
         }
@@ -37,32 +25,13 @@ namespace Quest
             //{
 
             //}
-            switch (Properties.Settings.Default.hp)
-            {
-                case 3:
-                    {
-                        hp1.Visibility = Visibility.Visible;
-                        hp2.Visibility = Visibility.Visible;
-                        hp3.Visibility = Visibility.Visible;
-                    }
-                    break;
-                case 2:
-                    {
-                        hp1.Visibility = Visibility.Visible;
-                        hp2.Visibility = Visibility.Visible;
-                    }
-                    break;
-                case 1:
-                    {
-                        hp1.Visibility = Visibility.Visible;
-                    }
-                    break;
-            }
+            method.LivesDisplay(hp1, hp2, hp3);
         }
 
         private void curs2_Click(object sender, RoutedEventArgs e)
         {
             Year2 y2 = new Year2();
+            y2.year = y2;
             y2.Show();
             Close();
         }
@@ -70,6 +39,7 @@ namespace Quest
         private void curs3_Click(object sender, RoutedEventArgs e)
         {
             Year3 y3 = new Year3();
+            y3.year = y3;
             y3.Show();
             Close();
         }

@@ -12,13 +12,13 @@ namespace Quest
     /// </summary>
     public partial class Year1 : Window
     {
+        public Window year;
         public Year1()
         {
             InitializeComponent();
         }
+        Methods method = new Methods();
         MainWindow main = new MainWindow();
-        Year1 year1;
-        Damage damage = new Damage();
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Properties.Settings.Default.Save();
@@ -27,54 +27,7 @@ namespace Quest
         int lvl = 0;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            switch (Properties.Settings.Default.hp)
-            {
-                case 3:
-                    {
-                        hp1.Visibility = Visibility.Visible;
-                        hp2.Visibility = Visibility.Visible;
-                        hp3.Visibility = Visibility.Visible;
-                    }
-                    break;
-                case 2:
-                    {
-                        hp1.Visibility = Visibility.Visible;
-                        hp2.Visibility = Visibility.Visible;
-                    }
-                    break;
-                case 1:
-                    {
-                        hp1.Visibility = Visibility.Visible;
-                    }
-                    break;
-            }
-        }
-        private void Damage()
-        {
-            MessageBox.Show("Ошибка", "Вы ошиблись. Попробуйте еще раз");
-            Properties.Settings.Default.hp--;
-            switch (Properties.Settings.Default.hp)
-            {
-                case 2:
-                    {
-                        hp3.Visibility = Visibility.Hidden;
-                    }
-                    break;
-                case 1:
-                    {
-                        hp2.Visibility = Visibility.Hidden;
-                    }
-                    break;
-                case 0:
-                    {
-                        hp1.Visibility = Visibility.Hidden;
-                        MessageBox.Show("Конец Игры", "You Died");
-                        Properties.Settings.Default.hp = 3;
-                        main.Show();
-                        Close();
-                    }
-                    break;
-            }
+            method.LivesDisplay(hp1, hp2, hp3);
         }
         private void Back(object sender, MouseButtonEventArgs e)
         {
@@ -114,7 +67,7 @@ namespace Quest
                 tc.SelectedIndex = 1;
                 //lb1.SetValue(ListBox.SelectedIndexProperty, DependencyProperty.UnsetValue);
             }
-            else Damage();
+            else method.DealingDamage(hp1, hp2, hp3, year);
         }
         #region ImgInfo
         private void img1_MouseDown(object sender, MouseButtonEventArgs e)
@@ -140,7 +93,6 @@ namespace Quest
                 }
             }
             else MessageBox.Show(Properties.Resources.ListInfo, "Информация");
-            
         }
         private void Chest_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -173,10 +125,7 @@ namespace Quest
                 img1.Visibility = Visibility.Visible;
                 lvl += 1;
             }
-            else
-            {
-                damage.DealingDamage(hp1, hp2, hp3, year1);
-            }
+            else method.DealingDamage(hp1, hp2, hp3, year);
         }
         private void Riddle2(object sender, SelectionChangedEventArgs e)
         {
@@ -188,7 +137,7 @@ namespace Quest
                 Chest.Name = "ChestOpen";
                 lvl += 1;
             }
-            else Damage();
+            else method.DealingDamage(hp1, hp2, hp3, year);
         }
         private void Riddle3()
         {
@@ -202,7 +151,7 @@ namespace Quest
                 lvl += 1;
                 img3.Name = "List";
             }
-            else Damage();
+            else method.DealingDamage(hp1, hp2, hp3, year);
         }
         private void Riddle4()
         {
@@ -214,7 +163,7 @@ namespace Quest
                 otv4.Visibility = Visibility.Collapsed;
                 lvl += 1;
             }
-            else Damage();
+            else method.DealingDamage(hp1, hp2, hp3, year);
         }
         private void Riddle5()
         {
@@ -226,7 +175,7 @@ namespace Quest
                 otv5.Visibility = Visibility.Collapsed;
                 lvl += 1;
             }
-            else Damage();
+            else method.DealingDamage(hp1, hp2, hp3, year);
         }
         private void Riddle6()
         {
@@ -238,9 +187,9 @@ namespace Quest
                 otv6.Visibility = Visibility.Collapsed;
                 next.Visibility = Visibility.Visible;
             }
-            else Damage();
+            else method.DealingDamage(hp1, hp2, hp3, year);
         }
-        private void otv_Click(object sender, RoutedEventArgs e)
+        private void Answer(object sender, RoutedEventArgs e)
         {
             switch (tc.SelectedIndex)
             {
@@ -322,103 +271,22 @@ namespace Quest
         { 993.6 / 1265.6, 1108 / 1265.6, 94.4 / 682.4, 466 / 682.4 },
         { 1055 / 1265.6, 1141 / 1265.6, 196 / 682.4, 480.8 / 682.4 },
         { 1039.2 / 1265.6, 1169.2 / 1265.6, 120.8 / 682.4, 526.4 / 682.4 }};
+        int caseCount = 1;
+
         private void tc_MouseClick(object sender, MouseButtonEventArgs e)
         {
             Point p = e.GetPosition(this);
-            //MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
-
-            //1265.6
-            //682.4
             double x = basis.ActualWidth;
             double y = basis.ActualHeight;
-            switch (tc.SelectedIndex)
-            {
-                case 1:
-                    {
-                        if (p.X > x * door[0, 0] && p.X < x * door[0, 1] &&
-                            p.Y > y * door[0, 2] && p.Y < y * door[0, 3])
-                        {
-                            tc.SelectedIndex = 2;
-                        }
-                        if (p.X > x * door[1, 0] && p.X < x * door[1, 1] &&
-                            p.Y > y * door[1, 2] && p.Y < y * door[1, 3])
-                        {
-                            tc.SelectedIndex = 3;
-                        }
-                        if (p.X > x * door[2, 0] && p.X < x * door[2, 1] &&
-                            p.Y > y * door[2, 2] && p.Y < y * door[2, 3])
-                        {
-                            tc.SelectedIndex = 4;
-                        }
-                        if (p.X > x * door[3, 0] && p.X < x * door[3, 1] &&
-                            p.Y > y * door[3, 2] && p.Y < y * door[3, 3])
-                        {
-                            tc.SelectedIndex = 5;
-                        }
-                        if (p.X > x * door[4, 0] && p.X < x * door[4, 1] &&
-                            p.Y > y * door[4, 2] && p.Y < y * door[4, 3])
-                        {
-                            tc.SelectedIndex = 6;
-                        }
-                        if (p.X > x * door[5, 0] && p.X < x * door[5, 1] &&
-                            p.Y > y * door[5, 2] && p.Y < y * door[5, 3])
-                        {
-                            tc.SelectedIndex = 7;
-                        }
-                    }
-                    break;
-                case 2:
-                    {
-                        if (p.X > x * exit[0, 0] && p.X < x * exit[0, 1] &&
-                            p.Y > y * exit[0, 2] && p.Y < y * exit[0, 3])
-                        {
-                            tc.SelectedIndex = 1;
-                        }
-                    }
-                    break;
-                case 3:
-                    {
-                        if (p.X > x * exit[1, 0] && p.X < x * exit[1, 1] &&
-                            p.Y > y * exit[1, 2] && p.Y < y * exit[1, 3])
-                        {
-                            tc.SelectedIndex = 1;
-                        }
-                    }
-                    break;
-                case 4:
-                    {
-                        if (p.X > x * exit[2, 0] && p.X < x * exit[2, 1] &&
-                            p.Y > y * exit[2, 2] && p.Y < y * exit[2, 3])
-                        {
-                            tc.SelectedIndex = 1;
-                        }
-                    }
-                    break;
-                case 5:
-                    {
-                        if (p.X > x * exit[3, 0] && p.X < x * exit[3, 1] &&
-                            p.Y > y * exit[3, 2] && p.Y < y * exit[3, 3])
-                        {
-                            tc.SelectedIndex = 1;
-                        }
-                    }
-                    break;
-                case 6:
-                    {
-                        if (p.X > x * exit[4, 0] && p.X < x * exit[4, 1] &&
-                            p.Y > y * exit[4, 2] && p.Y < y * exit[4, 3])
-                        {
-                            tc.SelectedIndex = 1;
-                        }
-                    }
-                    break;
-            }
+            int count = tc.SelectedIndex;
+            method.ClickingOnTheDoor(door, exit, p, x, y, tc, count, caseCount);
         }
         private void tc_MouseMove(object sender, MouseEventArgs e)
         {
             Point p = e.GetPosition(this);
             double x = basis.ActualWidth;
             double y = basis.ActualHeight;
+            int count = tc.SelectedIndex;
             switch (tc.SelectedIndex)
             {
                 case 1:

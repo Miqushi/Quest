@@ -165,6 +165,15 @@ namespace Quest.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Кливленд Стивен Гровер был 22-м и 24-м президентом США в 1885-1889 и в 1893-1897 г.г. Т.к. он сам себе не брат, то условие загадки выполняется..
+        /// </summary>
+        internal static string riddle12 {
+            get {
+                return ResourceManager.GetString("riddle12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Сундук открылся. Внутри его почему-то лежала фигура, а именно: тетраэдр. Вы берете его и идете исследовать другие кабинеты..
         /// </summary>
         internal static string riddle2 {
@@ -174,11 +183,29 @@ namespace Quest.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string riddle22 {
+            get {
+                return ResourceManager.GetString("riddle22", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Дверь отворилась. Вы берете листок с анограммой и выходите, продолжая исследования.
         /// </summary>
         internal static string riddle3 {
             get {
                 return ResourceManager.GetString("riddle3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string riddle32 {
+            get {
+                return ResourceManager.GetString("riddle32", resourceCulture);
             }
         }
         

@@ -79,10 +79,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Damage.cs" />
     <Compile Include="MessageBox.xaml.cs">
       <DependentUpon>MessageBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Methods.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Year1.xaml.cs">
       <DependentUpon>Year1.xaml</DependentUpon>
@@ -304,6 +304,13 @@
   <ItemGroup>
     <Resource Include="Img\figure3.png" />
     <Resource Include="Img\figure4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\imgHelp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\figure1.png" />
+    <Resource Include="Img\figure2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" />

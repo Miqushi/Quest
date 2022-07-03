@@ -16,6 +16,7 @@ namespace Quest
         {
             InitializeComponent();
         }
+        Methods method = new Methods();
         MainWindow main = new MainWindow();
         int puzzleCount;
         private void home_MouseDown(object sender, MouseButtonEventArgs e) => tc.SelectedIndex = 0;
@@ -26,27 +27,7 @@ namespace Quest
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            switch (Properties.Settings.Default.hp)
-            {
-                case 3:
-                    {
-                        hp1.Visibility = Visibility.Visible;
-                        hp2.Visibility = Visibility.Visible;
-                        hp3.Visibility = Visibility.Visible;
-                    }
-                    break;
-                case 2:
-                    {
-                        hp1.Visibility = Visibility.Visible;
-                        hp2.Visibility = Visibility.Visible;
-                    }
-                    break;
-                case 1:
-                    {
-                        hp1.Visibility = Visibility.Visible;
-                    }
-                    break;
-            }
+            method.LivesDisplay(hp1, hp2, hp3);
         }
         #region
         private int _trueCount, _count = 0;
@@ -158,7 +139,9 @@ namespace Quest
         readonly double[,] door = { {0.177, 0.2953, 0.3906, 0.8030 },
                             { 0.3876, 0.4521, 0.3845, 0.8269 },
                             { 0.5875, 0.6925, 0.3152, 0.9296 },
-                            { 0.7739, 0.9067, 0.2405, 0.9296 }
+                            { 0.7739, 0.9067, 0.2405, 0.9296 },
+                            {0,0,0,0 },
+                            {0,0,0,0 }
         };
         readonly double[,] exit = { {0.8449, 0.9763, 0.1994, 0.7425 },
                             { 0.8561, 0.9619, 0.1806, 0.5994 },
@@ -168,52 +151,19 @@ namespace Quest
         private void tc_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Point p = e.GetPosition(this);
-            //MessageBox.Show("Координата x=" + p.X.ToString() + " y=" + p.Y.ToString(), "Окно");
-
             double x = basis.ActualWidth;
             double y = basis.ActualHeight;
-            switch (tc.SelectedIndex)
+            int count = tc.SelectedIndex;
+            int caseCount = 0;
+            method.ClickingOnTheDoor(door, exit, p, x, y, tc,count, caseCount);
+            if(tc.SelectedIndex == 2)
             {
-                case 0:
-                    if (p.X > x * door[0, 0] && p.X < x * door[0, 1] &&
-                    p.Y > y * door[0, 2] && p.Y < y * door[0, 3])
-                        tc.SelectedIndex = 1;
-                    if (p.X > x * door[1, 0] && p.X < x * door[1, 1] &&
-                        p.Y > y * door[1, 2] && p.Y < y * door[1, 3])
-                        tc.SelectedIndex = 2;
-                    if (p.X > x * door[2, 0] && p.X < x * door[2, 1] &&
-                        p.Y > y * door[2, 2] && p.Y < y * door[2, 3])
-                        tc.SelectedIndex = 3;
-                    if (p.X > x * door[3, 0] && p.X < x * door[3, 1] &&
-                        p.Y > y * door[3, 2] && p.Y < y * door[3, 3])
-                        tc.SelectedIndex = 4;
-                    break;
-                case 1:
-                    if (p.X > x * exit[0, 0] && p.X < x * exit[0, 1] &&
-                    p.Y > y * exit[0, 2] && p.Y < y * exit[0, 3])
-                        tc.SelectedIndex = 0;
-                    break;
-                case 2:
-                    if (p.X > x * exit[1, 0] && p.X < x * exit[1, 1] &&
-                    p.Y > y * exit[1, 2] && p.Y < y * exit[1, 3])
-                        tc.SelectedIndex = 0;
-                    if (p.X > x * 0.071 && p.X < x * 0.4186 &&
+                if (p.X > x * 0.071 && p.X < x * 0.4186 &&
                     p.Y > y * 0.6381 && p.Y < y * 0.7994)
-                    {
-                        if (puzzleCount != 2) MessageBox.Show("Найдите все части пазла, чтобы выполнить задание");
-                        else tc.SelectedIndex = 5;
-                    }
-                    break;
-                case 3:
-                    if (p.X > x * exit[2, 0] && p.X < x * exit[2, 1] &&
-                    p.Y > y * exit[2, 2] && p.Y < y * exit[2, 3])
-                        tc.SelectedIndex = 0;
-                    break;
-                case 4:
-                    if (p.X > x * exit[3, 0] && p.X < x * exit[3, 1] &&
-                    p.Y > y * exit[3, 2] && p.Y < y * exit[3, 3])
-                        tc.SelectedIndex = 0;
-                    break;
+                {
+                    if (puzzleCount != 2) MessageBox.Show("Найдите все части пазла, чтобы выполнить задание");
+                    else tc.SelectedIndex = 5;
+                }
             }
         }
 
@@ -274,16 +224,17 @@ namespace Quest
             switch (_butCount)
             {
                 case 1:
-                    bw1.Source = BitmapFrame.Create(new Uri(@"pack://application:,,,/Img/bg.png"));
+                    bb1.Source = BitmapFrame.Create(new Uri(@"pack://application:,,,/Img/bg.png"));
                     break;
                 case 2:
-                    bw2.Source = BitmapFrame.Create(new Uri(@"pack://application:,,,/Img/bg.png"));
+                    bb2.Source = BitmapFrame.Create(new Uri(@"pack://application:,,,/Img/bg.png"));
                     break;
                 case 3:
-                    bw3.Source = BitmapFrame.Create(new Uri(@"pack://application:,,,/Img/bg.png"));
+                    bb3.Source = BitmapFrame.Create(new Uri(@"pack://application:,,,/Img/bg.png"));
                     break;
                 case 4:
-                    bw4.Source = BitmapFrame.Create(new Uri(@"pack://application:,,,/Img/bg.png"));
+                    bb4.Source = BitmapFrame.Create(new Uri(@"pack://application:,,,/Img/bg.png"));
+                    imgHelp.Visibility = Visibility.Visible;
                     break;
             }
             
@@ -291,7 +242,6 @@ namespace Quest
         private int _countClick = 1;
         private void ChangeNumber(object sender, MouseButtonEventArgs e)
         {
-            
             TextBlock tmp = (TextBlock)sender;
             if (_countClick > 4)
                 _countClick = 1;
@@ -319,10 +269,23 @@ namespace Quest
         }
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
+            //1265.6
+            //682.4
             double x = basis.ActualWidth;
             double y = basis.ActualHeight;
 
-            bw1.Margin = new Thickness();
+            bw1.Margin = new Thickness(0.24 * x, 0.015 * y, 0.71 * x, 0.88 * y);
+            Prompt1.Margin = new Thickness(0.51 * x, 0.15 * y, 0.43 * x, 0.74 * y);
+            Pictures.Margin = new Thickness(0.23 * x, 0.18 * y, 0.70 * x, 0.64 * y);
+            Code.Margin = new Thickness(0.23 * x, 0.30 * y, 0.69 * x, 0.50 * y);
+            Prompt2.Margin = new Thickness(0.42 * x, 0.15 * y, 0.54 * x, 0.71 * y);
+            bw2.Margin = new Thickness(0.68 * x, 0.57 * y, 0.29 * x, 0.25 * y);
+            imgHelp.Margin = new Thickness(0.32 * x, 0.25 * y, 0.57 * x, 0.58 * y);
+            butPanel.Margin = new Thickness(0.68 * x, 0.36 * y, 0.2 * x, 0.49 * y);
+            Prompt3.Margin = new Thickness(0.066 * x, 0.33 * y, 0.899 * x, 0.55 * y);
+            bw3.Margin = new Thickness(0.13 * x, 0.58 * y, 0.83 * x, 0.315 * y);
+            bw4.Margin = new Thickness(0.12 * x, 0.26 * y, 0.85 * x, 0.63 * y);
+            butGrid.Margin = new Thickness(0.67 * x, 0.43 * y, 0.26 * x, 0.40 * y);
         }
     }
 }
