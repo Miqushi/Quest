@@ -282,7 +282,7 @@ namespace Quest
                 Duration = TimeSpan.FromSeconds(0.5)
             };
             Casket.BeginAnimation(MarginProperty, animation);
-            textBlock1.Visibility = Visibility.Visible;
+            textBlock1.Text = "Введите код";
             Answer1.Visibility = Visibility.Visible;
             responseField1.Visibility = Visibility.Visible;
         }
@@ -316,14 +316,29 @@ namespace Quest
                 Duration = TimeSpan.FromSeconds(0.1)
             };
             Casket.BeginAnimation(MarginProperty, animation);
-            textBlock1.Visibility = Visibility.Collapsed;
+            textBlock1.Text = Properties.Resources.riddle4_4;
             Answer1.Visibility = Visibility.Collapsed;
             responseField1.Visibility = Visibility.Collapsed;
         }
+
+        private void Help(object sender, MouseButtonEventArgs e)
+        {
+            switch (tc.SelectedIndex)
+            {
+                case 1:
+                    MessageBox.Show("Посмотрите на предметы и их количество на картинке в комнате с кнопками");
+                    break;
+                case 3:
+                    MessageBox.Show("Ищите в кабинетах кнопки и нажимайте на них");
+                    break;
+                case 4:
+                    MessageBox.Show("Посмотрите на подсказки, где изображены 9 кнопок и нажмите те, которые выделены");
+                    break;
+            }
+        }
+
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            //1265.6
-            //682.4
             double x = basis.ActualWidth;
             double y = basis.ActualHeight;
 

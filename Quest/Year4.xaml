@@ -61,7 +61,7 @@
                 <ImageBrush ImageSource="Img/bar.jpg"/>
             </ToolBar.Background>
             <Image x:Name="home" Source="Img/back.png" Margin="2" ToolTip="Вернуться в главную комнату" MouseDown="home_MouseDown"/>
-            <Image x:Name="help" Source="Img/help.png" Margin="2" ToolTip="Ответ на загадку"/>
+            <Image x:Name="help" Source="Img/help.png" Margin="2" ToolTip="Ответ на загадку" MouseLeftButtonDown="Help"/>
             <Image x:Name="hp1" Visibility="Collapsed" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp2" Visibility="Collapsed" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp3" Visibility="Collapsed" Source="Img/hp.png" Margin="2" ToolTip="Количество жизней"/>
@@ -144,7 +144,7 @@
                         </Image>
                         <Border Style="{StaticResource Content}">
                             <TextBlock Margin="5">
-                                1
+                                Вы заходите в первый кабинет с непонятным кодовым замком и какой-то подсказкой
                             </TextBlock>
                         </Border>
                     </Grid>
@@ -160,7 +160,7 @@
                         <Image x:Name="Prompt2" Source="Img/Prompt2.jpg" Margin="529,104,686,494" MouseLeftButtonDown="Prompt_MouseLeftButtonDown"/>
                         <Border Style="{StaticResource Content}">
                             <TextBlock Margin="5">
-                                2
+                               Вы заходите во второй кабинет. В нем также разбросаны какие-то подсказки, а на столе можно что-то собрать.
                             </TextBlock>
                         </Border>
                     </Grid>
@@ -210,7 +210,7 @@
                         <Image x:Name="bw3" Source="Img/bw.png" Margin="166,398,1050,215" MouseLeftButtonDown="But_LeftClick"/>
                         <Border Style="{StaticResource Content}">
                             <TextBlock Margin="5">
-                            3
+                                Вы заходите в третий кабинет на котором расположена панель с индикацией. Может можно как-то активировать их активировать.
                             </TextBlock>
                         </Border>
                     </Grid>
@@ -248,8 +248,8 @@
                         </Grid>
                         <Border Style="{StaticResource Content}">
                             <StackPanel Margin="5">
-                                <TextBlock Name="textBlock1" Visibility="Collapsed">
-                                 Введите код от шкатулки
+                                <TextBlock Name="textBlock1">
+                                    Вы заходите в четветый кабинет. На столе стоит какая-то шкатулка, скорее всего в ней ключ на выход. На двери замок из кнопок, может где-то есть подсказки, какие кнопки нажать?
                                 </TextBlock>
                                 <TextBox Name="responseField1" Visibility="Collapsed" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18"/>
                                 <Button x:Name="Answer1" HorizontalAlignment="Center" Visibility="Collapsed" Content="Ответить" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="CheckAnswer" Cursor="Hand">

@@ -66,10 +66,15 @@
             <TabItem Header="0">
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
-                        <ImageBrush />
+                        <ImageBrush ImageSource="Img/y2_hall.jpg"/>
                     </Border.Background>
                     <Grid>
                         <Border Style="{StaticResource Content}">
+                            <StackPanel Margin="5">
+                                <TextBlock>
+                                 Вы подминмаетесь на 2 этаж. И продолжаете исследовать комнаты.
+                                </TextBlock>
+                            </StackPanel>
                         </Border>
                     </Grid>
                 </Border>
@@ -118,28 +123,6 @@
                     </Grid>
                 </Border>
             </TabItem>
-            <TabItem Header="3">
-                <Border Style="{StaticResource BackBorder}">
-                    <Border.Background>
-                        <ImageBrush ImageSource="Img/cab3_y2.jpg"/>
-                    </Border.Background>
-                    <Grid>
-                        <Border Style="{StaticResource Content}">
-                            <StackPanel Margin="5">
-                                <TextBlock x:Name="textBlock3">
-                                 В начале 1940-х годов некая лондонская фирма принимала заказы на изготовление глобусов, но с оговоркой, что заказ будет доставлен лишь после... Чего?
-                                </TextBlock>
-                                <TextBox x:Name="responseField3" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18"/>
-                                <Button x:Name="Answer3" HorizontalAlignment="Center" Content="Ответить" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="CheckAnswer">
-                                    <Button.Background>
-                                        <ImageBrush ImageSource="Img/button.png"/>
-                                    </Button.Background>
-                                </Button>
-                            </StackPanel>
-                        </Border>
-                    </Grid>
-                </Border>
-            </TabItem>
             <TabItem Header="exit" GotFocus="TabItem_GotFocus">
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
@@ -162,6 +145,29 @@
                     </Grid>
                 </Border>
             </TabItem>
+            <TabItem Header="3">
+                <Border Style="{StaticResource BackBorder}">
+                    <Border.Background>
+                        <ImageBrush ImageSource="Img/cab3_y2.jpg"/>
+                    </Border.Background>
+                    <Grid>
+                        <Border Style="{StaticResource Content}">
+                            <StackPanel Margin="5">
+                                <TextBlock x:Name="textBlock3">
+                                 В начале 1940-х годов некая лондонская фирма принимала заказы на изготовление глобусов, но с оговоркой, что заказ будет доставлен лишь после... Чего?
+                                </TextBlock>
+                                <TextBox x:Name="responseField3" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18"/>
+                                <Button x:Name="Answer3" HorizontalAlignment="Center" Content="Ответить" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="CheckAnswer">
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="Img/button.png"/>
+                                    </Button.Background>
+                                </Button>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Border>
+            </TabItem>
+            
         </TabControl>
     </Grid>
 </Window>

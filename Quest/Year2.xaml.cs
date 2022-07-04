@@ -74,6 +74,16 @@ namespace Quest
                     break;
             }
         }
+        private void TabItem_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (i == 3)
+            {
+                textBlock4.Text = "Ответьте на вопрос: какие часы показывают верное время только два раза в сутки?";
+                responseField4.Visibility = Visibility.Visible;
+                Answer4.Visibility = Visibility.Visible;
+            }
+        }
+        #region Riddle
         int i = 0;
         private void Riddle1()
         {
@@ -122,23 +132,26 @@ namespace Quest
             }
             else method.DealingDamage(hp1, hp2, hp3, year);
         }
+        #endregion
+        
         #region MouseClick
         readonly double[,] door =
-        {{992/ 1265.6, 1039.2/ 1265.6, 190.4/ 682.4, 533.6/ 682.4 },
-        { 748/ 1265.6, 784.8/ 1265.6, 256.8/ 682.4, 468/ 682.4},
-        { 668.4/ 1265.6, 696.8/ 1265.6, 290.4/ 682.4, 442.2/ 682.4},
-        { 612/ 1265.6, 638.4/ 1265.6, 304/ 682.4, 421.6/ 682.4 },
-        { 520/ 1265.6, 559/ 1265.6, 298/ 682.4, 406/ 682.4 },
-        { 196.8/ 1265.6, 355.2/ 1265.6, 280/ 682.4, 497.2/ 682.4 },
+        {{71/ 1265.6, 186/ 1265.6, 99/ 682.4, 626/ 682.4 },
+        { 572/ 1265.6, 675/ 1265.6, 259/ 682.4, 412/ 682.4},
+        { 861/ 1265.6, 899/ 1265.6, 190/ 682.4, 476/ 682.4},
+        { 964/ 1265.6, 1025/ 1265.6, 123/ 682.4, 574/ 682.4 },
+        { 0,0,0,0 },
+        { 0,0,0,0 },
         };
         readonly double[,] exit = { 
         { 992/ 1265.6, 1149/ 1265.6, 154/ 682.4, 436/ 682.4},
         { 932/ 1265.6, 1144/ 1265.6, 124/ 682.4, 485/ 682.4 },
-        { 1023/ 1265.6, 1185/ 1265.6, 185/ 682.4, 438/ 682.4 },
         { 0,0,0,0 },
+        { 1023/ 1265.6, 1185/ 1265.6, 185/ 682.4, 438/ 682.4 },
         { 0,0,0,0 }};
         private void tc_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+
             Point p = e.GetPosition(this);
             double x = basis.ActualWidth;
             double y = basis.ActualHeight;
@@ -155,24 +168,24 @@ namespace Quest
             switch (tc.SelectedIndex)
             {
                 case 0:
-                    //if (p.X > x * door[0, 0] && p.X < x * door[0, 1] &&
-                    //    p.Y > y * door[0, 2] && p.Y < y * door[0, 3] ||
-                    //        p.X > x * door[1, 0] && p.X < x * door[1, 1] &&
-                    //    p.Y > y * door[1, 2] && p.Y < y * door[1, 3] ||
-                    //        p.X > x * door[2, 0] && p.X < x * door[2, 1] &&
-                    //    p.Y > y * door[2, 2] && p.Y < y * door[2, 3] ||
-                    //        p.X > x * door[3, 0] && p.X < x * door[3, 1] &&
-                    //    p.Y > y * door[3, 2] && p.Y < y * door[3, 3] ||
-                    //        p.X > x * door[4, 0] && p.X < x * door[4, 1] &&
-                    //    p.Y > y * door[4, 2] && p.Y < y * door[4, 3])
-                    //{
-                    //    Cursor = Cursors.Hand;
-                    //}
-                    //else
-                    //{
-                    //    Cursor = Cursors.Arrow;
-                    //}
-                    //break;
+                    if (p.X > x * door[0, 0] && p.X < x * door[0, 1] &&
+                        p.Y > y * door[0, 2] && p.Y < y * door[0, 3] ||
+                            p.X > x * door[1, 0] && p.X < x * door[1, 1] &&
+                        p.Y > y * door[1, 2] && p.Y < y * door[1, 3] ||
+                            p.X > x * door[2, 0] && p.X < x * door[2, 1] &&
+                        p.Y > y * door[2, 2] && p.Y < y * door[2, 3] ||
+                            p.X > x * door[3, 0] && p.X < x * door[3, 1] &&
+                        p.Y > y * door[3, 2] && p.Y < y * door[3, 3] ||
+                            p.X > x * door[4, 0] && p.X < x * door[4, 1] &&
+                        p.Y > y * door[4, 2] && p.Y < y * door[4, 3])
+                    {
+                        Cursor = Cursors.Hand;
+                    }
+                    else
+                    {
+                        Cursor = Cursors.Arrow;
+                    }
+                    break;
                 case 1:
                     if (p.X > x * exit[0, 0] && p.X < x * exit[0, 1] &&
                     p.Y > y * exit[0, 2] && p.Y < y * exit[0, 3])
@@ -209,14 +222,6 @@ namespace Quest
             }
         }
         #endregion
-        private void TabItem_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (i == 3)
-            {
-                textBlock4.Text = "Ответьте на вопрос: какие часы показывают верное время только два раза в сутки?";
-                responseField4.Visibility = Visibility.Visible;
-                Answer4.Visibility = Visibility.Visible;
-            }      
-        }
+        
     }
 }
