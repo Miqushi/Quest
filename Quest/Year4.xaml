@@ -222,7 +222,8 @@
                         <ImageBrush ImageSource="Img/cab4_y4.jpg"/>
                     </Border.Background>
                     <Grid>
-                        <Image Name="Casket" Source="Img/casket.png" Margin="491,444,626,134" MouseLeftButtonDown="CasketLeftClick"/>
+                        <Image Name="Casket" Panel.ZIndex="1" Source="Img/casket.png" Margin="491,444,626,134"
+                        MouseLeftButtonDown="CasketLeftClick" MouseRightButtonDown="CasketRightClick"/>
                         <Image x:Name="bw4" Source="Img/Bw.png" Margin="152,178,1080,430" MouseLeftButtonDown="But_LeftClick"/>
                         <Grid x:Name="butGrid" Margin="851,294,337,277">
                             <Grid.RowDefinitions>
@@ -251,7 +252,7 @@
                                  Введите код от шкатулки
                                 </TextBlock>
                                 <TextBox Name="responseField1" Visibility="Collapsed" Margin="0,5,0,5" FontFamily="Monotype Corsiva" FontSize="18"/>
-                                <Button x:Name="Answer1" HorizontalAlignment="Center" Visibility="Collapsed" Content="Ответить" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="CheckAnswer">
+                                <Button x:Name="Answer1" HorizontalAlignment="Center" Visibility="Collapsed" Content="Ответить" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Click="CheckAnswer" Cursor="Hand">
                                     <Button.Background>
                                         <ImageBrush ImageSource="Img/button.png"/>
                                     </Button.Background>

@@ -336,6 +336,7 @@
                         <Border Style="{StaticResource Content}">
                             <StackPanel Margin="5">
                                 <TextBlock x:Name="tb6">
+                                    Приходите позже, когда ответите на прошлые загадки
                                 </TextBlock>
                                 <TextBox x:Name="textBox6" Margin="0,5,0,5" Visibility="Collapsed" FontFamily="Monotype Corsiva" FontSize="18"/>
                                 <Button x:Name="otv6" Visibility="Collapsed" HorizontalAlignment="Center" Content="Ответить" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="Answer">

@@ -251,10 +251,6 @@ namespace Quest
                 textBox6.Visibility = Visibility.Visible;
                 otv6.Visibility = Visibility.Visible;
             }
-            else
-            {
-                tb6.Text = "Приходите позже, когда решите все задания";
-            }
         }
         #endregion
         #region MouseClick
@@ -271,14 +267,13 @@ namespace Quest
         { 993.6 / 1265.6, 1108 / 1265.6, 94.4 / 682.4, 466 / 682.4 },
         { 1055 / 1265.6, 1141 / 1265.6, 196 / 682.4, 480.8 / 682.4 },
         { 1039.2 / 1265.6, 1169.2 / 1265.6, 120.8 / 682.4, 526.4 / 682.4 }};
-        int caseCount = 1;
-
         private void tc_MouseClick(object sender, MouseButtonEventArgs e)
         {
             Point p = e.GetPosition(this);
             double x = basis.ActualWidth;
             double y = basis.ActualHeight;
             int count = tc.SelectedIndex;
+            int caseCount = 1;
             method.ClickingOnTheDoor(door, exit, p, x, y, tc, count, caseCount);
         }
         private void tc_MouseMove(object sender, MouseEventArgs e)
@@ -286,7 +281,6 @@ namespace Quest
             Point p = e.GetPosition(this);
             double x = basis.ActualWidth;
             double y = basis.ActualHeight;
-            int count = tc.SelectedIndex;
             switch (tc.SelectedIndex)
             {
                 case 1:

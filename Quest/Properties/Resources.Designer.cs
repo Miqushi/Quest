@@ -119,6 +119,15 @@ namespace Quest.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы открываете шкатулку и видете гору изумрудов и ключ. &quot;Поздавляю, ты прошел это приключение, можешь забирать все и уходить&quot; - говорит Голос. Вы все забираете и уходите из этого странного места. Конец. .
+        /// </summary>
+        internal static string Final {
+            get {
+                return ResourceManager.GetString("Final", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
         /// </summary>
         internal static System.Drawing.Icon icon {
@@ -165,11 +174,11 @@ namespace Quest.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Кливленд Стивен Гровер был 22-м и 24-м президентом США в 1885-1889 и в 1893-1897 г.г. Т.к. он сам себе не брат, то условие загадки выполняется..
+        ///   Ищет локализованную строку, похожую на Это правильный ответ. Кливленд Стивен Гровер был 22-м и 24-м президентом США в 1885-1889 и в 1893-1897 г.г. Т.к. он сам себе не брат, то условие загадки выполняется..
         /// </summary>
-        internal static string riddle12 {
+        internal static string riddle1_2 {
             get {
-                return ResourceManager.GetString("riddle12", resourceCulture);
+                return ResourceManager.GetString("riddle1_2", resourceCulture);
             }
         }
         
@@ -183,15 +192,6 @@ namespace Quest.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
-        /// </summary>
-        internal static string riddle22 {
-            get {
-                return ResourceManager.GetString("riddle22", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Ищет локализованную строку, похожую на Дверь отворилась. Вы берете листок с анограммой и выходите, продолжая исследования.
         /// </summary>
         internal static string riddle3 {
@@ -201,11 +201,11 @@ namespace Quest.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на Это правильный ответ. Подразумевалось, что после войны политическая карта мира изменится.
         /// </summary>
-        internal static string riddle32 {
+        internal static string riddle3_2 {
             get {
-                return ResourceManager.GetString("riddle32", resourceCulture);
+                return ResourceManager.GetString("riddle3_2", resourceCulture);
             }
         }
         
@@ -215,6 +215,15 @@ namespace Quest.Properties {
         internal static string riddle4 {
             get {
                 return ResourceManager.GetString("riddle4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дверь на следующий этаж открывается и вы идете дальше..
+        /// </summary>
+        internal static string riddle4_2 {
+            get {
+                return ResourceManager.GetString("riddle4_2", resourceCulture);
             }
         }
         

@@ -51,7 +51,7 @@ namespace Quest
                     MessageBox.Show("Войны");
                     break;
                 case 4:
-                    MessageBox.Show("");
+                    MessageBox.Show("Которые стоят");
                     break;
             }
         }
@@ -67,18 +67,22 @@ namespace Quest
                     Riddle2();
                     break;
                     case 3:
+                    Riddle3();
                     break;
                     case 4:
+                    Riddle4();
                     break;
             }
         }
+        int i = 0;
         private void Riddle1()
         {
             if (responseField1.Text.Trim().ToLower().IndexOf("тот же") >= 0)
             {
-                textBlock1.Text = Properties.Resources.riddle12;
+                textBlock1.Text = Properties.Resources.riddle1_2;
                 responseField1.Visibility = Visibility.Collapsed;
                 Answer1.Visibility = Visibility.Collapsed;
+                i++;
             }
             else method.DealingDamage(hp1, hp2, hp3, year);
         }
@@ -86,9 +90,10 @@ namespace Quest
         {
             if (responseField2.Text.Trim().ToLower().IndexOf("незаразная")>=0)
             {
-                textBlock2.Text = Properties.Resources.riddle22;
+                textBlock1.Text = "Это правильный ответ";
                 responseField2.Visibility = Visibility.Collapsed;
                 Answer2.Visibility = Visibility.Collapsed;
+                i++;
             }
             else method.DealingDamage(hp1, hp2, hp3, year);
         }
@@ -96,13 +101,122 @@ namespace Quest
         {
             if (responseField3.Text.Trim().ToLower().IndexOf("войны") >= 0)
             {
-                textBlock3.Text = Properties.Resources.riddle32;
+                textBlock3.Text = Properties.Resources.riddle3_2;
                 responseField3.Visibility = Visibility.Collapsed;
                 Answer3.Visibility = Visibility.Collapsed;
+                i++;
             }
             else method.DealingDamage(hp1, hp2, hp3, year);
         }
+        private void Riddle4()
+        {
+            if (i != 3)
+            {
+                textBlock4.Text = "Приходите, когда ответите на прошлые задания";
+            }
+            if (responseField4.Text.Trim().ToLower().IndexOf("стоят") >= 0)
+            {
+                textBlock4.Text = Properties.Resources.riddle4_2;
+                responseField4.Visibility = Visibility.Collapsed;
+                Answer4.Visibility = Visibility.Collapsed;
+            }
+            else method.DealingDamage(hp1, hp2, hp3, year);
+        }
+        #region MouseClick
+        readonly double[,] door =
+        {{992/ 1265.6, 1039.2/ 1265.6, 190.4/ 682.4, 533.6/ 682.4 },
+        { 748/ 1265.6, 784.8/ 1265.6, 256.8/ 682.4, 468/ 682.4},
+        { 668.4/ 1265.6, 696.8/ 1265.6, 290.4/ 682.4, 442.2/ 682.4},
+        { 612/ 1265.6, 638.4/ 1265.6, 304/ 682.4, 421.6/ 682.4 },
+        { 520/ 1265.6, 559/ 1265.6, 298/ 682.4, 406/ 682.4 },
+        { 196.8/ 1265.6, 355.2/ 1265.6, 280/ 682.4, 497.2/ 682.4 },
+        };
+        readonly double[,] exit = { 
+        { 992/ 1265.6, 1149/ 1265.6, 154/ 682.4, 436/ 682.4},
+        { 932/ 1265.6, 1144/ 1265.6, 124/ 682.4, 485/ 682.4 },
+        { 1023/ 1265.6, 1185/ 1265.6, 185/ 682.4, 438/ 682.4 },
+        { 0,0,0,0 },
+        { 0,0,0,0 }};
+        private void tc_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Point p = e.GetPosition(this);
+            double x = basis.ActualWidth;
+            double y = basis.ActualHeight;
+            int count = tc.SelectedIndex;
+            int caseCount = 0;
+            method.ClickingOnTheDoor(door, exit, p, x, y, tc, count, caseCount);
+        }
 
-        
+        private void tc_MouseMove(object sender, MouseEventArgs e)
+        {
+            Point p = e.GetPosition(this);
+            double x = basis.ActualWidth;
+            double y = basis.ActualHeight;
+            switch (tc.SelectedIndex)
+            {
+                case 0:
+                    //if (p.X > x * door[0, 0] && p.X < x * door[0, 1] &&
+                    //    p.Y > y * door[0, 2] && p.Y < y * door[0, 3] ||
+                    //        p.X > x * door[1, 0] && p.X < x * door[1, 1] &&
+                    //    p.Y > y * door[1, 2] && p.Y < y * door[1, 3] ||
+                    //        p.X > x * door[2, 0] && p.X < x * door[2, 1] &&
+                    //    p.Y > y * door[2, 2] && p.Y < y * door[2, 3] ||
+                    //        p.X > x * door[3, 0] && p.X < x * door[3, 1] &&
+                    //    p.Y > y * door[3, 2] && p.Y < y * door[3, 3] ||
+                    //        p.X > x * door[4, 0] && p.X < x * door[4, 1] &&
+                    //    p.Y > y * door[4, 2] && p.Y < y * door[4, 3])
+                    //{
+                    //    Cursor = Cursors.Hand;
+                    //}
+                    //else
+                    //{
+                    //    Cursor = Cursors.Arrow;
+                    //}
+                    //break;
+                case 1:
+                    if (p.X > x * exit[0, 0] && p.X < x * exit[0, 1] &&
+                    p.Y > y * exit[0, 2] && p.Y < y * exit[0, 3])
+                    {
+                        Cursor = Cursors.Hand;
+                    }
+                    else
+                    {
+                        Cursor = Cursors.Arrow;
+                    }
+                    break;
+                case 3:
+                    if (p.X > x * exit[2, 0] && p.X < x * exit[2, 1] &&
+                    p.Y > y * exit[2, 2] && p.Y < y * exit[2, 3])
+                    {
+                        Cursor = Cursors.Hand;
+                    }
+                    else
+                    {
+                        Cursor = Cursors.Arrow;
+                    }
+                    break;
+                case 4:
+                    if (p.X > x * exit[3, 0] && p.X < x * exit[3, 1] &&
+                    p.Y > y * exit[3, 2] && p.Y < y * exit[3, 3])
+                    {
+                        Cursor = Cursors.Hand;
+                    }
+                    else
+                    {
+                        Cursor = Cursors.Arrow;
+                    }
+                    break;
+            }
+        }
+        #endregion
+        private void TabItem_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (i == 3)
+            {
+                textBlock4.Text = "Ответьте на вопрос: какие часы показывают верное время только два раза в сутки?";
+                responseField4.Visibility = Visibility.Visible;
+                Answer4.Visibility = Visibility.Visible;
+            }      
+        }
     }
 }

@@ -138,17 +138,20 @@ namespace Quest
         }
         #endregion
         #region
-        readonly double[,] door = { {0.177, 0.2953, 0.3906, 0.8030 },
+        readonly double[,] door = { 
+                            {0.177, 0.2953, 0.3906, 0.8030 },
                             { 0.3876, 0.4521, 0.3845, 0.8269 },
                             { 0.5875, 0.6925, 0.3152, 0.9296 },
                             { 0.7739, 0.9067, 0.2405, 0.9296 },
                             {0,0,0,0 },
                             {0,0,0,0 }
         };
-        readonly double[,] exit = { {0.8449, 0.9763, 0.1994, 0.7425 },
+        readonly double[,] exit = { 
+                            {0.8449, 0.9763, 0.1994, 0.7425 },
                             { 0.8561, 0.9619, 0.1806, 0.5994 },
                             { 0.8949, 0.9620,0.1887, 0.6483 },
-                            { 0.8727, 0.99, 0.3235, 0.7683 }
+                            { 0.8727, 0.99, 0.3235, 0.7683 },
+                            { 0,0,0,0 }
         };
         private void tc_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -223,6 +226,7 @@ namespace Quest
             Image x = (Image)sender;
             x.Source = BitmapFrame.Create(new Uri(@"pack://application:,,,/Img/bg.png"));
             _butCount++;
+            x.MouseLeftButtonDown -= But_LeftClick;
             switch (_butCount)
             {
                 case 1:
@@ -235,11 +239,12 @@ namespace Quest
                     bb3.Source = BitmapFrame.Create(new Uri(@"pack://application:,,,/Img/bg.png"));
                     break;
                 case 4:
-                    bb4.Source = BitmapFrame.Create(new Uri(@"pack://application:,,,/Img/bg.png"));
-                    imgHelp.Visibility = Visibility.Visible;
+                    {
+                        bb4.Source = BitmapFrame.Create(new Uri(@"pack://application:,,,/Img/bg.png"));
+                        imgHelp.Visibility = Visibility.Visible;
+                    }      
                     break;
-            }
-            
+            }  
         }
         private int _countClick = 1;
         private void ChangeNumber(object sender, MouseButtonEventArgs e)
@@ -263,33 +268,58 @@ namespace Quest
                     break;
             }
             _countClick++;
-            if(Code1.Text == "4" && Code2.Text == "1" && Code3.Text == "2" && Code4.Text == "3")
+            if(Code1.Text == "4" && Code2.Text == "1" && Code3.Text == "3" && Code4.Text == "2")
             {
                 MessageBox.Show("Вы получили две части пазла");
                 puzzleCount++;
             }
         }
-
         private void CasketLeftClick(object sender, MouseButtonEventArgs e)
         {
             var animation = new ThicknessAnimation
             {
-                To = new Thickness(100),
+                To = new Thickness(150),
                 Duration = TimeSpan.FromSeconds(0.5)
             };
             Casket.BeginAnimation(MarginProperty, animation);
-
+            textBlock1.Visibility = Visibility.Visible;
+            Answer1.Visibility = Visibility.Visible;
+            responseField1.Visibility = Visibility.Visible;
         }
 
         private void CheckAnswer(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToInt32(responseField1.Text) == 1984)
+            if (Answer1.Content.ToString() == "Конец")
             {
-                
+                Close();
+                main.Show();
             }
-            else method.DealingDamage(hp1, hp2, hp3, year);
+            try
+            {
+                if (Convert.ToInt32(responseField1.Text) == 1984)
+                {
+                    textBlock1.Text = Properties.Resources.Final;
+                    responseField1.Visibility = Visibility.Collapsed;
+                    Answer1.Content = "Конец";
+                }
+                else method.DealingDamage(hp1, hp2, hp3, year);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Код это цифры");
+            }
         }
-
+        private void CasketRightClick(object sender, MouseButtonEventArgs e)
+        {
+            var animation = new ThicknessAnimation
+            {
+                Duration = TimeSpan.FromSeconds(0.1)
+            };
+            Casket.BeginAnimation(MarginProperty, animation);
+            textBlock1.Visibility = Visibility.Collapsed;
+            Answer1.Visibility = Visibility.Collapsed;
+            responseField1.Visibility = Visibility.Collapsed;
+        }
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             //1265.6
@@ -309,6 +339,7 @@ namespace Quest
             bw3.Margin = new Thickness(0.13 * x, 0.58 * y, 0.83 * x, 0.315 * y);
             bw4.Margin = new Thickness(0.12 * x, 0.26 * y, 0.85 * x, 0.63 * y);
             butGrid.Margin = new Thickness(0.67 * x, 0.43 * y, 0.26 * x, 0.40 * y);
+            Casket.Margin = new Thickness(0.38 * x, 0.65 * y, 0.494 * x, 0.196 * y);
         }
     }
 }
