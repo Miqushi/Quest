@@ -48,10 +48,10 @@ namespace Quest
                     MessageBox.Show("Эта болезнь незаразная");
                     break;
                 case 3:
-                    MessageBox.Show("Войны");
+                    MessageBox.Show("Которые стоят");    
                     break;
                 case 4:
-                    MessageBox.Show("Которые стоят");
+                    MessageBox.Show("Войны");
                     break;
             }
         }
@@ -67,10 +67,10 @@ namespace Quest
                     Riddle2();
                     break;
                     case 3:
-                    Riddle3();
+                    Riddle4();
                     break;
                     case 4:
-                    Riddle4();
+                    Riddle3();
                     break;
             }
         }
@@ -120,15 +120,17 @@ namespace Quest
         }
         private void Riddle4()
         {
-            if (i != 3)
+            if(Answer4.Content.ToString() == "Дальше")
             {
-                textBlock4.Text = "Приходите, когда ответите на прошлые задания";
+                if (Properties.Settings.Default.YearCount == 1)
+                    Properties.Settings.Default.YearCount++;
+                Close();
             }
             if (responseField4.Text.Trim().ToLower().IndexOf("стоят") >= 0)
             {
                 textBlock4.Text = Properties.Resources.riddle4_2;
                 responseField4.Visibility = Visibility.Collapsed;
-                Answer4.Visibility = Visibility.Collapsed;
+                Answer4.Content = "Дальше";
             }
             else method.DealingDamage(hp1, hp2, hp3, year);
         }

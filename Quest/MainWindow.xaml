@@ -7,6 +7,7 @@
         ResizeMode="CanMinimize"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStartupLocation="CenterScreen"
         Title="Quest" Height="450" Width="400" Loaded="Window_Loaded" Icon="icon.ico" Topmost="True">
     <Grid Background="Black">
         <Border Margin="10,50,10,10" CornerRadius="15">
@@ -22,22 +23,22 @@
                     <TextBlock TextAlignment="Center" Margin="10,0" Text="Выжить в БГАЭК" FontFamily="Garamond" Foreground="DarkGray" FontSize="30"/>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Bottom" Margin="90,0,90,10" Height="220">
-                    <Button x:Name="curs1" Margin="10,3" Content="I этаж" Height="47" Click="curs1_Click" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16">
+                    <Button x:Name="curs1" Margin="10,3" Content="I этаж" Height="47" Click="curs1_Click"  BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16">
                         <Button.Background>
                             <ImageBrush ImageSource="Img/button.png"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="curs2" Margin="10,3" Content="II этаж" Height="47"  BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="curs2_Click">
+                    <Button x:Name="curs2" Margin="10,3" Content="II этаж" Height="47" IsEnabled="False" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="curs2_Click">
                         <Button.Background>
                             <ImageBrush ImageSource="Img/button.png"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="curs3" Margin="10,3" Content="III этаж" Height="47" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="curs3_Click">
+                    <Button x:Name="curs3" Margin="10,3" Content="III этаж" Height="47" IsEnabled="False" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="curs3_Click">
                         <Button.Background>
                             <ImageBrush ImageSource="Img/button.png"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="curs4" Margin="10,3" Content="IV этаж" Height="47" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="curs4_Click">
+                    <Button x:Name="curs4" Margin="10,3" Content="IV этаж" Height="47" IsEnabled="False" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="curs4_Click">
                         <Button.Background>
                             <ImageBrush ImageSource="Img/button.png"/>
                         </Button.Background>

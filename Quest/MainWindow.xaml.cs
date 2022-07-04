@@ -21,10 +21,18 @@ namespace Quest
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //if (Properties.Settings.Default.YearCount == 0)
-            //{
-
-            //}
+            if (Properties.Settings.Default.YearCount > 0)
+            {
+                curs2.IsEnabled = true;
+            }
+            if (Properties.Settings.Default.YearCount > 1)
+            {
+                curs3.IsEnabled = true;
+            }
+            if (Properties.Settings.Default.YearCount > 2)
+            {
+                curs4.IsEnabled = true;
+            }
             method.LivesDisplay(hp1, hp2, hp3);
         }
 

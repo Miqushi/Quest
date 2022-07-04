@@ -47,13 +47,19 @@ namespace Quest
         }
         private void Riddle5()
         {
+            if (otv5.Content.ToString() == "Дальше")
+            {
+                if (Properties.Settings.Default.YearCount == 2)
+                    Properties.Settings.Default.YearCount++;
+                Close();
+            }
             string otvet = textBox5.Text.Trim().ToLower();
             if (otvet == "граммофон")
             {
                 textBlock5.Text = "Это правильный ответ и вы проходите дальше";
                 textBox5.Visibility = Visibility.Collapsed;
-                otv5.Visibility = Visibility.Collapsed;
-                next.Visibility = Visibility.Visible;
+                otv5.Content = "Дальше";
+                
             }
             else
             {
@@ -75,13 +81,6 @@ namespace Quest
                     }
                     break;
             }
-        }
-        private void next_Click(object sender, RoutedEventArgs e)
-        {
-            if (Properties.Settings.Default.YearCount == 2)
-               Properties.Settings.Default.YearCount++;
-            main.Show();
-            Close();
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)

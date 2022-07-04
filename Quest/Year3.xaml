@@ -256,11 +256,6 @@
                                     <ImageBrush ImageSource="Img/button.png"/>
                                 </Button.Background>
                             </Button>
-                            <Button x:Name="next" HorizontalAlignment="Center" Content="Дальше" Visibility="Collapsed" Foreground="Black" BorderBrush="Transparent" FontFamily="Monotype Corsiva" FontSize="19" Cursor="Hand" Click="next_Click">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="Img/button.png"/>
-                                </Button.Background>
-                            </Button>
                         </StackPanel>
                     </Border>
                 </Border>

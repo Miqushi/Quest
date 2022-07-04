@@ -179,13 +179,20 @@ namespace Quest
         }
         private void Riddle6()
         {
+            if(otv6.Content.ToString() == "Дальше")
+            {
+                if (Properties.Settings.Default.YearCount == 0)
+                    Properties.Settings.Default.YearCount++;
+                Close();
+            }
+
             string otvet = textBox6.Text.Trim().ToLower();
             if (otvet == "греция" || otvet == "древняя греция")
             {
                 tb6.Text = Properties.Resources.riddle6;
                 textBox6.Visibility = Visibility.Collapsed;
-                otv6.Visibility = Visibility.Collapsed;
-                next.Visibility = Visibility.Visible;
+                otv6.Content = "Дальше";
+                
             }
             else method.DealingDamage(hp1, hp2, hp3, year);
         }
@@ -209,13 +216,6 @@ namespace Quest
                     Riddle6();
                     break;
             }
-        }
-        private void next_Click(object sender, RoutedEventArgs e)
-        {
-            if (Properties.Settings.Default.YearCount == 0)
-                Properties.Settings.Default.YearCount++;
-            main.Show();
-            Close();
         }
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {

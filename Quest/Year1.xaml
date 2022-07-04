@@ -344,11 +344,6 @@
                                         <ImageBrush ImageSource="Img/button.png"/>
                                     </Button.Background>
                                 </Button>
-                                <Button x:Name="next" Visibility="Collapsed" HorizontalAlignment="Center" Margin="5" Content="Вперед" Foreground="Black" BorderBrush="Transparent" FontFamily="Viner Hand ITC" FontSize="16" Click="next_Click">
-                                    <Button.Background>
-                                        <ImageBrush ImageSource="Img/button.png"/>
-                                    </Button.Background>
-                                </Button>
                             </StackPanel>
                         </Border>
                     </Grid>
