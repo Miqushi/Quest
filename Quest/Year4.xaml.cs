@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 
 namespace Quest
@@ -12,6 +13,7 @@ namespace Quest
     /// </summary>
     public partial class Year4 : Window
     {
+        public Window year;
         public Year4()
         {
             InitializeComponent();
@@ -267,6 +269,27 @@ namespace Quest
                 puzzleCount++;
             }
         }
+
+        private void CasketLeftClick(object sender, MouseButtonEventArgs e)
+        {
+            var animation = new ThicknessAnimation
+            {
+                To = new Thickness(100),
+                Duration = TimeSpan.FromSeconds(0.5)
+            };
+            Casket.BeginAnimation(MarginProperty, animation);
+
+        }
+
+        private void CheckAnswer(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToInt32(responseField1.Text) == 1984)
+            {
+                
+            }
+            else method.DealingDamage(hp1, hp2, hp3, year);
+        }
+
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             //1265.6

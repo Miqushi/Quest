@@ -47,6 +47,7 @@ namespace Quest
         private void curs4_Click(object sender, RoutedEventArgs e)
         {
             Year4 y4 = new Year4();
+            y4.year = y4;
             y4.Show();
             Close();
         }

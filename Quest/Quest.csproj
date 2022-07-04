@@ -312,6 +312,9 @@
     <Resource Include="Img\figure1.png" />
     <Resource Include="Img\figure2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\casket.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
