@@ -126,7 +126,7 @@
             <TabItem Header="exit" GotFocus="TabItem_GotFocus">
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
-                        <ImageBrush />
+                        <ImageBrush ImageSource="Img/Stairs.jpg" />
                     </Border.Background>
                     <Grid>
                         <Border Style="{StaticResource Content}">

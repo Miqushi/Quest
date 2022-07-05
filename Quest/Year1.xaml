@@ -330,7 +330,7 @@
             <TabItem Header="2 этаж" GotFocus="TabItem_GotFocus">
                 <Border Style="{StaticResource BackBorder}">
                     <Border.Background>
-                        <ImageBrush ImageSource="Img/House.jpeg"/>
+                        <ImageBrush ImageSource="Img/Stairs.jpg"/>
                     </Border.Background>
                     <Grid>
                         <Border Style="{StaticResource Content}">

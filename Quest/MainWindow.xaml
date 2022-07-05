@@ -47,7 +47,7 @@
             </Grid>
         </Border>
         <ToolBar Margin="2" VerticalAlignment="Top" Height="40">
-            <Image Source="Img/Reference.png" Margin="2"/>
+            <Image Source="Img/Reference.png" Margin="2" MouseLeftButtonDown="Image_MouseLeftButtonDown" Cursor="Hand"/>
             <Image x:Name="hp1" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp2" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
             <Image x:Name="hp3" Source="Img/hp.png" Visibility="Hidden" Margin="2" ToolTip="Количество жизней"/>
