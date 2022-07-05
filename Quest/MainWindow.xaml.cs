@@ -62,7 +62,7 @@ namespace Quest
 
         private void Image_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            MessageBox.Show(Properties.Resources.Reference);
+            MessageBox.Show(Properties.Resources.Reference,"Справка");
         }
     }
 }
